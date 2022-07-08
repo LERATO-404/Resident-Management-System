@@ -1,0 +1,14 @@
+C:\Users\LAVAS\Desktop\CMPG 223 - SYSTEMS DESIGN\Project\RMS\Residence-Management-System\bin\Debug\Residence-Management-System.exe.config
+C:\Users\LAVAS\Desktop\CMPG 223 - SYSTEMS DESIGN\Project\RMS\Residence-Management-System\bin\Debug\Residence-Management-System.exe
+C:\Users\LAVAS\Desktop\CMPG 223 - SYSTEMS DESIGN\Project\RMS\Residence-Management-System\bin\Debug\Residence-Management-System.pdb
+C:\Users\LAVAS\Desktop\CMPG 223 - SYSTEMS DESIGN\Project\RMS\Residence-Management-System\obj\Debug\Residence-Management-System.csproj.AssemblyReference.cache
+C:\Users\LAVAS\Desktop\CMPG 223 - SYSTEMS DESIGN\Project\RMS\Residence-Management-System\obj\Debug\Residence_Management_System.LandingPage.resources
+C:\Users\LAVAS\Desktop\CMPG 223 - SYSTEMS DESIGN\Project\RMS\Residence-Management-System\obj\Debug\Residence_Management_System.Login.resources
+C:\Users\LAVAS\Desktop\CMPG 223 - SYSTEMS DESIGN\Project\RMS\Residence-Management-System\obj\Debug\Residence_Management_System.Properties.Resources.resources
+C:\Users\LAVAS\Desktop\CMPG 223 - SYSTEMS DESIGN\Project\RMS\Residence-Management-System\obj\Debug\Residence_Management_System.Register.resources
+C:\Users\LAVAS\Desktop\CMPG 223 - SYSTEMS DESIGN\Project\RMS\Residence-Management-System\obj\Debug\Residence-Management-System.csproj.GenerateResource.cache
+C:\Users\LAVAS\Desktop\CMPG 223 - SYSTEMS DESIGN\Project\RMS\Residence-Management-System\obj\Debug\Residence-Management-System.csproj.CoreCompileInputs.cache
+C:\Users\LAVAS\Desktop\CMPG 223 - SYSTEMS DESIGN\Project\RMS\Residence-Management-System\obj\Debug\Residence-Management-System.exe
+C:\Users\LAVAS\Desktop\CMPG 223 - SYSTEMS DESIGN\Project\RMS\Residence-Management-System\obj\Debug\Residence-Management-System.pdb
+C:\Users\LAVAS\Desktop\CMPG 223 - SYSTEMS DESIGN\Project\RMS\Residence-Management-System\bin\Debug\FontAwesome.Sharp.dll
+C:\Users\LAVAS\Desktop\CMPG 223 - SYSTEMS DESIGN\Project\RMS\Residence-Management-System\bin\Debug\Guna.UI2.dll
