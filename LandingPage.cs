@@ -16,22 +16,30 @@ namespace Residence_Management_System
         public LandingPage()
         {
             InitializeComponent();
+            User_Controls.UC_home uch = new User_Controls.UC_home();
+            addUserControl(uch);
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        //*********************methods****************
+
+        private void addUserControl(UserControl userControl)
         {
-
+            userControl.Dock = DockStyle.Fill;
+            tabsContainer.Controls.Clear();
+            tabsContainer.Controls.Add(userControl);
+            userControl.BringToFront();
         }
+
+        //*********************methods****************
+
+
 
         private void LandingPage_Load(object sender, EventArgs e)
         {
 
         }
 
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
+        
 
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
@@ -68,30 +76,68 @@ namespace Residence_Management_System
 
         }
 
-        private void iconButton1_Click(object sender, EventArgs e)
-        {
-            sideBarTimer.Start();
-
-        }
-
-        private void guna2PictureBox2_Click(object sender, EventArgs e)
-        {
-
-        }
+       
 
         private void iconButton1_Click_1(object sender, EventArgs e)
         {
             sideBarTimer.Start();
-        }
-
-        private void guna2PictureBox1_Click(object sender, EventArgs e)
-        {
             
         }
+
 
         private void guna2PictureBox2_Click_1(object sender, EventArgs e)
         {
             sideBarTimer.Start();
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void homebtn_Click(object sender, EventArgs e)
+        {
+            User_Controls.UC_home uch = new User_Controls.UC_home();
+            addUserControl(uch);
+        }
+
+        private void registerbtn_Click(object sender, EventArgs e)
+        {
+            User_Controls.UC_register ucR = new User_Controls.UC_register();
+            addUserControl(ucR);
+        }
+
+        private void roombtn_Click(object sender, EventArgs e)
+        {
+            User_Controls.UC_room ucRoom = new User_Controls.UC_room();
+            addUserControl(ucRoom);
+        }
+
+        private void activitiesbtn_Click(object sender, EventArgs e)
+        {
+            User_Controls.UC_activities ucAct = new User_Controls.UC_activities();
+            addUserControl(ucAct);
+        }
+
+        private void reporbtn_Click(object sender, EventArgs e)
+        {
+            User_Controls.UC_report ucReport = new User_Controls.UC_report();
+            addUserControl(ucReport);
         }
     }
 }

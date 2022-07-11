@@ -26,5 +26,11 @@ namespace Residence_Management_System
         {
 
         }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+            Login loginForm = new Login();
+            loginForm.Show();
+        }
     }
 }

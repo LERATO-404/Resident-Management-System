@@ -82,6 +82,36 @@
     <Compile Include="Register.Designer.cs">
       <DependentUpon>Register.cs</DependentUpon>
     </Compile>
+    <Compile Include="User_Controls\UC_activities.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User_Controls\UC_activities.Designer.cs">
+      <DependentUpon>UC_activities.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User_Controls\UC_home.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User_Controls\UC_home.Designer.cs">
+      <DependentUpon>UC_home.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User_Controls\UC_register.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User_Controls\UC_register.Designer.cs">
+      <DependentUpon>UC_register.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User_Controls\UC_report.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User_Controls\UC_report.Designer.cs">
+      <DependentUpon>UC_report.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User_Controls\UC_room.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User_Controls\UC_room.Designer.cs">
+      <DependentUpon>UC_room.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="LandingPage.resx">
       <DependentUpon>LandingPage.cs</DependentUpon>
     </EmbeddedResource>
@@ -95,6 +125,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Register.resx">
       <DependentUpon>Register.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User_Controls\UC_activities.resx">
+      <DependentUpon>UC_activities.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User_Controls\UC_home.resx">
+      <DependentUpon>UC_home.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User_Controls\UC_register.resx">
+      <DependentUpon>UC_register.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User_Controls\UC_report.resx">
+      <DependentUpon>UC_report.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User_Controls\UC_room.resx">
+      <DependentUpon>UC_room.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

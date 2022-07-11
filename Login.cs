@@ -61,5 +61,18 @@ namespace Residence_Management_System
         {
 
         }
+
+        private void signInbtn_Click(object sender, EventArgs e)
+        {
+            LandingPage landingPageForm = new LandingPage();
+            landingPageForm.Show();
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+            Register registerForm = new Register();
+            registerForm.Show();
+        }
     }
 }
