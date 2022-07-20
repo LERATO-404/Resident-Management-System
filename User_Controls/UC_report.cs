@@ -16,5 +16,15 @@ namespace Residence_Management_System.User_Controls
         {
             InitializeComponent();
         }
+
+        private void UC_report_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2HScrollBar1_Scroll(object sender, ScrollEventArgs e)
+        {
+
+        }
     }
 }

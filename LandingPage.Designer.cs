@@ -31,16 +31,16 @@ namespace Residence_Management_System
         {
             this.components = new System.ComponentModel.Container();
             this.sideBarContainer = new System.Windows.Forms.FlowLayoutPanel();
-            this.panelLogo = new System.Windows.Forms.Panel();
-            this.sideBarTimer = new System.Windows.Forms.Timer(this.components);
-            this.tabsContainer = new System.Windows.Forms.Panel();
-            this.LogoLandingPage = new Guna.UI2.WinForms.Guna2PictureBox();
             this.menuBtn = new FontAwesome.Sharp.IconButton();
             this.homebtn = new FontAwesome.Sharp.IconButton();
             this.registerbtn = new FontAwesome.Sharp.IconButton();
             this.roombtn = new FontAwesome.Sharp.IconButton();
             this.activitiesbtn = new FontAwesome.Sharp.IconButton();
             this.reporbtn = new FontAwesome.Sharp.IconButton();
+            this.panelLogo = new System.Windows.Forms.Panel();
+            this.LogoLandingPage = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.sideBarTimer = new System.Windows.Forms.Timer(this.components);
+            this.tabsContainer = new System.Windows.Forms.Panel();
             this.sideBarContainer.SuspendLayout();
             this.panelLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.LogoLandingPage)).BeginInit();
@@ -63,43 +63,6 @@ namespace Residence_Management_System
             this.sideBarContainer.Size = new System.Drawing.Size(44, 800);
             this.sideBarContainer.TabIndex = 0;
             this.sideBarContainer.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanelMenu_Paint);
-            // 
-            // panelLogo
-            // 
-            this.panelLogo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.panelLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.panelLogo.Controls.Add(this.LogoLandingPage);
-            this.panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelLogo.Location = new System.Drawing.Point(44, 0);
-            this.panelLogo.Name = "panelLogo";
-            this.panelLogo.Size = new System.Drawing.Size(890, 58);
-            this.panelLogo.TabIndex = 1;
-            this.panelLogo.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
-            // 
-            // sideBarTimer
-            // 
-            this.sideBarTimer.Interval = 10;
-            this.sideBarTimer.Tick += new System.EventHandler(this.sideBarTimer_Tick);
-            // 
-            // tabsContainer
-            // 
-            this.tabsContainer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabsContainer.Location = new System.Drawing.Point(44, 58);
-            this.tabsContainer.Name = "tabsContainer";
-            this.tabsContainer.Size = new System.Drawing.Size(890, 569);
-            this.tabsContainer.TabIndex = 6;
-            // 
-            // LogoLandingPage
-            // 
-            this.LogoLandingPage.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.LogoLandingPage.Image = global::Residence_Management_System.Properties.Resources.LogoRMS;
-            this.LogoLandingPage.ImageRotate = 0F;
-            this.LogoLandingPage.Location = new System.Drawing.Point(0, 0);
-            this.LogoLandingPage.Name = "LogoLandingPage";
-            this.LogoLandingPage.Size = new System.Drawing.Size(163, 58);
-            this.LogoLandingPage.TabIndex = 17;
-            this.LogoLandingPage.TabStop = false;
-            this.LogoLandingPage.Click += new System.EventHandler(this.guna2PictureBox2_Click_1);
             // 
             // menuBtn
             // 
@@ -237,6 +200,43 @@ namespace Residence_Management_System
             this.reporbtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.reporbtn.UseVisualStyleBackColor = true;
             this.reporbtn.Click += new System.EventHandler(this.reporbtn_Click);
+            // 
+            // panelLogo
+            // 
+            this.panelLogo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.panelLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.panelLogo.Controls.Add(this.LogoLandingPage);
+            this.panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelLogo.Location = new System.Drawing.Point(44, 0);
+            this.panelLogo.Name = "panelLogo";
+            this.panelLogo.Size = new System.Drawing.Size(890, 58);
+            this.panelLogo.TabIndex = 1;
+            this.panelLogo.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // LogoLandingPage
+            // 
+            this.LogoLandingPage.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.LogoLandingPage.Image = global::Residence_Management_System.Properties.Resources.LogoRMS;
+            this.LogoLandingPage.ImageRotate = 0F;
+            this.LogoLandingPage.Location = new System.Drawing.Point(0, 0);
+            this.LogoLandingPage.Name = "LogoLandingPage";
+            this.LogoLandingPage.Size = new System.Drawing.Size(163, 58);
+            this.LogoLandingPage.TabIndex = 17;
+            this.LogoLandingPage.TabStop = false;
+            this.LogoLandingPage.Click += new System.EventHandler(this.guna2PictureBox2_Click_1);
+            // 
+            // sideBarTimer
+            // 
+            this.sideBarTimer.Interval = 10;
+            this.sideBarTimer.Tick += new System.EventHandler(this.sideBarTimer_Tick);
+            // 
+            // tabsContainer
+            // 
+            this.tabsContainer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabsContainer.Location = new System.Drawing.Point(44, 58);
+            this.tabsContainer.Name = "tabsContainer";
+            this.tabsContainer.Size = new System.Drawing.Size(890, 569);
+            this.tabsContainer.TabIndex = 6;
             // 
             // LandingPage
             // 

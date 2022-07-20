@@ -90,26 +90,6 @@ namespace Residence_Management_System
             sideBarTimer.Start();
         }
 
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void homebtn_Click(object sender, EventArgs e)
         {
             User_Controls.UC_home uch = new User_Controls.UC_home();
