@@ -122,7 +122,7 @@ namespace Residence_Management_System.User_Controls
             // 
             this.guna2TabControl1.Controls.Add(this.Employee);
             this.guna2TabControl1.Controls.Add(this.Student);
-            this.guna2TabControl1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.guna2TabControl1.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.guna2TabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.guna2TabControl1.ItemSize = new System.Drawing.Size(180, 40);
             this.guna2TabControl1.Location = new System.Drawing.Point(0, 0);
@@ -145,7 +145,7 @@ namespace Residence_Management_System.User_Controls
             this.guna2TabControl1.TabButtonSelectedState.ForeColor = System.Drawing.Color.Black;
             this.guna2TabControl1.TabButtonSelectedState.InnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.guna2TabControl1.TabButtonSize = new System.Drawing.Size(180, 40);
-            this.guna2TabControl1.TabIndex = 1;
+            this.guna2TabControl1.TabIndex = 0;
             this.guna2TabControl1.TabMenuBackColor = System.Drawing.Color.White;
             this.guna2TabControl1.TabMenuOrientation = Guna.UI2.WinForms.TabMenuOrientation.HorizontalTop;
             this.guna2TabControl1.SelectedIndexChanged += new System.EventHandler(this.guna2TabControl1_SelectedIndexChanged);
@@ -207,7 +207,7 @@ namespace Residence_Management_System.User_Controls
             this.guna2TextBox15.PlaceholderText = "e.g 123";
             this.guna2TextBox15.SelectedText = "";
             this.guna2TextBox15.Size = new System.Drawing.Size(68, 36);
-            this.guna2TextBox15.TabIndex = 125;
+            this.guna2TextBox15.TabIndex = 0;
             // 
             // guna2TextBox17
             // 
@@ -227,7 +227,7 @@ namespace Residence_Management_System.User_Controls
             this.guna2TextBox17.PlaceholderText = "";
             this.guna2TextBox17.SelectedText = "";
             this.guna2TextBox17.Size = new System.Drawing.Size(200, 36);
-            this.guna2TextBox17.TabIndex = 128;
+            this.guna2TextBox17.TabIndex = 2;
             // 
             // label1
             // 
@@ -271,7 +271,7 @@ namespace Residence_Management_System.User_Controls
             this.guna2TextBox19.PlaceholderText = "";
             this.guna2TextBox19.SelectedText = "";
             this.guna2TextBox19.Size = new System.Drawing.Size(200, 36);
-            this.guna2TextBox19.TabIndex = 125;
+            this.guna2TextBox19.TabIndex = 3;
             // 
             // guna2TextBox20
             // 
@@ -291,7 +291,7 @@ namespace Residence_Management_System.User_Controls
             this.guna2TextBox20.PlaceholderText = "e.g Potch Street";
             this.guna2TextBox20.SelectedText = "";
             this.guna2TextBox20.Size = new System.Drawing.Size(126, 36);
-            this.guna2TextBox20.TabIndex = 134;
+            this.guna2TextBox20.TabIndex = 1;
             // 
             // guna2TextBox21
             // 
@@ -311,7 +311,7 @@ namespace Residence_Management_System.User_Controls
             this.guna2TextBox21.PlaceholderText = "";
             this.guna2TextBox21.SelectedText = "";
             this.guna2TextBox21.Size = new System.Drawing.Size(200, 36);
-            this.guna2TextBox21.TabIndex = 129;
+            this.guna2TextBox21.TabIndex = 4;
             // 
             // label19
             // 
@@ -362,13 +362,14 @@ namespace Residence_Management_System.User_Controls
             this.guna2DateTimePicker3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.guna2DateTimePicker3.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.guna2DateTimePicker3.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2DateTimePicker3.ForeColor = System.Drawing.Color.White;
             this.guna2DateTimePicker3.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.guna2DateTimePicker3.Location = new System.Drawing.Point(17, 192);
+            this.guna2DateTimePicker3.Location = new System.Drawing.Point(63, 192);
             this.guna2DateTimePicker3.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.guna2DateTimePicker3.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.guna2DateTimePicker3.Name = "guna2DateTimePicker3";
             this.guna2DateTimePicker3.Size = new System.Drawing.Size(200, 36);
-            this.guna2DateTimePicker3.TabIndex = 147;
+            this.guna2DateTimePicker3.TabIndex = 2;
             this.guna2DateTimePicker3.Value = new System.DateTime(2022, 7, 8, 11, 10, 53, 331);
             // 
             // label17
@@ -377,7 +378,7 @@ namespace Residence_Management_System.User_Controls
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label17.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.label17.Location = new System.Drawing.Point(11, 33);
+            this.label17.Location = new System.Drawing.Point(57, 33);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(54, 13);
             this.label17.TabIndex = 144;
@@ -390,7 +391,7 @@ namespace Residence_Management_System.User_Controls
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.label15.Location = new System.Drawing.Point(14, 174);
+            this.label15.Location = new System.Drawing.Point(60, 174);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(58, 13);
             this.label15.TabIndex = 146;
@@ -402,7 +403,7 @@ namespace Residence_Management_System.User_Controls
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.label16.Location = new System.Drawing.Point(14, 102);
+            this.label16.Location = new System.Drawing.Point(60, 102);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(51, 13);
             this.label16.TabIndex = 145;
@@ -427,10 +428,10 @@ namespace Residence_Management_System.User_Controls
             "Cleaning Manager",
             "Residence housekeeper",
             "Parking attendant"});
-            this.guna2ComboBox5.Location = new System.Drawing.Point(14, 49);
+            this.guna2ComboBox5.Location = new System.Drawing.Point(60, 49);
             this.guna2ComboBox5.Name = "guna2ComboBox5";
             this.guna2ComboBox5.Size = new System.Drawing.Size(200, 36);
-            this.guna2ComboBox5.TabIndex = 142;
+            this.guna2ComboBox5.TabIndex = 0;
             // 
             // guna2ComboBox4
             // 
@@ -448,10 +449,10 @@ namespace Residence_Management_System.User_Controls
             "Part-Time",
             "Temporary",
             "Volunteer"});
-            this.guna2ComboBox4.Location = new System.Drawing.Point(17, 120);
+            this.guna2ComboBox4.Location = new System.Drawing.Point(63, 120);
             this.guna2ComboBox4.Name = "guna2ComboBox4";
             this.guna2ComboBox4.Size = new System.Drawing.Size(197, 36);
-            this.guna2ComboBox4.TabIndex = 143;
+            this.guna2ComboBox4.TabIndex = 1;
             // 
             // guna2GroupBox3
             // 
@@ -484,13 +485,14 @@ namespace Residence_Management_System.User_Controls
             this.guna2DateTimePicker4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.guna2DateTimePicker4.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.guna2DateTimePicker4.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2DateTimePicker4.ForeColor = System.Drawing.Color.White;
             this.guna2DateTimePicker4.Format = System.Windows.Forms.DateTimePickerFormat.Long;
             this.guna2DateTimePicker4.Location = new System.Drawing.Point(9, 192);
             this.guna2DateTimePicker4.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.guna2DateTimePicker4.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.guna2DateTimePicker4.Name = "guna2DateTimePicker4";
             this.guna2DateTimePicker4.Size = new System.Drawing.Size(200, 36);
-            this.guna2DateTimePicker4.TabIndex = 86;
+            this.guna2DateTimePicker4.TabIndex = 4;
             this.guna2DateTimePicker4.Value = new System.DateTime(2022, 7, 8, 11, 10, 53, 331);
             // 
             // label22
@@ -544,10 +546,10 @@ namespace Residence_Management_System.User_Controls
             this.guna2TextBox5.Location = new System.Drawing.Point(9, 120);
             this.guna2TextBox5.Name = "guna2TextBox5";
             this.guna2TextBox5.PasswordChar = '\0';
-            this.guna2TextBox5.PlaceholderText = "";
+            this.guna2TextBox5.PlaceholderText = "@domain@gmail.com";
             this.guna2TextBox5.SelectedText = "";
             this.guna2TextBox5.Size = new System.Drawing.Size(200, 36);
-            this.guna2TextBox5.TabIndex = 79;
+            this.guna2TextBox5.TabIndex = 2;
             // 
             // guna2TextBox6
             // 
@@ -567,7 +569,7 @@ namespace Residence_Management_System.User_Controls
             this.guna2TextBox6.PlaceholderText = "";
             this.guna2TextBox6.SelectedText = "";
             this.guna2TextBox6.Size = new System.Drawing.Size(200, 36);
-            this.guna2TextBox6.TabIndex = 77;
+            this.guna2TextBox6.TabIndex = 1;
             // 
             // guna2ComboBox6
             // 
@@ -587,7 +589,7 @@ namespace Residence_Management_System.User_Controls
             this.guna2ComboBox6.Location = new System.Drawing.Point(251, 192);
             this.guna2ComboBox6.Name = "guna2ComboBox6";
             this.guna2ComboBox6.Size = new System.Drawing.Size(200, 36);
-            this.guna2ComboBox6.TabIndex = 84;
+            this.guna2ComboBox6.TabIndex = 5;
             // 
             // label25
             // 
@@ -619,7 +621,7 @@ namespace Residence_Management_System.User_Controls
             this.guna2TextBox7.PlaceholderText = "";
             this.guna2TextBox7.SelectedText = "";
             this.guna2TextBox7.Size = new System.Drawing.Size(200, 36);
-            this.guna2TextBox7.TabIndex = 75;
+            this.guna2TextBox7.TabIndex = 0;
             // 
             // label26
             // 
@@ -648,10 +650,10 @@ namespace Residence_Management_System.User_Controls
             this.guna2TextBox8.Location = new System.Drawing.Point(251, 120);
             this.guna2TextBox8.Name = "guna2TextBox8";
             this.guna2TextBox8.PasswordChar = '\0';
-            this.guna2TextBox8.PlaceholderText = "";
+            this.guna2TextBox8.PlaceholderText = "123 456 7891";
             this.guna2TextBox8.SelectedText = "";
             this.guna2TextBox8.Size = new System.Drawing.Size(200, 36);
-            this.guna2TextBox8.TabIndex = 81;
+            this.guna2TextBox8.TabIndex = 3;
             // 
             // label27
             // 
@@ -679,7 +681,7 @@ namespace Residence_Management_System.User_Controls
             this.guna2Button1.Location = new System.Drawing.Point(619, 464);
             this.guna2Button1.Name = "guna2Button1";
             this.guna2Button1.Size = new System.Drawing.Size(110, 33);
-            this.guna2Button1.TabIndex = 68;
+            this.guna2Button1.TabIndex = 1;
             this.guna2Button1.Text = "Cancel";
             // 
             // guna2Button3
@@ -696,7 +698,7 @@ namespace Residence_Management_System.User_Controls
             this.guna2Button3.Location = new System.Drawing.Point(735, 464);
             this.guna2Button3.Name = "guna2Button3";
             this.guna2Button3.Size = new System.Drawing.Size(110, 33);
-            this.guna2Button3.TabIndex = 67;
+            this.guna2Button3.TabIndex = 0;
             this.guna2Button3.Text = "Add";
             // 
             // label20
@@ -728,6 +730,7 @@ namespace Residence_Management_System.User_Controls
             this.Student.Controls.Add(this.addEmployeebtn);
             this.Student.Controls.Add(this.label4);
             this.Student.Controls.Add(this.label3);
+            this.Student.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.Student.Location = new System.Drawing.Point(4, 44);
             this.Student.Name = "Student";
             this.Student.Padding = new System.Windows.Forms.Padding(3);
@@ -773,10 +776,10 @@ namespace Residence_Management_System.User_Controls
             "Sophomore",
             "Junior",
             "Senior"});
-            this.guna2ComboBox1.Location = new System.Drawing.Point(13, 115);
+            this.guna2ComboBox1.Location = new System.Drawing.Point(63, 116);
             this.guna2ComboBox1.Name = "guna2ComboBox1";
             this.guna2ComboBox1.Size = new System.Drawing.Size(200, 36);
-            this.guna2ComboBox1.TabIndex = 138;
+            this.guna2ComboBox1.TabIndex = 1;
             // 
             // label32
             // 
@@ -784,7 +787,7 @@ namespace Residence_Management_System.User_Controls
             this.label32.AutoSize = true;
             this.label32.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label32.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.label32.Location = new System.Drawing.Point(10, 98);
+            this.label32.Location = new System.Drawing.Point(60, 99);
             this.label32.Name = "label32";
             this.label32.Size = new System.Drawing.Size(76, 13);
             this.label32.TabIndex = 137;
@@ -796,7 +799,7 @@ namespace Residence_Management_System.User_Controls
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.label12.Location = new System.Drawing.Point(10, 41);
+            this.label12.Location = new System.Drawing.Point(60, 42);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(94, 13);
             this.label12.TabIndex = 122;
@@ -814,13 +817,13 @@ namespace Residence_Management_System.User_Controls
             this.guna2TextBox14.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.guna2TextBox14.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2TextBox14.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox14.Location = new System.Drawing.Point(12, 59);
+            this.guna2TextBox14.Location = new System.Drawing.Point(62, 60);
             this.guna2TextBox14.Name = "guna2TextBox14";
             this.guna2TextBox14.PasswordChar = '\0';
             this.guna2TextBox14.PlaceholderText = "e.g 12345678";
             this.guna2TextBox14.SelectedText = "";
             this.guna2TextBox14.Size = new System.Drawing.Size(200, 36);
-            this.guna2TextBox14.TabIndex = 121;
+            this.guna2TextBox14.TabIndex = 0;
             // 
             // label34
             // 
@@ -828,7 +831,7 @@ namespace Residence_Management_System.User_Controls
             this.label34.AutoSize = true;
             this.label34.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label34.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.label34.Location = new System.Drawing.Point(10, 210);
+            this.label34.Location = new System.Drawing.Point(60, 211);
             this.label34.Name = "label34";
             this.label34.Size = new System.Drawing.Size(105, 13);
             this.label34.TabIndex = 127;
@@ -848,10 +851,10 @@ namespace Residence_Management_System.User_Controls
             this.guna2ComboBox2.Items.AddRange(new object[] {
             "Active",
             "Not Active"});
-            this.guna2ComboBox2.Location = new System.Drawing.Point(13, 228);
+            this.guna2ComboBox2.Location = new System.Drawing.Point(63, 229);
             this.guna2ComboBox2.Name = "guna2ComboBox2";
             this.guna2ComboBox2.Size = new System.Drawing.Size(200, 36);
-            this.guna2ComboBox2.TabIndex = 135;
+            this.guna2ComboBox2.TabIndex = 3;
             // 
             // label36
             // 
@@ -859,7 +862,7 @@ namespace Residence_Management_System.User_Controls
             this.label36.AutoSize = true;
             this.label36.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label36.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.label36.Location = new System.Drawing.Point(10, 154);
+            this.label36.Location = new System.Drawing.Point(60, 155);
             this.label36.Name = "label36";
             this.label36.Size = new System.Drawing.Size(93, 13);
             this.label36.TabIndex = 128;
@@ -877,13 +880,13 @@ namespace Residence_Management_System.User_Controls
             this.guna2TextBox18.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.guna2TextBox18.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2TextBox18.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox18.Location = new System.Drawing.Point(13, 171);
+            this.guna2TextBox18.Location = new System.Drawing.Point(63, 172);
             this.guna2TextBox18.Name = "guna2TextBox18";
             this.guna2TextBox18.PasswordChar = '\0';
             this.guna2TextBox18.PlaceholderText = "e.g Bsc In information Technology";
             this.guna2TextBox18.SelectedText = "";
             this.guna2TextBox18.Size = new System.Drawing.Size(200, 36);
-            this.guna2TextBox18.TabIndex = 126;
+            this.guna2TextBox18.TabIndex = 2;
             // 
             // guna2GroupBox1
             // 
@@ -924,7 +927,7 @@ namespace Residence_Management_System.User_Controls
             this.guna2TextBox12.PlaceholderText = "e.g 123";
             this.guna2TextBox12.SelectedText = "";
             this.guna2TextBox12.Size = new System.Drawing.Size(68, 36);
-            this.guna2TextBox12.TabIndex = 125;
+            this.guna2TextBox12.TabIndex = 0;
             // 
             // guna2TextBox9
             // 
@@ -944,7 +947,7 @@ namespace Residence_Management_System.User_Controls
             this.guna2TextBox9.PlaceholderText = "";
             this.guna2TextBox9.SelectedText = "";
             this.guna2TextBox9.Size = new System.Drawing.Size(200, 36);
-            this.guna2TextBox9.TabIndex = 128;
+            this.guna2TextBox9.TabIndex = 2;
             // 
             // label10
             // 
@@ -988,7 +991,7 @@ namespace Residence_Management_System.User_Controls
             this.guna2TextBox16.PlaceholderText = "";
             this.guna2TextBox16.SelectedText = "";
             this.guna2TextBox16.Size = new System.Drawing.Size(200, 36);
-            this.guna2TextBox16.TabIndex = 125;
+            this.guna2TextBox16.TabIndex = 3;
             // 
             // guna2TextBox13
             // 
@@ -1008,7 +1011,7 @@ namespace Residence_Management_System.User_Controls
             this.guna2TextBox13.PlaceholderText = "e.g Potch Street";
             this.guna2TextBox13.SelectedText = "";
             this.guna2TextBox13.Size = new System.Drawing.Size(126, 36);
-            this.guna2TextBox13.TabIndex = 134;
+            this.guna2TextBox13.TabIndex = 1;
             // 
             // guna2TextBox11
             // 
@@ -1028,7 +1031,7 @@ namespace Residence_Management_System.User_Controls
             this.guna2TextBox11.PlaceholderText = "";
             this.guna2TextBox11.SelectedText = "";
             this.guna2TextBox11.Size = new System.Drawing.Size(200, 36);
-            this.guna2TextBox11.TabIndex = 129;
+            this.guna2TextBox11.TabIndex = 4;
             // 
             // label11
             // 
@@ -1103,7 +1106,7 @@ namespace Residence_Management_System.User_Controls
             this.guna2ComboBox7.Location = new System.Drawing.Point(10, 230);
             this.guna2ComboBox7.Name = "guna2ComboBox7";
             this.guna2ComboBox7.Size = new System.Drawing.Size(200, 36);
-            this.guna2ComboBox7.TabIndex = 148;
+            this.guna2ComboBox7.TabIndex = 6;
             // 
             // label30
             // 
@@ -1124,7 +1127,7 @@ namespace Residence_Management_System.User_Controls
             this.label31.AutoSize = true;
             this.label31.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label31.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.label31.Location = new System.Drawing.Point(240, 212);
+            this.label31.Location = new System.Drawing.Point(252, 212);
             this.label31.Name = "label31";
             this.label31.Size = new System.Drawing.Size(65, 13);
             this.label31.TabIndex = 149;
@@ -1145,10 +1148,10 @@ namespace Residence_Management_System.User_Controls
             "Male",
             "Female",
             "Other"});
-            this.guna2ComboBox3.Location = new System.Drawing.Point(243, 173);
+            this.guna2ComboBox3.Location = new System.Drawing.Point(255, 173);
             this.guna2ComboBox3.Name = "guna2ComboBox3";
             this.guna2ComboBox3.Size = new System.Drawing.Size(200, 36);
-            this.guna2ComboBox3.TabIndex = 147;
+            this.guna2ComboBox3.TabIndex = 5;
             // 
             // label18
             // 
@@ -1156,7 +1159,7 @@ namespace Residence_Management_System.User_Controls
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label18.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.label18.Location = new System.Drawing.Point(242, 156);
+            this.label18.Location = new System.Drawing.Point(254, 156);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(45, 13);
             this.label18.TabIndex = 146;
@@ -1182,13 +1185,14 @@ namespace Residence_Management_System.User_Controls
             this.guna2DateTimePicker1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.guna2DateTimePicker1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.guna2DateTimePicker1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2DateTimePicker1.ForeColor = System.Drawing.Color.White;
             this.guna2DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Long;
             this.guna2DateTimePicker1.Location = new System.Drawing.Point(10, 173);
             this.guna2DateTimePicker1.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.guna2DateTimePicker1.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.guna2DateTimePicker1.Name = "guna2DateTimePicker1";
             this.guna2DateTimePicker1.Size = new System.Drawing.Size(200, 36);
-            this.guna2DateTimePicker1.TabIndex = 145;
+            this.guna2DateTimePicker1.TabIndex = 4;
             this.guna2DateTimePicker1.Value = new System.DateTime(2022, 7, 8, 11, 10, 53, 331);
             // 
             // label8
@@ -1221,7 +1225,7 @@ namespace Residence_Management_System.User_Controls
             this.guna2TextBox1.PlaceholderText = "";
             this.guna2TextBox1.SelectedText = "";
             this.guna2TextBox1.Size = new System.Drawing.Size(200, 36);
-            this.guna2TextBox1.TabIndex = 113;
+            this.guna2TextBox1.TabIndex = 0;
             // 
             // label7
             // 
@@ -1229,7 +1233,7 @@ namespace Residence_Management_System.User_Controls
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.label7.Location = new System.Drawing.Point(242, 98);
+            this.label7.Location = new System.Drawing.Point(254, 98);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(87, 13);
             this.label7.TabIndex = 119;
@@ -1247,13 +1251,13 @@ namespace Residence_Management_System.User_Controls
             this.guna2TextBox4.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.guna2TextBox4.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2TextBox4.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox4.Location = new System.Drawing.Point(245, 117);
+            this.guna2TextBox4.Location = new System.Drawing.Point(257, 117);
             this.guna2TextBox4.Name = "guna2TextBox4";
             this.guna2TextBox4.PasswordChar = '\0';
-            this.guna2TextBox4.PlaceholderText = "";
+            this.guna2TextBox4.PlaceholderText = "123 456 7891";
             this.guna2TextBox4.SelectedText = "";
             this.guna2TextBox4.Size = new System.Drawing.Size(200, 36);
-            this.guna2TextBox4.TabIndex = 117;
+            this.guna2TextBox4.TabIndex = 3;
             // 
             // guna2TextBox2
             // 
@@ -1267,13 +1271,13 @@ namespace Residence_Management_System.User_Controls
             this.guna2TextBox2.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.guna2TextBox2.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2TextBox2.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox2.Location = new System.Drawing.Point(244, 59);
+            this.guna2TextBox2.Location = new System.Drawing.Point(256, 59);
             this.guna2TextBox2.Name = "guna2TextBox2";
             this.guna2TextBox2.PasswordChar = '\0';
             this.guna2TextBox2.PlaceholderText = "";
             this.guna2TextBox2.SelectedText = "";
             this.guna2TextBox2.Size = new System.Drawing.Size(200, 36);
-            this.guna2TextBox2.TabIndex = 115;
+            this.guna2TextBox2.TabIndex = 1;
             // 
             // label5
             // 
@@ -1281,7 +1285,7 @@ namespace Residence_Management_System.User_Controls
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.label5.Location = new System.Drawing.Point(240, 41);
+            this.label5.Location = new System.Drawing.Point(252, 41);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(62, 13);
             this.label5.TabIndex = 116;
@@ -1314,10 +1318,10 @@ namespace Residence_Management_System.User_Controls
             this.guna2TextBox3.Location = new System.Drawing.Point(9, 116);
             this.guna2TextBox3.Name = "guna2TextBox3";
             this.guna2TextBox3.PasswordChar = '\0';
-            this.guna2TextBox3.PlaceholderText = "";
+            this.guna2TextBox3.PlaceholderText = "@domain@gmail.com";
             this.guna2TextBox3.SelectedText = "";
             this.guna2TextBox3.Size = new System.Drawing.Size(200, 36);
-            this.guna2TextBox3.TabIndex = 118;
+            this.guna2TextBox3.TabIndex = 2;
             // 
             // guna2Button2
             // 
@@ -1333,7 +1337,7 @@ namespace Residence_Management_System.User_Controls
             this.guna2Button2.Location = new System.Drawing.Point(641, 477);
             this.guna2Button2.Name = "guna2Button2";
             this.guna2Button2.Size = new System.Drawing.Size(110, 33);
-            this.guna2Button2.TabIndex = 61;
+            this.guna2Button2.TabIndex = 1;
             this.guna2Button2.Text = "Cancel";
             this.guna2Button2.Click += new System.EventHandler(this.guna2Button2_Click);
             // 
@@ -1351,7 +1355,7 @@ namespace Residence_Management_System.User_Controls
             this.addEmployeebtn.Location = new System.Drawing.Point(757, 474);
             this.addEmployeebtn.Name = "addEmployeebtn";
             this.addEmployeebtn.Size = new System.Drawing.Size(110, 33);
-            this.addEmployeebtn.TabIndex = 60;
+            this.addEmployeebtn.TabIndex = 0;
             this.addEmployeebtn.Text = "Add";
             this.addEmployeebtn.Click += new System.EventHandler(this.addEmployeebtn_Click);
             // 
@@ -1399,13 +1403,235 @@ namespace Residence_Management_System.User_Controls
             this.guna2ComboBox8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.guna2ComboBox8.ItemHeight = 30;
             this.guna2ComboBox8.Items.AddRange(new object[] {
-            "Male",
-            "Female",
-            "Other"});
-            this.guna2ComboBox8.Location = new System.Drawing.Point(245, 230);
+            "Afghan",
+            "Albanian",
+            "Algerian",
+            "American",
+            "Andorran",
+            "Angolan",
+            "Anguillan",
+            "Argentine",
+            "Armenian",
+            "Australian",
+            "Austrian",
+            "Azerbaijani",
+            "Bahamian",
+            "Bahraini",
+            "Bangladeshi",
+            "Barbadian",
+            "Belarusian",
+            "Belgian",
+            "Belizean",
+            "Beninese",
+            "Bermudian",
+            "Bhutanese",
+            "Bolivian",
+            "Botswanan",
+            "Brazilian",
+            "British",
+            "British Virgin Islander",
+            "Bruneian",
+            "Bulgarian",
+            "Burkinan",
+            "Burmese",
+            "Burundian",
+            "Cambodian",
+            "Cameroonian",
+            "Canadian",
+            "Cape Verdean",
+            "Cayman Islander",
+            "Central African",
+            "Chadian",
+            "Chilean",
+            "Chinese",
+            "Citizen of Antigua and Barbuda",
+            "Citizen of Bosnia and Herzegovina",
+            "Citizen of Guinea-Bissau",
+            "Citizen of Kiribati",
+            "Citizen of Seychelles",
+            "Citizen of the Dominican Republic",
+            "Citizen of Vanuatu",
+            "Colombian",
+            "Comoran",
+            "Congolese (Congo)",
+            "Congolese (DRC)",
+            "Cook Islander",
+            "Costa Rican",
+            "Croatian",
+            "Cuban",
+            "Cymraes",
+            "Cymro",
+            "Cypriot",
+            "Czech",
+            "Danish",
+            "Djiboutian",
+            "Dominican",
+            "Dutch",
+            "East Timorese",
+            "Ecuadorean",
+            "Egyptian",
+            "Emirati",
+            "English",
+            "Equatorial Guinean",
+            "Eritrean",
+            "Estonian",
+            "Ethiopian",
+            "Faroese",
+            "Fijian",
+            "Filipino",
+            "Finnish",
+            "French",
+            "Gabonese",
+            "Gambian",
+            "Georgian",
+            "German",
+            "Ghanaian",
+            "Gibraltarian",
+            "Greek",
+            "Greenlandic",
+            "Grenadian",
+            "Guamanian",
+            "Guatemalan",
+            "Guinean",
+            "Guyanese",
+            "Haitian",
+            "Honduran",
+            "Hong Konger",
+            "Hungarian",
+            "Icelandic",
+            "Indian",
+            "Indonesian",
+            "Iranian",
+            "Iraqi",
+            "Irish",
+            "Israeli",
+            "Italian",
+            "Ivorian",
+            "Jamaican",
+            "Japanese",
+            "Jordanian",
+            "Kazakh",
+            "Kenyan",
+            "Kittitian",
+            "Kosovan",
+            "Kuwaiti",
+            "Kyrgyz",
+            "Lao",
+            "Latvian",
+            "Lebanese",
+            "Liberian",
+            "Libyan",
+            "Liechtenstein citizen",
+            "Lithuanian",
+            "Luxembourger",
+            "Macanese",
+            "Macedonian",
+            "Malagasy",
+            "Malawian",
+            "Malaysian",
+            "Maldivian",
+            "Malian",
+            "Maltese",
+            "Marshallese",
+            "Martiniquais",
+            "Mauritanian",
+            "Mauritian",
+            "Mexican",
+            "Micronesian",
+            "Moldovan",
+            "Monegasque",
+            "Mongolian",
+            "Montenegrin",
+            "Montserratian",
+            "Moroccan",
+            "Mosotho",
+            "Mozambican",
+            "Namibian",
+            "Nauruan",
+            "Nepalese",
+            "New Zealander",
+            "Nicaraguan",
+            "Nigerian",
+            "Nigerien",
+            "Niuean",
+            "North Korean",
+            "Northern Irish",
+            "Norwegian",
+            "Omani",
+            "Pakistani",
+            "Palauan",
+            "Palestinian",
+            "Panamanian",
+            "Papua New Guinean",
+            "Paraguayan",
+            "Peruvian",
+            "Pitcairn Islander",
+            "Polish",
+            "Portuguese",
+            "Prydeinig",
+            "Puerto Rican",
+            "Qatari",
+            "Romanian",
+            "Russian",
+            "Rwandan",
+            "Salvadorean",
+            "Sammarinese",
+            "Samoan",
+            "Sao Tomean",
+            "Saudi Arabian",
+            "Scottish",
+            "Senegalese",
+            "Serbian",
+            "Sierra Leonean",
+            "Singaporean",
+            "Slovak",
+            "Slovenian",
+            "Solomon Islander",
+            "Somali",
+            "South African",
+            "South Korean",
+            "South Sudanese",
+            "Spanish",
+            "Sri Lankan",
+            "St Helenian",
+            "St Lucian",
+            "Stateless",
+            "Sudanese",
+            "Surinamese",
+            "Swazi",
+            "Swedish",
+            "Swiss",
+            "Syrian",
+            "Taiwanese",
+            "Tajik",
+            "Tanzanian",
+            "Thai",
+            "Togolese",
+            "Tongan",
+            "Trinidadian",
+            "Tristanian",
+            "Tunisian",
+            "Turkish",
+            "Turkmen",
+            "Turks and Caicos Islander",
+            "Tuvaluan",
+            "Ugandan",
+            "Ukrainian",
+            "Uruguayan",
+            "Uzbek",
+            "Vatican citizen",
+            "Venezuelan",
+            "Vietnamese",
+            "Vincentian",
+            "Wallisian",
+            "Welsh",
+            "Yemeni",
+            "Zambian",
+            "Zimbabwean"});
+            this.guna2ComboBox8.Location = new System.Drawing.Point(257, 230);
             this.guna2ComboBox8.Name = "guna2ComboBox8";
             this.guna2ComboBox8.Size = new System.Drawing.Size(200, 36);
-            this.guna2ComboBox8.TabIndex = 151;
+            this.guna2ComboBox8.TabIndex = 7;
             // 
             // UC_register
             // 
