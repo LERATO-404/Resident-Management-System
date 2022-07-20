@@ -241,5 +241,10 @@ namespace Residence_Management_System.User_Controls
         {
 
         }
+
+        private void guna2DateTimePicker3_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -42,7 +42,7 @@ namespace Residence_Management_System.User_Controls
             this.label19 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.guna2GroupBox4 = new Guna.UI2.WinForms.Guna2GroupBox();
-            this.guna2DateTimePicker3 = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            this.jobStartDate = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.label17 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
@@ -186,7 +186,7 @@ namespace Residence_Management_System.User_Controls
             this.guna2GroupBox5.Location = new System.Drawing.Point(6, 310);
             this.guna2GroupBox5.Name = "guna2GroupBox5";
             this.guna2GroupBox5.Size = new System.Drawing.Size(451, 148);
-            this.guna2GroupBox5.TabIndex = 142;
+            this.guna2GroupBox5.TabIndex = 1;
             this.guna2GroupBox5.Text = "Address Details";
             // 
             // guna2TextBox15
@@ -340,7 +340,7 @@ namespace Residence_Management_System.User_Controls
             // guna2GroupBox4
             // 
             this.guna2GroupBox4.AutoScroll = true;
-            this.guna2GroupBox4.Controls.Add(this.guna2DateTimePicker3);
+            this.guna2GroupBox4.Controls.Add(this.jobStartDate);
             this.guna2GroupBox4.Controls.Add(this.label17);
             this.guna2GroupBox4.Controls.Add(this.label15);
             this.guna2GroupBox4.Controls.Add(this.label16);
@@ -352,25 +352,26 @@ namespace Residence_Management_System.User_Controls
             this.guna2GroupBox4.Location = new System.Drawing.Point(526, 44);
             this.guna2GroupBox4.Name = "guna2GroupBox4";
             this.guna2GroupBox4.Size = new System.Drawing.Size(356, 260);
-            this.guna2GroupBox4.TabIndex = 141;
+            this.guna2GroupBox4.TabIndex = 2;
             this.guna2GroupBox4.Text = "Job Information";
             // 
-            // guna2DateTimePicker3
+            // jobStartDate
             // 
-            this.guna2DateTimePicker3.BorderRadius = 5;
-            this.guna2DateTimePicker3.Checked = true;
-            this.guna2DateTimePicker3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.guna2DateTimePicker3.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.guna2DateTimePicker3.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2DateTimePicker3.ForeColor = System.Drawing.Color.White;
-            this.guna2DateTimePicker3.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.guna2DateTimePicker3.Location = new System.Drawing.Point(63, 192);
-            this.guna2DateTimePicker3.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.guna2DateTimePicker3.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            this.guna2DateTimePicker3.Name = "guna2DateTimePicker3";
-            this.guna2DateTimePicker3.Size = new System.Drawing.Size(200, 36);
-            this.guna2DateTimePicker3.TabIndex = 2;
-            this.guna2DateTimePicker3.Value = new System.DateTime(2022, 7, 8, 11, 10, 53, 331);
+            this.jobStartDate.BorderRadius = 5;
+            this.jobStartDate.Checked = true;
+            this.jobStartDate.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.jobStartDate.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.jobStartDate.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.jobStartDate.ForeColor = System.Drawing.Color.White;
+            this.jobStartDate.Format = System.Windows.Forms.DateTimePickerFormat.Long;
+            this.jobStartDate.Location = new System.Drawing.Point(63, 192);
+            this.jobStartDate.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.jobStartDate.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.jobStartDate.Name = "jobStartDate";
+            this.jobStartDate.Size = new System.Drawing.Size(200, 36);
+            this.jobStartDate.TabIndex = 2;
+            this.jobStartDate.Value = new System.DateTime(2022, 7, 8, 11, 10, 53, 331);
+            this.jobStartDate.ValueChanged += new System.EventHandler(this.guna2DateTimePicker3_ValueChanged);
             // 
             // label17
             // 
@@ -475,7 +476,7 @@ namespace Residence_Management_System.User_Controls
             this.guna2GroupBox3.Location = new System.Drawing.Point(6, 44);
             this.guna2GroupBox3.Name = "guna2GroupBox3";
             this.guna2GroupBox3.Size = new System.Drawing.Size(508, 260);
-            this.guna2GroupBox3.TabIndex = 69;
+            this.guna2GroupBox3.TabIndex = 0;
             this.guna2GroupBox3.Text = "Employee Personal Information";
             // 
             // guna2DateTimePicker4
@@ -650,7 +651,7 @@ namespace Residence_Management_System.User_Controls
             this.guna2TextBox8.Location = new System.Drawing.Point(251, 120);
             this.guna2TextBox8.Name = "guna2TextBox8";
             this.guna2TextBox8.PasswordChar = '\0';
-            this.guna2TextBox8.PlaceholderText = "123 456 7891";
+            this.guna2TextBox8.PlaceholderText = "023 456 7891";
             this.guna2TextBox8.SelectedText = "";
             this.guna2TextBox8.Size = new System.Drawing.Size(200, 36);
             this.guna2TextBox8.TabIndex = 3;
@@ -757,7 +758,7 @@ namespace Residence_Management_System.User_Controls
             this.guna2GroupBox2.Location = new System.Drawing.Point(517, 44);
             this.guna2GroupBox2.Name = "guna2GroupBox2";
             this.guna2GroupBox2.Size = new System.Drawing.Size(350, 286);
-            this.guna2GroupBox2.TabIndex = 140;
+            this.guna2GroupBox2.TabIndex = 2;
             this.guna2GroupBox2.Text = "Academic Information";
             // 
             // guna2ComboBox1
@@ -906,7 +907,7 @@ namespace Residence_Management_System.User_Controls
             this.guna2GroupBox1.Location = new System.Drawing.Point(2, 336);
             this.guna2GroupBox1.Name = "guna2GroupBox1";
             this.guna2GroupBox1.Size = new System.Drawing.Size(456, 148);
-            this.guna2GroupBox1.TabIndex = 140;
+            this.guna2GroupBox1.TabIndex = 1;
             this.guna2GroupBox1.Text = "Address Details";
             // 
             // guna2TextBox12
@@ -1082,7 +1083,7 @@ namespace Residence_Management_System.User_Controls
             this.AddStudentGB.Location = new System.Drawing.Point(2, 44);
             this.AddStudentGB.Name = "AddStudentGB";
             this.AddStudentGB.Size = new System.Drawing.Size(509, 286);
-            this.AddStudentGB.TabIndex = 62;
+            this.AddStudentGB.TabIndex = 0;
             this.AddStudentGB.Text = "Student Personal Information";
             // 
             // guna2ComboBox7
@@ -1254,7 +1255,7 @@ namespace Residence_Management_System.User_Controls
             this.guna2TextBox4.Location = new System.Drawing.Point(257, 117);
             this.guna2TextBox4.Name = "guna2TextBox4";
             this.guna2TextBox4.PasswordChar = '\0';
-            this.guna2TextBox4.PlaceholderText = "123 456 7891";
+            this.guna2TextBox4.PlaceholderText = "023 456 7891";
             this.guna2TextBox4.SelectedText = "";
             this.guna2TextBox4.Size = new System.Drawing.Size(200, 36);
             this.guna2TextBox4.TabIndex = 3;
@@ -1318,7 +1319,7 @@ namespace Residence_Management_System.User_Controls
             this.guna2TextBox3.Location = new System.Drawing.Point(9, 116);
             this.guna2TextBox3.Name = "guna2TextBox3";
             this.guna2TextBox3.PasswordChar = '\0';
-            this.guna2TextBox3.PlaceholderText = "@domain@gmail.com";
+            this.guna2TextBox3.PlaceholderText = "domain@gmail.com";
             this.guna2TextBox3.SelectedText = "";
             this.guna2TextBox3.Size = new System.Drawing.Size(200, 36);
             this.guna2TextBox3.TabIndex = 2;
@@ -1724,7 +1725,7 @@ namespace Residence_Management_System.User_Controls
         private System.Windows.Forms.Label label31;
         private Guna.UI2.WinForms.Guna2ComboBox guna2ComboBox7;
         private Guna.UI2.WinForms.Guna2GroupBox guna2GroupBox4;
-        private Guna.UI2.WinForms.Guna2DateTimePicker guna2DateTimePicker3;
+        private Guna.UI2.WinForms.Guna2DateTimePicker jobStartDate;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label16;

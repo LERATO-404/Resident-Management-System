@@ -48,6 +48,8 @@ namespace Residence_Management_System
             this.label6 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.guna2Panel4 = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2ComboBox3 = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.label18 = new System.Windows.Forms.Label();
             this.guna2DateTimePicker1 = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
@@ -63,8 +65,6 @@ namespace Residence_Management_System
             this.label2 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.label18 = new System.Windows.Forms.Label();
-            this.guna2ComboBox3 = new Guna.UI2.WinForms.Guna2ComboBox();
             this.guna2Panel2.SuspendLayout();
             this.guna2Panel6.SuspendLayout();
             this.guna2Panel5.SuspendLayout();
@@ -101,7 +101,7 @@ namespace Residence_Management_System
             this.guna2Button1.Location = new System.Drawing.Point(359, 546);
             this.guna2Button1.Name = "guna2Button1";
             this.guna2Button1.Size = new System.Drawing.Size(180, 45);
-            this.guna2Button1.TabIndex = 59;
+            this.guna2Button1.TabIndex = 0;
             this.guna2Button1.Text = "Register";
             // 
             // guna2Panel6
@@ -134,7 +134,7 @@ namespace Residence_Management_System
             this.guna2TextBox6.PlaceholderText = "";
             this.guna2TextBox6.SelectedText = "";
             this.guna2TextBox6.Size = new System.Drawing.Size(200, 36);
-            this.guna2TextBox6.TabIndex = 59;
+            this.guna2TextBox6.TabIndex = 1;
             // 
             // guna2TextBox5
             // 
@@ -154,7 +154,7 @@ namespace Residence_Management_System
             this.guna2TextBox5.PlaceholderText = "";
             this.guna2TextBox5.SelectedText = "";
             this.guna2TextBox5.Size = new System.Drawing.Size(200, 36);
-            this.guna2TextBox5.TabIndex = 58;
+            this.guna2TextBox5.TabIndex = 0;
             // 
             // label15
             // 
@@ -220,7 +220,7 @@ namespace Residence_Management_System
             this.guna2ComboBox2.Location = new System.Drawing.Point(310, 51);
             this.guna2ComboBox2.Name = "guna2ComboBox2";
             this.guna2ComboBox2.Size = new System.Drawing.Size(197, 36);
-            this.guna2ComboBox2.TabIndex = 56;
+            this.guna2ComboBox2.TabIndex = 1;
             // 
             // label14
             // 
@@ -252,7 +252,7 @@ namespace Residence_Management_System
             this.guna2ComboBox1.Location = new System.Drawing.Point(64, 51);
             this.guna2ComboBox1.Name = "guna2ComboBox1";
             this.guna2ComboBox1.Size = new System.Drawing.Size(200, 36);
-            this.guna2ComboBox1.TabIndex = 54;
+            this.guna2ComboBox1.TabIndex = 0;
             // 
             // label13
             // 
@@ -341,6 +341,38 @@ namespace Residence_Management_System
             this.guna2Panel4.Size = new System.Drawing.Size(571, 248);
             this.guna2Panel4.TabIndex = 27;
             // 
+            // guna2ComboBox3
+            // 
+            this.guna2ComboBox3.BackColor = System.Drawing.Color.Transparent;
+            this.guna2ComboBox3.BorderRadius = 5;
+            this.guna2ComboBox3.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.guna2ComboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.guna2ComboBox3.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2ComboBox3.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2ComboBox3.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.guna2ComboBox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.guna2ComboBox3.ItemHeight = 30;
+            this.guna2ComboBox3.Items.AddRange(new object[] {
+            "Male",
+            "Female",
+            "Other"});
+            this.guna2ComboBox3.Location = new System.Drawing.Point(314, 200);
+            this.guna2ComboBox3.Name = "guna2ComboBox3";
+            this.guna2ComboBox3.Size = new System.Drawing.Size(200, 36);
+            this.guna2ComboBox3.TabIndex = 5;
+            // 
+            // label18
+            // 
+            this.label18.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.label18.Location = new System.Drawing.Point(311, 184);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(45, 13);
+            this.label18.TabIndex = 51;
+            this.label18.Text = "Gender";
+            // 
             // guna2DateTimePicker1
             // 
             this.guna2DateTimePicker1.BorderRadius = 5;
@@ -354,7 +386,7 @@ namespace Residence_Management_System
             this.guna2DateTimePicker1.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.guna2DateTimePicker1.Name = "guna2DateTimePicker1";
             this.guna2DateTimePicker1.Size = new System.Drawing.Size(191, 36);
-            this.guna2DateTimePicker1.TabIndex = 49;
+            this.guna2DateTimePicker1.TabIndex = 4;
             this.guna2DateTimePicker1.Value = new System.DateTime(2022, 7, 8, 11, 10, 53, 331);
             // 
             // label12
@@ -396,10 +428,10 @@ namespace Residence_Management_System
             this.guna2TextBox4.Location = new System.Drawing.Point(311, 128);
             this.guna2TextBox4.Name = "guna2TextBox4";
             this.guna2TextBox4.PasswordChar = '\0';
-            this.guna2TextBox4.PlaceholderText = "";
+            this.guna2TextBox4.PlaceholderText = "023 456 7891";
             this.guna2TextBox4.SelectedText = "";
             this.guna2TextBox4.Size = new System.Drawing.Size(200, 36);
-            this.guna2TextBox4.TabIndex = 46;
+            this.guna2TextBox4.TabIndex = 3;
             // 
             // label10
             // 
@@ -428,10 +460,10 @@ namespace Residence_Management_System
             this.guna2TextBox3.Location = new System.Drawing.Point(65, 128);
             this.guna2TextBox3.Name = "guna2TextBox3";
             this.guna2TextBox3.PasswordChar = '\0';
-            this.guna2TextBox3.PlaceholderText = "";
+            this.guna2TextBox3.PlaceholderText = "domain@gmail.com";
             this.guna2TextBox3.SelectedText = "";
             this.guna2TextBox3.Size = new System.Drawing.Size(200, 36);
-            this.guna2TextBox3.TabIndex = 44;
+            this.guna2TextBox3.TabIndex = 2;
             // 
             // label9
             // 
@@ -463,7 +495,7 @@ namespace Residence_Management_System
             this.guna2TextBox2.PlaceholderText = "";
             this.guna2TextBox2.SelectedText = "";
             this.guna2TextBox2.Size = new System.Drawing.Size(200, 36);
-            this.guna2TextBox2.TabIndex = 42;
+            this.guna2TextBox2.TabIndex = 1;
             // 
             // label8
             // 
@@ -495,7 +527,7 @@ namespace Residence_Management_System
             this.guna2TextBox1.PlaceholderText = "";
             this.guna2TextBox1.SelectedText = "";
             this.guna2TextBox1.Size = new System.Drawing.Size(200, 36);
-            this.guna2TextBox1.TabIndex = 40;
+            this.guna2TextBox1.TabIndex = 0;
             // 
             // label3
             // 
@@ -547,38 +579,6 @@ namespace Residence_Management_System
             this.guna2PictureBox1.TabIndex = 0;
             this.guna2PictureBox1.TabStop = false;
             this.guna2PictureBox1.Click += new System.EventHandler(this.guna2PictureBox1_Click);
-            // 
-            // label18
-            // 
-            this.label18.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.label18.Location = new System.Drawing.Point(311, 184);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(45, 13);
-            this.label18.TabIndex = 51;
-            this.label18.Text = "Gender";
-            // 
-            // guna2ComboBox3
-            // 
-            this.guna2ComboBox3.BackColor = System.Drawing.Color.Transparent;
-            this.guna2ComboBox3.BorderRadius = 5;
-            this.guna2ComboBox3.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.guna2ComboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.guna2ComboBox3.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2ComboBox3.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2ComboBox3.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.guna2ComboBox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.guna2ComboBox3.ItemHeight = 30;
-            this.guna2ComboBox3.Items.AddRange(new object[] {
-            "Male",
-            "Female",
-            "Other"});
-            this.guna2ComboBox3.Location = new System.Drawing.Point(314, 200);
-            this.guna2ComboBox3.Name = "guna2ComboBox3";
-            this.guna2ComboBox3.Size = new System.Drawing.Size(200, 36);
-            this.guna2ComboBox3.TabIndex = 58;
             // 
             // Register
             // 
