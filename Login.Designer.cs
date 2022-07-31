@@ -135,6 +135,7 @@ namespace Residence_Management_System
             // 
             // signInbtn
             // 
+            this.signInbtn.Animated = true;
             this.signInbtn.BackColor = System.Drawing.SystemColors.Control;
             this.signInbtn.BorderRadius = 8;
             this.signInbtn.Cursor = System.Windows.Forms.Cursors.Hand;

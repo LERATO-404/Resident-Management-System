@@ -16,5 +16,15 @@ namespace Residence_Management_System.User_Controls
         {
             InitializeComponent();
         }
+
+        private void UC_activities_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2GroupBox5_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
