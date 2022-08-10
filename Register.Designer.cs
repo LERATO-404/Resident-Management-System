@@ -63,6 +63,7 @@ namespace Residence_Management_System
             this.label2 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.guna2Panel7 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel2.SuspendLayout();
             this.guna2Panel6.SuspendLayout();
             this.guna2Panel5.SuspendLayout();
@@ -70,11 +71,12 @@ namespace Residence_Management_System
             this.guna2Panel4.SuspendLayout();
             this.guna2Panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
+            this.guna2Panel7.SuspendLayout();
             this.SuspendLayout();
             // 
             // guna2Panel2
             // 
-            this.guna2Panel2.Controls.Add(this.guna2Button1);
+            this.guna2Panel2.Controls.Add(this.guna2Panel7);
             this.guna2Panel2.Controls.Add(this.guna2Panel6);
             this.guna2Panel2.Controls.Add(this.guna2Panel5);
             this.guna2Panel2.Controls.Add(this.guna2Panel1);
@@ -97,9 +99,9 @@ namespace Residence_Management_System
             this.guna2Button1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2Button1.ForeColor = System.Drawing.Color.White;
-            this.guna2Button1.Location = new System.Drawing.Point(359, 546);
+            this.guna2Button1.Location = new System.Drawing.Point(357, 3);
             this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.Size = new System.Drawing.Size(180, 45);
+            this.guna2Button1.Size = new System.Drawing.Size(152, 37);
             this.guna2Button1.TabIndex = 0;
             this.guna2Button1.Text = "Register";
             // 
@@ -344,9 +346,11 @@ namespace Residence_Management_System
             this.guna2DateTimePicker1.BorderRadius = 5;
             this.guna2DateTimePicker1.Checked = true;
             this.guna2DateTimePicker1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.guna2DateTimePicker1.CustomFormat = "YYYY-MM-DD";
             this.guna2DateTimePicker1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.guna2DateTimePicker1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Long;
+            this.guna2DateTimePicker1.ForeColor = System.Drawing.Color.White;
+            this.guna2DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.guna2DateTimePicker1.Location = new System.Drawing.Point(74, 200);
             this.guna2DateTimePicker1.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.guna2DateTimePicker1.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
@@ -546,6 +550,15 @@ namespace Residence_Management_System
             this.guna2PictureBox1.TabStop = false;
             this.guna2PictureBox1.Click += new System.EventHandler(this.guna2PictureBox1_Click);
             // 
+            // guna2Panel7
+            // 
+            this.guna2Panel7.BorderStyle = System.Drawing.Drawing2D.DashStyle.Dot;
+            this.guna2Panel7.Controls.Add(this.guna2Button1);
+            this.guna2Panel7.Location = new System.Drawing.Point(33, 546);
+            this.guna2Panel7.Name = "guna2Panel7";
+            this.guna2Panel7.Size = new System.Drawing.Size(569, 48);
+            this.guna2Panel7.TabIndex = 59;
+            // 
             // Register
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -569,6 +582,7 @@ namespace Residence_Management_System
             this.guna2Panel3.ResumeLayout(false);
             this.guna2Panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
+            this.guna2Panel7.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -608,5 +622,6 @@ namespace Residence_Management_System
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label12;
         private Guna.UI2.WinForms.Guna2DateTimePicker guna2DateTimePicker1;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel7;
     }
 }
