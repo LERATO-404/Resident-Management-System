@@ -57,6 +57,7 @@
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xaml" />
@@ -84,6 +85,13 @@
     <Compile Include="Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\ActivityModel.cs" />
+    <Compile Include="Models\PointsModel.cs" />
+    <Compile Include="Models\ReservationModel.cs" />
+    <Compile Include="Models\RoomModel.cs" />
+    <Compile Include="Models\StudentModel.cs" />
+    <Compile Include="Models\UserModel.cs" />
+    <Compile Include="Models\WorkerModel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
@@ -91,12 +99,18 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="ProtectPassword.cs" />
     <Compile Include="Register.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Register.Designer.cs">
       <DependentUpon>Register.cs</DependentUpon>
     </Compile>
+    <Compile Include="Repository\ActivityControllerRepo.cs" />
+    <Compile Include="Repository\AdminRepo.cs" />
+    <Compile Include="Repository\HomeRepo.cs" />
+    <Compile Include="Repository\RoomControllerRepo.cs" />
+    <Compile Include="Repository\UserRepo.cs" />
     <Compile Include="User_Controls\UC_activities.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -194,6 +208,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>ResidenceManagementSystemDB.mdf</DependentUpon>
     </Content>
+    <Content Include="sql\createRmsTables.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
