@@ -120,9 +120,6 @@ namespace Residence_Management_System.Models
 			get {return _password;}
 			set {_password = value;}
 		}
-		
-		
-		
 	}
 }
 

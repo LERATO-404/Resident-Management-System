@@ -47,7 +47,7 @@ namespace Residence_Management_System.User_Controls
             this.guna2Button7 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2ComboBox5 = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
+            this.lblWelcomeUsername = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
@@ -332,17 +332,17 @@ namespace Residence_Management_System.User_Controls
             this.label6.TabIndex = 190;
             this.label6.Text = "Show table";
             // 
-            // label8
+            // lblWelcomeUsername
             // 
-            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.label8.Location = new System.Drawing.Point(77, 45);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(38, 13);
-            this.label8.TabIndex = 190;
-            this.label8.Text = "Name";
+            this.lblWelcomeUsername.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblWelcomeUsername.AutoSize = true;
+            this.lblWelcomeUsername.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblWelcomeUsername.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.lblWelcomeUsername.Location = new System.Drawing.Point(77, 45);
+            this.lblWelcomeUsername.Name = "lblWelcomeUsername";
+            this.lblWelcomeUsername.Size = new System.Drawing.Size(38, 13);
+            this.lblWelcomeUsername.TabIndex = 190;
+            this.lblWelcomeUsername.Text = "Name";
             // 
             // label7
             // 
@@ -359,7 +359,7 @@ namespace Residence_Management_System.User_Controls
             // panel1
             // 
             this.panel1.Controls.Add(this.label7);
-            this.panel1.Controls.Add(this.label8);
+            this.panel1.Controls.Add(this.lblWelcomeUsername);
             this.panel1.Location = new System.Drawing.Point(703, 3);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(173, 94);
@@ -497,7 +497,6 @@ namespace Residence_Management_System.User_Controls
         private Guna.UI2.WinForms.Guna2GroupBox guna2GroupBox4;
         private Guna.UI2.WinForms.Guna2DataGridView guna2DataGridView2;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
-        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Panel panel1;
         private Guna.UI2.WinForms.Guna2Button guna2Button7;
@@ -508,5 +507,6 @@ namespace Residence_Management_System.User_Controls
         private Guna.UI2.WinForms.Guna2Button guna2Button2;
         private Guna.UI2.WinForms.Guna2Button guna2Button3;
         private Guna.UI2.WinForms.Guna2TextBox guna2TextBox2;
+        public System.Windows.Forms.Label lblWelcomeUsername;
     }
 }
