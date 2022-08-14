@@ -64,7 +64,7 @@ namespace Residence_Management_System.User_Controls
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.guna2TabControl1 = new Guna.UI2.WinForms.Guna2TabControl();
-            this.Allocation = new System.Windows.Forms.TabPage();
+            this.Reservation = new System.Windows.Forms.TabPage();
             this.guna2GroupBox3 = new Guna.UI2.WinForms.Guna2GroupBox();
             this.guna2DataGridView2 = new Guna.UI2.WinForms.Guna2DataGridView();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
@@ -96,7 +96,7 @@ namespace Residence_Management_System.User_Controls
             this.guna2Panel1.SuspendLayout();
             this.AddStudentGB.SuspendLayout();
             this.guna2TabControl1.SuspendLayout();
-            this.Allocation.SuspendLayout();
+            this.Reservation.SuspendLayout();
             this.guna2GroupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView2)).BeginInit();
             this.guna2Panel2.SuspendLayout();
@@ -278,8 +278,9 @@ namespace Residence_Management_System.User_Controls
             this.guna2ComboBox8.ItemHeight = 30;
             this.guna2ComboBox8.Items.AddRange(new object[] {
             "All Rooms",
-            "Occupied Rooms",
-            "Not Occupied Rooms"});
+            "Occupied with Rooms",
+            "Not Occupied Rooms",
+            "Fully Occupied Rooms"});
             this.guna2ComboBox8.Location = new System.Drawing.Point(91, 33);
             this.guna2ComboBox8.Name = "guna2ComboBox8";
             this.guna2ComboBox8.Size = new System.Drawing.Size(200, 36);
@@ -621,7 +622,7 @@ namespace Residence_Management_System.User_Controls
             // 
             // guna2TabControl1
             // 
-            this.guna2TabControl1.Controls.Add(this.Allocation);
+            this.guna2TabControl1.Controls.Add(this.Reservation);
             this.guna2TabControl1.Controls.Add(this.Rooms);
             this.guna2TabControl1.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.guna2TabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -651,21 +652,21 @@ namespace Residence_Management_System.User_Controls
             this.guna2TabControl1.TabMenuOrientation = Guna.UI2.WinForms.TabMenuOrientation.HorizontalTop;
             this.guna2TabControl1.SelectedIndexChanged += new System.EventHandler(this.guna2TabControl1_SelectedIndexChanged);
             // 
-            // Allocation
+            // Reservation
             // 
-            this.Allocation.Controls.Add(this.guna2GroupBox3);
-            this.Allocation.Controls.Add(this.guna2GroupBox2);
-            this.Allocation.Controls.Add(this.guna2Button1);
-            this.Allocation.Controls.Add(this.label20);
-            this.Allocation.Controls.Add(this.label28);
-            this.Allocation.Location = new System.Drawing.Point(4, 44);
-            this.Allocation.Name = "Allocation";
-            this.Allocation.Padding = new System.Windows.Forms.Padding(3);
-            this.Allocation.Size = new System.Drawing.Size(882, 521);
-            this.Allocation.TabIndex = 0;
-            this.Allocation.Text = "Allocate Student";
-            this.Allocation.UseVisualStyleBackColor = true;
-            this.Allocation.Click += new System.EventHandler(this.Allocation_Click);
+            this.Reservation.Controls.Add(this.guna2GroupBox3);
+            this.Reservation.Controls.Add(this.guna2GroupBox2);
+            this.Reservation.Controls.Add(this.guna2Button1);
+            this.Reservation.Controls.Add(this.label20);
+            this.Reservation.Controls.Add(this.label28);
+            this.Reservation.Location = new System.Drawing.Point(4, 44);
+            this.Reservation.Name = "Reservation";
+            this.Reservation.Padding = new System.Windows.Forms.Padding(3);
+            this.Reservation.Size = new System.Drawing.Size(882, 521);
+            this.Reservation.TabIndex = 0;
+            this.Reservation.Text = "Reservations";
+            this.Reservation.UseVisualStyleBackColor = true;
+            this.Reservation.Click += new System.EventHandler(this.Allocation_Click);
             // 
             // guna2GroupBox3
             // 
@@ -833,9 +834,9 @@ namespace Residence_Management_System.User_Controls
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             this.label1.Location = new System.Drawing.Point(86, 69);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(136, 13);
+            this.label1.Size = new System.Drawing.Size(112, 13);
             this.label1.TabIndex = 186;
-            this.label1.Text = "Room allocation number";
+            this.label1.Text = "Reservation number";
             // 
             // label2
             // 
@@ -1002,7 +1003,7 @@ namespace Residence_Management_System.User_Controls
             this.guna2Button6.Name = "guna2Button6";
             this.guna2Button6.Size = new System.Drawing.Size(110, 33);
             this.guna2Button6.TabIndex = 0;
-            this.guna2Button6.Text = "Allocate";
+            this.guna2Button6.Text = "Reserve";
             // 
             // guna2ComboBox6
             // 
@@ -1017,8 +1018,7 @@ namespace Residence_Management_System.User_Controls
             this.guna2ComboBox6.ItemHeight = 30;
             this.guna2ComboBox6.Items.AddRange(new object[] {
             "Male",
-            "Female",
-            "Other"});
+            "Female"});
             this.guna2ComboBox6.Location = new System.Drawing.Point(36, 177);
             this.guna2ComboBox6.Name = "guna2ComboBox6";
             this.guna2ComboBox6.Size = new System.Drawing.Size(200, 36);
@@ -1107,9 +1107,9 @@ namespace Residence_Management_System.User_Controls
             this.label28.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label28.Location = new System.Drawing.Point(6, 3);
             this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(153, 25);
+            this.label28.Size = new System.Drawing.Size(121, 25);
             this.label28.TabIndex = 63;
-            this.label28.Text = "Allocate Student";
+            this.label28.Text = "Reservations";
             this.label28.Click += new System.EventHandler(this.label28_Click);
             // 
             // UC_room
@@ -1128,8 +1128,8 @@ namespace Residence_Management_System.User_Controls
             this.AddStudentGB.ResumeLayout(false);
             this.AddStudentGB.PerformLayout();
             this.guna2TabControl1.ResumeLayout(false);
-            this.Allocation.ResumeLayout(false);
-            this.Allocation.PerformLayout();
+            this.Reservation.ResumeLayout(false);
+            this.Reservation.PerformLayout();
             this.guna2GroupBox3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView2)).EndInit();
             this.guna2Panel2.ResumeLayout(false);
@@ -1171,7 +1171,7 @@ namespace Residence_Management_System.User_Controls
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private Guna.UI2.WinForms.Guna2TabControl guna2TabControl1;
-        private System.Windows.Forms.TabPage Allocation;
+        private System.Windows.Forms.TabPage Reservation;
         private Guna.UI2.WinForms.Guna2DateTimePicker guna2DateTimePicker4;
         private System.Windows.Forms.Label label24;
         private Guna.UI2.WinForms.Guna2ComboBox guna2ComboBox6;

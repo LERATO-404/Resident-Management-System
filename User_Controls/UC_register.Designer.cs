@@ -1003,9 +1003,9 @@ namespace Residence_Management_System.User_Controls
             this.label35.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             this.label35.Location = new System.Drawing.Point(72, 31);
             this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(111, 13);
+            this.label35.Size = new System.Drawing.Size(66, 13);
             this.label35.TabIndex = 176;
-            this.label35.Text = "Guardian Full Name";
+            this.label35.Text = "Next of Kin";
             // 
             // label37
             // 
@@ -1015,9 +1015,9 @@ namespace Residence_Management_System.User_Controls
             this.label37.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             this.label37.Location = new System.Drawing.Point(71, 91);
             this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(87, 13);
+            this.label37.Size = new System.Drawing.Size(149, 13);
             this.label37.TabIndex = 175;
-            this.label37.Text = "Phone Number";
+            this.label37.Text = "Next of Kin Phone Number";
             // 
             // guna2TextBox22
             // 

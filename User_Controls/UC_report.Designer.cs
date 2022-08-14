@@ -42,6 +42,7 @@ namespace Residence_Management_System.User_Controls
             this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2HScrollBar1 = new Guna.UI2.WinForms.Guna2HScrollBar();
+            this.label3 = new System.Windows.Forms.Label();
             this.guna2GroupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox2)).BeginInit();
             this.guna2GroupBox5.SuspendLayout();
@@ -210,10 +211,22 @@ namespace Residence_Management_System.User_Controls
             this.guna2HScrollBar1.SmallChange = 5;
             this.guna2HScrollBar1.TabIndex = 10;
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(130, 433);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(345, 39);
+            this.label3.TabIndex = 13;
+            this.label3.Text = "Participation marks contributes 30% to a student senior placement mark.\r\nA studen" +
+    "t index mark (academics) is calculated by the university, \r\nmakes out the remain" +
+    "ing 70%";
+            // 
             // UC_report
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.guna2Panel1);
             this.Controls.Add(this.guna2GroupBox5);
             this.Controls.Add(this.guna2GroupBox4);
@@ -247,5 +260,6 @@ namespace Residence_Management_System.User_Controls
         private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
         private Guna.UI2.WinForms.Guna2HScrollBar guna2HScrollBar1;
+        private System.Windows.Forms.Label label3;
     }
 }
