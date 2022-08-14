@@ -18,3 +18,5 @@ C:\Users\LAVAS\Desktop\CMPG 223 - SYSTEMS DESIGN\Project\RMS\Residence-Managemen
 C:\Users\LAVAS\Desktop\CMPG 223 - SYSTEMS DESIGN\Project\RMS\Residence-Management-System\obj\Debug\Residence_Management_System.User_Controls.UC_report.resources
 C:\Users\LAVAS\Desktop\CMPG 223 - SYSTEMS DESIGN\Project\RMS\Residence-Management-System\obj\Debug\Residence_Management_System.User_Controls.UC_room.resources
 C:\Users\LAVAS\Desktop\CMPG 223 - SYSTEMS DESIGN\Project\RMS\Residence-Management-System\obj\Debug\Residence-Management-System.csproj.CopyComplete
+C:\Users\LAVAS\Desktop\CMPG 223 - SYSTEMS DESIGN\Project\RMS\Residence-Management-System\bin\Debug\App_Data\ResidenceManagementSystemDB.mdf
+C:\Users\LAVAS\Desktop\CMPG 223 - SYSTEMS DESIGN\Project\RMS\Residence-Management-System\bin\Debug\App_Data\ResidenceManagementSystemDB_log.ldf
