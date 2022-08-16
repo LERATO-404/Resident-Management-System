@@ -246,5 +246,10 @@ namespace Residence_Management_System.User_Controls
         {
 
         }
+
+        private void btnAddStudent_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
