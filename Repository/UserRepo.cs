@@ -17,7 +17,7 @@ namespace Residence_Management_System.Repository
 		
 		public static SqlConnection getConnection(){
 			
-			string constring= @"";
+			string constring= @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\App_Data\ResidenceManagementSystemDB.mdf;Integrated Security=True";
 			SqlConnection con = new SqlConnection(constring);
 			try{
 				con.Open();
@@ -50,11 +50,11 @@ namespace Residence_Management_System.Repository
 			//encrypt password before inserting into USERS TABLE
 			//string encodedUserPassword = userPasswordProtect.encryptPassword(txtPassword.Text); //do this inside button register
 					
-			string sqlInsert = @"Insert into [users] "+
-			"Values (@firstName, @lastName, @EmailAddress, @phoneNumber, @dob, @jobTitle, @jobType, @username, @password)";
+			//string sqlInsert = @"Insert into [users] "+
+			//"Values (@firstName, @lastName, @EmailAddress, @phoneNumber, @dob, @jobTitle, @jobType, @username, @password)";
 			
-			string sqlInsert2 = @"INSERT INTO [users](firstName,lastName,emailAddress,phoneNumber,dOB,jobTitle,jobType,username ,password)"+ 
-			"VALUES(@firstName,@lastName,@emailAddress,@phoneNumber,@dOB,@jobTitle,@jobType,@username ,@password)";
+			string sqlInsert = @"INSERT INTO [users](firstName,lastName,emailAddress,phoneNumber,dOB,jobTitle,jobType,username ,password)"+
+				"VALUES(@firstName,@lastName,@emailAddress,@phoneNumber,@dOB,@jobTitle,@jobType,@username ,@password)";
 			 
 			SqlConnection con = getConnection();
 			SqlCommand cmd = new SqlCommand(sqlInsert, con);
@@ -68,22 +68,23 @@ namespace Residence_Management_System.Repository
 			cmd.Parameters.Add("@jobTitle",SqlDbType.VarChar).Value = usM.JobTitle;
 			cmd.Parameters.Add("@jobType",SqlDbType.VarChar).Value = usM.JobType;
 			cmd.Parameters.Add("@username",SqlDbType.VarChar).Value = usM.UserName;
-			cmd.Parameters.Add("@password",SqlDbType.VarChar).Value = usM.Password;
+			cmd.Parameters.Add("@password",SqlDbType.VarChar).Value = userPasswordProtect.encryptPassword(usM.Password);
 			
 			try{
 				cmd.ExecuteNonQuery();
 				MessageBox.Show("Account created successfully", "Information", (MessageBoxButtons)MessageBoxButton.OK, MessageBoxIcon.Information);
 			}catch(Exception ex){
-				MessageBox.Show("Failed to insert student \n"+ ex.Message, "Error", (MessageBoxButtons)MessageBoxButton.OK, MessageBoxIcon.Error);
+				MessageBox.Show("Failed to register user \n"+ ex.Message, "Error", (MessageBoxButtons)MessageBoxButton.OK, MessageBoxIcon.Error);
 			}
 			if (con.State == ConnectionState.Open)
 				con.Close();
 		}
 		
-		public static void loginUser(string username, string password){
+		public static void loginUser(string username, string password)
+		{
 			SqlConnection con = getConnection();
-
-			try{
+			try
+			{
 				
 				if(String.IsNullOrEmpty(username)  != true || String.IsNullOrEmpty(password) != true){
 					//encrypt password entered when logging in
@@ -97,9 +98,9 @@ namespace Residence_Management_System.Repository
 						SqlDataReader myReader = cmd.ExecuteReader();
 						if (myReader.HasRows)
 						{
+							
 							LandingPage landingP = new LandingPage();
 							landingP.Show(); //show landing page
-							//User_Controls.UC_home.lblWelcomeUsername.Text = username;
 							myReader.Close();
 							//this.Hide();
 						}

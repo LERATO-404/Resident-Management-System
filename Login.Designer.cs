@@ -307,8 +307,8 @@ namespace Residence_Management_System
         private Guna.UI2.WinForms.Guna2Button btnSignIn;
         private System.Windows.Forms.Label label2;
         private Guna.UI2.WinForms.Guna2TextBox txtPassword;
-        private Guna.UI2.WinForms.Guna2TextBox txtUsername;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
+        public Guna.UI2.WinForms.Guna2TextBox txtUsername;
     }
 }
 

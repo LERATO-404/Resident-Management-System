@@ -29,9 +29,9 @@ namespace Residence_Management_System.User_Controls
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.guna2GroupBox3 = new Guna.UI2.WinForms.Guna2GroupBox();
             this.lblTotalStudent = new System.Windows.Forms.Label();
             this.iconPictureBox4 = new FontAwesome.Sharp.IconPictureBox();
@@ -42,6 +42,7 @@ namespace Residence_Management_System.User_Controls
             this.lblTotalEmployees = new System.Windows.Forms.Label();
             this.iconPictureBox2 = new FontAwesome.Sharp.IconPictureBox();
             this.guna2GroupBox4 = new Guna.UI2.WinForms.Guna2GroupBox();
+            this.btnCancel = new Guna.UI2.WinForms.Guna2Button();
             this.dgvShowTable = new Guna.UI2.WinForms.Guna2DataGridView();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             this.btnDisplay = new Guna.UI2.WinForms.Guna2Button();
@@ -52,7 +53,6 @@ namespace Residence_Management_System.User_Controls
             this.panel1 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.guna2GroupBox5 = new Guna.UI2.WinForms.Guna2GroupBox();
-            this.btnCancel = new Guna.UI2.WinForms.Guna2Button();
             this.btnDelete = new Guna.UI2.WinForms.Guna2Button();
             this.txtIdentifier = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2GroupBox3.SuspendLayout();
@@ -213,32 +213,51 @@ namespace Residence_Management_System.User_Controls
             this.guna2GroupBox4.TabIndex = 175;
             this.guna2GroupBox4.Text = "Display all the table";
             // 
+            // btnCancel
+            // 
+            this.btnCancel.Animated = true;
+            this.btnCancel.AnimatedGIF = true;
+            this.btnCancel.BorderRadius = 10;
+            this.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCancel.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnCancel.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnCancel.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnCancel.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnCancel.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnCancel.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnCancel.ForeColor = System.Drawing.Color.Black;
+            this.btnCancel.Location = new System.Drawing.Point(761, 380);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(110, 33);
+            this.btnCancel.TabIndex = 180;
+            this.btnCancel.Text = "Cancel";
+            // 
             // dgvShowTable
             // 
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            this.dgvShowTable.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.dgvShowTable.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvShowTable.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvShowTable.BackgroundColor = System.Drawing.Color.White;
             this.dgvShowTable.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvShowTable.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvShowTable.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 9F);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvShowTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvShowTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvShowTable.ColumnHeadersHeight = 4;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 9F);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvShowTable.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvShowTable.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvShowTable.EnableHeadersVisualStyles = false;
             this.dgvShowTable.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvShowTable.Location = new System.Drawing.Point(3, 157);
@@ -296,6 +315,7 @@ namespace Residence_Management_System.User_Controls
             this.btnDisplay.Size = new System.Drawing.Size(110, 33);
             this.btnDisplay.TabIndex = 188;
             this.btnDisplay.Text = "Display";
+            this.btnDisplay.Click += new System.EventHandler(this.btnDisplay_Click);
             // 
             // cboxViewTable
             // 
@@ -392,25 +412,6 @@ namespace Residence_Management_System.User_Controls
             this.guna2GroupBox5.Size = new System.Drawing.Size(263, 151);
             this.guna2GroupBox5.TabIndex = 181;
             this.guna2GroupBox5.Text = "Delete entry";
-            // 
-            // btnCancel
-            // 
-            this.btnCancel.Animated = true;
-            this.btnCancel.AnimatedGIF = true;
-            this.btnCancel.BorderRadius = 10;
-            this.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCancel.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnCancel.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnCancel.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnCancel.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnCancel.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btnCancel.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnCancel.ForeColor = System.Drawing.Color.Black;
-            this.btnCancel.Location = new System.Drawing.Point(761, 380);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(110, 33);
-            this.btnCancel.TabIndex = 180;
-            this.btnCancel.Text = "Cancel";
             // 
             // btnDelete
             // 

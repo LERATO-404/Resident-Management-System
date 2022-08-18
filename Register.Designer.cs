@@ -113,6 +113,7 @@ namespace Residence_Management_System
             this.btnRegister.Size = new System.Drawing.Size(152, 37);
             this.btnRegister.TabIndex = 0;
             this.btnRegister.Text = "Register";
+            this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
             // 
             // panelLoginCreden
             // 

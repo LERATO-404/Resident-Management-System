@@ -17,56 +17,54 @@ namespace Residence_Management_System
             InitializeComponent();
         }
 
-        private void label2_Click(object sender, EventArgs e)
-        {
 
+        /*=====================method==============*/
+
+        public Boolean isEmptyInput()
+        {
+            if (String.IsNullOrEmpty(txtUsername.Text) == true || String.IsNullOrEmpty(txtPassword.Text) == true )
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void clearLogin()
         {
-
+            txtUsername.Clear();
+            txtPassword.Clear();
         }
 
-        private void label2_Click_1(object sender, EventArgs e)
-        {
+        /*=============================method===================*/
 
-        }
 
-        private void iconPictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void guna2TextBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void guna2Button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void iconPictureBox1_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click_2(object sender, EventArgs e)
-        {
-
-        }
-
-        private void guna2HScrollBar1_Scroll(object sender, ScrollEventArgs e)
-        {
-
-        }
 
         private void signInbtn_Click(object sender, EventArgs e)
         {
-            LandingPage landingPageForm = new LandingPage();
-            landingPageForm.Show();
-
+            string username = txtUsername.Text.Trim();
+            string password = txtPassword.Text.Trim();
+            
+            Models.UserModel usLogin = new Models.UserModel();
+            //User_Controls.UC_home signedinUsername = new User_Controls.UC_home();
+            try
+            {
+                if (isEmptyInput() == false)
+                {
+                    Repository.UserRepo.loginUser(username, password);
+                }
+                else
+                {
+                    MessageBox.Show("Please enter your username and password to log in!..", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+              
+            }
         }
 
         private void label4_Click(object sender, EventArgs e)

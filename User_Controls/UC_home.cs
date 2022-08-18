@@ -15,9 +15,15 @@ namespace Residence_Management_System.User_Controls
         public UC_home()
         {
             InitializeComponent();
+            
         }
 
         private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnDisplay_Click(object sender, EventArgs e)
         {
 
         }
