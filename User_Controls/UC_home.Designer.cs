@@ -249,7 +249,7 @@ namespace Residence_Management_System.User_Controls
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvShowTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvShowTable.ColumnHeadersHeight = 4;
+            this.dgvShowTable.ColumnHeadersHeight = 30;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9F);
@@ -278,7 +278,7 @@ namespace Residence_Management_System.User_Controls
             this.dgvShowTable.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.dgvShowTable.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
             this.dgvShowTable.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            this.dgvShowTable.ThemeStyle.HeaderStyle.Height = 4;
+            this.dgvShowTable.ThemeStyle.HeaderStyle.Height = 30;
             this.dgvShowTable.ThemeStyle.ReadOnly = false;
             this.dgvShowTable.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
             this.dgvShowTable.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
@@ -329,7 +329,7 @@ namespace Residence_Management_System.User_Controls
             this.cboxViewTable.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.cboxViewTable.ItemHeight = 30;
             this.cboxViewTable.Items.AddRange(new object[] {
-            "Users",
+            "users",
             "Rooms",
             "Employees/Staff",
             "Students",

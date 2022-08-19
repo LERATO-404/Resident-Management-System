@@ -16,7 +16,7 @@ namespace Residence_Management_System.Repository
 		public static SqlConnection getConnection()
 		{
 
-			string constring = @"";
+			string constring = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\App_Data\ResidenceManagementSystemDB.mdf;Integrated Security=True"; ;
 			SqlConnection con = new SqlConnection(constring);
 			try
 			{
@@ -30,46 +30,104 @@ namespace Residence_Management_System.Repository
 			}
 			return con;
 		}
-		public int countRecords(string tableNameSelected)
+
+
+		public string selectedTable(ComboBox cs)
+		{
+			
+			int tableSelected = cs.SelectedIndex;
+
+			string tname = "";
+			switch (tableSelected)
+			{
+				case 0:
+					tname = @"SELECT * FROM [users]";
+					break;
+				case 1:
+					tname = @"SELECT * FROM [rooms]";
+					break;
+				case 2:
+					tname = @"SELECT * FROM [workers]";
+					break;
+				case 3:
+					tname = @"SELECT * FROM [students]";
+					break;
+				case 4:
+					tname = @"SELECT * FROM [reservations]";
+					break;
+				case 5:
+					tname = @"SELECT * FROM [activityParticipation]";
+					break;
+				case 6:
+					tname = @"SELECT * FROM [points]";
+					break;
+				default:
+					tname = "";
+					break;
+			}
+			return tname;
+		}
+
+		public int countRecords(string sqlCount)
 		{
 			try
 			{
 				int recordsAvailable = 0;
-				string sqlTotalRecords = @"SELECT COUNT(*) FROM [tableNameSelected]";
-					
 				using (SqlConnection con = getConnection())
 				{
-					using (SqlCommand cmd = new SqlCommand(sqlTotalRecords, con))
+					using (SqlCommand cmd = new SqlCommand(sqlCount, con))
 					{
 						if (con.State != ConnectionState.Open)
 							con.Open();
 						recordsAvailable = (int)cmd.ExecuteScalar();
 						con.Close();
 					}
-				}  
+				}
 				return recordsAvailable;
-				
-			}catch(Exception ex){
+
+			}
+			catch (Exception ex)
+			{
 				return 0;
 			}
 		}
 
-		public static void viewTable(string tableNameSelected, DataGridView dgv){
+		public int countRoom()
+        {
+			string sqlTotalRoom = @"SELECT COUNT(*) FROM [rooms]";
+			int numberOfRooms =  countRecords(sqlTotalRoom);
+			return numberOfRooms;
+		}
+
+		public int countStudents()
+		{
+			string sqlTotalStudents = @"SELECT COUNT(*) FROM [studens]";
+			int numberOfRooms = countRecords(sqlTotalStudents);
+			return numberOfRooms;
+		}
+
+		public int countWorkers()
+		{
+			string sqlTotalWorkers = @"SELECT COUNT(*) FROM [users]";
+			int numberOfRooms = countRecords(sqlTotalWorkers);
+			return numberOfRooms;
+		}
+
+		public void viewTable(ComboBox viewCB, DataGridView dgv)
+		{
 			using (SqlConnection con = getConnection())
 			{
 				if (con.State != ConnectionState.Open)
 					con.Open();
-				string sqlQuery = @"Select * FROM [tableNameSelected]";
-				SqlCommand cmd = new SqlCommand(sqlQuery, con);
-				SqlDataAdapter adp = new SqlDataAdapter(cmd);
+
+				string sqlUsers = selectedTable(viewCB);
+				SqlDataAdapter adapt = new SqlDataAdapter();
 				DataSet ds = new DataSet();
-
-				adp.SelectCommand = cmd;
-				adp.Fill(ds, "KeyInfo");
-
+				SqlCommand cmd = new SqlCommand(sqlUsers, con);
+				adapt.SelectCommand = cmd;
+				adapt.Fill(ds, "UserInfo");
 				dgv.DataSource = ds;
-				dgv.DataMember = "KeyInfo";
-
+				dgv.DataMember = "UserInfo";
 				if (con.State == ConnectionState.Open)
 					con.Close();
 			}

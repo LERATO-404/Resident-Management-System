@@ -102,7 +102,7 @@ namespace Residence_Management_System.Models
 		public string JobType{
 			get {return _jobType;}
 			set {
-				if(value == "Residence Manager" || value =="Room Controller" || value == "Activity Controller" || value == "Administrator"){
+				if(value == "Residence-Manager" || value =="Room-Controller" || value == "Activity-Controller" || value == "Administrator"){
 					_jobType = value;
 				}
 				else{

@@ -32,7 +32,7 @@ namespace Residence_Management_System.Repository
 		
 		public int getUserId(String userName)
 		{
-			string sqlId = @"SELECT * FROM [users] WHERE userName LIKE '" + userName+ "'"; // userName = lblWelcome.Text
+			string sqlId = @"SELECT userName, password FROM [users] WHERE userName LIKE '" + userName+ "'"; // userName = lblWelcome.Text
 			using (SqlConnection con = new SqlConnection(sqlId))
 			{
 				SqlDataAdapter adapt = new SqlDataAdapter();
@@ -45,7 +45,9 @@ namespace Residence_Management_System.Repository
 				return loginID;
 			}
 		}
+
 		
+
 		public static void addUser(Models.UserModel usM){
 			//encrypt password before inserting into USERS TABLE
 			//string encodedUserPassword = userPasswordProtect.encryptPassword(txtPassword.Text); //do this inside button register

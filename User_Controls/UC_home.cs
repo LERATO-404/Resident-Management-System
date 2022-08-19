@@ -12,20 +12,19 @@ namespace Residence_Management_System.User_Controls
 {
     public partial class UC_home : UserControl
     {
+        Repository.HomeRepo rph = new Repository.HomeRepo();
         public UC_home()
         {
             InitializeComponent();
-            
+            lblTotalEmployees.Text = rph.countWorkers().ToString();
+            lblTotalRooms.Text = rph.countRoom().ToString();
+            lblTotalStudent.Text = rph.countStudents().ToString();
         }
 
-        private void label1_Click(object sender, EventArgs e)
+		private void btnDisplay_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void btnDisplay_Click(object sender, EventArgs e)
-        {
-
+            Repository.HomeRepo us = new Repository.HomeRepo();
+			us.viewTable(cboxViewTable,dgvShowTable);
         }
     }
 }

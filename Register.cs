@@ -50,19 +50,19 @@ namespace Residence_Management_System
             string _jobType = "Guest";
             if (cBoxJobType.SelectedIndex == 0)
             {
-                _jobType = "Resident Manager";
+                _jobType = "Residence-Manager";
             }
             else if (cBoxJobType.SelectedIndex == 1)
             {
-                _jobType = "Admin";
+                _jobType = "Administrator";
             }
             else if (cBoxJobType.SelectedIndex == 2)
             {
-                _jobType = "Room Controller";
+                _jobType = "Room-Controller";
             }
             else if (cBoxJobType.SelectedIndex == 3)
             {
-                _jobType = "Activity Controller";
+                _jobType = "Activity-Controller";
             }
             return _jobType;
         }
@@ -88,6 +88,8 @@ namespace Residence_Management_System
                 _jobTitle = "Volunteer";
             }
             return _jobTitle;
+
+      
         }
 
         /*===========================method=========================*/

@@ -257,10 +257,10 @@ namespace Residence_Management_System
             this.cBoxJobType.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.cBoxJobType.ItemHeight = 30;
             this.cBoxJobType.Items.AddRange(new object[] {
-            "Resident Manager",
-            "Admin\t",
-            "Room Controller",
-            "Activity Controller"});
+            "Residence-Manager",
+            "Administrator",
+            "Room-Controller",
+            "Activity-Controller"});
             this.cBoxJobType.Location = new System.Drawing.Point(64, 51);
             this.cBoxJobType.Name = "cBoxJobType";
             this.cBoxJobType.Size = new System.Drawing.Size(200, 36);

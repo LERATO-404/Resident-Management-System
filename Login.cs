@@ -46,9 +46,6 @@ namespace Residence_Management_System
         {
             string username = txtUsername.Text.Trim();
             string password = txtPassword.Text.Trim();
-            
-            Models.UserModel usLogin = new Models.UserModel();
-            //User_Controls.UC_home signedinUsername = new User_Controls.UC_home();
             try
             {
                 if (isEmptyInput() == false)

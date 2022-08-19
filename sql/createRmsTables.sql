@@ -19,7 +19,7 @@ CREATE TABLE [dbo].[users] (
     [password]     NVARCHAR (40) NOT NULL,
     PRIMARY KEY CLUSTERED ([userId] ASC),
     UNIQUE NONCLUSTERED ([username] ASC),
-    CHECK ([jobType]='Residence Manager' OR [jobType]='Room Controller' OR [jobType]='Activity Controller' OR [jobType]='Administrator' OR [jobType ]='Guest'),
+    CHECK ([jobType]='Residence-Manager' OR [jobType]='Room-Controller' OR [jobType]='Activity-Controller' OR [jobType]='Administrator' OR [jobType ]='Guest'),
     CHECK ([jobTitle]='Full-Time' OR [jobTitle]='Part-Time' OR [jobTitle]='Temporary' OR [jobTitle]='Volunteer' OR [jobTitle]='Guest')
 );
 
