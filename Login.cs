@@ -12,6 +12,10 @@ namespace Residence_Management_System
 {
     public partial class Login : Form
     {
+
+        
+
+
         public Login()
         {
             InitializeComponent();
@@ -38,23 +42,28 @@ namespace Residence_Management_System
             txtPassword.Clear();
         }
 
+
+        
         /*=============================method===================*/
+
 
 
 
         private void signInbtn_Click(object sender, EventArgs e)
         {
+
             string username = txtUsername.Text.Trim();
             string password = txtPassword.Text.Trim();
             try
             {
                 if (isEmptyInput() == false)
                 {
-                    Repository.UserRepo.loginUser(username, password);
+                    Repository.UserRepo.loginUser(username, password);   
+                    //this.Hide();
                 }
                 else
                 {
-                    MessageBox.Show("Please enter your username and password to log in!..", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Please enter your username and password to log in!..", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             catch (Exception ex)

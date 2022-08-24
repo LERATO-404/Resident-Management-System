@@ -29,9 +29,9 @@ namespace Residence_Management_System.User_Controls
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.guna2GroupBox3 = new Guna.UI2.WinForms.Guna2GroupBox();
             this.lblTotalStudent = new System.Windows.Forms.Label();
             this.iconPictureBox4 = new FontAwesome.Sharp.IconPictureBox();
@@ -48,9 +48,6 @@ namespace Residence_Management_System.User_Controls
             this.btnDisplay = new Guna.UI2.WinForms.Guna2Button();
             this.cboxViewTable = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.lblWelcomeUsername = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.guna2GroupBox5 = new Guna.UI2.WinForms.Guna2GroupBox();
             this.btnDelete = new Guna.UI2.WinForms.Guna2Button();
@@ -64,7 +61,6 @@ namespace Residence_Management_System.User_Controls
             this.guna2GroupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvShowTable)).BeginInit();
             this.guna2Panel2.SuspendLayout();
-            this.panel1.SuspendLayout();
             this.guna2GroupBox5.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -234,30 +230,30 @@ namespace Residence_Management_System.User_Controls
             // 
             // dgvShowTable
             // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.dgvShowTable.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            this.dgvShowTable.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvShowTable.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvShowTable.BackgroundColor = System.Drawing.Color.White;
             this.dgvShowTable.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvShowTable.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvShowTable.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvShowTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 9F);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvShowTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvShowTable.ColumnHeadersHeight = 30;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvShowTable.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 9F);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvShowTable.DefaultCellStyle = dataGridViewCellStyle6;
             this.dgvShowTable.EnableHeadersVisualStyles = false;
             this.dgvShowTable.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvShowTable.Location = new System.Drawing.Point(3, 157);
@@ -353,39 +349,6 @@ namespace Residence_Management_System.User_Controls
             this.label6.TabIndex = 190;
             this.label6.Text = "Show table";
             // 
-            // lblWelcomeUsername
-            // 
-            this.lblWelcomeUsername.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblWelcomeUsername.AutoSize = true;
-            this.lblWelcomeUsername.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblWelcomeUsername.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.lblWelcomeUsername.Location = new System.Drawing.Point(77, 45);
-            this.lblWelcomeUsername.Name = "lblWelcomeUsername";
-            this.lblWelcomeUsername.Size = new System.Drawing.Size(38, 13);
-            this.lblWelcomeUsername.TabIndex = 190;
-            this.lblWelcomeUsername.Text = "Name";
-            // 
-            // label7
-            // 
-            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.label7.Location = new System.Drawing.Point(13, 45);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(58, 13);
-            this.label7.TabIndex = 191;
-            this.label7.Text = "Welcome,";
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.label7);
-            this.panel1.Controls.Add(this.lblWelcomeUsername);
-            this.panel1.Location = new System.Drawing.Point(703, 3);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(173, 94);
-            this.panel1.TabIndex = 192;
-            // 
             // label5
             // 
             this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
@@ -430,6 +393,7 @@ namespace Residence_Management_System.User_Controls
             this.btnDelete.Size = new System.Drawing.Size(110, 33);
             this.btnDelete.TabIndex = 188;
             this.btnDelete.Text = "Delete";
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // txtIdentifier
             // 
@@ -457,13 +421,13 @@ namespace Residence_Management_System.User_Controls
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.Controls.Add(this.guna2GroupBox5);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.guna2GroupBox4);
             this.Controls.Add(this.guna2GroupBox3);
             this.Controls.Add(this.guna2GroupBox2);
             this.Controls.Add(this.guna2GroupBox1);
             this.Name = "UC_home";
             this.Size = new System.Drawing.Size(890, 569);
+            this.Load += new System.EventHandler(this.UC_home_Load);
             this.guna2GroupBox3.ResumeLayout(false);
             this.guna2GroupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox4)).EndInit();
@@ -477,8 +441,6 @@ namespace Residence_Management_System.User_Controls
             ((System.ComponentModel.ISupportInitialize)(this.dgvShowTable)).EndInit();
             this.guna2Panel2.ResumeLayout(false);
             this.guna2Panel2.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.guna2GroupBox5.ResumeLayout(false);
             this.guna2GroupBox5.PerformLayout();
             this.ResumeLayout(false);
@@ -498,8 +460,6 @@ namespace Residence_Management_System.User_Controls
         private Guna.UI2.WinForms.Guna2GroupBox guna2GroupBox4;
         private Guna.UI2.WinForms.Guna2DataGridView dgvShowTable;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Panel panel1;
         private Guna.UI2.WinForms.Guna2Button btnDisplay;
         private Guna.UI2.WinForms.Guna2ComboBox cboxViewTable;
         private System.Windows.Forms.Label label6;
@@ -508,6 +468,5 @@ namespace Residence_Management_System.User_Controls
         private Guna.UI2.WinForms.Guna2Button btnCancel;
         private Guna.UI2.WinForms.Guna2Button btnDelete;
         private Guna.UI2.WinForms.Guna2TextBox txtIdentifier;
-        public System.Windows.Forms.Label lblWelcomeUsername;
     }
 }

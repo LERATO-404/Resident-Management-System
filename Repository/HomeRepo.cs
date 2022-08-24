@@ -68,6 +68,42 @@ namespace Residence_Management_System.Repository
 			return tname;
 		}
 
+		public string selectedTableToDeleteResource(ComboBox cs, int id)
+		{
+
+			int tableSelected = cs.SelectedIndex;
+
+			string tname = "";
+			switch (tableSelected)
+			{
+				case 0:
+					tname = @"DELETE [users] WHERE userId = '" + id + "'";
+					break;
+				case 1:
+					tname = @"DELETE [rooms] WHERE roomId = '" + id + "'";
+					break;
+				case 2:
+					tname = @"DELETE  [workers] WHERE workerId = '" + id + "'";
+					break;
+				case 3:
+					tname = @"DELETE  [students] WHERE studentId = '" + id + "'";
+					break;
+				case 4:
+					tname = @"DELETE  [reservations] WHERE reservationId = '" + id + "'";
+					break;
+				case 5:
+					tname = @"DELETE  [activityParticipation] WHERE activityId = '" + id + "'";
+					break;
+				case 6:
+					tname = @"DELETE  [points] WHERE pointsId = '" + id + "'";
+					break;
+				default:
+					tname = "";
+					break;
+			}
+			return tname;
+		}
+
 		public int countRecords(string sqlCount)
 		{
 			try
@@ -92,6 +128,23 @@ namespace Residence_Management_System.Repository
 			}
 		}
 
+		public int getUserId(string userName)
+		{
+			string sqlId = @"SELECT userName, password FROM [users] WHERE userName LIKE '" + userName + "'"; // userName = lblWelcome.Text
+			using (SqlConnection con = new SqlConnection(sqlId))
+			{
+				SqlDataAdapter adapt = new SqlDataAdapter();
+				DataSet ds = new DataSet();
+				SqlCommand cmd = new SqlCommand(sqlId, con);
+				adapt.SelectCommand = cmd;
+				adapt = new SqlDataAdapter(cmd);
+				adapt.Fill(ds);
+				int loginID = Convert.ToInt32(ds.Tables[0].Rows[0][0]);
+				return loginID;
+			}
+		}
+
+
 		public int countRoom()
         {
 			string sqlTotalRoom = @"SELECT COUNT(*) FROM [rooms]";
@@ -113,24 +166,77 @@ namespace Residence_Management_System.Repository
 			return numberOfRooms;
 		}
 
+		
+
 		public void viewTable(ComboBox viewCB, DataGridView dgv)
 		{
-			using (SqlConnection con = getConnection())
-			{
-				if (con.State != ConnectionState.Open)
-					con.Open();
+            try
+            {
+				using (SqlConnection con = getConnection())
+				{
+					if (con.State != ConnectionState.Open)
+						con.Open();
 
-				string sqlUsers = selectedTable(viewCB);
+					string sqlUsers = selectedTable(viewCB);
+					SqlDataAdapter adapt = new SqlDataAdapter();
+					DataSet ds = new DataSet();
+					SqlCommand cmd = new SqlCommand(sqlUsers, con);
+					adapt.SelectCommand = cmd;
+					adapt.Fill(ds, "UserInfo");
+					dgv.DataSource = ds;
+					dgv.DataMember = "UserInfo";
+					if (con.State == ConnectionState.Open)
+						con.Close();
+				}
+			}
+            catch (Exception exView)
+            {
+				MessageBox.Show("Please select the table you want to display", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+			}
+			
+		}
+
+		public void removeById(ComboBox cbDel,int id)
+		{
+			string sqlDeleteResource = selectedTableToDeleteResource(cbDel, id);
+			using (SqlConnection con = getConnection())
+            {
+				
+				
 				SqlDataAdapter adapt = new SqlDataAdapter();
-				DataSet ds = new DataSet();
-				SqlCommand cmd = new SqlCommand(sqlUsers, con);
-				adapt.SelectCommand = cmd;
-				adapt.Fill(ds, "UserInfo");
-				dgv.DataSource = ds;
-				dgv.DataMember = "UserInfo";
+				adapt.DeleteCommand = new SqlCommand(sqlDeleteResource, con);
+				try
+				{
+					if (MessageBox.Show("Are you sure you want to delete id number:" + id.ToString(), "Remove Resource", (MessageBoxButtons)MessageBoxButton.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+					{
+						
+						int deletedResource = adapt.DeleteCommand.ExecuteNonQuery();
+						
+						if(deletedResource > 0)
+                        {
+							MessageBox.Show("Id number:" + id.ToString() + " removed", "Remove Resource", (MessageBoxButtons)MessageBoxButton.OK, MessageBoxIcon.Information);
+                        }
+                        else
+                        {
+							MessageBox.Show("Id not found", "Id not found", MessageBoxButtons.OK, MessageBoxIcon.Error);
+							
+						}
+						
+					}
+					else
+					{
+						MessageBox.Show("Id number:" + id.ToString() + " not removed", "Remove Resource", (MessageBoxButtons)MessageBoxButton.OK, MessageBoxIcon.Information);
+					}
+				}
+				catch (Exception ex)
+				{
+					MessageBox.Show("Failed to remove resource \n" + ex.Message, "Error", (MessageBoxButtons)MessageBoxButton.OK, MessageBoxIcon.Error);
+				}
 				if (con.State == ConnectionState.Open)
 					con.Close();
-			}
+			} 
+
+			
 		}
 	}
 }

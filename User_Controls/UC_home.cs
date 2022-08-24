@@ -12,7 +12,8 @@ namespace Residence_Management_System.User_Controls
 {
     public partial class UC_home : UserControl
     {
-        Repository.HomeRepo rph = new Repository.HomeRepo();
+        public Repository.HomeRepo rph = new Repository.HomeRepo();
+  
         public UC_home()
         {
             InitializeComponent();
@@ -21,10 +22,38 @@ namespace Residence_Management_System.User_Controls
             lblTotalStudent.Text = rph.countStudents().ToString();
         }
 
-		private void btnDisplay_Click(object sender, EventArgs e)
+        private void btnDisplay_Click(object sender, EventArgs e)
         {
-            Repository.HomeRepo us = new Repository.HomeRepo();
-			us.viewTable(cboxViewTable,dgvShowTable);
+           
+			rph.viewTable(cboxViewTable,dgvShowTable);
+        }
+
+        private void UC_home_Load(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                
+                if (txtIdentifier.Text != "")
+                {
+                    //label5.Text = rph.selectedTableToDeleteResource(cboxViewTable, txtIdentifier.Text);
+                    rph.removeById(cboxViewTable, int.Parse(txtIdentifier.Text));
+
+                }
+                else
+                {
+                    MessageBox.Show("Please enter the Id of the resource you want to delete!..", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception exhomeDelete)
+            {
+                MessageBox.Show("Invalid Id, Please enter Id number (firstcolumn) of the resource you want to delete!..", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            
         }
     }
 }

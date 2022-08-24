@@ -6,15 +6,27 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Text.RegularExpressions;
+using System.ComponentModel.DataAnnotations;
+using System.Net.Mail;
 using System.Windows.Forms;
 
 namespace Residence_Management_System
 {
     public partial class Register : Form
     {
+
+        // Regular expression used to validate a phone number.
+        const string motif = @"^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$";
+
+        // validate email
+        const string emailReg = @"^[\w!#$%&'*+\-/=?\^_`{|}~]+(\.[\w!#$%&'*+\-/=?\^_`{|}~]+)*@((([\-\w]+\.)+[a-zA-Z]{2,4})|(([0-9]{1,3}\.){3}[0-9]{1,3}))\z";
+
         public Register()
         {
             InitializeComponent();
+            lblInvalidEmail.Visible = false;
+            lblInvalidPhone.Visible = false;
         }
 
         /*===========================method=========================*/
@@ -92,6 +104,40 @@ namespace Residence_Management_System
       
         }
 
+        public bool IsValidEmailAddress(string email)
+        {
+            
+            bool isEmValid = Regex.IsMatch(email, emailReg);
+            if (isEmValid == true)
+            {
+                return true;
+            }
+            else
+            {
+                lblInvalidEmail.Visible = true;
+                lblInvalidEmail.Text = "Invalid Email";
+                return false;
+            } 
+           
+        }
+
+        
+
+        public bool IsValidPhoneNumber(string sourceNum)
+        {
+            bool isPhoneValid = Regex.IsMatch(sourceNum, motif);
+            if (isPhoneValid == true &&  sourceNum.Length == 10)
+            {
+                return true;
+            }
+            else
+            {
+                lblInvalidPhone.Visible = true;
+                lblInvalidPhone.Text = "Invalid Phone number";
+                return false;
+            }
+        }
+
         /*===========================method=========================*/
 
         private void guna2PictureBox1_Click(object sender, EventArgs e)
@@ -99,12 +145,9 @@ namespace Residence_Management_System
 
         }
 
-        private void guna2ComboBox2_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
+       
         private void label5_Click(object sender, EventArgs e)
+
         {
             Login loginForm = new Login();
             loginForm.Show();
@@ -112,29 +155,23 @@ namespace Residence_Management_System
 
         private void btnRegister_Click(object sender, EventArgs e)
         {
-            try
+            string usEmail = txtEmailAddress.Text.Trim();
+            string usPhone = txtPhoneNumber.Text.Trim();
+            if (isEmptyInput() == false && IsValidEmailAddress(usEmail) == true && IsValidPhoneNumber(usPhone) == true)
             {
-                if (isEmptyInput() == false)
-                {
-                    Models.UserModel us = new Models.UserModel(txtFirstName.Text.Trim(), txtLastName.Text.Trim(), txtEmailAddress.Text.Trim(),
-                    txtPhoneNumber.Text.Trim(), dtpDob.Text, jobTitleSelected().Trim(), jobTypeSelected().Trim(),
-                    txtRegisterUsername.Text.Trim(), txtRegisterPassword.Text.Trim());
-                    Repository.UserRepo.addUser(us);
-                    clearRegister();
-
-                }
-                else
-                {
-                    MessageBox.Show("Please fill all the boxes with * to register your account!..", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
+                
+                Models.UserModel us = new Models.UserModel(txtFirstName.Text.Trim(), txtLastName.Text.Trim(), usEmail,
+                usPhone, dtpDob.Text, jobTitleSelected().Trim(), jobTypeSelected().Trim(),
+                txtRegisterUsername.Text.Trim(), txtRegisterPassword.Text.Trim());
+                Repository.UserRepo.addUser(us);
+                
+             
             }
-            catch (Exception ex)
+            else
             {
-                //make username unique when creating a USER TABLE
-                MessageBox.Show("Unsername already taken", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txtRegisterUsername.Clear();
-                txtRegisterUsername.Focus();
+                MessageBox.Show("Please fill all the boxes with * to register your account!..", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+            
         }
     }
 }

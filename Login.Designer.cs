@@ -92,9 +92,9 @@ namespace Residence_Management_System
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             this.label7.Location = new System.Drawing.Point(48, 186);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(194, 13);
+            this.label7.Size = new System.Drawing.Size(220, 13);
             this.label7.TabIndex = 24;
-            this.label7.Text = "jsaajsnka j jas ks n as amsj kassajnkj.";
+            this.label7.Text = "Log in with your username and password";
             // 
             // label6
             // 
@@ -204,7 +204,7 @@ namespace Residence_Management_System
             this.txtUsername.Location = new System.Drawing.Point(51, 214);
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.PasswordChar = '\0';
-            this.txtUsername.PlaceholderText = "Enter Username, email";
+            this.txtUsername.PlaceholderText = "Enter Username";
             this.txtUsername.SelectedText = "";
             this.txtUsername.Size = new System.Drawing.Size(253, 36);
             this.txtUsername.TabIndex = 17;
@@ -238,9 +238,10 @@ namespace Residence_Management_System
             this.label5.ForeColor = System.Drawing.Color.White;
             this.label5.Location = new System.Drawing.Point(53, 233);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(315, 17);
+            this.label5.Size = new System.Drawing.Size(471, 34);
             this.label5.TabIndex = 15;
-            this.label5.Text = "akjbkbcbe abakcakabk hkabbchkheh hkbaechbbek";
+            this.label5.Text = "Use RMS to easily maintain rooms and reservations, Students and Workers, \r\nand al" +
+    "l the sports activities in the Residence.\r\n";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label1
@@ -306,9 +307,9 @@ namespace Residence_Management_System
         private System.Windows.Forms.Label label3;
         private Guna.UI2.WinForms.Guna2Button btnSignIn;
         private System.Windows.Forms.Label label2;
-        private Guna.UI2.WinForms.Guna2TextBox txtPassword;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
         public Guna.UI2.WinForms.Guna2TextBox txtUsername;
+        public Guna.UI2.WinForms.Guna2TextBox txtPassword;
     }
 }
 

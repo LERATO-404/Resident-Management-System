@@ -64,6 +64,8 @@ namespace Residence_Management_System
             this.label2 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.lblInvalidEmail = new System.Windows.Forms.Label();
+            this.lblInvalidPhone = new System.Windows.Forms.Label();
             this.guna2Panel2.SuspendLayout();
             this.guna2Panel7.SuspendLayout();
             this.panelLoginCreden.SuspendLayout();
@@ -335,6 +337,8 @@ namespace Residence_Management_System
             // 
             // panelBasicInfor
             // 
+            this.panelBasicInfor.Controls.Add(this.lblInvalidPhone);
+            this.panelBasicInfor.Controls.Add(this.lblInvalidEmail);
             this.panelBasicInfor.Controls.Add(this.dtpDob);
             this.panelBasicInfor.Controls.Add(this.label12);
             this.panelBasicInfor.Controls.Add(this.label11);
@@ -362,7 +366,7 @@ namespace Residence_Management_System
             this.dtpDob.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.dtpDob.ForeColor = System.Drawing.Color.White;
             this.dtpDob.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpDob.Location = new System.Drawing.Point(74, 200);
+            this.dtpDob.Location = new System.Drawing.Point(65, 209);
             this.dtpDob.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.dtpDob.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.dtpDob.Name = "dtpDob";
@@ -376,7 +380,7 @@ namespace Residence_Management_System
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.label12.Location = new System.Drawing.Point(71, 184);
+            this.label12.Location = new System.Drawing.Point(71, 193);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(74, 13);
             this.label12.TabIndex = 48;
@@ -407,6 +411,7 @@ namespace Residence_Management_System
             this.txtPhoneNumber.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtPhoneNumber.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtPhoneNumber.Location = new System.Drawing.Point(311, 128);
+            this.txtPhoneNumber.MaxLength = 10;
             this.txtPhoneNumber.Name = "txtPhoneNumber";
             this.txtPhoneNumber.PasswordChar = '\0';
             this.txtPhoneNumber.PlaceholderText = "023 456 7891";
@@ -561,6 +566,26 @@ namespace Residence_Management_System
             this.guna2PictureBox1.TabStop = false;
             this.guna2PictureBox1.Click += new System.EventHandler(this.guna2PictureBox1_Click);
             // 
+            // lblInvalidEmail
+            // 
+            this.lblInvalidEmail.AutoSize = true;
+            this.lblInvalidEmail.ForeColor = System.Drawing.Color.Red;
+            this.lblInvalidEmail.Location = new System.Drawing.Point(71, 167);
+            this.lblInvalidEmail.Name = "lblInvalidEmail";
+            this.lblInvalidEmail.Size = new System.Drawing.Size(63, 13);
+            this.lblInvalidEmail.TabIndex = 49;
+            this.lblInvalidEmail.Text = "InvalidEmail";
+            // 
+            // lblInvalidPhone
+            // 
+            this.lblInvalidPhone.AutoSize = true;
+            this.lblInvalidPhone.ForeColor = System.Drawing.Color.Red;
+            this.lblInvalidPhone.Location = new System.Drawing.Point(311, 167);
+            this.lblInvalidPhone.Name = "lblInvalidPhone";
+            this.lblInvalidPhone.Size = new System.Drawing.Size(69, 13);
+            this.lblInvalidPhone.TabIndex = 50;
+            this.lblInvalidPhone.Text = "InvalidPhone";
+            // 
             // Register
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -625,5 +650,7 @@ namespace Residence_Management_System
         private System.Windows.Forms.Label label12;
         private Guna.UI2.WinForms.Guna2DateTimePicker dtpDob;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel7;
+        private System.Windows.Forms.Label lblInvalidEmail;
+        private System.Windows.Forms.Label lblInvalidPhone;
     }
 }
