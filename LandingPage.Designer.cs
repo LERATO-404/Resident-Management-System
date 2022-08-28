@@ -31,19 +31,19 @@ namespace Residence_Management_System
         {
             this.components = new System.ComponentModel.Container();
             this.sideBarContainer = new System.Windows.Forms.FlowLayoutPanel();
+            this.panelLogo = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label7 = new System.Windows.Forms.Label();
+            this.lblWelcomeUsername = new System.Windows.Forms.Label();
+            this.sideBarTimer = new System.Windows.Forms.Timer(this.components);
+            this.tabsContainer = new System.Windows.Forms.Panel();
             this.menuBtn = new FontAwesome.Sharp.IconButton();
             this.homebtn = new FontAwesome.Sharp.IconButton();
             this.registerbtn = new FontAwesome.Sharp.IconButton();
             this.roombtn = new FontAwesome.Sharp.IconButton();
             this.activitiesbtn = new FontAwesome.Sharp.IconButton();
             this.reporbtn = new FontAwesome.Sharp.IconButton();
-            this.panelLogo = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label7 = new System.Windows.Forms.Label();
-            this.lblWelcomeUsername = new System.Windows.Forms.Label();
             this.LogoLandingPage = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.sideBarTimer = new System.Windows.Forms.Timer(this.components);
-            this.tabsContainer = new System.Windows.Forms.Panel();
             this.sideBarContainer.SuspendLayout();
             this.panelLogo.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -67,6 +67,65 @@ namespace Residence_Management_System
             this.sideBarContainer.Size = new System.Drawing.Size(44, 800);
             this.sideBarContainer.TabIndex = 0;
             this.sideBarContainer.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanelMenu_Paint);
+            // 
+            // panelLogo
+            // 
+            this.panelLogo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.panelLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.panelLogo.Controls.Add(this.panel1);
+            this.panelLogo.Controls.Add(this.LogoLandingPage);
+            this.panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelLogo.Location = new System.Drawing.Point(44, 0);
+            this.panelLogo.Name = "panelLogo";
+            this.panelLogo.Size = new System.Drawing.Size(890, 58);
+            this.panelLogo.TabIndex = 1;
+            this.panelLogo.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.label7);
+            this.panel1.Controls.Add(this.lblWelcomeUsername);
+            this.panel1.Location = new System.Drawing.Point(714, 3);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(173, 52);
+            this.panel1.TabIndex = 193;
+            // 
+            // label7
+            // 
+            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.Black;
+            this.label7.Location = new System.Drawing.Point(13, 24);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(58, 13);
+            this.label7.TabIndex = 191;
+            this.label7.Text = "Welcome,";
+            // 
+            // lblWelcomeUsername
+            // 
+            this.lblWelcomeUsername.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblWelcomeUsername.AutoSize = true;
+            this.lblWelcomeUsername.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblWelcomeUsername.ForeColor = System.Drawing.Color.Black;
+            this.lblWelcomeUsername.Location = new System.Drawing.Point(77, 24);
+            this.lblWelcomeUsername.Name = "lblWelcomeUsername";
+            this.lblWelcomeUsername.Size = new System.Drawing.Size(38, 13);
+            this.lblWelcomeUsername.TabIndex = 190;
+            this.lblWelcomeUsername.Text = "Name";
+            // 
+            // sideBarTimer
+            // 
+            this.sideBarTimer.Interval = 10;
+            this.sideBarTimer.Tick += new System.EventHandler(this.sideBarTimer_Tick);
+            // 
+            // tabsContainer
+            // 
+            this.tabsContainer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabsContainer.Location = new System.Drawing.Point(44, 58);
+            this.tabsContainer.Name = "tabsContainer";
+            this.tabsContainer.Size = new System.Drawing.Size(890, 569);
+            this.tabsContainer.TabIndex = 6;
             // 
             // menuBtn
             // 
@@ -205,76 +264,17 @@ namespace Residence_Management_System
             this.reporbtn.UseVisualStyleBackColor = true;
             this.reporbtn.Click += new System.EventHandler(this.reporbtn_Click);
             // 
-            // panelLogo
-            // 
-            this.panelLogo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.panelLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.panelLogo.Controls.Add(this.panel1);
-            this.panelLogo.Controls.Add(this.LogoLandingPage);
-            this.panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelLogo.Location = new System.Drawing.Point(44, 0);
-            this.panelLogo.Name = "panelLogo";
-            this.panelLogo.Size = new System.Drawing.Size(890, 58);
-            this.panelLogo.TabIndex = 1;
-            this.panelLogo.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.label7);
-            this.panel1.Controls.Add(this.lblWelcomeUsername);
-            this.panel1.Location = new System.Drawing.Point(714, 3);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(173, 52);
-            this.panel1.TabIndex = 193;
-            // 
-            // label7
-            // 
-            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.Black;
-            this.label7.Location = new System.Drawing.Point(13, 24);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(58, 13);
-            this.label7.TabIndex = 191;
-            this.label7.Text = "Welcome,";
-            // 
-            // lblWelcomeUsername
-            // 
-            this.lblWelcomeUsername.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblWelcomeUsername.AutoSize = true;
-            this.lblWelcomeUsername.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblWelcomeUsername.ForeColor = System.Drawing.Color.Black;
-            this.lblWelcomeUsername.Location = new System.Drawing.Point(77, 24);
-            this.lblWelcomeUsername.Name = "lblWelcomeUsername";
-            this.lblWelcomeUsername.Size = new System.Drawing.Size(38, 13);
-            this.lblWelcomeUsername.TabIndex = 190;
-            this.lblWelcomeUsername.Text = "Name";
-            // 
             // LogoLandingPage
             // 
             this.LogoLandingPage.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.LogoLandingPage.Image = global::Residence_Management_System.Properties.Resources.LogoRMS;
+            this.LogoLandingPage.Image = global::Residence_Management_System.Properties.Resources.LogoRMS1;
             this.LogoLandingPage.ImageRotate = 0F;
             this.LogoLandingPage.Location = new System.Drawing.Point(0, 0);
             this.LogoLandingPage.Name = "LogoLandingPage";
-            this.LogoLandingPage.Size = new System.Drawing.Size(163, 58);
+            this.LogoLandingPage.Size = new System.Drawing.Size(162, 58);
             this.LogoLandingPage.TabIndex = 17;
             this.LogoLandingPage.TabStop = false;
             this.LogoLandingPage.Click += new System.EventHandler(this.guna2PictureBox2_Click_1);
-            // 
-            // sideBarTimer
-            // 
-            this.sideBarTimer.Interval = 10;
-            this.sideBarTimer.Tick += new System.EventHandler(this.sideBarTimer_Tick);
-            // 
-            // tabsContainer
-            // 
-            this.tabsContainer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabsContainer.Location = new System.Drawing.Point(44, 58);
-            this.tabsContainer.Name = "tabsContainer";
-            this.tabsContainer.Size = new System.Drawing.Size(890, 569);
-            this.tabsContainer.TabIndex = 6;
             // 
             // LandingPage
             // 
@@ -308,10 +308,10 @@ namespace Residence_Management_System
         private System.Windows.Forms.Timer sideBarTimer;
         public System.Windows.Forms.FlowLayoutPanel sideBarContainer;
         private FontAwesome.Sharp.IconButton menuBtn;
-        private Guna.UI2.WinForms.Guna2PictureBox LogoLandingPage;
         private System.Windows.Forms.Panel tabsContainer;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label7;
         public System.Windows.Forms.Label lblWelcomeUsername;
+        private Guna.UI2.WinForms.Guna2PictureBox LogoLandingPage;
     }
 }

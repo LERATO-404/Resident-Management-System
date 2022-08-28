@@ -1,6 +1,6 @@
 DROP TABLE [dbo].[users]
 DROP TABLE [dbo].[students]
-DROP TABLE [dbo].[workers]
+DROP TABLE [8D5901062469E8288D7A18734F03CAA8_SYSTEMS DESIGN\PROJECT\RMS\RESIDENCE-MANAGEMENT-SYSTEM\APP_DATA\RESIDENCEMANAGEMENTSYSTEMDB.MDF].[dbo].[workers]
 DROP TABLE [dbo].[rooms]
 DROP TABLE [dbo].[reservations]
 DROP TABLE [dbo].[activityParticipation]
@@ -44,22 +44,25 @@ CREATE TABLE [dbo].[students] (
     CHECK ([gender]='Male' OR [gender]='Female')
 );
 
-CREATE TABLE [dbo].[workers] (
+CREATE TABLE [8D5901062469E8288D7A18734F03CAA8_SYSTEMS DESIGN\PROJECT\RMS\RESIDENCE-MANAGEMENT-SYSTEM\APP_DATA\RESIDENCEMANAGEMENTSYSTEMDB.MDF].[dbo].[workers] (
     [workerId]     INT           IDENTITY (1, 1) NOT NULL,
     [firstName]    NVARCHAR (50) NOT NULL,
     [lastName]     NVARCHAR (50) NOT NULL,
     [emailAddress] NVARCHAR (50) NOT NULL,
     [phoneNumber]  NVARCHAR (50) NOT NULL,
     [dOB]          DATE          NULL,
+    [gender]       NVARCHAR (10) NULL,
     [jobTitle]     NVARCHAR (10) NULL,
     [jobType]      NVARCHAR (10) NULL,
     [startDate]    DATE          NULL,
     [addedBy]      INT           NOT NULL,
     PRIMARY KEY CLUSTERED ([workerId] ASC),
     FOREIGN KEY ([addedBy]) REFERENCES [dbo].[users] ([userId]),
+    CHECK ([gender]='Male' OR [gender]='Female'),
     CHECK ([jobType]='Security' OR [jobType]='Cleaner' OR [jobType]='Gardener' OR [jobType]='Constructor' OR [jobType]='other'),
     CHECK ([jobTitle]='Full-Time' OR [jobTitle]='Part-Time' OR [jobTitle]='Temporary' OR [jobTitle]='Volunteer' OR [jobTitle]='Guest')
 );
+
 
 CREATE TABLE [dbo].[rooms] (
     [roomID]     INT           IDENTITY (1, 1) NOT NULL,

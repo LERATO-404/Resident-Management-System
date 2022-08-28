@@ -16,7 +16,8 @@ namespace Residence_Management_System.Models
 		private string _emailAddress;
 		private string _phoneNumber;
 		private string _dOB;
-		private string _jobTitle;
+        private string _gender;
+        private string _jobTitle;
 		private string _jobType;
 		private string _startDate;
 		private int _userId; // addedBy
@@ -27,13 +28,14 @@ namespace Residence_Management_System.Models
 			
 		}
 		
-		public WorkerModel(int aId, string aFirstName, string aLstName,string aEmailAddress,string aPhoneNumber,string aDOB,string aJobTitle,string aJobType, string aStartDate, int aUserId){
+		public WorkerModel(int aId, string aFirstName, string aLstName,string aEmailAddress,string aPhoneNumber,string aDOB,string aGender,string aJobTitle,string aJobType, string aStartDate, int aUserId){
 			_id = aId;
 			_firstName = aFirstName;
 			_lastName = aLstName;
 			_emailAddress = aEmailAddress;
 			_phoneNumber = aPhoneNumber;
 			_dOB = aDOB;
+			Gender = aGender;
 			JobTitle = aJobTitle;
 			JobType = aJobType;
 			_startDate = aStartDate;
@@ -41,20 +43,21 @@ namespace Residence_Management_System.Models
 			
 		}
 		
-		public WorkerModel(string aFirstName, string aLstName,string aEmailAddress,string aPhoneNumber,string aDOB,string aJobTitle,string aJobType, string aStartDate, int aUserId){
+		public WorkerModel(string aFirstName, string aLastName,string aEmailAddress,string aPhoneNumber,string aDOB, string aGender, string aJobTitle,string aJobType, string aStartDate){
 			
 			_firstName = aFirstName;
-			_lastName = aLstName;
+			_lastName = aLastName;
 			_emailAddress = aEmailAddress;
 			_phoneNumber = aPhoneNumber;
 			_dOB = aDOB;
-			JobTitle = aJobTitle;
+            Gender = aGender;
+            JobTitle = aJobTitle;
 			JobType = aJobType;
 			_startDate = aStartDate;
-			UserId = aUserId;
+			//UserId = aUserId;
 		}
 		
-		public int workerId{
+		public int WorkerId{
 			get {return _id;}
 			set {_id = value;}
 		}
@@ -84,8 +87,24 @@ namespace Residence_Management_System.Models
 			get {return _dOB;}
 			set {_dOB = value;}
 		}
-		
-		public string JobTitle{
+
+        public string Gender
+        {
+            get { return _gender; }
+            set
+            {
+                if (value == "Male" || value == "Female")
+                {
+                    _gender = value;
+                }
+                else
+                {
+                    _gender = "";
+                }
+            }
+        }
+
+        public string JobTitle{
 			get {return _jobTitle;}
 			set {
 				if(value == "Full-Time" || value =="Part-Time" || value == "Temporary" || value == "Volunteer"){
@@ -114,14 +133,14 @@ namespace Residence_Management_System.Models
 			set { _startDate = value; }
 		}
 		
-		// Foreign key 
-		[Display(Name = "UserModel")] 
+		
+		[ForeignKey("UserModel")]
 		public int UserId { 
 			get{ return _userId; }
 			set{ _userId = value; }
 		} 
-		[ForeignKey("UserId")] 
-		public virtual UserModel users { get; set; }
+		public virtual UserModel UserModel { get; set; }
+		
 	}
 }
 

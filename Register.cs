@@ -10,18 +10,17 @@ using System.Text.RegularExpressions;
 using System.ComponentModel.DataAnnotations;
 using System.Net.Mail;
 using System.Windows.Forms;
+using Residence_Management_System.ExtraMethods;
+using Residence_Management_System.Repository;
+
 
 namespace Residence_Management_System
 {
     public partial class Register : Form
     {
-
-        // Regular expression used to validate a phone number.
-        const string motif = @"^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$";
-
-        // validate email
-        const string emailReg = @"^[\w!#$%&'*+\-/=?\^_`{|}~]+(\.[\w!#$%&'*+\-/=?\^_`{|}~]+)*@((([\-\w]+\.)+[a-zA-Z]{2,4})|(([0-9]{1,3}\.){3}[0-9]{1,3}))\z";
-
+        private readonly UserRepo uR = new UserRepo();
+        private readonly MyMethods myMethod = new MyMethods();
+        private readonly IsValid extraMethodIsValid = new IsValid();
         public Register()
         {
             InitializeComponent();
@@ -44,7 +43,7 @@ namespace Residence_Management_System
             }
         }
 
-        private void clearRegister()
+        private void ClearRegister()
         {
             txtFirstName.Clear();
             txtLastName.Clear();
@@ -57,7 +56,7 @@ namespace Residence_Management_System
             txtRegisterPassword.Clear();
         }
 
-        public string jobTypeSelected()
+        public string JobTypeSelected()
         {
             string _jobType = "Guest";
             if (cBoxJobType.SelectedIndex == 0)
@@ -78,66 +77,6 @@ namespace Residence_Management_System
             }
             return _jobType;
         }
-
-
-        public string jobTitleSelected()
-        {
-            string _jobTitle = "Guest";
-            if (cBoxJobTitle.SelectedIndex == 0)
-            {
-                _jobTitle = "Full-Time";
-            }
-            else if (cBoxJobTitle.SelectedIndex == 1)
-            {
-                _jobTitle = "Part-Time";
-            }
-            else if (cBoxJobTitle.SelectedIndex == 2)
-            {
-                _jobTitle = "Temporary";
-            }
-            else if (cBoxJobTitle.SelectedIndex == 3)
-            {
-                _jobTitle = "Volunteer";
-            }
-            return _jobTitle;
-
-      
-        }
-
-        public bool IsValidEmailAddress(string email)
-        {
-            
-            bool isEmValid = Regex.IsMatch(email, emailReg);
-            if (isEmValid == true)
-            {
-                return true;
-            }
-            else
-            {
-                lblInvalidEmail.Visible = true;
-                lblInvalidEmail.Text = "Invalid Email";
-                return false;
-            } 
-           
-        }
-
-        
-
-        public bool IsValidPhoneNumber(string sourceNum)
-        {
-            bool isPhoneValid = Regex.IsMatch(sourceNum, motif);
-            if (isPhoneValid == true &&  sourceNum.Length == 10)
-            {
-                return true;
-            }
-            else
-            {
-                lblInvalidPhone.Visible = true;
-                lblInvalidPhone.Text = "Invalid Phone number";
-                return false;
-            }
-        }
-
         /*===========================method=========================*/
 
         private void guna2PictureBox1_Click(object sender, EventArgs e)
@@ -157,15 +96,12 @@ namespace Residence_Management_System
         {
             string usEmail = txtEmailAddress.Text.Trim();
             string usPhone = txtPhoneNumber.Text.Trim();
-            if (isEmptyInput() == false && IsValidEmailAddress(usEmail) == true && IsValidPhoneNumber(usPhone) == true)
+            if (isEmptyInput() == false && extraMethodIsValid.IsValidEmailAddress(usEmail,lblInvalidEmail) == true && extraMethodIsValid.IsValidPhoneNumber(usPhone,lblInvalidPhone) == true)
             {
-                
                 Models.UserModel us = new Models.UserModel(txtFirstName.Text.Trim(), txtLastName.Text.Trim(), usEmail,
-                usPhone, dtpDob.Text, jobTitleSelected().Trim(), jobTypeSelected().Trim(),
+                usPhone, dtpDob.Text, myMethod.JobTitleSelected(cBoxJobTitle).Trim(), JobTypeSelected().Trim(),
                 txtRegisterUsername.Text.Trim(), txtRegisterPassword.Text.Trim());
-                Repository.UserRepo.addUser(us);
-                
-             
+                uR.AddUser(us);
             }
             else
             {

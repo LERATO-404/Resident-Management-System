@@ -49,6 +49,8 @@ namespace Residence_Management_System
             this.label6 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panelBasicInfor = new Guna.UI2.WinForms.Guna2Panel();
+            this.lblInvalidPhone = new System.Windows.Forms.Label();
+            this.lblInvalidEmail = new System.Windows.Forms.Label();
             this.dtpDob = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
@@ -64,8 +66,6 @@ namespace Residence_Management_System
             this.label2 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.lblInvalidEmail = new System.Windows.Forms.Label();
-            this.lblInvalidPhone = new System.Windows.Forms.Label();
             this.guna2Panel2.SuspendLayout();
             this.guna2Panel7.SuspendLayout();
             this.panelLoginCreden.SuspendLayout();
@@ -355,6 +355,26 @@ namespace Residence_Management_System
             this.panelBasicInfor.Size = new System.Drawing.Size(571, 248);
             this.panelBasicInfor.TabIndex = 27;
             // 
+            // lblInvalidPhone
+            // 
+            this.lblInvalidPhone.AutoSize = true;
+            this.lblInvalidPhone.ForeColor = System.Drawing.Color.Red;
+            this.lblInvalidPhone.Location = new System.Drawing.Point(311, 167);
+            this.lblInvalidPhone.Name = "lblInvalidPhone";
+            this.lblInvalidPhone.Size = new System.Drawing.Size(69, 13);
+            this.lblInvalidPhone.TabIndex = 50;
+            this.lblInvalidPhone.Text = "InvalidPhone";
+            // 
+            // lblInvalidEmail
+            // 
+            this.lblInvalidEmail.AutoSize = true;
+            this.lblInvalidEmail.ForeColor = System.Drawing.Color.Red;
+            this.lblInvalidEmail.Location = new System.Drawing.Point(71, 167);
+            this.lblInvalidEmail.Name = "lblInvalidEmail";
+            this.lblInvalidEmail.Size = new System.Drawing.Size(63, 13);
+            this.lblInvalidEmail.TabIndex = 49;
+            this.lblInvalidEmail.Text = "InvalidEmail";
+            // 
             // dtpDob
             // 
             this.dtpDob.Animated = true;
@@ -566,26 +586,6 @@ namespace Residence_Management_System
             this.guna2PictureBox1.TabStop = false;
             this.guna2PictureBox1.Click += new System.EventHandler(this.guna2PictureBox1_Click);
             // 
-            // lblInvalidEmail
-            // 
-            this.lblInvalidEmail.AutoSize = true;
-            this.lblInvalidEmail.ForeColor = System.Drawing.Color.Red;
-            this.lblInvalidEmail.Location = new System.Drawing.Point(71, 167);
-            this.lblInvalidEmail.Name = "lblInvalidEmail";
-            this.lblInvalidEmail.Size = new System.Drawing.Size(63, 13);
-            this.lblInvalidEmail.TabIndex = 49;
-            this.lblInvalidEmail.Text = "InvalidEmail";
-            // 
-            // lblInvalidPhone
-            // 
-            this.lblInvalidPhone.AutoSize = true;
-            this.lblInvalidPhone.ForeColor = System.Drawing.Color.Red;
-            this.lblInvalidPhone.Location = new System.Drawing.Point(311, 167);
-            this.lblInvalidPhone.Name = "lblInvalidPhone";
-            this.lblInvalidPhone.Size = new System.Drawing.Size(69, 13);
-            this.lblInvalidPhone.TabIndex = 50;
-            this.lblInvalidPhone.Text = "InvalidPhone";
-            // 
             // Register
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -650,7 +650,7 @@ namespace Residence_Management_System
         private System.Windows.Forms.Label label12;
         private Guna.UI2.WinForms.Guna2DateTimePicker dtpDob;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel7;
-        private System.Windows.Forms.Label lblInvalidEmail;
-        private System.Windows.Forms.Label lblInvalidPhone;
+        public System.Windows.Forms.Label lblInvalidEmail;
+        public System.Windows.Forms.Label lblInvalidPhone;
     }
 }

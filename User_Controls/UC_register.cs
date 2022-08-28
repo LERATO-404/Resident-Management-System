@@ -7,20 +7,72 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Residence_Management_System.ExtraMethods;
+using Residence_Management_System.Repository;
+
+
 
 namespace Residence_Management_System.User_Controls
 {
     public partial class UC_register : UserControl
     {
+        private readonly AdminRepo rpA = new AdminRepo();
+        private readonly MyMethods myMethod = new MyMethods();
+        private readonly IsValid extraMethodIsValid = new IsValid();
+        
+
         public UC_register()
         {
             InitializeComponent();
+            lblInvalidEmpEmail.Visible = false;
+            lblInvalidEmpPhone.Visible = false;
         }
 
-        private void groupBox2_Enter(object sender, EventArgs e)
+        
+
+
+        //==========methods============================
+        public Boolean isEmpEmptyInput()
         {
-
+            if (String.IsNullOrEmpty(txtEmpFirstName.Text) == true || String.IsNullOrEmpty(txtEmpLastName.Text) == true ||
+            String.IsNullOrEmpty(txtEmpEmail.Text) == true || String.IsNullOrEmpty(txtEmpPhoneNo.Text) == true ||
+            String.IsNullOrEmpty(cBoxEmpJobTitle.Text) == true || String.IsNullOrEmpty(cBoxEmpJobType.Text) == true ||
+            String.IsNullOrEmpty(dtpEmpDob.Text) == true)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
+
+        public string jobTypeSelected(ComboBox cs)
+        {
+            string _jobType = "other";
+            if (cs.SelectedIndex == 0)
+            {
+                _jobType = "Security";
+            }
+            else if (cs.SelectedIndex == 1)
+            {
+                _jobType = "Cleaner";
+            }
+            else if (cs.SelectedIndex == 2)
+            {
+                _jobType = "Gardener";
+            }
+            else if (cs.SelectedIndex == 3)
+            {
+                _jobType = "Constructor";
+            }
+            return _jobType;
+        }
+
+
+
+        //===================methods===================
+
 
         private void guna2TabControl1_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -37,202 +89,12 @@ namespace Residence_Management_System.User_Controls
 
         }
 
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void label3_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void label8_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void guna2TextBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
-
         private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void guna2TextBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void guna2TextBox3_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label7_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void guna2TextBox4_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void guna2ComboBox3_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label18_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label9_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void guna2DateTimePicker1_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label10_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label11_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void guna2ComboBox2_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label14_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void guna2ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label13_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void guna2DateTimePicker2_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label12_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void addEmployeebtn_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void guna2Button2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void guna2TextBox3_TextChanged_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label13_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label10_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label11_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void guna2ComboBox1_SelectedIndexChanged_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void guna2TextBox10_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label12_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void guna2TextBox9_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void guna2TextBox11_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label14_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void guna2TextBox12_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label18_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label30_Click(object sender, EventArgs e)
         {
 
         }
@@ -249,6 +111,23 @@ namespace Residence_Management_System.User_Controls
 
         private void btnAddStudent_Click(object sender, EventArgs e)
         {
+
+        }
+
+       
+        private void btnAddEmpl_Click(object sender, EventArgs e)
+        {
+            string empEmail = txtEmpEmail.Text.Trim();
+            string empPhone = txtEmpPhoneNo.Text.Trim();
+            if (isEmpEmptyInput() == false && extraMethodIsValid.IsValidEmailAddress(empEmail, lblInvalidEmpEmail) == true && extraMethodIsValid.IsValidPhoneNumber(empPhone, lblInvalidEmpPhone) == true)
+            {
+                Models.WorkerModel createdWorker = new Models.WorkerModel(txtEmpFirstName.Text.Trim(), txtEmpLastName.Text.Trim(), empEmail, empPhone,dtpEmpDob.Text.Trim(), cBoxGender.Text.Trim(),myMethod.JobTitleSelected(cBoxEmpJobTitle), jobTypeSelected(cBoxEmpJobType), dateStartDate.Text.Trim());
+                rpA.AddWorker(createdWorker);
+            }
+            else
+            {
+                MessageBox.Show("Please fill all the boxes with * to register your account!..", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
 
         }
     }

@@ -12,10 +12,7 @@ namespace Residence_Management_System
 {
     public partial class Login : Form
     {
-
-        
-
-
+        private Repository.UserRepo uR = new Repository.UserRepo();
         public Login()
         {
             InitializeComponent();
@@ -41,13 +38,7 @@ namespace Residence_Management_System
             txtUsername.Clear();
             txtPassword.Clear();
         }
-
-
-        
         /*=============================method===================*/
-
-
-
 
         private void signInbtn_Click(object sender, EventArgs e)
         {
@@ -58,7 +49,7 @@ namespace Residence_Management_System
             {
                 if (isEmptyInput() == false)
                 {
-                    Repository.UserRepo.loginUser(username, password);   
+                    uR.LoginUser(username, password);   
                     //this.Hide();
                 }
                 else

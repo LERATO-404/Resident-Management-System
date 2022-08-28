@@ -7,25 +7,28 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Residence_Management_System.Repository;
 
 namespace Residence_Management_System.User_Controls
 {
     public partial class UC_home : UserControl
     {
-        public Repository.HomeRepo rph = new Repository.HomeRepo();
-  
+        private readonly HomeRepo rph = new HomeRepo();
+        
+
         public UC_home()
         {
             InitializeComponent();
-            lblTotalEmployees.Text = rph.countWorkers().ToString();
-            lblTotalRooms.Text = rph.countRoom().ToString();
-            lblTotalStudent.Text = rph.countStudents().ToString();
+            lblTotalEmployees.Text = rph.CountWorkers().ToString();
+            lblTotalRooms.Text = rph.CountRoom().ToString();
+            lblTotalStudent.Text = rph.CountStudents().ToString();
+            
         }
 
         private void btnDisplay_Click(object sender, EventArgs e)
         {
            
-			rph.viewTable(cboxViewTable,dgvShowTable);
+			rph.ViewTable(cboxViewTable,dgvShowTable);
         }
 
         private void UC_home_Load(object sender, EventArgs e)
@@ -35,21 +38,19 @@ namespace Residence_Management_System.User_Controls
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
+
             try
-            {
-                
+            { 
                 if (txtIdentifier.Text != "")
                 {
-                    //label5.Text = rph.selectedTableToDeleteResource(cboxViewTable, txtIdentifier.Text);
-                    rph.removeById(cboxViewTable, int.Parse(txtIdentifier.Text));
-
+                    rph.RemoveById(cboxViewTable, int.Parse(txtIdentifier.Text));
                 }
                 else
                 {
                     MessageBox.Show("Please enter the Id of the resource you want to delete!..", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-            catch (Exception exhomeDelete)
+            catch (Exception)
             {
                 MessageBox.Show("Invalid Id, Please enter Id number (firstcolumn) of the resource you want to delete!..", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }

@@ -276,5 +276,10 @@ namespace Residence_Management_System.User_Controls
         {
 
         }
+
+        private void btnDisplayReservations_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

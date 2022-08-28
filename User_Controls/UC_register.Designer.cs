@@ -52,6 +52,8 @@ namespace Residence_Management_System.User_Controls
             this.cBoxEmpJobType = new Guna.UI2.WinForms.Guna2ComboBox();
             this.cBoxEmpJobTitle = new Guna.UI2.WinForms.Guna2ComboBox();
             this.gboxEmployeeInfo = new Guna.UI2.WinForms.Guna2GroupBox();
+            this.lblInvalidEmpPhone = new System.Windows.Forms.Label();
+            this.lblInvalidEmpEmail = new System.Windows.Forms.Label();
             this.dtpEmpDob = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.label22 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
@@ -223,6 +225,7 @@ namespace Residence_Management_System.User_Controls
             this.btnAddEmpl.Size = new System.Drawing.Size(110, 33);
             this.btnAddEmpl.TabIndex = 0;
             this.btnAddEmpl.Text = "Add";
+            this.btnAddEmpl.Click += new System.EventHandler(this.btnAddEmpl_Click);
             // 
             // guna2GroupBox5
             // 
@@ -514,6 +517,8 @@ namespace Residence_Management_System.User_Controls
             // gboxEmployeeInfo
             // 
             this.gboxEmployeeInfo.AutoScroll = true;
+            this.gboxEmployeeInfo.Controls.Add(this.lblInvalidEmpPhone);
+            this.gboxEmployeeInfo.Controls.Add(this.lblInvalidEmpEmail);
             this.gboxEmployeeInfo.Controls.Add(this.dtpEmpDob);
             this.gboxEmployeeInfo.Controls.Add(this.label22);
             this.gboxEmployeeInfo.Controls.Add(this.label23);
@@ -535,6 +540,26 @@ namespace Residence_Management_System.User_Controls
             this.gboxEmployeeInfo.TabIndex = 0;
             this.gboxEmployeeInfo.Text = "Employee Personal Information";
             // 
+            // lblInvalidEmpPhone
+            // 
+            this.lblInvalidEmpPhone.AutoSize = true;
+            this.lblInvalidEmpPhone.ForeColor = System.Drawing.Color.Red;
+            this.lblInvalidEmpPhone.Location = new System.Drawing.Point(264, 159);
+            this.lblInvalidEmpPhone.Name = "lblInvalidEmpPhone";
+            this.lblInvalidEmpPhone.Size = new System.Drawing.Size(76, 15);
+            this.lblInvalidEmpPhone.TabIndex = 86;
+            this.lblInvalidEmpPhone.Text = "InvalidPhone";
+            // 
+            // lblInvalidEmpEmail
+            // 
+            this.lblInvalidEmpEmail.AutoSize = true;
+            this.lblInvalidEmpEmail.ForeColor = System.Drawing.Color.Red;
+            this.lblInvalidEmpEmail.Location = new System.Drawing.Point(15, 159);
+            this.lblInvalidEmpEmail.Name = "lblInvalidEmpEmail";
+            this.lblInvalidEmpEmail.Size = new System.Drawing.Size(71, 15);
+            this.lblInvalidEmpEmail.TabIndex = 67;
+            this.lblInvalidEmpEmail.Text = "InvalidEmail";
+            // 
             // dtpEmpDob
             // 
             this.dtpEmpDob.BorderRadius = 5;
@@ -544,7 +569,7 @@ namespace Residence_Management_System.User_Controls
             this.dtpEmpDob.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.dtpEmpDob.ForeColor = System.Drawing.Color.White;
             this.dtpEmpDob.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.dtpEmpDob.Location = new System.Drawing.Point(9, 192);
+            this.dtpEmpDob.Location = new System.Drawing.Point(9, 205);
             this.dtpEmpDob.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.dtpEmpDob.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.dtpEmpDob.Name = "dtpEmpDob";
@@ -582,7 +607,7 @@ namespace Residence_Management_System.User_Controls
             this.label24.AutoSize = true;
             this.label24.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label24.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.label24.Location = new System.Drawing.Point(6, 174);
+            this.label24.Location = new System.Drawing.Point(6, 187);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(73, 13);
             this.label24.TabIndex = 85;
@@ -643,7 +668,7 @@ namespace Residence_Management_System.User_Controls
             "Male",
             "Female",
             "Other"});
-            this.cBoxGender.Location = new System.Drawing.Point(251, 192);
+            this.cBoxGender.Location = new System.Drawing.Point(251, 205);
             this.cBoxGender.Name = "cBoxGender";
             this.cBoxGender.Size = new System.Drawing.Size(200, 36);
             this.cBoxGender.TabIndex = 5;
@@ -686,7 +711,7 @@ namespace Residence_Management_System.User_Controls
             this.label26.AutoSize = true;
             this.label26.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label26.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.label26.Location = new System.Drawing.Point(248, 174);
+            this.label26.Location = new System.Drawing.Point(248, 187);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(45, 13);
             this.label26.TabIndex = 83;
@@ -705,6 +730,7 @@ namespace Residence_Management_System.User_Controls
             this.txtEmpPhoneNo.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtEmpPhoneNo.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtEmpPhoneNo.Location = new System.Drawing.Point(251, 120);
+            this.txtEmpPhoneNo.MaxLength = 10;
             this.txtEmpPhoneNo.Name = "txtEmpPhoneNo";
             this.txtEmpPhoneNo.PasswordChar = '\0';
             this.txtEmpPhoneNo.PlaceholderText = "023 456 7891";
@@ -1893,5 +1919,7 @@ namespace Residence_Management_System.User_Controls
         private Guna.UI2.WinForms.Guna2Button btnCancelStudentInput;
         private Guna.UI2.WinForms.Guna2Button btnAddStudent;
         private System.Windows.Forms.Panel panel2;
+        public System.Windows.Forms.Label lblInvalidEmpPhone;
+        public System.Windows.Forms.Label lblInvalidEmpEmail;
     }
 }
