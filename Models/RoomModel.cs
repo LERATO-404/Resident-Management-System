@@ -11,11 +11,10 @@ namespace Residence_Management_System.Models
 	public class RoomModel{
 		
 		private int _roomID;
+		private string _roomSymbolCode;
 		private string _roomFloor;
 		private string _roomType;
-		private string _bedUsed;
-		private string _chairUsed;
-		private string _roomStatus;
+		private string _roomAvailability;
 		private int _userId;
 		
 		
@@ -23,37 +22,35 @@ namespace Residence_Management_System.Models
 			
 		}
 		
-		public RoomModel(int aRoomId, string aRoomFloor, string aRoomType,string aBedUsed,string aChairUsed,string aRoomStatus, int aUserId){
+		public RoomModel(int aRoomId,string aRoomSymbol, string aRoomFloor, string aRoomType,string aRoomAvailability, int aUserId){
 			_roomID = aRoomId;
+			_roomSymbolCode = aRoomSymbol;
 			RoomFloor = aRoomFloor;
 			RoomType = aRoomType;
-			BedUsed = aBedUsed;
-			ChairUsed = aChairUsed;
-			RoomStatus = aRoomStatus;
+			RoomAvailability= aRoomAvailability;
 			UserId = aUserId;
 		}
-		
-		public RoomModel(string aRoomFloor, string aRoomType,string aBedUsed,string aChairUsed,string aRoomStatus, int aUserId){
+
+		public RoomModel(string aRoomSymbol, string aRoomFloor, string aRoomType, string aRoomAvailability)
+		{
+			_roomSymbolCode = aRoomSymbol;
 			RoomFloor = aRoomFloor;
 			RoomType = aRoomType;
-			BedUsed = aBedUsed;
-			ChairUsed = aChairUsed;
-			RoomStatus = aRoomStatus;
-			UserId = aUserId;
-			/*
-			_roomFloor = aRoomFloor;
-			_roomType = aRoomType;
-			_bedUsed = aBedUsed;
-			_chairUsed = aChairUsed;
-			_roomStatus = aRoomStatus;*/
+			RoomAvailability = aRoomAvailability;
+			//UserId = aUserId;
 		}
-		
+
 		public int RoomId{
 			get {return _roomID;}
 			set {_roomID = value;}
 		}
-		
-		
+
+		public string RoomSymbolCode
+        {
+            get {return _roomSymbolCode; }
+            set { _roomSymbolCode = value; }
+        }
+
 		public string RoomFloor{
 			get {return _roomFloor;}
 			set {
@@ -78,6 +75,7 @@ namespace Residence_Management_System.Models
 			}
 		}
 		
+		/*
 		public string BedUsed{
 			get {return _bedUsed;}
 			set {
@@ -100,16 +98,16 @@ namespace Residence_Management_System.Models
 					_chairUsed = null;
 				}
 			}
-		}
+		}*/
 		
-		public string RoomStatus{
-			get {return _roomStatus;}
+		public string RoomAvailability{
+			get {return _roomAvailability; }
 			set {
 				if(value == "Fully-Occupied" || value =="Not-Fully-Occupied" || value == "Occupied"){
-					_roomStatus = value;
+					_roomAvailability = value;
 				}
 				else{
-					_roomStatus = null;
+					_roomAvailability = null;
 				}
 			}
 		}

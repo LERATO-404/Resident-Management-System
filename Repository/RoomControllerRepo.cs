@@ -15,10 +15,48 @@ namespace Residence_Management_System.Repository
     public class RoomControllerRepo{
 
         private readonly MyMethods myRoomMethod = new MyMethods();
-       
+
+
+        public string SelectedRoomToDelete(int id)
+        {
+            return @"DELETE [rooms] WHERE roomId = '" + id + "'";
+        }
+
+
+        public string SelectedRoomsTable(ComboBox cs, string tb)
+        {
+            int tableSelected = cs.SelectedIndex;
+            string tname;
+            switch (tableSelected)
+            {
+                case 0:
+                    tname = @"SELECT * FROM [rooms]";
+                    break;
+                case 1:
+                    tname = @"SELECT * FROM [rooms] WHERE roomType LIKE '" + tb + "'";
+                    break;
+                case 2:
+                    tname = @"SELECT * FROM [rooms] WHERE roomType LIKE '" + tb + "'";
+                    break;
+                case 3:
+                    tname = @"SELECT * FROM [rooms] WHERE roomAvailability LIKE '" + tb + "'";
+                    break;
+                case 4:
+                    tname = @"SELECT * FROM [rooms] WHERE roomAvailability LIKE '" + tb + "'";
+                    break;
+                case 5:
+                    tname = @"SELECT * FROM [rooms] WHERE roomAvailability LIKE '" + tb + "'";
+                    break;
+                default:
+                    tname = "";
+                    break;
+            }
+            return tname;
+        }
+
         public void AddRoom(Models.RoomModel rm){
-			string sqlInsertRoom = @"INSERT INTO [rooms](roomFloor,roomType,bedUsed,chairUsed,roomStatus,userId)"+ 
-			"VALUES(@roomFloor,@roomType,@bedUsed,@chairUsed,@roomStatus,@userId)";
+			string sqlInsertRoom = @"INSERT INTO [rooms](roomSymbolCode,roomFloor,roomType,roomAvailability)" +
+            "VALUES(@roomSymbolCode,@roomFloor,@roomType,@roomAvailability)";
             using (SqlConnection con = new SqlConnection(myRoomMethod.GetConnection()))
             {
                 if (con.State != ConnectionState.Open) { con.Open(); }
@@ -28,12 +66,11 @@ namespace Residence_Management_System.Repository
                     CommandType = CommandType.Text
                 };
 
+                cmd.Parameters.Add("@roomSymbolCode", SqlDbType.VarChar).Value = rm.RoomSymbolCode;
                 cmd.Parameters.Add("@roomFloor", SqlDbType.VarChar).Value = rm.RoomFloor;
                 cmd.Parameters.Add("@roomType", SqlDbType.VarChar).Value = rm.RoomType;
-                cmd.Parameters.Add("@bedUsed", SqlDbType.VarChar).Value = rm.BedUsed;
-                cmd.Parameters.Add("@chairUsed", SqlDbType.VarChar).Value = rm.ChairUsed;
-                cmd.Parameters.Add("@roomStatus", SqlDbType.VarChar).Value = rm.RoomStatus;
-                cmd.Parameters.Add("@userId", SqlDbType.Int).Value = rm.UserId;
+                cmd.Parameters.Add("@roomAvailability", SqlDbType.VarChar).Value = rm.RoomAvailability;
+                //cmd.Parameters.Add("@userId", SqlDbType.Int).Value = rm.UserId;
 
                 try
                 {
@@ -54,7 +91,7 @@ namespace Residence_Management_System.Repository
 		
 		public void UpdateRoomById(int id){
 			Models.RoomModel rmUpdate = new Models.RoomModel();
-			string sqlUpdate = @"UPDATE [rooms] SET roomFloor=@roomFloor,roomType=@roomType,bedUsed=@bedUsed,chairUsed=@chairUsed,roomStatus=@roomStatus WHERE roomId=@roomId";
+			string sqlUpdate = @"UPDATE [rooms] SET roomSymbolCode=@roomSymbolCode,roomFloor=@roomFloor,roomType=@roomType,roomAvailability=@roomAvailability WHERE roomId=@roomId";
 
             using (SqlConnection con = new SqlConnection(myRoomMethod.GetConnection()))
             {
@@ -72,11 +109,10 @@ namespace Residence_Management_System.Repository
               
                 
                 cmd.Parameters.Add("@roomId", SqlDbType.Int).Value = id;
+                cmd.Parameters.Add("@roomSymbolCode", SqlDbType.VarChar).Value = rmUpdate.RoomSymbolCode;
                 cmd.Parameters.Add("@roomFloor", SqlDbType.VarChar).Value = rmUpdate.RoomFloor;
                 cmd.Parameters.Add("@roomType", SqlDbType.VarChar).Value = rmUpdate.RoomType;
-                cmd.Parameters.Add("@bedUsed", SqlDbType.VarChar).Value = rmUpdate.BedUsed;
-                cmd.Parameters.Add("@chairUsed", SqlDbType.VarChar).Value = rmUpdate.ChairUsed;
-                cmd.Parameters.Add("@roomStatus", SqlDbType.VarChar).Value = rmUpdate.RoomStatus;
+                cmd.Parameters.Add("@roomAvailability", SqlDbType.VarChar).Value = rmUpdate.RoomAvailability;
 
 
                 try

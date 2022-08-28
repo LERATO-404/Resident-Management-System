@@ -8,13 +8,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Residence_Management_System.Repository;
+using Residence_Management_System.ExtraMethods;
 
 namespace Residence_Management_System.User_Controls
 {
     public partial class UC_home : UserControl
     {
         private readonly HomeRepo rph = new HomeRepo();
-        
+        private readonly MyMethods myM = new MyMethods();
 
         public UC_home()
         {
@@ -23,8 +24,8 @@ namespace Residence_Management_System.User_Controls
 
         private void btnDisplay_Click(object sender, EventArgs e)
         {
-           
-			rph.ViewTable(cboxViewTable,dgvShowTable);
+            string selecteT = rph.SelectedTable(cboxViewTable);
+            myM.ViewTable(dgvShowTable,selecteT);
         }
 
         private void UC_home_Load(object sender, EventArgs e)
@@ -37,12 +38,12 @@ namespace Residence_Management_System.User_Controls
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-
             try
             { 
                 if (txtIdentifier.Text != "")
                 {
-                    rph.RemoveById(cboxViewTable, int.Parse(txtIdentifier.Text));
+                    string resourceToDelete = rph.SelectedTableToDeleteResource(cboxViewTable, int.Parse(txtIdentifier.Text));
+                    myM.RemoveById(int.Parse(txtIdentifier.Text), resourceToDelete);
                 }
                 else
                 {

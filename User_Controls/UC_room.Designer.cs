@@ -146,7 +146,7 @@ namespace Residence_Management_System.User_Controls
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvRooms.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvRooms.ColumnHeadersHeight = 4;
+            this.dgvRooms.ColumnHeadersHeight = 30;
             this.dgvRooms.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
@@ -174,7 +174,7 @@ namespace Residence_Management_System.User_Controls
             this.dgvRooms.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.dgvRooms.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
             this.dgvRooms.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            this.dgvRooms.ThemeStyle.HeaderStyle.Height = 4;
+            this.dgvRooms.ThemeStyle.HeaderStyle.Height = 30;
             this.dgvRooms.ThemeStyle.ReadOnly = false;
             this.dgvRooms.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
             this.dgvRooms.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
@@ -271,9 +271,11 @@ namespace Residence_Management_System.User_Controls
             this.cboxShowRooms.ItemHeight = 30;
             this.cboxShowRooms.Items.AddRange(new object[] {
             "All Rooms",
-            "Occupied with Rooms",
-            "Not Occupied Rooms",
-            "Fully Occupied Rooms"});
+            "Single",
+            "Shared",
+            "Occupied",
+            "Not-fully-occupied",
+            "Fully-Occupied"});
             this.cboxShowRooms.Location = new System.Drawing.Point(91, 33);
             this.cboxShowRooms.Name = "cboxShowRooms";
             this.cboxShowRooms.Size = new System.Drawing.Size(200, 36);
@@ -342,6 +344,7 @@ namespace Residence_Management_System.User_Controls
             this.txtRoomSymbolCode.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtRoomSymbolCode.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtRoomSymbolCode.Location = new System.Drawing.Point(27, 70);
+            this.txtRoomSymbolCode.MaxLength = 5;
             this.txtRoomSymbolCode.Name = "txtRoomSymbolCode";
             this.txtRoomSymbolCode.PasswordChar = '\0';
             this.txtRoomSymbolCode.PlaceholderText = "G21";
@@ -392,8 +395,9 @@ namespace Residence_Management_System.User_Controls
             this.cboxRoomAvailability.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.cboxRoomAvailability.ItemHeight = 30;
             this.cboxRoomAvailability.Items.AddRange(new object[] {
-            "Available ",
-            "Not Available"});
+            "Occupied",
+            "Not-Fully-Occupied",
+            "Fully-Occupied"});
             this.cboxRoomAvailability.Location = new System.Drawing.Point(27, 270);
             this.cboxRoomAvailability.Name = "cboxRoomAvailability";
             this.cboxRoomAvailability.Size = new System.Drawing.Size(200, 36);
@@ -491,10 +495,10 @@ namespace Residence_Management_System.User_Controls
             this.cboxFloor.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.cboxFloor.ItemHeight = 30;
             this.cboxFloor.Items.AddRange(new object[] {
-            "Floor 1",
-            "Floor 2",
-            "Floor 3",
-            "Floor 4"});
+            "Floor-1",
+            "Floor-2",
+            "Floor-3",
+            "Floor-4"});
             this.cboxFloor.Location = new System.Drawing.Point(27, 138);
             this.cboxFloor.Name = "cboxFloor";
             this.cboxFloor.Size = new System.Drawing.Size(200, 36);

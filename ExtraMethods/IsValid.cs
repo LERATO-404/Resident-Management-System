@@ -17,6 +17,8 @@ namespace Residence_Management_System.ExtraMethods
         // validate email
         const string emailReg = @"^[\w!#$%&'*+\-/=?\^_`{|}~]+(\.[\w!#$%&'*+\-/=?\^_`{|}~]+)*@((([\-\w]+\.)+[a-zA-Z]{2,4})|(([0-9]{1,3}\.){3}[0-9]{1,3}))\z";
 
+        const int phoneLen = 10;
+        const int studentNoLen = 8;
         
         public bool IsValidEmailAddress(string email, Label labelSelected)
         {
@@ -39,7 +41,7 @@ namespace Residence_Management_System.ExtraMethods
         public bool IsValidPhoneNumber(string sourceNum, Label labelSelected)
         {
             bool isPhoneValid = Regex.IsMatch(sourceNum, motif);
-            if (isPhoneValid == true && sourceNum.Length == 10)
+            if (isPhoneValid == true && sourceNum.Length == phoneLen)
             {
                 labelSelected.Visible = false;
                 return true;
@@ -51,6 +53,23 @@ namespace Residence_Management_System.ExtraMethods
                 return false;
             }
         }
+
+        public bool IsValidStudentNumber(string sourceNum, Label labelSelected)
+        {
+            bool isStuNoValid = Regex.IsMatch(sourceNum, motif);
+            if (isStuNoValid == true && sourceNum.Length == studentNoLen)
+            {
+                labelSelected.Visible = false;
+                return true;
+            }
+            else
+            {
+                labelSelected.Visible = true;
+                labelSelected.Text = "Invalid Phone number";
+                return false;
+            }
+        }
+
 
     }
 }

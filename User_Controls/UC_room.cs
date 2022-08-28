@@ -12,9 +12,24 @@ namespace Residence_Management_System.User_Controls
 {
     public partial class UC_room : UserControl
     {
+        private readonly ExtraMethods.MyMethods myM = new ExtraMethods.MyMethods();
+        private readonly Repository.RoomControllerRepo rRCR = new Repository.RoomControllerRepo();
         public UC_room()
         {
             InitializeComponent();
+        }
+
+        public Boolean IsRoomInputEmpty()
+        {
+            if (String.IsNullOrEmpty(txtRoomIdentifier.Text) == true || String.IsNullOrEmpty(cboxFloor.Text) == true ||
+            String.IsNullOrEmpty(cboxRoomType.Text) == true || String.IsNullOrEmpty(cboxRoomAvailability.Text) == true)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
         private void guna2Panel1_Paint(object sender, PaintEventArgs e)
@@ -23,11 +38,6 @@ namespace Residence_Management_System.User_Controls
         }
 
         private void guna2TabControl1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void guna2TextBox21_TextChanged(object sender, EventArgs e)
         {
 
         }
@@ -72,11 +82,6 @@ namespace Residence_Management_System.User_Controls
 
         }
 
-        private void guna2GroupBox4_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void label8_Click(object sender, EventArgs e)
         {
 
@@ -92,22 +97,7 @@ namespace Residence_Management_System.User_Controls
 
         }
 
-        private void guna2ComboBox9_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void guna2DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void guna2TextBox20_TextChanged(object sender, EventArgs e)
         {
 
         }
@@ -117,22 +107,7 @@ namespace Residence_Management_System.User_Controls
 
         }
 
-        private void guna2ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void label28_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void guna2TextBox15_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void guna2GroupBox5_Click(object sender, EventArgs e)
         {
 
         }
@@ -147,27 +122,7 @@ namespace Residence_Management_System.User_Controls
 
         }
 
-        private void guna2ComboBox2_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label19_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void guna2TextBox8_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void guna2TextBox19_TextChanged(object sender, EventArgs e)
         {
 
         }
@@ -182,44 +137,31 @@ namespace Residence_Management_System.User_Controls
 
         }
 
-        private void guna2TextBox17_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void label20_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void label21_Click(object sender, EventArgs e)
-        {
 
-        }
-
-        private void guna2Button3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label10_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label11_Click(object sender, EventArgs e)
-        {
-
-        }
-
+       
         private void guna2Button4_Click(object sender, EventArgs e)
         {
-
+            try
+            {
+                if (txtRoomIdentifier.Text != "")
+                {
+                    string resourceToDelete = rRCR.SelectedRoomToDelete(int.Parse(txtRoomIdentifier.Text));
+                    myM.RemoveById(int.Parse(txtRoomIdentifier.Text), resourceToDelete);
+                }
+                else
+                {
+                    MessageBox.Show("Please enter the Id of the resource you want to delete!..", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Invalid Id, Please enter Id number (firstcolumn) of the resource you want to delete!..", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void label12_Click(object sender, EventArgs e)
@@ -229,12 +171,15 @@ namespace Residence_Management_System.User_Controls
 
         private void addRoombtn_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void guna2GroupBox3_Click(object sender, EventArgs e)
-        {
-
+            if(IsRoomInputEmpty() == false)
+            { 
+                Models.RoomModel rm = new Models.RoomModel(txtRoomSymbolCode.Text.Trim(), cboxFloor.Text.Trim(), cboxRoomType.Text.Trim(), cboxRoomAvailability.Text.Trim());
+                rRCR.AddRoom(rm);
+            }
+            else
+            {
+                MessageBox.Show("Please fill all the boxes with * to add a room!..", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
         private void Allocation_Click(object sender, EventArgs e)
@@ -274,12 +219,14 @@ namespace Residence_Management_System.User_Controls
 
         private void guna2Button2_Click(object sender, EventArgs e)
         {
-
+            string selecteRoomsThat = rRCR.SelectedRoomsTable(cboxShowRooms, cboxShowRooms.Text);
+            myM.ViewTable(dgvRooms, selecteRoomsThat);
         }
 
+       
         private void btnDisplayReservations_Click(object sender, EventArgs e)
         {
-
+            
         }
     }
 }

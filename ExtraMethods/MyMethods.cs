@@ -106,6 +106,84 @@ namespace Residence_Management_System.ExtraMethods
             }
         }
 
+        public void ViewTable(DataGridView dgv, string selectTable)
+        {
+            using (SqlConnection con = new SqlConnection(GetConnection()))
+            {
+                if (con.State != ConnectionState.Open) { con.Open(); }
+
+                string sqlUsers = selectTable;
+
+                DataSet ds = new DataSet();
+                SqlCommand cmd = new SqlCommand(sqlUsers, con);
+                SqlDataAdapter adapt = new SqlDataAdapter()
+                {
+                    SelectCommand = cmd
+                };
+                try
+                {
+                    adapt.Fill(ds, "UserInfo");
+                    dgv.DataSource = ds;
+                    dgv.DataMember = "UserInfo";
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Please select the table you want to display", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                finally
+                {
+                    ds.Dispose();
+                    cmd.Dispose();
+                    adapt.Dispose();
+                    //if (con.State == ConnectionState.Open) { con.Close(); }
+                }
+            }
+        }
+
+        public void RemoveById(int id, string sqlDeleteResource)
+        {
+            using (SqlConnection con = new SqlConnection(GetConnection()))
+            {
+                if (con.State != ConnectionState.Open) { con.Open(); }
+                SqlDataAdapter adapt = new SqlDataAdapter()
+                {
+                    DeleteCommand = new SqlCommand(sqlDeleteResource, con)
+                };
+                try
+                {
+                    if (MessageBox.Show("Are you sure you want to delete id number:" + id.ToString(), "Remove Resource", (MessageBoxButtons)MessageBoxButton.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        int deletedResource = adapt.DeleteCommand.ExecuteNonQuery();
+                        if (deletedResource > 0)
+                        {
+                            MessageBox.Show("Id number:" + id.ToString() + " removed", "Remove Resource", (MessageBoxButtons)MessageBoxButton.OK, MessageBoxIcon.Information);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Id not found", "Id not found", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Id number:" + id.ToString() + " not removed", "Remove Resource", (MessageBoxButtons)MessageBoxButton.OK, MessageBoxIcon.Information);
+                    }
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Failed to remove resource.Please Display the table you want to delete a resource From \n", "Error", (MessageBoxButtons)MessageBoxButton.OK, MessageBoxIcon.Error);
+                }
+                finally
+                {
+                    adapt.Dispose();
+                    //if (con.State == ConnectionState.Open) { con.Close(); }
+                }
+
+            }
+
+
+        }
+
         public string JobTitleSelected(ComboBox cs)
         {
             string _jobTitle = "Guest";
