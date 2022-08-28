@@ -26,6 +26,10 @@ namespace Residence_Management_System.User_Controls
             InitializeComponent();
             lblInvalidEmpEmail.Visible = false;
             lblInvalidEmpPhone.Visible = false;
+            lblInvalidNOKPhone.Visible = false;
+            lblStuInvalidEmail.Visible = false;
+            lblStuInvalidPhone.Visible = false;
+
         }
 
         
@@ -35,7 +39,7 @@ namespace Residence_Management_System.User_Controls
         public Boolean isEmpEmptyInput()
         {
             if (String.IsNullOrEmpty(txtEmpFirstName.Text) == true || String.IsNullOrEmpty(txtEmpLastName.Text) == true ||
-            String.IsNullOrEmpty(txtEmpEmail.Text) == true || String.IsNullOrEmpty(txtEmpPhoneNo.Text) == true ||
+            String.IsNullOrEmpty(txtEmpEmail.Text) == true || String.IsNullOrEmpty(txtEmpPhoneNo.Text) == true || String.IsNullOrEmpty(cBoxGender.Text) == true ||
             String.IsNullOrEmpty(cBoxEmpJobTitle.Text) == true || String.IsNullOrEmpty(cBoxEmpJobType.Text) == true ||
             String.IsNullOrEmpty(dtpEmpDob.Text) == true)
             {
@@ -47,30 +51,22 @@ namespace Residence_Management_System.User_Controls
             }
         }
 
-        public string jobTypeSelected(ComboBox cs)
+        public Boolean isStuEmptyInput()
         {
-            string _jobType = "other";
-            if (cs.SelectedIndex == 0)
+            if (String.IsNullOrEmpty(txtStuFirstName.Text) == true || String.IsNullOrEmpty(txtStuLastName.Text) == true ||
+            String.IsNullOrEmpty(txtStuEmail.Text) == true || String.IsNullOrEmpty(txtStuPhoneNo.Text) == true || String.IsNullOrEmpty(dtpStuDob.Text) == true ||
+            String.IsNullOrEmpty(cBoxStuGender.Text) == true || String.IsNullOrEmpty(cBoxStuTitle.Text) == true || String.IsNullOrEmpty(cBoxStuNationality.Text) == true ||
+            String.IsNullOrEmpty(txtStudentNo.Text) == true || String.IsNullOrEmpty(cboxStudentType.Text) == true || String.IsNullOrEmpty(txtCourseName.Text) == true|| 
+            String.IsNullOrEmpty(cboxRegistrationStatus.Text) == true|| String.IsNullOrEmpty(txtStuNextOfKinName.Text) == true|| 
+            String.IsNullOrEmpty(txtStuNextOfKinPhone.Text) == true)
             {
-                _jobType = "Security";
+                return true;
             }
-            else if (cs.SelectedIndex == 1)
+            else
             {
-                _jobType = "Cleaner";
+                return false;
             }
-            else if (cs.SelectedIndex == 2)
-            {
-                _jobType = "Gardener";
-            }
-            else if (cs.SelectedIndex == 3)
-            {
-                _jobType = "Constructor";
-            }
-            return _jobType;
         }
-
-
-
         //===================methods===================
 
 
@@ -111,6 +107,20 @@ namespace Residence_Management_System.User_Controls
 
         private void btnAddStudent_Click(object sender, EventArgs e)
         {
+            string stuPhone = txtStuPhoneNo.Text.Trim();
+            string nxtOfKinPhone = txtStuNextOfKinPhone.Text.Trim();
+            string stuEmail = txtStuEmail.Text.Trim();
+
+            if(isStuEmptyInput() == false && extraMethodIsValid.IsValidEmailAddress(stuEmail, lblStuInvalidEmail) == true && extraMethodIsValid.IsValidPhoneNumber(stuPhone, lblStuInvalidPhone) == true && extraMethodIsValid.IsValidPhoneNumber(nxtOfKinPhone, lblInvalidNOKPhone))
+            {
+                Models.StudentModel createdStudent = new Models.StudentModel(txtEmpFirstName.Text.Trim(), txtEmpLastName.Text.Trim(), txtStuEmail.Text.Trim(), txtStuPhoneNo.Text.Trim(), cBoxStuGender.Text.Trim(),
+                dtpStuDob.Text.Trim(), cBoxStuNationality.Text.Trim(), cboxStudentType.Text.Trim(), txtCourseName.Text.Trim(), txtStuNextOfKinName.Text.Trim(), txtStuNextOfKinPhone.Text.Trim());
+                rpA.AddStudent(createdStudent);
+            }
+            else
+            {
+                MessageBox.Show("Please fill all the boxes with * to add a student!..", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
 
         }
 
@@ -121,12 +131,12 @@ namespace Residence_Management_System.User_Controls
             string empPhone = txtEmpPhoneNo.Text.Trim();
             if (isEmpEmptyInput() == false && extraMethodIsValid.IsValidEmailAddress(empEmail, lblInvalidEmpEmail) == true && extraMethodIsValid.IsValidPhoneNumber(empPhone, lblInvalidEmpPhone) == true)
             {
-                Models.WorkerModel createdWorker = new Models.WorkerModel(txtEmpFirstName.Text.Trim(), txtEmpLastName.Text.Trim(), empEmail, empPhone,dtpEmpDob.Text.Trim(), cBoxGender.Text.Trim(),myMethod.JobTitleSelected(cBoxEmpJobTitle), jobTypeSelected(cBoxEmpJobType), dateStartDate.Text.Trim());
+                Models.WorkerModel createdWorker = new Models.WorkerModel(txtEmpFirstName.Text.Trim(), txtEmpLastName.Text.Trim(), empEmail, empPhone,dtpEmpDob.Text.Trim(), cBoxGender.Text.Trim(),cBoxEmpJobTitle.Text.Trim(), cBoxEmpJobType.Text.Trim(), dateStartDate.Text.Trim());
                 rpA.AddWorker(createdWorker);
             }
             else
             {
-                MessageBox.Show("Please fill all the boxes with * to register your account!..", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Please fill all the boxes with * to add a worker!..", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
 
         }

@@ -19,10 +19,6 @@ namespace Residence_Management_System.User_Controls
         public UC_home()
         {
             InitializeComponent();
-            lblTotalEmployees.Text = rph.CountWorkers().ToString();
-            lblTotalRooms.Text = rph.CountRoom().ToString();
-            lblTotalStudent.Text = rph.CountStudents().ToString();
-            
         }
 
         private void btnDisplay_Click(object sender, EventArgs e)
@@ -34,6 +30,9 @@ namespace Residence_Management_System.User_Controls
         private void UC_home_Load(object sender, EventArgs e)
         {
             
+            lblTotalRooms.Text = rph.CountRoom().ToString();
+            lblTotalStudent.Text = rph.CountStudents().ToString();
+            lblTotalEmployees.Text = rph.CountWorkers().ToString();
         }
 
         private void btnDelete_Click(object sender, EventArgs e)

@@ -89,24 +89,20 @@ namespace Residence_Management_System.ExtraMethods
 
         public int CountRecords(string sqlCount)
         {
-            try
+            using (SqlConnection con = new SqlConnection(GetConnection()))
             {
-                int recordsAvailable = 0;
-                using (SqlConnection con = new SqlConnection(GetConnection()))
+                using (SqlCommand cmd = new SqlCommand(sqlCount, con))
                 {
-                    using (SqlCommand cmd = new SqlCommand(sqlCount, con))
+                    if (con.State != ConnectionState.Open){con.Open();}
+                    try
                     {
-                        if (con.State != ConnectionState.Open) {
-                            con.Open();
-                        }
-                        return recordsAvailable = (int)cmd.ExecuteScalar();
-                       
+                        return (int)cmd.ExecuteScalar();
+                    }
+                    catch (Exception)
+                    {
+                        return 0;
                     }
                 }
-            }
-            catch (Exception)
-            {
-                return 0;
             }
         }
 

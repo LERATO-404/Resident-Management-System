@@ -89,23 +89,25 @@ namespace Residence_Management_System.Repository
 
 		public int CountRoom()
         {
-			string sqlTotalRoom = @"SELECT COUNT(*) FROM [rooms]";
+			string sqlTotalRoom = @"SELECT COUNT(roomID) FROM [rooms]";
 			int numberOfRooms = myHomeMethod.CountRecords(sqlTotalRoom);
 			return numberOfRooms;
 		}
 
 		public int CountStudents()
 		{
-			string sqlTotalStudents = @"SELECT COUNT(*) FROM [studens]";
-			int numberOfRooms = myHomeMethod.CountRecords(sqlTotalStudents);
-			return numberOfRooms;
+			string sqlTotalStudents = @"SELECT COUNT(studentId) FROM [students]";
+			int numberOfStuderns = myHomeMethod.CountRecords(sqlTotalStudents);
+			return numberOfStuderns;
 		}
 
 		public int CountWorkers()
 		{
-			string sqlTotalWorkers = @"SELECT COUNT(*) FROM [users]";
-			int numberOfRooms = myHomeMethod.CountRecords(sqlTotalWorkers);
-			return numberOfRooms;
+			string sqlTotalUsers = @"SELECT COUNT(userId) FROM [users]";
+			string sqlTotalWorkers = @"SELECT COUNT(workerId) FROM [workers]";
+			int numberOfSystemUsers = myHomeMethod.CountRecords(sqlTotalUsers);
+			int numberOfWorker = myHomeMethod.CountRecords(sqlTotalWorkers);
+			return numberOfSystemUsers + numberOfWorker;
 		}
 		
 

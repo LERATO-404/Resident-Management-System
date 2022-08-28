@@ -83,6 +83,7 @@ namespace Residence_Management_System.User_Controls
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.gboxNextOfKin = new Guna.UI2.WinForms.Guna2GroupBox();
+            this.lblInvalidNOKPhone = new System.Windows.Forms.Label();
             this.label35 = new System.Windows.Forms.Label();
             this.label37 = new System.Windows.Forms.Label();
             this.txtStuNextOfKinName = new Guna.UI2.WinForms.Guna2TextBox();
@@ -97,6 +98,8 @@ namespace Residence_Management_System.User_Controls
             this.cboxRegistrationStatus = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label34 = new System.Windows.Forms.Label();
             this.gboxStudentInfor = new Guna.UI2.WinForms.Guna2GroupBox();
+            this.lblStuInvalidPhone = new System.Windows.Forms.Label();
+            this.lblStuInvalidEmail = new System.Windows.Forms.Label();
             this.label33 = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
             this.cBoxStuNationality = new Guna.UI2.WinForms.Guna2ComboBox();
@@ -666,8 +669,7 @@ namespace Residence_Management_System.User_Controls
             this.cBoxGender.ItemHeight = 30;
             this.cBoxGender.Items.AddRange(new object[] {
             "Male",
-            "Female",
-            "Other"});
+            "Female"});
             this.cBoxGender.Location = new System.Drawing.Point(251, 205);
             this.cBoxGender.Name = "cBoxGender";
             this.cBoxGender.Size = new System.Drawing.Size(200, 36);
@@ -1009,6 +1011,7 @@ namespace Residence_Management_System.User_Controls
             // gboxNextOfKin
             // 
             this.gboxNextOfKin.AutoScroll = true;
+            this.gboxNextOfKin.Controls.Add(this.lblInvalidNOKPhone);
             this.gboxNextOfKin.Controls.Add(this.label35);
             this.gboxNextOfKin.Controls.Add(this.label37);
             this.gboxNextOfKin.Controls.Add(this.txtStuNextOfKinName);
@@ -1021,6 +1024,16 @@ namespace Residence_Management_System.User_Controls
             this.gboxNextOfKin.Size = new System.Drawing.Size(360, 150);
             this.gboxNextOfKin.TabIndex = 133;
             this.gboxNextOfKin.Text = "Next Of Kin Details";
+            // 
+            // lblInvalidNOKPhone
+            // 
+            this.lblInvalidNOKPhone.AutoSize = true;
+            this.lblInvalidNOKPhone.ForeColor = System.Drawing.Color.Red;
+            this.lblInvalidNOKPhone.Location = new System.Drawing.Point(226, 86);
+            this.lblInvalidNOKPhone.Name = "lblInvalidNOKPhone";
+            this.lblInvalidNOKPhone.Size = new System.Drawing.Size(76, 15);
+            this.lblInvalidNOKPhone.TabIndex = 170;
+            this.lblInvalidNOKPhone.Text = "InvalidPhone";
             // 
             // label35
             // 
@@ -1079,6 +1092,7 @@ namespace Residence_Management_System.User_Controls
             this.txtStuNextOfKinPhone.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtStuNextOfKinPhone.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtStuNextOfKinPhone.Location = new System.Drawing.Point(76, 105);
+            this.txtStuNextOfKinPhone.MaxLength = 10;
             this.txtStuNextOfKinPhone.Name = "txtStuNextOfKinPhone";
             this.txtStuNextOfKinPhone.PasswordChar = '\0';
             this.txtStuNextOfKinPhone.PlaceholderText = "023 456 7891";
@@ -1196,6 +1210,7 @@ namespace Residence_Management_System.User_Controls
             this.txtStudentNo.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtStudentNo.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtStudentNo.Location = new System.Drawing.Point(73, 60);
+            this.txtStudentNo.MaxLength = 8;
             this.txtStudentNo.Name = "txtStudentNo";
             this.txtStudentNo.PasswordChar = '\0';
             this.txtStudentNo.PlaceholderText = "e.g 12345678";
@@ -1237,6 +1252,8 @@ namespace Residence_Management_System.User_Controls
             // gboxStudentInfor
             // 
             this.gboxStudentInfor.AutoScroll = true;
+            this.gboxStudentInfor.Controls.Add(this.lblStuInvalidPhone);
+            this.gboxStudentInfor.Controls.Add(this.lblStuInvalidEmail);
             this.gboxStudentInfor.Controls.Add(this.label33);
             this.gboxStudentInfor.Controls.Add(this.label29);
             this.gboxStudentInfor.Controls.Add(this.cBoxStuNationality);
@@ -1263,6 +1280,26 @@ namespace Residence_Management_System.User_Controls
             this.gboxStudentInfor.Size = new System.Drawing.Size(509, 275);
             this.gboxStudentInfor.TabIndex = 0;
             this.gboxStudentInfor.Text = "Student Personal Information";
+            // 
+            // lblStuInvalidPhone
+            // 
+            this.lblStuInvalidPhone.AutoSize = true;
+            this.lblStuInvalidPhone.ForeColor = System.Drawing.Color.Red;
+            this.lblStuInvalidPhone.Location = new System.Drawing.Point(362, 101);
+            this.lblStuInvalidPhone.Name = "lblStuInvalidPhone";
+            this.lblStuInvalidPhone.Size = new System.Drawing.Size(76, 15);
+            this.lblStuInvalidPhone.TabIndex = 169;
+            this.lblStuInvalidPhone.Text = "InvalidPhone";
+            // 
+            // lblStuInvalidEmail
+            // 
+            this.lblStuInvalidEmail.AutoSize = true;
+            this.lblStuInvalidEmail.ForeColor = System.Drawing.Color.Red;
+            this.lblStuInvalidEmail.Location = new System.Drawing.Point(109, 98);
+            this.lblStuInvalidEmail.Name = "lblStuInvalidEmail";
+            this.lblStuInvalidEmail.Size = new System.Drawing.Size(71, 15);
+            this.lblStuInvalidEmail.TabIndex = 136;
+            this.lblStuInvalidEmail.Text = "InvalidEmail";
             // 
             // label33
             // 
@@ -1590,8 +1627,7 @@ namespace Residence_Management_System.User_Controls
             this.cBoxStuGender.ItemHeight = 30;
             this.cBoxStuGender.Items.AddRange(new object[] {
             "Male",
-            "Female",
-            "Other"});
+            "Female"});
             this.cBoxStuGender.Location = new System.Drawing.Point(272, 174);
             this.cBoxStuGender.Name = "cBoxStuGender";
             this.cBoxStuGender.Size = new System.Drawing.Size(200, 36);
@@ -1683,6 +1719,7 @@ namespace Residence_Management_System.User_Controls
             this.txtStuPhoneNo.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtStuPhoneNo.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtStuPhoneNo.Location = new System.Drawing.Point(274, 118);
+            this.txtStuPhoneNo.MaxLength = 10;
             this.txtStuPhoneNo.Name = "txtStuPhoneNo";
             this.txtStuPhoneNo.PasswordChar = '\0';
             this.txtStuPhoneNo.PlaceholderText = "023 456 7891";
@@ -1921,5 +1958,8 @@ namespace Residence_Management_System.User_Controls
         private System.Windows.Forms.Panel panel2;
         public System.Windows.Forms.Label lblInvalidEmpPhone;
         public System.Windows.Forms.Label lblInvalidEmpEmail;
+        public System.Windows.Forms.Label lblStuInvalidPhone;
+        public System.Windows.Forms.Label lblStuInvalidEmail;
+        public System.Windows.Forms.Label lblInvalidNOKPhone;
     }
 }

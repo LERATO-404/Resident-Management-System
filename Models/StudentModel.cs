@@ -46,7 +46,7 @@ namespace Residence_Management_System.Models
 		}
 		
 		public StudentModel(string aFirstName, string aLstName,string aEmailAddress,string aPhoneNumber,string aGender,string 
-		aDOB,string aNationality,string aStudentType, string aCourseName, string aNextOfKinName, string aNextOfKinPhone, int aUserId){
+		aDOB,string aNationality,string aStudentType, string aCourseName, string aNextOfKinName, string aNextOfKinPhone){
 		
 			_firstName = aFirstName;
 			_lastName = aLstName;
@@ -59,7 +59,7 @@ namespace Residence_Management_System.Models
 			_courseName = aCourseName;
 			_nextOfKinFullName = aNextOfKinName;
 			_nextOfKinPhone = aNextOfKinPhone;
-			UserId = aUserId;
+			//UserId = aUserId;
 		}
 		
 		public int StudentId{
@@ -113,7 +113,7 @@ namespace Residence_Management_System.Models
 		public string StudentType{
 			get {return _studentType;}
 			set { 
-				if(value == "Freshman" || value =="Sophomore" || value == "Junior" || value == "Senior"){
+				if(value == "Freshmen" || value =="Sophomore" || value == "Junior" || value == "Senior"){
 					_studentType = value;
 				}
 				else{

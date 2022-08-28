@@ -145,8 +145,8 @@ namespace Residence_Management_System.Repository
 		
 		
 		public void AddStudent(Models.StudentModel std){
-			string sqlInsertStudent = @"INSERT INTO [students](firstName,lastName,emailAddress,phoneNumber, gender,dOB,nationality,studentType, courseName,nextOfKinFullName, nextOfKinPhone, userId)"+ 
-			"VALUES(@firstName,@lastName,@emailAddress,@phoneNumber,@gender,@dOB,@nationality,@studentType,@courseName,@nextOfKinFullName,@nextOfKinPhone, @userId)";
+			string sqlInsertStudent = @"INSERT INTO [students](firstName,lastName,emailAddress,phoneNumber, gender,dOB,nationality,studentType, courseName,nextOfKinFullName, nextOfKinPhone)"+ 
+			"VALUES(@firstName,@lastName,@emailAddress,@phoneNumber,@gender,@dOB,@nationality,@studentType,@courseName,@nextOfKinFullName,@nextOfKinPhone)";
 
             using (SqlConnection con = new SqlConnection(myAdminMethod.GetConnection()))
             {
@@ -167,7 +167,7 @@ namespace Residence_Management_System.Repository
                 cmd.Parameters.Add("@courseName", SqlDbType.VarChar).Value = std.CourseName;
                 cmd.Parameters.Add("@nextOfKinFullName", SqlDbType.VarChar).Value = std.NextOfKinFullName;
                 cmd.Parameters.Add("@nextOfKinPhone", SqlDbType.VarChar).Value = std.NextOfKinPhone;
-                cmd.Parameters.Add("@userId", SqlDbType.Int).Value = std.UserId;
+                //cmd.Parameters.Add("@userId", SqlDbType.Int).Value = std.UserId;
 
 
                 try
