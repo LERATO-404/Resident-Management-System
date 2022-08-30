@@ -16,6 +16,7 @@ namespace Residence_Management_System.Repository
 		
 		public static readonly ProtectPassword userPasswordProtect = new ProtectPassword();
         private readonly MyMethods myUserMethod = new MyMethods();
+        
         public void AddUser(Models.UserModel usM){
 			
 			string sqlInsert = @"INSERT INTO [users](firstName,lastName,emailAddress,phoneNumber,dOB,jobTitle,jobType,username ,password)"+
@@ -53,8 +54,10 @@ namespace Residence_Management_System.Repository
                 }
             }	
 		}
-		
-		public void LoginUser(string username, string password)
+
+       
+
+        public void LoginUser(string username, string password)
 		{
 
             using (SqlConnection con = new SqlConnection(myUserMethod.GetConnection()))

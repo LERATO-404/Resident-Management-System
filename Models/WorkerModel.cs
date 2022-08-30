@@ -21,42 +21,46 @@ namespace Residence_Management_System.Models
 		private string _jobType;
 		private string _startDate;
 		private int _userId; // addedBy
-		
-		
-		
-		public WorkerModel(){
+        
+
+        public WorkerModel(){
 			
 		}
 		
-		public WorkerModel(int aId, string aFirstName, string aLstName,string aEmailAddress,string aPhoneNumber,string aDOB,string aGender,string aJobTitle,string aJobType, string aStartDate, int aUserId){
-			_id = aId;
-			_firstName = aFirstName;
-			_lastName = aLstName;
-			_emailAddress = aEmailAddress;
-			_phoneNumber = aPhoneNumber;
-			_dOB = aDOB;
-			Gender = aGender;
-			JobTitle = aJobTitle;
-			JobType = aJobType;
-			_startDate = aStartDate;
-			UserId = aUserId;
+		public WorkerModel(string aFirstName, string aLastName,string aEmailAddress,string aPhoneNumber, string aDOB, string aGender, string aJobTitle,string aJobType, string aStartDate){
+
 			
-		}
-		
-		public WorkerModel(string aFirstName, string aLastName,string aEmailAddress,string aPhoneNumber,string aDOB, string aGender, string aJobTitle,string aJobType, string aStartDate){
-			
-			_firstName = aFirstName;
-			_lastName = aLastName;
-			_emailAddress = aEmailAddress;
-			_phoneNumber = aPhoneNumber;
-			_dOB = aDOB;
-            Gender = aGender;
-            JobTitle = aJobTitle;
-			JobType = aJobType;
-			_startDate = aStartDate;
+			this._firstName = aFirstName;
+			this._lastName = aLastName;
+			this._emailAddress = aEmailAddress;
+			this._phoneNumber = aPhoneNumber;
+			this._dOB = aDOB;
+			this.Gender = aGender;
+			this.JobTitle = aJobTitle;
+			this.JobType = aJobType;
+			this._startDate = aStartDate;
 			//UserId = aUserId;
 		}
-		
+
+     
+        public WorkerModel(int aId,string aFirstName, string aLstName, string aEmailAddress, string aPhoneNumber, string aDOB, string aGender, string aJobTitle, string aJobType, string aStartDate)
+		{
+
+			this.WorkerId = aId;
+			this._firstName = aFirstName;
+			this._lastName = aLstName;
+			this._emailAddress = aEmailAddress;
+			this._phoneNumber = aPhoneNumber;
+			this._dOB = aDOB;
+			this.Gender = aGender;
+			this.JobTitle = aJobTitle;
+			this.JobType = aJobType;
+			this._startDate = aStartDate;
+			//UserId = aUserId;
+
+		}
+
+
 		public int WorkerId{
 			get {return _id;}
 			set {_id = value;}
@@ -83,7 +87,8 @@ namespace Residence_Management_System.Models
 			set {_phoneNumber = value;}
 		}
 		
-		public string DateOfBirth{
+		public string DateOfBirth
+		{
 			get {return _dOB;}
 			set {_dOB = value;}
 		}
@@ -111,7 +116,7 @@ namespace Residence_Management_System.Models
 					_jobTitle = value;
 				}
 				else{
-					_jobTitle = "Guest";
+					_jobTitle = "";
 				}
 			}
 		}
@@ -119,27 +124,29 @@ namespace Residence_Management_System.Models
 		public string JobType{
 			get {return _jobType;}
 			set {
-				if(value == "Security" || value =="Cleaner" || value == "Gardener" || value == "Constructor"){
+				if(value == "Security" || value == "Residence-Receptionist" || value == "Garden-Manager" || value == "Gardener" || value == "Cleaning-Manager" || value == "Residence-housekeeper" || value == "Parking-attendant")
+				{
 					_jobType = value;
 				}
 				else{
-					_jobType = "other";
+					_jobType = "";
 				}
 			}
 		}
 		
-		public string StartDate{
+		public string StartDate
+		{
 			get {return _startDate;}
 			set { _startDate = value; }
 		}
 		
 		
-		[ForeignKey("UserModel")]
+	//[ForeignKey("UserModel")]
 		public int UserId { 
 			get{ return _userId; }
 			set{ _userId = value; }
 		} 
-		public virtual UserModel UserModel { get; set; }
+		//public virtual UserModel UserModel { get; set; }
 		
 	}
 }

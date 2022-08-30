@@ -622,7 +622,7 @@ namespace Residence_Management_System.User_Controls
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvReservations.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
-            this.dgvReservations.ColumnHeadersHeight = 4;
+            this.dgvReservations.ColumnHeadersHeight = 30;
             this.dgvReservations.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
@@ -650,7 +650,7 @@ namespace Residence_Management_System.User_Controls
             this.dgvReservations.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.dgvReservations.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
             this.dgvReservations.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            this.dgvReservations.ThemeStyle.HeaderStyle.Height = 4;
+            this.dgvReservations.ThemeStyle.HeaderStyle.Height = 30;
             this.dgvReservations.ThemeStyle.ReadOnly = false;
             this.dgvReservations.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
             this.dgvReservations.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
@@ -690,6 +690,7 @@ namespace Residence_Management_System.User_Controls
             this.btnDeleteReservation.Size = new System.Drawing.Size(110, 33);
             this.btnDeleteReservation.TabIndex = 188;
             this.btnDeleteReservation.Text = "Delete";
+            this.btnDeleteReservation.Click += new System.EventHandler(this.btnDeleteReservation_Click);
             // 
             // btnDisplayReservations
             // 
@@ -742,8 +743,12 @@ namespace Residence_Management_System.User_Controls
             this.cboxShowReservations.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.cboxShowReservations.ItemHeight = 30;
             this.cboxShowReservations.Items.AddRange(new object[] {
-            "Shared Rooms",
-            "Single Rooms"});
+            "Reservation",
+            "Single",
+            "Shared",
+            "staying",
+            "leaving",
+            "not-sure"});
             this.cboxShowReservations.Location = new System.Drawing.Point(91, 33);
             this.cboxShowReservations.Name = "cboxShowReservations";
             this.cboxShowReservations.Size = new System.Drawing.Size(200, 36);
@@ -809,8 +814,9 @@ namespace Residence_Management_System.User_Controls
             this.cboxRecessStatus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.cboxRecessStatus.ItemHeight = 30;
             this.cboxRecessStatus.Items.AddRange(new object[] {
-            "Staying",
-            "Leaving"});
+            "staying",
+            "leaving",
+            "not-sure"});
             this.cboxRecessStatus.Location = new System.Drawing.Point(37, 234);
             this.cboxRecessStatus.Name = "cboxRecessStatus";
             this.cboxRecessStatus.Size = new System.Drawing.Size(200, 36);
@@ -927,6 +933,7 @@ namespace Residence_Management_System.User_Controls
             this.btnReserve.Size = new System.Drawing.Size(110, 33);
             this.btnReserve.TabIndex = 0;
             this.btnReserve.Text = "Reserve";
+            this.btnReserve.Click += new System.EventHandler(this.btnReserve_Click);
             // 
             // cboxBedandChairUsage
             // 
@@ -940,10 +947,10 @@ namespace Residence_Management_System.User_Controls
             this.cboxBedandChairUsage.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.cboxBedandChairUsage.ItemHeight = 30;
             this.cboxBedandChairUsage.Items.AddRange(new object[] {
-            "R:Bed & Chair",
-            "S:Bed & Chair",
-            "R:Bed & S:Chair",
-            "R:Chair & S:Bed"});
+            "R:Bed-Chair",
+            "S:Bed-Chair",
+            "R:Bed-S:Chair",
+            "R:Chair-S:Bed"});
             this.cboxBedandChairUsage.Location = new System.Drawing.Point(37, 179);
             this.cboxBedandChairUsage.Name = "cboxBedandChairUsage";
             this.cboxBedandChairUsage.Size = new System.Drawing.Size(200, 36);

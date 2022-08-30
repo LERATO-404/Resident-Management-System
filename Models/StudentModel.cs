@@ -19,6 +19,7 @@ namespace Residence_Management_System.Models
 		private string _dOB;
 		private string _nationality;
 		private string _studentType;
+		private int _studentNo;
 		private string _courseName;
 		private string _nextOfKinFullName;
 		private string _nextOfKinPhone;
@@ -29,7 +30,7 @@ namespace Residence_Management_System.Models
 		}
 		
 		public StudentModel(int aStudentId, string aFirstName, string aLstName,string aEmailAddress,string aPhoneNumber,string aGender,string 
-		aDOB,string aNationality,string aStudentType, string aCourseName, string aNextOfKinName, string aNextOfKinPhone, int aUserId){
+		aDOB,string aNationality,int aStudentNo, string aStudentType, string aCourseName, string aNextOfKinName, string aNextOfKinPhone, int aUserId){
 			_studentId = aStudentId;
 			_firstName = aFirstName;
 			_lastName = aLstName;
@@ -38,16 +39,18 @@ namespace Residence_Management_System.Models
 			Gender = aGender;
 			_dOB = aDOB;
 			_nationality = aNationality;
+			_studentNo = aStudentNo;
 			StudentType = aStudentType;
 			_courseName = aCourseName;
 			_nextOfKinFullName = aNextOfKinName;
 			_nextOfKinPhone = aNextOfKinPhone;
 			UserId = aUserId;
 		}
-		
-		public StudentModel(string aFirstName, string aLstName,string aEmailAddress,string aPhoneNumber,string aGender,string 
-		aDOB,string aNationality,string aStudentType, string aCourseName, string aNextOfKinName, string aNextOfKinPhone){
-		
+
+		public StudentModel(string aFirstName, string aLstName, string aEmailAddress, string aPhoneNumber, string aGender, string
+		aDOB, string aNationality, int aStudentNo, string aStudentType, string aCourseName, string aNextOfKinName, string aNextOfKinPhone)
+		{
+			
 			_firstName = aFirstName;
 			_lastName = aLstName;
 			_emailAddress = aEmailAddress;
@@ -55,13 +58,14 @@ namespace Residence_Management_System.Models
 			Gender = aGender;
 			_dOB = aDOB;
 			_nationality = aNationality;
+			_studentNo = aStudentNo;
 			StudentType = aStudentType;
 			_courseName = aCourseName;
 			_nextOfKinFullName = aNextOfKinName;
 			_nextOfKinPhone = aNextOfKinPhone;
 			//UserId = aUserId;
 		}
-		
+
 		public int StudentId{
 			get {return _studentId;}
 			set {_studentId = value;}
@@ -109,7 +113,12 @@ namespace Residence_Management_System.Models
 			get {return _nationality;}
 			set {_nationality = value;}
 		}
-		
+		public int StudentNo
+		{
+			get { return _studentNo; }
+			set { _studentNo = value; }
+		}
+
 		public string StudentType{
 			get {return _studentType;}
 			set { 

@@ -19,7 +19,7 @@ namespace Residence_Management_System.User_Controls
         private readonly AdminRepo rpA = new AdminRepo();
         private readonly MyMethods myMethod = new MyMethods();
         private readonly IsValid extraMethodIsValid = new IsValid();
-        
+
 
         public UC_register()
         {
@@ -32,16 +32,16 @@ namespace Residence_Management_System.User_Controls
 
         }
 
-        
+
 
 
         //==========methods============================
         public Boolean isEmpEmptyInput()
         {
-            if (String.IsNullOrEmpty(txtEmpFirstName.Text) == true || String.IsNullOrEmpty(txtEmpLastName.Text) == true ||
-            String.IsNullOrEmpty(txtEmpEmail.Text) == true || String.IsNullOrEmpty(txtEmpPhoneNo.Text) == true || String.IsNullOrEmpty(cBoxGender.Text) == true ||
-            String.IsNullOrEmpty(cBoxEmpJobTitle.Text) == true || String.IsNullOrEmpty(cBoxEmpJobType.Text) == true ||
-            String.IsNullOrEmpty(dtpEmpDob.Text) == true)
+            if ((string.IsNullOrEmpty(txtEmpFirstName.Text) == true) || (string.IsNullOrEmpty(txtEmpLastName.Text) == true) ||
+            (string.IsNullOrEmpty(txtEmpEmail.Text) == true) || (string.IsNullOrEmpty(txtEmpPhoneNo.Text) == true) || (string.IsNullOrEmpty(cBoxGender.Text) == true) ||
+            (string.IsNullOrEmpty(cBoxEmpJobTitle.Text) == true) || (string.IsNullOrEmpty(cBoxEmpJobType.Text) == true) ||
+            (string.IsNullOrEmpty(dtpEmpDob.Text) == true))
             {
                 return true;
             }
@@ -113,8 +113,8 @@ namespace Residence_Management_System.User_Controls
 
             if(isStuEmptyInput() == false && extraMethodIsValid.IsValidEmailAddress(stuEmail, lblStuInvalidEmail) == true && extraMethodIsValid.IsValidPhoneNumber(stuPhone, lblStuInvalidPhone) == true && extraMethodIsValid.IsValidPhoneNumber(nxtOfKinPhone, lblInvalidNOKPhone))
             {
-                Models.StudentModel createdStudent = new Models.StudentModel(txtEmpFirstName.Text.Trim(), txtEmpLastName.Text.Trim(), txtStuEmail.Text.Trim(), txtStuPhoneNo.Text.Trim(), cBoxStuGender.Text.Trim(),
-                dtpStuDob.Text.Trim(), cBoxStuNationality.Text.Trim(), cboxStudentType.Text.Trim(), txtCourseName.Text.Trim(), txtStuNextOfKinName.Text.Trim(), txtStuNextOfKinPhone.Text.Trim());
+                Models.StudentModel createdStudent = new Models.StudentModel(txtStuFirstName.Text.Trim(), txtStuLastName.Text.Trim(), txtStuEmail.Text.Trim(), txtStuPhoneNo.Text.Trim(), cBoxStuGender.Text.Trim(),
+                dtpStuDob.Text.Trim(), cBoxStuNationality.Text.Trim(),int.Parse(txtStudentNo.Text), cboxStudentType.Text.Trim(), txtCourseName.Text.Trim(), txtStuNextOfKinName.Text.Trim(), txtStuNextOfKinPhone.Text.Trim());
                 rpA.AddStudent(createdStudent);
             }
             else
@@ -129,9 +129,11 @@ namespace Residence_Management_System.User_Controls
         {
             string empEmail = txtEmpEmail.Text.Trim();
             string empPhone = txtEmpPhoneNo.Text.Trim();
+
             if (isEmpEmptyInput() == false && extraMethodIsValid.IsValidEmailAddress(empEmail, lblInvalidEmpEmail) == true && extraMethodIsValid.IsValidPhoneNumber(empPhone, lblInvalidEmpPhone) == true)
             {
-                Models.WorkerModel createdWorker = new Models.WorkerModel(txtEmpFirstName.Text.Trim(), txtEmpLastName.Text.Trim(), empEmail, empPhone,dtpEmpDob.Text.Trim(), cBoxGender.Text.Trim(),cBoxEmpJobTitle.Text.Trim(), cBoxEmpJobType.Text.Trim(), dateStartDate.Text.Trim());
+                
+                Models.WorkerModel createdWorker = new Models.WorkerModel(txtEmpFirstName.Text.Trim(), txtEmpLastName.Text.Trim(), empEmail, empPhone,dtpEmpDob.Text, cBoxGender.Text.Trim(),cBoxEmpJobTitle.Text.Trim(), cBoxEmpJobType.Text.Trim(), dtpStartDate.Text);
                 rpA.AddWorker(createdWorker);
             }
             else
@@ -139,6 +141,85 @@ namespace Residence_Management_System.User_Controls
                 MessageBox.Show("Please fill all the boxes with * to add a worker!..", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
 
+        }
+
+        private void btnDeleteEmployee_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                
+                if (txtEmployeeIdentifier.Text != "")
+                {
+                    string employeeToToDelete = rpA.SelectedEmployeeToDelete(int.Parse(txtEmployeeIdentifier.Text));
+                    myMethod.RemoveById(int.Parse(txtEmployeeIdentifier.Text), employeeToToDelete);
+                }
+                else
+                {
+                    MessageBox.Show("Please enter the Id of the resource you want to delete!..", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Invalid Id, Please enter Id number (firstcolumn) of the resource you want to delete!..", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnDisplayEmployee_Click(object sender, EventArgs e)
+        {
+            if(String.IsNullOrEmpty(txtEmployeeIdentifier.Text) == false)
+            {
+                Models.WorkerModel viewWorkerDetails = new Models.WorkerModel();
+                bool isInputValid = Int32.TryParse(txtEmployeeIdentifier.Text, out int id);
+                if(isInputValid == true)
+                {
+                    rpA.ViewEmployeeDetails(id, viewWorkerDetails);
+                    txtEmpFirstName.Text = viewWorkerDetails.FirstName;
+                    txtEmpLastName.Text = viewWorkerDetails.LastName;
+                    txtEmpEmail.Text = viewWorkerDetails.EmailAddress;
+                    txtEmpPhoneNo.Text = viewWorkerDetails.PhoneNumber;
+                    dtpEmpDob.Text = viewWorkerDetails.DateOfBirth;
+                    cBoxGender.Text = viewWorkerDetails.Gender;
+                    cBoxEmpJobTitle.Text = viewWorkerDetails.JobTitle;
+                    cBoxEmpJobType.Text = viewWorkerDetails.JobType;
+                    dtpStartDate.Text = viewWorkerDetails.StartDate;
+                }
+                else
+                {
+                    MessageBox.Show("Invalid worker Id entered!!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                
+            }
+            else
+            {
+                MessageBox.Show("Please enter the employee Id of the worker you want to view!..", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            string x = ((String.IsNullOrEmpty(txtEmployeeIdentifier.Text) == true) && (isEmpEmptyInput() == true)) ? "Please enter the employee Id of the worker you want to update!.. " : "Please fill all the boxes with *";
+            if (String.IsNullOrEmpty(txtEmployeeIdentifier.Text) == false && (isEmpEmptyInput() == false))
+            {
+                Models.WorkerModel viewWorkerDetails = new Models.WorkerModel(txtEmpFirstName.Text, txtEmpLastName.Text, txtEmpEmail.Text, txtEmpPhoneNo.Text, dtpEmpDob.Text, cBoxGender.Text, cBoxEmpJobTitle.Text, cBoxEmpJobType.Text, dtpStartDate.Text);
+                bool isInputValid = Int32.TryParse(txtEmployeeIdentifier.Text, out int id);
+                if (isInputValid == true)
+                {
+                    rpA.UpdateWorker(id, viewWorkerDetails);
+                }
+                else
+                {
+                    MessageBox.Show("Invalid worker Id entered!!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+            }
+            else
+            {
+                MessageBox.Show(x, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+
+            
         }
     }
 }

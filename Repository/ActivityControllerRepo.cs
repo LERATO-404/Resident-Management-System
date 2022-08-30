@@ -18,9 +18,11 @@ namespace Residence_Management_System.Repository
         
 
         public void AllocateStudentToActivity(Models.ActivityModel stdAct){
-			string sqlInsertActivity = @"INSERT INTO [activityParticipation](activityName,activityDescription,participatingGender,allocatedDate, studentParticipant,addedBy)"+ 
-			"VALUES(@activityName,@activityDescription,@participatingGender,@allocatedDate,@studentParticipant,@addedBy)";
+			string sqlInsertActivity = @"INSERT INTO [activityParticipation](activityName,activityDescription,semesterParticipating,allocatedDate, studentParticipant)"+
+            "VALUES(@activityName,@activityDescription,@semesterParticipating,@allocatedDate,@studentParticipant)";
+
            
+
             using (SqlConnection con = new SqlConnection(myActMethod.GetConnection()))
             {
                 if (con.State != ConnectionState.Open) { con.Open(); }
@@ -29,13 +31,15 @@ namespace Residence_Management_System.Repository
                 {
                     CommandType = CommandType.Text
                 };
+                
                 cmd.Parameters.Add("@activityName", SqlDbType.VarChar).Value = stdAct.ActivityName;
                 cmd.Parameters.Add("@activityDescription", SqlDbType.VarChar).Value = stdAct.ActivityDescription;
-                cmd.Parameters.Add("@participatingGender", SqlDbType.VarChar).Value = stdAct.ParticipatingGender;
+                cmd.Parameters.Add("@semesterParticipating", SqlDbType.VarChar).Value = stdAct.ParticipatingGender;
                 cmd.Parameters.Add("@allocatedDate", SqlDbType.VarChar).Value = stdAct.AllocatedDate;
                 cmd.Parameters.Add("@studentParticipant", SqlDbType.Int).Value = stdAct.StudentId;
-                cmd.Parameters.Add("@addedBy", SqlDbType.Int).Value = stdAct.UserId;
+                //cmd.Parameters.Add("@addedBy", SqlDbType.Int).Value = stdAct.UserId;
 
+               
                 try
                 {
                     cmd.ExecuteNonQuery();
@@ -52,8 +56,45 @@ namespace Residence_Management_System.Repository
                 }
             }
 		}
-		
-		public void RemoveActivityById(int actId){
+
+
+        public void AddTotalPoints(Models.ActivityModel stdAct)
+        {
+           
+            string sqlInsertPoints = @"INSERT INTO [points](studentId, totalPoint)" +
+            "VALUES(@studentId, @totalPoint)";
+
+            using (SqlConnection con = new SqlConnection(myActMethod.GetConnection()))
+            {
+                if (con.State != ConnectionState.Open) { con.Open(); }
+
+               
+                SqlCommand cmd2 = new SqlCommand(sqlInsertPoints, con)
+                {
+                    CommandType = CommandType.Text
+                };
+                
+                cmd2.Parameters.Add("@studentId", SqlDbType.VarChar).Value = stdAct.StudentId;
+                cmd2.Parameters.Add("@totalPoint", SqlDbType.VarChar).Value = stdAct.TotalPoints;
+
+                try
+                {
+                    cmd2.ExecuteNonQuery();
+                    //MessageBox.Show("Activity participation added successfully", "Information", (MessageBoxButtons)MessageBoxButton.OK, MessageBoxIcon.Information);
+                }
+                catch (Exception ex)
+                {
+                   MessageBox.Show("Failed to add activity \n" + ex.Message, "Error", (MessageBoxButtons)MessageBoxButton.OK, MessageBoxIcon.Error);
+                }
+                finally
+                {
+                    cmd2.Dispose();
+                    //if (con.State == ConnectionState.Open) { con.Close(); }
+                }
+            }
+        }
+
+        public void RemoveActivityById(int actId){
 			string sqlDeleteActivity = @"DELETE FROM [activityParticipation] WHERE studentNumber = '"+actId+"'";
 
             using (SqlConnection con = new SqlConnection(myActMethod.GetConnection())) {

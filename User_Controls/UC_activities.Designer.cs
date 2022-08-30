@@ -29,9 +29,9 @@ namespace Residence_Management_System.User_Controls
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.guna2TabControl1 = new Guna.UI2.WinForms.Guna2TabControl();
             this.addParticipant = new System.Windows.Forms.TabPage();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
@@ -81,20 +81,21 @@ namespace Residence_Management_System.User_Controls
             this.label28 = new System.Windows.Forms.Label();
             this.showActivities = new System.Windows.Forms.TabPage();
             this.gboxDisplayActivities = new Guna.UI2.WinForms.Guna2GroupBox();
+            this.gboxDeleteAct = new Guna.UI2.WinForms.Guna2GroupBox();
+            this.btnDeleteActivity = new Guna.UI2.WinForms.Guna2Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtActivityIdentifier = new Guna.UI2.WinForms.Guna2TextBox();
             this.dgvActivities = new Guna.UI2.WinForms.Guna2DataGridView();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
-            this.btnDeleteActivity = new Guna.UI2.WinForms.Guna2Button();
+            this.label17 = new System.Windows.Forms.Label();
+            this.cboxFilterBy = new Guna.UI2.WinForms.Guna2ComboBox();
             this.btnDisplayActivities = new Guna.UI2.WinForms.Guna2Button();
-            this.txtActivityIdentifier = new Guna.UI2.WinForms.Guna2TextBox();
             this.cboxShowActivities = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
-            this.gboxDeleteAct = new Guna.UI2.WinForms.Guna2GroupBox();
             this.btnCancelActivityInput = new Guna.UI2.WinForms.Guna2Button();
-            this.cboxFilterBy = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.label17 = new System.Windows.Forms.Label();
+            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
             this.guna2TabControl1.SuspendLayout();
             this.addParticipant.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -106,9 +107,9 @@ namespace Residence_Management_System.User_Controls
             this.guna2GroupBox1.SuspendLayout();
             this.showActivities.SuspendLayout();
             this.gboxDisplayActivities.SuspendLayout();
+            this.gboxDeleteAct.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvActivities)).BeginInit();
             this.guna2Panel2.SuspendLayout();
-            this.gboxDeleteAct.SuspendLayout();
             this.SuspendLayout();
             // 
             // guna2TabControl1
@@ -225,10 +226,12 @@ namespace Residence_Management_System.User_Controls
             this.btnAddActivity.Size = new System.Drawing.Size(110, 33);
             this.btnAddActivity.TabIndex = 2;
             this.btnAddActivity.Text = "Add";
+            this.btnAddActivity.Click += new System.EventHandler(this.btnAddActivity_Click);
             // 
             // guna2GroupBox2
             // 
             this.guna2GroupBox2.AutoScroll = true;
+            this.guna2GroupBox2.Controls.Add(this.checkedListBox1);
             this.guna2GroupBox2.Controls.Add(this.gboxW);
             this.guna2GroupBox2.Controls.Add(this.gboxC);
             this.guna2GroupBox2.Controls.Add(this.gboxHP);
@@ -769,9 +772,9 @@ namespace Residence_Management_System.User_Controls
             this.cboxSemesterParticipating.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.cboxSemesterParticipating.ItemHeight = 30;
             this.cboxSemesterParticipating.Items.AddRange(new object[] {
-            "First Semester ",
-            "Second Semester",
-            "Both Semesters"});
+            "First-Semester ",
+            "Second-Semester",
+            "Both-Semesters"});
             this.cboxSemesterParticipating.Location = new System.Drawing.Point(512, 32);
             this.cboxSemesterParticipating.Name = "cboxSemesterParticipating";
             this.cboxSemesterParticipating.Size = new System.Drawing.Size(200, 36);
@@ -894,38 +897,98 @@ namespace Residence_Management_System.User_Controls
             this.gboxDisplayActivities.TabIndex = 177;
             this.gboxDisplayActivities.Text = "Display Activities";
             // 
+            // gboxDeleteAct
+            // 
+            this.gboxDeleteAct.AutoScroll = true;
+            this.gboxDeleteAct.Controls.Add(this.btnDeleteActivity);
+            this.gboxDeleteAct.Controls.Add(this.label4);
+            this.gboxDeleteAct.Controls.Add(this.txtActivityIdentifier);
+            this.gboxDeleteAct.CustomBorderColor = System.Drawing.Color.White;
+            this.gboxDeleteAct.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.gboxDeleteAct.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.gboxDeleteAct.Location = new System.Drawing.Point(605, 0);
+            this.gboxDeleteAct.Name = "gboxDeleteAct";
+            this.gboxDeleteAct.Size = new System.Drawing.Size(263, 185);
+            this.gboxDeleteAct.TabIndex = 182;
+            this.gboxDeleteAct.Text = "Delete entry";
+            // 
+            // btnDeleteActivity
+            // 
+            this.btnDeleteActivity.Animated = true;
+            this.btnDeleteActivity.BorderRadius = 10;
+            this.btnDeleteActivity.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDeleteActivity.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnDeleteActivity.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnDeleteActivity.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnDeleteActivity.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnDeleteActivity.FillColor = System.Drawing.Color.Red;
+            this.btnDeleteActivity.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnDeleteActivity.ForeColor = System.Drawing.Color.White;
+            this.btnDeleteActivity.Location = new System.Drawing.Point(72, 128);
+            this.btnDeleteActivity.Name = "btnDeleteActivity";
+            this.btnDeleteActivity.Size = new System.Drawing.Size(110, 33);
+            this.btnDeleteActivity.TabIndex = 188;
+            this.btnDeleteActivity.Text = "Delete";
+            // 
+            // label4
+            // 
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.label4.Location = new System.Drawing.Point(16, 57);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(90, 13);
+            this.label4.TabIndex = 186;
+            this.label4.Text = "Activity number";
+            // 
+            // txtActivityIdentifier
+            // 
+            this.txtActivityIdentifier.BorderRadius = 5;
+            this.txtActivityIdentifier.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtActivityIdentifier.DefaultText = "";
+            this.txtActivityIdentifier.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtActivityIdentifier.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtActivityIdentifier.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtActivityIdentifier.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtActivityIdentifier.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtActivityIdentifier.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtActivityIdentifier.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtActivityIdentifier.Location = new System.Drawing.Point(19, 73);
+            this.txtActivityIdentifier.Name = "txtActivityIdentifier";
+            this.txtActivityIdentifier.PasswordChar = '\0';
+            this.txtActivityIdentifier.PlaceholderText = "";
+            this.txtActivityIdentifier.SelectedText = "";
+            this.txtActivityIdentifier.Size = new System.Drawing.Size(224, 36);
+            this.txtActivityIdentifier.TabIndex = 184;
+            // 
             // dgvActivities
             // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.dgvActivities.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvActivities.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvActivities.BackgroundColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            this.dgvActivities.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvActivities.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.dgvActivities.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.dgvActivities.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvActivities.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 9F);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvActivities.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvActivities.ColumnHeadersHeight = 4;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvActivities.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvActivities.EnableHeadersVisualStyles = false;
+            this.dgvActivities.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 9F);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvActivities.DefaultCellStyle = dataGridViewCellStyle6;
             this.dgvActivities.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvActivities.Location = new System.Drawing.Point(3, 191);
             this.dgvActivities.Name = "dgvActivities";
             this.dgvActivities.RowHeadersVisible = false;
-            this.dgvActivities.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvActivities.Size = new System.Drawing.Size(865, 226);
             this.dgvActivities.TabIndex = 179;
             this.dgvActivities.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
@@ -962,23 +1025,38 @@ namespace Residence_Management_System.User_Controls
             this.guna2Panel2.Size = new System.Drawing.Size(584, 148);
             this.guna2Panel2.TabIndex = 178;
             // 
-            // btnDeleteActivity
+            // label17
             // 
-            this.btnDeleteActivity.Animated = true;
-            this.btnDeleteActivity.BorderRadius = 10;
-            this.btnDeleteActivity.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnDeleteActivity.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnDeleteActivity.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnDeleteActivity.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnDeleteActivity.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnDeleteActivity.FillColor = System.Drawing.Color.Red;
-            this.btnDeleteActivity.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnDeleteActivity.ForeColor = System.Drawing.Color.White;
-            this.btnDeleteActivity.Location = new System.Drawing.Point(72, 128);
-            this.btnDeleteActivity.Name = "btnDeleteActivity";
-            this.btnDeleteActivity.Size = new System.Drawing.Size(110, 33);
-            this.btnDeleteActivity.TabIndex = 188;
-            this.btnDeleteActivity.Text = "Delete";
+            this.label17.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.label17.Location = new System.Drawing.Point(82, 82);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(49, 13);
+            this.label17.TabIndex = 189;
+            this.label17.Text = "Filter by";
+            // 
+            // cboxFilterBy
+            // 
+            this.cboxFilterBy.BackColor = System.Drawing.Color.Transparent;
+            this.cboxFilterBy.BorderRadius = 5;
+            this.cboxFilterBy.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cboxFilterBy.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboxFilterBy.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cboxFilterBy.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cboxFilterBy.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cboxFilterBy.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cboxFilterBy.ItemHeight = 30;
+            this.cboxFilterBy.Items.AddRange(new object[] {
+            "High Performance",
+            "Competitive",
+            "Recreational",
+            "Well-being"});
+            this.cboxFilterBy.Location = new System.Drawing.Point(137, 73);
+            this.cboxFilterBy.Name = "cboxFilterBy";
+            this.cboxFilterBy.Size = new System.Drawing.Size(200, 36);
+            this.cboxFilterBy.TabIndex = 188;
             // 
             // btnDisplayActivities
             // 
@@ -998,26 +1076,6 @@ namespace Residence_Management_System.User_Controls
             this.btnDisplayActivities.TabIndex = 183;
             this.btnDisplayActivities.Text = "Display";
             // 
-            // txtActivityIdentifier
-            // 
-            this.txtActivityIdentifier.BorderRadius = 5;
-            this.txtActivityIdentifier.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtActivityIdentifier.DefaultText = "";
-            this.txtActivityIdentifier.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtActivityIdentifier.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtActivityIdentifier.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtActivityIdentifier.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtActivityIdentifier.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtActivityIdentifier.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtActivityIdentifier.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtActivityIdentifier.Location = new System.Drawing.Point(19, 73);
-            this.txtActivityIdentifier.Name = "txtActivityIdentifier";
-            this.txtActivityIdentifier.PasswordChar = '\0';
-            this.txtActivityIdentifier.PlaceholderText = "";
-            this.txtActivityIdentifier.SelectedText = "";
-            this.txtActivityIdentifier.Size = new System.Drawing.Size(224, 36);
-            this.txtActivityIdentifier.TabIndex = 184;
-            // 
             // cboxShowActivities
             // 
             this.cboxShowActivities.BackColor = System.Drawing.Color.Transparent;
@@ -1036,18 +1094,6 @@ namespace Residence_Management_System.User_Controls
             this.cboxShowActivities.Name = "cboxShowActivities";
             this.cboxShowActivities.Size = new System.Drawing.Size(200, 36);
             this.cboxShowActivities.TabIndex = 185;
-            // 
-            // label4
-            // 
-            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.label4.Location = new System.Drawing.Point(16, 57);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(90, 13);
-            this.label4.TabIndex = 186;
-            this.label4.Text = "Activity number";
             // 
             // label14
             // 
@@ -1081,21 +1127,6 @@ namespace Residence_Management_System.User_Controls
             this.label16.TabIndex = 175;
             this.label16.Text = "Activities";
             // 
-            // gboxDeleteAct
-            // 
-            this.gboxDeleteAct.AutoScroll = true;
-            this.gboxDeleteAct.Controls.Add(this.btnDeleteActivity);
-            this.gboxDeleteAct.Controls.Add(this.label4);
-            this.gboxDeleteAct.Controls.Add(this.txtActivityIdentifier);
-            this.gboxDeleteAct.CustomBorderColor = System.Drawing.Color.White;
-            this.gboxDeleteAct.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.gboxDeleteAct.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.gboxDeleteAct.Location = new System.Drawing.Point(605, 0);
-            this.gboxDeleteAct.Name = "gboxDeleteAct";
-            this.gboxDeleteAct.Size = new System.Drawing.Size(263, 185);
-            this.gboxDeleteAct.TabIndex = 182;
-            this.gboxDeleteAct.Text = "Delete entry";
-            // 
             // btnCancelActivityInput
             // 
             this.btnCancelActivityInput.Animated = true;
@@ -1115,38 +1146,13 @@ namespace Residence_Management_System.User_Controls
             this.btnCancelActivityInput.TabIndex = 180;
             this.btnCancelActivityInput.Text = "Cancel";
             // 
-            // cboxFilterBy
+            // checkedListBox1
             // 
-            this.cboxFilterBy.BackColor = System.Drawing.Color.Transparent;
-            this.cboxFilterBy.BorderRadius = 5;
-            this.cboxFilterBy.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cboxFilterBy.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboxFilterBy.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cboxFilterBy.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cboxFilterBy.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.cboxFilterBy.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.cboxFilterBy.ItemHeight = 30;
-            this.cboxFilterBy.Items.AddRange(new object[] {
-            "High Performance",
-            "Competitive",
-            "Recreational",
-            "Well-being"});
-            this.cboxFilterBy.Location = new System.Drawing.Point(137, 73);
-            this.cboxFilterBy.Name = "cboxFilterBy";
-            this.cboxFilterBy.Size = new System.Drawing.Size(200, 36);
-            this.cboxFilterBy.TabIndex = 188;
-            // 
-            // label17
-            // 
-            this.label17.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.label17.Location = new System.Drawing.Point(82, 82);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(49, 13);
-            this.label17.TabIndex = 189;
-            this.label17.Text = "Filter by";
+            this.checkedListBox1.FormattingEnabled = true;
+            this.checkedListBox1.Location = new System.Drawing.Point(369, 3);
+            this.checkedListBox1.Name = "checkedListBox1";
+            this.checkedListBox1.Size = new System.Drawing.Size(120, 22);
+            this.checkedListBox1.TabIndex = 179;
             // 
             // UC_activities
             // 
@@ -1176,11 +1182,11 @@ namespace Residence_Management_System.User_Controls
             this.showActivities.ResumeLayout(false);
             this.showActivities.PerformLayout();
             this.gboxDisplayActivities.ResumeLayout(false);
+            this.gboxDeleteAct.ResumeLayout(false);
+            this.gboxDeleteAct.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvActivities)).EndInit();
             this.guna2Panel2.ResumeLayout(false);
             this.guna2Panel2.PerformLayout();
-            this.gboxDeleteAct.ResumeLayout(false);
-            this.gboxDeleteAct.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1250,5 +1256,6 @@ namespace Residence_Management_System.User_Controls
         private Guna.UI2.WinForms.Guna2Button btnCancelActivityInput;
         private Guna.UI2.WinForms.Guna2ComboBox cboxFilterBy;
         private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.CheckedListBox checkedListBox1;
     }
 }

@@ -13,10 +13,11 @@ namespace Residence_Management_System.Models
 		private int _activityId;
 		private string _activityName;
 		private string _activityDescription;
-		private string _particpatingGender;
-		private string _allocatedDate;
+		private string _particpatingSemester;
+		private DateTime _allocatedDate;
 		private int _studentId;
 		private int _userId;
+		private int _totalPoints;
 		
 		
 		public ActivityModel(){
@@ -24,27 +25,33 @@ namespace Residence_Management_System.Models
 			
 		}
 		
-		public ActivityModel(int anActivityId, string anActivityName, string aAnctivityDescription, string aParticpatingGender ,string anAllocatedDate,  int aStudentId, int aUserId){
+		public ActivityModel(int anActivityId, string anActivityName, string aAnctivityDescription, string aParticipatingSemeter , DateTime anAllocatedDate,  int aStudentId, int aUserId){
 			_activityId = anActivityId;
 			_activityName = anActivityName;
 			_activityDescription = aAnctivityDescription;
-			ParticipatingGender = aParticpatingGender;
+			_particpatingSemester = aParticipatingSemeter;
 			_allocatedDate = anAllocatedDate;
 			StudentId = aStudentId;
 			UserId  = aUserId;
 			
 		}
 		
-		public ActivityModel(string anActivityName, string aAnctivityDescription, string aParticpatingGender ,string anAllocatedDate,  int aStudentId, int aUserId){
+		public ActivityModel(string anActivityName, string aAnctivityDescription, string aParticipatingSemeter, DateTime anAllocatedDate,  int aStudentId){
 			_activityName = anActivityName;
 			_activityDescription = aAnctivityDescription;
-			ParticipatingGender = aParticpatingGender;
+			_particpatingSemester = aParticipatingSemeter;
 			_allocatedDate = anAllocatedDate;
 			StudentId = aStudentId;
-			UserId  = aUserId;
+			//UserId  = aUserId;
 			
 		}
-		
+
+		public ActivityModel(int aStudentId, int aTotalPoints)
+		{
+			StudentId = aStudentId;
+			_totalPoints = aTotalPoints;
+		}
+
 
 		public int ActivityId{
 			get {return _activityId;}
@@ -62,23 +69,31 @@ namespace Residence_Management_System.Models
 			set {_activityDescription = value;}
 		}
 		
-		public string AllocatedDate{
+		public DateTime AllocatedDate
+		{
 			get {return _allocatedDate;}
 			set {_allocatedDate = value;}
 		}
-		
+
+		public int TotalPoints
+		{
+			get { return _totalPoints; }
+			set { _totalPoints = value; }
+		}
+
 		public string ParticipatingGender{
-			get {return _particpatingGender;}
+			get {return _particpatingSemester;}
 			set {
-				if(value == "Male" || value =="Female" || value == "Both"){
-					_particpatingGender = value;
+				if(value == "First-Semester" || value == "Second-Semester" || value == "Both-Semesters")
+				{
+					_particpatingSemester = value;
 				}
 				else{
-					_particpatingGender = null;
+					_particpatingSemester = null;
 				}
 			}
 		}
-		
+
 		// Foreign key 
 		[Display(Name = "StudentModel")] 
 		public int StudentId { 

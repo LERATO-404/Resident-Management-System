@@ -42,50 +42,30 @@ namespace Residence_Management_System.ExtraMethods
             }
         }
 
+
+
+
+
         /*
-        public int GetUserId()
+        public int GetUserId(string lbl)
         {
             string sqlId = @"SELECT * FROM [users] WHERE username = @username"; // userName = lblWelcome.Text
             using (SqlConnection con = new SqlConnection(GetConnection()))
             {
                 if (con.State != ConnectionState.Open) { con.Open(); }
                 SqlCommand cmd = new SqlCommand(sqlId, con);
-                using (LandingPage userName = new LandingPage()){
-                    cmd.Parameters.AddWithValue("@username", userName.lblWelcomeUsername.Text);
+                cmd.Parameters.AddWithValue("@username", lbl);
+                try
+                {
                     return Convert.ToInt32(cmd.ExecuteScalar());
+                }
+                finally
+                {
+                    cmd.Dispose();
                 }
             }
         }
         */
-
-        public int GetUserId()
-        {
-            
-            using (SqlConnection con = new SqlConnection(GetConnection()))
-            {
-                SqlDataAdapter adapt = new SqlDataAdapter();
-                DataSet ds = new DataSet();
-                using (LandingPage userNm = new LandingPage())
-                {
-                    string sqlId = @"SELECT * FROM [users] WHERE userName LIKE '" + userNm.lblWelcomeUsername.Text + "'";
-                    SqlCommand cmd = new SqlCommand(sqlId, con);
-                    adapt.SelectCommand = cmd;
-                    adapt = new SqlDataAdapter(cmd);
-                    adapt.Fill(ds);
-                    try
-                    {
-                        int loginID = Convert.ToInt32(ds.Tables[0].Rows[0][0]);
-                        return loginID;
-                    }
-                    finally
-                    {
-                        adapt.Dispose();
-                        ds.Dispose();
-                        cmd.Dispose();
-                    }
-                }   
-            }   
-        }
 
         public int CountRecords(string sqlCount)
         {
@@ -112,23 +92,21 @@ namespace Residence_Management_System.ExtraMethods
             {
                 if (con.State != ConnectionState.Open) { con.Open(); }
 
-                string sqlUsers = selectTable;
-
                 DataSet ds = new DataSet();
-                SqlCommand cmd = new SqlCommand(sqlUsers, con);
+                SqlCommand cmd = new SqlCommand(selectTable, con);
                 SqlDataAdapter adapt = new SqlDataAdapter()
                 {
                     SelectCommand = cmd
                 };
                 try
                 {
-                    adapt.Fill(ds, "UserInfo");
+                    adapt.Fill(ds, "Info");
                     dgv.DataSource = ds;
-                    dgv.DataMember = "UserInfo";
+                    dgv.DataMember = "Info";
                 }
-                catch (Exception)
+                catch (Exception ex)
                 {
-                    MessageBox.Show("Please select the table you want to display", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Please select the table you want to display"+ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 finally
                 {
@@ -206,5 +184,44 @@ namespace Residence_Management_System.ExtraMethods
             return _jobTitle;
         }
 
-    }
+        
+        public bool CheckIfIdExist(int id, string tableToCheck)
+        {
+            using (SqlConnection con = new SqlConnection(GetConnection()))
+            {
+                string query  = ""; 
+                //string query = @"SELECT * FROM {tableToCheck} WHERE userName LIKE '" + userNm.lblWelcomeUsername.Text + "'";
+                SqlCommand cmd = new SqlCommand(query, con);
+                SqlDataReader myReader = cmd.ExecuteReader();
+
+                try
+                {
+                    //cmd.ExecuteNonQuery();
+                    if (myReader.HasRows)
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        myReader.Close();
+                        MessageBox.Show("Id:"+id+" does not exist", "Information", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message + GetConnection().ToString());
+                    myReader.Close();
+                    
+                }
+                finally
+                {
+                    myReader.Close();
+                    cmd.Dispose();
+                }
+                return false;
+            }
+           
+        }
+    }   
 }

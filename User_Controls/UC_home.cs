@@ -16,7 +16,7 @@ namespace Residence_Management_System.User_Controls
     {
         private readonly HomeRepo rph = new HomeRepo();
         private readonly MyMethods myM = new MyMethods();
-
+        
         public UC_home()
         {
             InitializeComponent();
@@ -30,10 +30,12 @@ namespace Residence_Management_System.User_Controls
 
         private void UC_home_Load(object sender, EventArgs e)
         {
-            
+            //LandingPage lp = new LandingPage();
+            //lp.GetUserId()
             lblTotalRooms.Text = rph.CountRoom().ToString();
             lblTotalStudent.Text = rph.CountStudents().ToString();
             lblTotalEmployees.Text = rph.CountWorkers().ToString();
+            
         }
 
         private void btnDelete_Click(object sender, EventArgs e)

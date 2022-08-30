@@ -75,31 +75,6 @@ namespace Residence_Management_System.Models
 			}
 		}
 		
-		/*
-		public string BedUsed{
-			get {return _bedUsed;}
-			set {
-				if(value == "Residence-Bed" || value =="Student-Bed"){
-					_bedUsed = value;
-				}
-				else{
-					_bedUsed = null;
-				}
-			}
-		}
-		
-		public string ChairUsed{
-			get {return _chairUsed;}
-			set {
-				if(value == "Residence-Chair" || value =="Student-Chair"){
-					_chairUsed = value;
-				}
-				else{
-					_chairUsed = null;
-				}
-			}
-		}*/
-		
 		public string RoomAvailability{
 			get {return _roomAvailability; }
 			set {

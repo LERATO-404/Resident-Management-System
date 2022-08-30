@@ -22,6 +22,10 @@ namespace Residence_Management_System.Repository
             return @"DELETE [rooms] WHERE roomId = '" + id + "'";
         }
 
+        public string SelectedReservationToDelete(int id)
+        {
+            return @"DELETE [reservations] WHERE reservationId = '" + id + "'";
+        }
 
         public string SelectedRoomsTable(ComboBox cs, string tb)
         {
@@ -47,6 +51,38 @@ namespace Residence_Management_System.Repository
                 case 5:
                     tname = @"SELECT * FROM [rooms] WHERE roomAvailability LIKE '" + tb + "'";
                     break;
+                default:
+                    tname = "";
+                    break;
+            }
+            return tname;
+        }
+
+        public string SelectedReservationTable(ComboBox cs, string tb)
+        {
+            int tableSelected = cs.SelectedIndex;
+            string tname;
+            switch (tableSelected)
+            {
+                case 0:
+                    tname = @"SELECT * FROM [reservations]";
+                    break;
+                case 1:
+                    tname = @"SELECT * FROM [rooms] WHERE roomType LIKE '" + tb + "'";
+                    break;
+                case 2:
+                    tname = @"SELECT * FROM [rooms] WHERE roomType LIKE '" + tb + "'";
+                    break;
+                case 3:
+                    tname = @"SELECT * FROM [reservations] WHERE recessStatus LIKE '" + tb + "'";
+                    break;
+                case 4:
+                    tname = @"SELECT * FROM [reservations] WHERE recessStatus LIKE '" + tb + "'";
+                    break;
+                case 5:
+                    tname = @"SELECT * FROM [reservations] WHERE recessStatus LIKE '" + tb + "'";
+                    break;
+
                 default:
                     tname = "";
                     break;
@@ -167,8 +203,9 @@ namespace Residence_Management_System.Repository
 		
 		
 		public void ReserveRoomForStudent(Models.ReservationModel rms){
-			string sqlInsertReservation = @"INSERT INTO [reservations](studentId,roomId,reservedBy,recessStatus,gender,dateReserved)"+ 
-			"VALUES(@studentId,@roomId,@reservedBy,@recessStatus,@gender,@dateReserved)";
+            //aStudentNo,aRoomId,aBedAndChairUsage,aRecessStatus, aDateReserved
+            string sqlInsertReservation = @"INSERT INTO [reservations](studentId,roomId,bedAndChairUsage,recessStatus,dateReserved)" +
+            "VALUES(@StudentNo,@roomId,@aBedAndChairUsage,@recessStatus,@dateReserved)";
 
             using (SqlConnection con = new SqlConnection(myRoomMethod.GetConnection()))
             {
@@ -179,12 +216,11 @@ namespace Residence_Management_System.Repository
                     CommandType = CommandType.Text
                 };
 
-                cmd.Parameters.Add("@studentId", SqlDbType.VarChar).Value = rms.StudentId;
-                cmd.Parameters.Add("@roomId", SqlDbType.VarChar).Value = rms.RoomId;
-                cmd.Parameters.Add("@reservedBy", SqlDbType.VarChar).Value = rms.UserId;
+                cmd.Parameters.Add("@StudentNo", SqlDbType.Int).Value = rms.StudentId;
+                cmd.Parameters.Add("@roomId", SqlDbType.Int).Value = rms.RoomId;
+                cmd.Parameters.Add("@aBedAndChairUsage", SqlDbType.VarChar).Value = rms.BedAndChairUsage;
                 cmd.Parameters.Add("@recessStatus", SqlDbType.VarChar).Value = rms.RecessStatus;
-                cmd.Parameters.Add("@gender", SqlDbType.VarChar).Value = rms.Gender;
-                cmd.Parameters.Add("@dateReserved", SqlDbType.VarChar).Value = rms.DateReserved;
+                cmd.Parameters.Add("@dateReserved", SqlDbType.DateTime).Value = rms.DateReserved;
 
 
                 try

@@ -7,11 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
+using Residence_Management_System.ExtraMethods;
 
 namespace Residence_Management_System
 {
     public partial class LandingPage : Form
     {
+        //private readonly MyMethods myLandingMethod = new MyMethods();
         bool sideBarExpand;
         public LandingPage()
         {
@@ -31,12 +34,29 @@ namespace Residence_Management_System
         }
 
         //*********************methods****************
-
-
+        /*
+        public int GetUserId(string lbl)
+        {
+            string sqlId = @"SELECT userId, username FROM [users] WHERE username = '" + lbl + "'"; // userName = lblWelcome.Text
+            using (SqlConnection con = new SqlConnection(myLandingMethod.GetConnection()))
+            {
+                if (con.State != ConnectionState.Open) { con.Open(); }
+                SqlCommand cmd = new SqlCommand(sqlId, con);
+               
+                try
+                {
+                    return Convert.ToInt32(cmd.ExecuteScalar());
+                }
+                finally
+                {
+                    cmd.Dispose();
+                }
+            }
+        }*/
 
         private void LandingPage_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         

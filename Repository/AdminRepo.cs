@@ -15,8 +15,60 @@ namespace Residence_Management_System.Repository
     public class AdminRepo{
 
         private readonly MyMethods myAdminMethod = new MyMethods();
+
+        public string SelectedEmployeeToDelete(int id)
+        {
+            return @"DELETE [workers] WHERE workerId = '" + id + "'";
+        }
+
+        public Models.WorkerModel ViewEmployeeDetails(int id, Models.WorkerModel wkView)
+        {
+            string sqlEmployee = @"SELECT * FROM [workers] WHERE workerId ='" + id + "'";
+            using (SqlConnection con = new SqlConnection(myAdminMethod.GetConnection()))
+            {
+                if (con.State != ConnectionState.Open) { con.Open(); }
+
+                SqlCommand cmd = new SqlCommand(sqlEmployee, con)
+                {
+                    CommandType = CommandType.Text
+                };
+                SqlDataReader srd = cmd.ExecuteReader();
+                try
+                {
+                    if (srd.Read())
+                    {
+                        wkView.FirstName = srd["firstName"].ToString();
+                        wkView.LastName = srd["lastName"].ToString();
+                        wkView.EmailAddress = srd["emailAddress"].ToString();
+                        wkView.PhoneNumber = srd["phoneNumber"].ToString();
+                        wkView.DateOfBirth = srd["dOB"].ToString();
+                        wkView.Gender = srd["gender"].ToString();
+                        wkView.JobType = srd["jobTitle"].ToString();
+                        wkView.JobTitle = srd["jobType"].ToString();
+                        wkView.StartDate = srd["startDate"].ToString();
+                    }
+                    else
+                    {
+                        MessageBox.Show("No data found worker Id " + id.ToString(), "Error", (MessageBoxButtons)MessageBoxButton.OK, MessageBoxIcon.Error);
+                    }
+                    
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Failed to view worker. No worker in the system to view \n" +ex.Message,"Error", (MessageBoxButtons)MessageBoxButton.OK, MessageBoxIcon.Error);
+                }
+                finally
+                {
+                    srd.Close();
+                    cmd.Dispose();
+                }
+                return wkView;
+            }
+        
+        }
+        
         public void AddWorker(Models.WorkerModel wk){
-			string sqlInsertWorker = @"INSERT INTO [workers](firstName,lastName,emailAddress,phoneNumber,dOB,gender,jobTitle,jobType,startDate)"+
+			string sqlInsertWorker = @"INSERT INTO [workers](firstName,lastName,emailAddress,phoneNumber,dOB,gender,jobTitle,jobType,startDate)" +
             "VALUES(@firstName,@lastName,@emailAddress,@phoneNumber,@dOB,@gender,@jobTitle,@jobType,@startDate)";
 
             using (SqlConnection con = new SqlConnection(myAdminMethod.GetConnection()))
@@ -30,14 +82,14 @@ namespace Residence_Management_System.Repository
                 };
                 cmd.Parameters.Add("@firstName", SqlDbType.VarChar).Value = wk.FirstName;
                 cmd.Parameters.Add("@lastName", SqlDbType.VarChar).Value = wk.LastName;
-                cmd.Parameters.Add("@EmailAddress", SqlDbType.VarChar).Value = wk.EmailAddress;
+                cmd.Parameters.Add("@emailAddress", SqlDbType.VarChar).Value = wk.EmailAddress;
                 cmd.Parameters.Add("@phoneNumber", SqlDbType.VarChar).Value = wk.PhoneNumber;
-                cmd.Parameters.Add("@dob", SqlDbType.Date).Value = wk.DateOfBirth;
+                cmd.Parameters.Add("@dOB", SqlDbType.Date).Value = wk.DateOfBirth;
                 cmd.Parameters.Add("@gender", SqlDbType.VarChar).Value = wk.Gender;
                 cmd.Parameters.Add("@jobTitle", SqlDbType.VarChar).Value = wk.JobTitle;
                 cmd.Parameters.Add("@jobType", SqlDbType.VarChar).Value = wk.JobType;
                 cmd.Parameters.Add("@startDate", SqlDbType.Date).Value = wk.StartDate;
-                //cmd.Parameters.Add("@userId", SqlDbType.Int).Value = wk.UserModel;
+                //cmd.Parameters.Add("@addedBy", SqlDbType.Int).Value = wk.UserId;
 
 
                 try
@@ -47,7 +99,7 @@ namespace Residence_Management_System.Repository
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Failed to add worker \n" + ex.Message, "Error", (MessageBoxButtons)MessageBoxButton.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Failed to add worker \n" + ex.Message + wk.UserId.ToString(), "Error", (MessageBoxButtons)MessageBoxButton.OK, MessageBoxIcon.Error);
                 }
                 finally
                 {
@@ -59,35 +111,36 @@ namespace Residence_Management_System.Repository
 			
 		}
 		
-		public void UpdateWorker(int wId){
-			Models.WorkerModel wkUpdate = new Models.WorkerModel();
-			string sqlUpdateWorker = @"UPDATE [rooms] SET firstName=@firstName,lastName=@lastName,emailAddress=@emailAddress,
-			phoneNumber=@phoneNumber,
-			dOB=@dOB,jobTitle=@jobTitle,
-			jobType=@jobType,
-			startDate=@startDate WHERE workerId=@workerId";
+		public void UpdateWorker(int wId, Models.WorkerModel wkUpdate)
+        {
+			 
+			string sqlUpdateWorker = @"UPDATE [workers] SET firstName=@firstName,lastName=@lastName,emailAddress=@emailAddress,
+			phoneNumber=@phoneNumber,dOB=@dOB,gender=@gender,jobTitle=@jobTitle,jobType=@jobType,startDate=@startDate WHERE workerId=@workerId";
 
             using (SqlConnection con = new SqlConnection(myAdminMethod.GetConnection()))
             {
                 if (con.State != ConnectionState.Open) { con.Open(); }
                 
 
-                SqlCommand cmd = new SqlCommand(sqlUpdateWorker, con);
+                SqlCommand cmd = new SqlCommand(sqlUpdateWorker, con) {
+                    CommandType = CommandType.Text
+                };
                 SqlDataAdapter adapt = new SqlDataAdapter() {
                     UpdateCommand = new SqlCommand(sqlUpdateWorker, con)
                 };
-				
 
-				cmd.CommandType = CommandType.Text;
-				cmd.Parameters.Add("@workerId", SqlDbType.Int).Value = wId;
-				cmd.Parameters.Add("@firstName", SqlDbType.VarChar).Value = wkUpdate.FirstName;
-				cmd.Parameters.Add("@lastName", SqlDbType.VarChar).Value = wkUpdate.LastName;
-				cmd.Parameters.Add("@EmailAddress", SqlDbType.VarChar).Value = wkUpdate.EmailAddress;
-				cmd.Parameters.Add("@phoneNumber", SqlDbType.VarChar).Value = wkUpdate.PhoneNumber;
-				cmd.Parameters.Add("@dob", SqlDbType.Date).Value = wkUpdate.DateOfBirth;
-				cmd.Parameters.Add("@jobTitle", SqlDbType.VarChar).Value = wkUpdate.JobTitle;
-				cmd.Parameters.Add("@jobType", SqlDbType.VarChar).Value = wkUpdate.JobType;
-				cmd.Parameters.Add("@startDate", SqlDbType.VarChar).Value = wkUpdate.StartDate;
+
+
+                adapt.UpdateCommand.Parameters.Add("@workerId", SqlDbType.Int).Value = wId;
+                adapt.UpdateCommand.Parameters.Add("@firstName", SqlDbType.VarChar).Value = wkUpdate.FirstName;
+                adapt.UpdateCommand.Parameters.Add("@lastName", SqlDbType.VarChar).Value = wkUpdate.LastName;
+                adapt.UpdateCommand.Parameters.Add("@emailAddress", SqlDbType.VarChar).Value = wkUpdate.EmailAddress;
+                adapt.UpdateCommand.Parameters.Add("@phoneNumber", SqlDbType.VarChar).Value = wkUpdate.PhoneNumber;
+                adapt.UpdateCommand.Parameters.Add("@dOB", SqlDbType.VarChar).Value = wkUpdate.DateOfBirth;
+                adapt.UpdateCommand.Parameters.Add("@gender", SqlDbType.VarChar).Value = wkUpdate.Gender;
+                adapt.UpdateCommand.Parameters.Add("@jobTitle", SqlDbType.VarChar).Value = wkUpdate.JobTitle;
+                adapt.UpdateCommand.Parameters.Add("@jobType", SqlDbType.VarChar).Value = wkUpdate.JobType;
+                adapt.UpdateCommand.Parameters.Add("@startDate", SqlDbType.VarChar).Value = wkUpdate.StartDate;
 
 				try
 				{
@@ -145,8 +198,8 @@ namespace Residence_Management_System.Repository
 		
 		
 		public void AddStudent(Models.StudentModel std){
-			string sqlInsertStudent = @"INSERT INTO [students](firstName,lastName,emailAddress,phoneNumber, gender,dOB,nationality,studentType, courseName,nextOfKinFullName, nextOfKinPhone)"+ 
-			"VALUES(@firstName,@lastName,@emailAddress,@phoneNumber,@gender,@dOB,@nationality,@studentType,@courseName,@nextOfKinFullName,@nextOfKinPhone)";
+			string sqlInsertStudent = @"INSERT INTO [students](firstName,lastName,emailAddress,phoneNumber, gender,dOB,nationality,studentNo,studentType, courseName,nextOfKinFullName, nextOfKinPhone)" + 
+			"VALUES(@firstName,@lastName,@emailAddress,@phoneNumber,@gender,@dOB,@nationality,@studentNo,@studentType,@courseName,@nextOfKinFullName,@nextOfKinPhone)";
 
             using (SqlConnection con = new SqlConnection(myAdminMethod.GetConnection()))
             {
@@ -163,6 +216,7 @@ namespace Residence_Management_System.Repository
                 cmd.Parameters.Add("@gender", SqlDbType.VarChar).Value = std.Gender;
                 cmd.Parameters.Add("@dob", SqlDbType.Date).Value = std.DateOfBirth;
                 cmd.Parameters.Add("@nationality", SqlDbType.VarChar).Value = std.Nationality;
+                cmd.Parameters.Add("@studentNo", SqlDbType.VarChar).Value = std.StudentNo;
                 cmd.Parameters.Add("@studentType", SqlDbType.VarChar).Value = std.StudentType;
                 cmd.Parameters.Add("@courseName", SqlDbType.VarChar).Value = std.CourseName;
                 cmd.Parameters.Add("@nextOfKinFullName", SqlDbType.VarChar).Value = std.NextOfKinFullName;
