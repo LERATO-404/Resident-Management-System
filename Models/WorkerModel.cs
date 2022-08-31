@@ -36,8 +36,8 @@ namespace Residence_Management_System.Models
 			this._phoneNumber = aPhoneNumber;
 			this._dOB = aDOB;
 			this.Gender = aGender;
-			this.JobTitle = aJobTitle;
-			this.JobType = aJobType;
+			JobTitle = aJobTitle;
+			JobType = aJobType;
 			this._startDate = aStartDate;
 			//UserId = aUserId;
 		}
@@ -53,8 +53,8 @@ namespace Residence_Management_System.Models
 			this._phoneNumber = aPhoneNumber;
 			this._dOB = aDOB;
 			this.Gender = aGender;
-			this.JobTitle = aJobTitle;
-			this.JobType = aJobType;
+			JobTitle = aJobTitle;
+			JobType = aJobType;
 			this._startDate = aStartDate;
 			//UserId = aUserId;
 

@@ -9,6 +9,7 @@ using System.Windows;
 using System.Windows.Forms;
 using MessageBox = System.Windows.Forms.MessageBox;
 using Residence_Management_System.ExtraMethods;
+using Residence_Management_System.Models;
 
 namespace Residence_Management_System.Repository
 {
@@ -21,7 +22,12 @@ namespace Residence_Management_System.Repository
             return @"DELETE [workers] WHERE workerId = '" + id + "'";
         }
 
-        public Models.WorkerModel ViewEmployeeDetails(int id, Models.WorkerModel wkView)
+        public string SelectedStudentToDelete(int id)
+        {
+            return @"DELETE [students] WHERE studentId = '" + id + "'";
+        }
+
+        public WorkerModel ViewEmployeeDetails(int id, WorkerModel wkView)
         {
             string sqlEmployee = @"SELECT * FROM [workers] WHERE workerId ='" + id + "'";
             using (SqlConnection con = new SqlConnection(myAdminMethod.GetConnection()))
@@ -66,7 +72,56 @@ namespace Residence_Management_System.Repository
             }
         
         }
-        
+
+        public StudentModel ViewStudentDetails(int id, StudentModel stView)
+        {
+            string sqlStudent = @"SELECT * FROM [students] WHERE studentId = '" + id + "'";
+            using (SqlConnection con = new SqlConnection(myAdminMethod.GetConnection()))
+            {
+                if (con.State != ConnectionState.Open) { con.Open(); }
+
+                SqlCommand cmd = new SqlCommand(sqlStudent, con)
+                {
+                    CommandType = CommandType.Text
+                };
+                SqlDataReader srd = cmd.ExecuteReader();
+                try
+                {
+                    if (srd.Read())
+                    {
+                        stView.FirstName = srd["firstName"].ToString();
+                        stView.LastName = srd["lastName"].ToString();
+                        stView.EmailAddress = srd["emailAddress"].ToString();
+                        stView.PhoneNumber = srd["phoneNumber"].ToString();
+                        stView.Gender = srd["gender"].ToString();
+                        stView.DateOfBirth = srd["dOB"].ToString();
+                        stView.NextOfKinFullName = srd["nextOfKinFullName"].ToString();
+                        stView.NextOfKinPhone = srd["nextOfKinPhone"].ToString();
+                        stView.StudentNo = (int)srd["studentNo"];
+                        stView.StudentType = srd["studentType"].ToString();
+                        stView.CourseName = srd["courseName"].ToString();
+                        stView.RegistrationStatus = srd["registrationStatus"].ToString();
+                    }
+                    else
+                    {
+                        MessageBox.Show("No data found student Id " + id.ToString(), "Error", (MessageBoxButtons)MessageBoxButton.OK, MessageBoxIcon.Error);
+                    }
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Failed to view student. No student in the system to view \n" + ex.Message, "Error", (MessageBoxButtons)MessageBoxButton.OK, MessageBoxIcon.Error);
+                }
+                finally
+                {
+                    srd.Close();
+                    cmd.Dispose();
+                }
+                return stView;
+            }
+
+        }
+
         public void AddWorker(Models.WorkerModel wk){
 			string sqlInsertWorker = @"INSERT INTO [workers](firstName,lastName,emailAddress,phoneNumber,dOB,gender,jobTitle,jobType,startDate)" +
             "VALUES(@firstName,@lastName,@emailAddress,@phoneNumber,@dOB,@gender,@jobTitle,@jobType,@startDate)";
@@ -197,9 +252,9 @@ namespace Residence_Management_System.Repository
 		}
 		
 		
-		public void AddStudent(Models.StudentModel std){
-			string sqlInsertStudent = @"INSERT INTO [students](firstName,lastName,emailAddress,phoneNumber, gender,dOB,nationality,studentNo,studentType, courseName,nextOfKinFullName, nextOfKinPhone)" + 
-			"VALUES(@firstName,@lastName,@emailAddress,@phoneNumber,@gender,@dOB,@nationality,@studentNo,@studentType,@courseName,@nextOfKinFullName,@nextOfKinPhone)";
+		public void AddStudent(StudentModel std){
+			string sqlInsertStudent = @"INSERT INTO [students](firstName,lastName,emailAddress,phoneNumber,gender,dOB,nextOfKinFullName,nextOfKinPhone,studentNo,studentType,courseName,registrationStatus)" +
+            "VALUES(@firstName,@lastName,@emailAddress,@phoneNumber,@gender,@dOB,@nextOfKinFullName,@nextOfKinPhone,@studentNo,@studentType,@courseName,@registrationStatus)";
 
             using (SqlConnection con = new SqlConnection(myAdminMethod.GetConnection()))
             {
@@ -215,12 +270,12 @@ namespace Residence_Management_System.Repository
                 cmd.Parameters.Add("@phoneNumber", SqlDbType.VarChar).Value = std.PhoneNumber;
                 cmd.Parameters.Add("@gender", SqlDbType.VarChar).Value = std.Gender;
                 cmd.Parameters.Add("@dob", SqlDbType.Date).Value = std.DateOfBirth;
-                cmd.Parameters.Add("@nationality", SqlDbType.VarChar).Value = std.Nationality;
+                cmd.Parameters.Add("@nextOfKinFullName", SqlDbType.VarChar).Value = std.NextOfKinFullName;
+                cmd.Parameters.Add("@nextOfKinPhone", SqlDbType.VarChar).Value = std.NextOfKinPhone;
                 cmd.Parameters.Add("@studentNo", SqlDbType.VarChar).Value = std.StudentNo;
                 cmd.Parameters.Add("@studentType", SqlDbType.VarChar).Value = std.StudentType;
                 cmd.Parameters.Add("@courseName", SqlDbType.VarChar).Value = std.CourseName;
-                cmd.Parameters.Add("@nextOfKinFullName", SqlDbType.VarChar).Value = std.NextOfKinFullName;
-                cmd.Parameters.Add("@nextOfKinPhone", SqlDbType.VarChar).Value = std.NextOfKinPhone;
+                cmd.Parameters.Add("@registrationStatus", SqlDbType.VarChar).Value = std.RegistrationStatus;
                 //cmd.Parameters.Add("@userId", SqlDbType.Int).Value = std.UserId;
 
 
@@ -243,49 +298,44 @@ namespace Residence_Management_System.Repository
 		}
 		
 		
-		public void UpdateStudentById(int stUpId){
-			Models.StudentModel stUpdate = new Models.StudentModel();
-			string sqlUpdateWorker = @"UPDATE [rooms] SET firstName=@firstName,lastName=@lastName,emailAddress=@emailAddress,
-			phoneNumber=@phoneNumber,
-			gender=@gender,
-			dOB=@dOB,nationality=@nationality,
-			studentType=@studentType,
-			courseName=@courseName,
-			nextOfKinFullName=@nextOfKinFullName,
-			nextOfKinPhone=@nextOfKinPhone,
-			WHERE studentId=@studentId";
+		public void UpdateStudentById(int stUpId, StudentModel stUpdate)
+        {
+			string sqlUpdateStudent = @"UPDATE [students] SET firstName=@firstName,lastName=@lastName,emailAddress=@emailAddress,
+			phoneNumber=@phoneNumber,gender=@gender,dOB=@dOB,nextOfKinFullName=@nextOfKinFullName,nextOfKinPhone=@nextOfKinPhone,studentNo=@studentNo,
+			studentType=@studentType,courseName=@courseName,registrationStatus=@registrationStatus WHERE studentId=@studentId";
 
             using (SqlConnection con = new SqlConnection(myAdminMethod.GetConnection()))
             {
                 if (con.State != ConnectionState.Open) { con.Open(); }
                 
-                SqlCommand cmd = new SqlCommand(sqlUpdateWorker, con) { 
+                SqlCommand cmd = new SqlCommand(sqlUpdateStudent, con) { 
                     CommandType = CommandType.Text
                 };
 
                 SqlDataAdapter adapt = new SqlDataAdapter()
                 {
-                    UpdateCommand = new SqlCommand(sqlUpdateWorker, con)
+                    UpdateCommand = new SqlCommand(sqlUpdateStudent, con)
                 };
 
-                cmd.Parameters.Add("@studentId", SqlDbType.Int).Value = stUpId;
-                cmd.Parameters.Add("@firstName", SqlDbType.VarChar).Value = stUpdate.FirstName;
-                cmd.Parameters.Add("@lastName", SqlDbType.VarChar).Value = stUpdate.LastName;
-                cmd.Parameters.Add("@EmailAddress", SqlDbType.VarChar).Value = stUpdate.EmailAddress;
-                cmd.Parameters.Add("@phoneNumber", SqlDbType.VarChar).Value = stUpdate.PhoneNumber;
-                cmd.Parameters.Add("@gender", SqlDbType.VarChar).Value = stUpdate.Gender;
-                cmd.Parameters.Add("@dob", SqlDbType.Date).Value = stUpdate.DateOfBirth;
-                cmd.Parameters.Add("@nationality", SqlDbType.VarChar).Value = stUpdate.Nationality;
-                cmd.Parameters.Add("@studentType", SqlDbType.VarChar).Value = stUpdate.StudentType;
-                cmd.Parameters.Add("@courseName", SqlDbType.VarChar).Value = stUpdate.CourseName;
-                cmd.Parameters.Add("@nextOfKinFullName", SqlDbType.VarChar).Value = stUpdate.NextOfKinFullName;
-                cmd.Parameters.Add("@nextOfKinPhone", SqlDbType.VarChar).Value = stUpdate.NextOfKinPhone;
+                adapt.UpdateCommand.Parameters.Add("@studentId", SqlDbType.VarChar).Value = stUpId;
+                adapt.UpdateCommand.Parameters.Add("@firstName", SqlDbType.VarChar).Value = stUpdate.FirstName;
+                adapt.UpdateCommand.Parameters.Add("@lastName", SqlDbType.VarChar).Value = stUpdate.LastName;
+                adapt.UpdateCommand.Parameters.Add("@EmailAddress", SqlDbType.VarChar).Value = stUpdate.EmailAddress;
+                adapt.UpdateCommand.Parameters.Add("@phoneNumber", SqlDbType.VarChar).Value = stUpdate.PhoneNumber;
+                adapt.UpdateCommand.Parameters.Add("@gender", SqlDbType.VarChar).Value = stUpdate.Gender;
+                adapt.UpdateCommand.Parameters.Add("@dob", SqlDbType.Date).Value = stUpdate.DateOfBirth;
+                adapt.UpdateCommand.Parameters.Add("@nextOfKinFullName", SqlDbType.VarChar).Value = stUpdate.NextOfKinFullName;
+                adapt.UpdateCommand.Parameters.Add("@nextOfKinPhone", SqlDbType.VarChar).Value = stUpdate.NextOfKinPhone;
+                adapt.UpdateCommand.Parameters.Add("@studentNo", SqlDbType.VarChar).Value = stUpdate.StudentNo;
+                adapt.UpdateCommand.Parameters.Add("@studentType", SqlDbType.VarChar).Value = stUpdate.StudentType;
+                adapt.UpdateCommand.Parameters.Add("@courseName", SqlDbType.VarChar).Value = stUpdate.CourseName;
+                adapt.UpdateCommand.Parameters.Add("@registrationStatus", SqlDbType.VarChar).Value = stUpdate.RegistrationStatus;
 
 
                 try
                 {
                     adapt.UpdateCommand.ExecuteNonQuery();
-                    MessageBox.Show("Student details updated successfully", "Update Worker Details", (MessageBoxButtons)MessageBoxButton.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Student details updated successfully", "Update Student Details", (MessageBoxButtons)MessageBoxButton.OK, MessageBoxIcon.Information);
                 }
                 catch (Exception ex)
                 {

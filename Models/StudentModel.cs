@@ -17,12 +17,12 @@ namespace Residence_Management_System.Models
 		private string _phoneNumber;
 		private string _gender;
 		private string _dOB;
-		private string _nationality;
-		private string _studentType;
-		private int _studentNo;
-		private string _courseName;
 		private string _nextOfKinFullName;
 		private string _nextOfKinPhone;
+		private int _studentNo;
+		private string _studentType;
+		private string _courseName;
+		private string _registrationStatus;
 		private int _userId;
 		
 		public StudentModel(){
@@ -30,7 +30,7 @@ namespace Residence_Management_System.Models
 		}
 		
 		public StudentModel(int aStudentId, string aFirstName, string aLstName,string aEmailAddress,string aPhoneNumber,string aGender,string 
-		aDOB,string aNationality,int aStudentNo, string aStudentType, string aCourseName, string aNextOfKinName, string aNextOfKinPhone, int aUserId){
+		aDOB, string aNextOfKinName, string aNextOfKinPhone, int aStudentNo, string aStudentType, string aCourseName, string aRegistrationStatus){
 			_studentId = aStudentId;
 			_firstName = aFirstName;
 			_lastName = aLstName;
@@ -38,17 +38,17 @@ namespace Residence_Management_System.Models
 			_phoneNumber = aPhoneNumber;
 			Gender = aGender;
 			_dOB = aDOB;
-			_nationality = aNationality;
+			_nextOfKinFullName = aNextOfKinName;
+			_nextOfKinPhone = aNextOfKinPhone;
 			_studentNo = aStudentNo;
 			StudentType = aStudentType;
 			_courseName = aCourseName;
-			_nextOfKinFullName = aNextOfKinName;
-			_nextOfKinPhone = aNextOfKinPhone;
-			UserId = aUserId;
+			RegistrationStatus = aRegistrationStatus;
+			//UserId = aUserId;
 		}
 
 		public StudentModel(string aFirstName, string aLstName, string aEmailAddress, string aPhoneNumber, string aGender, string
-		aDOB, string aNationality, int aStudentNo, string aStudentType, string aCourseName, string aNextOfKinName, string aNextOfKinPhone)
+		aDOB, string aNextOfKinName, string aNextOfKinPhone, int aStudentNo, string aStudentType, string aCourseName, string aRegistrationStatus)
 		{
 			
 			_firstName = aFirstName;
@@ -57,13 +57,13 @@ namespace Residence_Management_System.Models
 			_phoneNumber = aPhoneNumber;
 			Gender = aGender;
 			_dOB = aDOB;
-			_nationality = aNationality;
+			_nextOfKinFullName = aNextOfKinName;
+			_nextOfKinPhone = aNextOfKinPhone;
 			_studentNo = aStudentNo;
 			StudentType = aStudentType;
 			_courseName = aCourseName;
-			_nextOfKinFullName = aNextOfKinName;
-			_nextOfKinPhone = aNextOfKinPhone;
-			//UserId = aUserId;
+			RegistrationStatus = aRegistrationStatus;
+			//Us/UserId = aUserId;
 		}
 
 		public int StudentId{
@@ -108,11 +108,20 @@ namespace Residence_Management_System.Models
 			get {return _dOB;}
 			set {_dOB = value;}
 		}
-		
-		public string Nationality{
-			get {return _nationality;}
-			set {_nationality = value;}
+
+
+		public string NextOfKinFullName
+		{
+			get { return _nextOfKinFullName; }
+			set { _nextOfKinFullName = value; }
 		}
+
+		public string NextOfKinPhone
+		{
+			get { return _nextOfKinPhone; }
+			set { _nextOfKinPhone = value; }
+		}
+
 		public int StudentNo
 		{
 			get { return _studentNo; }
@@ -135,26 +144,34 @@ namespace Residence_Management_System.Models
 			get {return _courseName;}
 			set {_courseName = value;}
 		}
-		
-		
-		public string NextOfKinFullName{
-			get {return _nextOfKinFullName;}
-			set {_nextOfKinFullName = value;}
+
+		public string RegistrationStatus
+        {
+			get { return _registrationStatus; }
+			set
+			{
+				if (value == "Active" || value == "Not-Active")
+				{
+					_registrationStatus = value;
+				}
+				else
+				{
+					_registrationStatus = "";
+				}
+			}
 		}
-		
-		public string NextOfKinPhone{
-			get {return _nextOfKinPhone;}
-			set {_nextOfKinPhone = value;}
-		}
+
+
+
 		
 		// Foreign key 
-		[Display(Name = "UserModel")] 
+		//[Display(Name = "UserModel")] 
 		public int UserId { 
 			get{ return _userId; }
 			set{ _userId = value; }
 		} 
-		[ForeignKey("UserId")] 
-		public virtual UserModel users { get; set; }
+		//[ForeignKey("UserId")] 
+		//public virtual UserModel users { get; set; }*/
 	}
 }
 
