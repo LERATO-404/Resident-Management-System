@@ -78,7 +78,7 @@ namespace Residence_Management_System.Models
 		public string RoomAvailability{
 			get {return _roomAvailability; }
 			set {
-				if(value == "Fully-Occupied" || value =="Not-Fully-Occupied" || value == "Occupied"){
+				if(value == "Available" || value =="Not-Available"){
 					_roomAvailability = value;
 				}
 				else{

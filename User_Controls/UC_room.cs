@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Residence_Management_System.Repository;
 using Residence_Management_System.ExtraMethods;
+using Residence_Management_System.Models;
 
 namespace Residence_Management_System.User_Controls
 {
@@ -231,13 +232,39 @@ namespace Residence_Management_System.User_Controls
 
         private void updateRoombtn_Click(object sender, EventArgs e)
         {
+            string x = ((String.IsNullOrEmpty(txtRoomIdentifier.Text) == true) && (IsRoomInputEmpty() == true)) ? "Please enter the room Id of the room you want to update!.. " : "Please fill all the boxes with *";
+            if (String.IsNullOrEmpty(txtRoomIdentifier.Text) == false && (IsRoomInputEmpty() == false))
+            {
+                RoomModel updateRoomDetails = new RoomModel(txtRoomSymbolCode.Text, cboxFloor.Text,cboxRoomType.Text, cboxRoomAvailability.Text);
+                bool isInputValid = Int32.TryParse(txtRoomIdentifier.Text, out int id);
+                if (isInputValid == true)
+                {
+                    rRCR.UpdateRoomById(id, updateRoomDetails);
+                }
+                else
+                {
+                    MessageBox.Show("Invalid room Id entered!!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
 
+            }
+            else
+            {
+                MessageBox.Show(x, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void guna2Button2_Click(object sender, EventArgs e)
         {
             string selecteRoomsThat = rRCR.SelectedRoomsTable(cboxShowRooms, cboxShowRooms.Text);
-            myM.ViewTable(dgvRooms, selecteRoomsThat);
+            if(String.IsNullOrEmpty(selecteRoomsThat) == false)
+            {
+                myM.ViewTable(dgvRooms, selecteRoomsThat);
+            }
+            else
+            {
+                MessageBox.Show("First Select the table you want to view!!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+           
         }
 
        
@@ -303,6 +330,34 @@ namespace Residence_Management_System.User_Controls
             else
             {
                 MessageBox.Show("Please fill all the boxes with * to add a reservation!..", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            if (String.IsNullOrEmpty(txtRoomIdentifier.Text) == false)
+            {
+                RoomModel rm = new RoomModel();
+                bool isInputValid = Int32.TryParse(txtRoomIdentifier.Text, out int id);
+                if (isInputValid == true)
+                {
+                    rRCR.ViewRoomDetails(id, rm);
+                    txtRoomSymbolCode.Text = rm.RoomSymbolCode;
+                    cboxFloor.Text = rm.RoomFloor;
+                    cboxRoomType.Text = rm.RoomType;
+                    cboxRoomAvailability.Text = rm.RoomAvailability;
+                
+                }
+                else
+                {
+                    MessageBox.Show("Invalid room Id entered!!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+            }
+            else
+            {
+                MessageBox.Show("Please enter the room Id of the room you want to view!..", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

@@ -122,7 +122,7 @@ namespace Residence_Management_System.Repository
 
         }
 
-        public void AddWorker(Models.WorkerModel wk){
+        public void AddWorker(WorkerModel wk){
 			string sqlInsertWorker = @"INSERT INTO [workers](firstName,lastName,emailAddress,phoneNumber,dOB,gender,jobTitle,jobType,startDate)" +
             "VALUES(@firstName,@lastName,@emailAddress,@phoneNumber,@dOB,@gender,@jobTitle,@jobType,@startDate)";
 
@@ -166,7 +166,7 @@ namespace Residence_Management_System.Repository
 			
 		}
 		
-		public void UpdateWorker(int wId, Models.WorkerModel wkUpdate)
+		public void UpdateWorker(int wId, WorkerModel wkUpdate)
         {
 			 
 			string sqlUpdateWorker = @"UPDATE [workers] SET firstName=@firstName,lastName=@lastName,emailAddress=@emailAddress,

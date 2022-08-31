@@ -9,6 +9,7 @@ using System.Windows;
 using System.Windows.Forms;
 using MessageBox = System.Windows.Forms.MessageBox;
 using Residence_Management_System.ExtraMethods;
+using Residence_Management_System.Models;
 
 namespace Residence_Management_System.Repository
 {
@@ -46,9 +47,6 @@ namespace Residence_Management_System.Repository
                     tname = @"SELECT * FROM [rooms] WHERE roomAvailability LIKE '" + tb + "'";
                     break;
                 case 4:
-                    tname = @"SELECT * FROM [rooms] WHERE roomAvailability LIKE '" + tb + "'";
-                    break;
-                case 5:
                     tname = @"SELECT * FROM [rooms] WHERE roomAvailability LIKE '" + tb + "'";
                     break;
                 default:
@@ -90,7 +88,48 @@ namespace Residence_Management_System.Repository
             return tname;
         }
 
-        public void AddRoom(Models.RoomModel rm){
+        public RoomModel ViewRoomDetails(int id, RoomModel roomView)
+        {
+            string sqlStudent = @"SELECT * FROM [rooms] WHERE roomId = '" + id + "'";
+            using (SqlConnection con = new SqlConnection(myRoomMethod.GetConnection()))
+            {
+                if (con.State != ConnectionState.Open) { con.Open(); }
+
+                SqlCommand cmd = new SqlCommand(sqlStudent, con)
+                {
+                    CommandType = CommandType.Text
+                };
+                SqlDataReader srd = cmd.ExecuteReader();
+                try
+                {
+                    if (srd.Read())
+                    {
+                        roomView.RoomSymbolCode = srd["roomSymbolCode"].ToString();
+                        roomView.RoomFloor = srd["roomFloor"].ToString();
+                        roomView.RoomType = srd["roomType"].ToString();
+                        roomView.RoomAvailability = srd["roomAvailability"].ToString();
+                    }
+                    else
+                    {
+                        MessageBox.Show("No data found room Id " + id.ToString(), "Error", (MessageBoxButtons)MessageBoxButton.OK, MessageBoxIcon.Error);
+                    }
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Failed to view room. No room in the system to view \n" + ex.Message, "Error", (MessageBoxButtons)MessageBoxButton.OK, MessageBoxIcon.Error);
+                }
+                finally
+                {
+                    srd.Close();
+                    cmd.Dispose();
+                }
+                return roomView;
+            }
+
+        }
+
+        public void AddRoom(RoomModel rm){
 			string sqlInsertRoom = @"INSERT INTO [rooms](roomSymbolCode,roomFloor,roomType,roomAvailability)" +
             "VALUES(@roomSymbolCode,@roomFloor,@roomType,@roomAvailability)";
             using (SqlConnection con = new SqlConnection(myRoomMethod.GetConnection()))
@@ -125,8 +164,9 @@ namespace Residence_Management_System.Repository
             }
 		}
 		
-		public void UpdateRoomById(int id){
-			Models.RoomModel rmUpdate = new Models.RoomModel();
+		public void UpdateRoomById(int id, RoomModel rmUpdate)
+        {
+			 
 			string sqlUpdate = @"UPDATE [rooms] SET roomSymbolCode=@roomSymbolCode,roomFloor=@roomFloor,roomType=@roomType,roomAvailability=@roomAvailability WHERE roomId=@roomId";
 
             using (SqlConnection con = new SqlConnection(myRoomMethod.GetConnection()))
@@ -142,13 +182,13 @@ namespace Residence_Management_System.Repository
                 {
                     UpdateCommand = new SqlCommand(sqlUpdate, con)
                 };
-              
-                
-                cmd.Parameters.Add("@roomId", SqlDbType.Int).Value = id;
-                cmd.Parameters.Add("@roomSymbolCode", SqlDbType.VarChar).Value = rmUpdate.RoomSymbolCode;
-                cmd.Parameters.Add("@roomFloor", SqlDbType.VarChar).Value = rmUpdate.RoomFloor;
-                cmd.Parameters.Add("@roomType", SqlDbType.VarChar).Value = rmUpdate.RoomType;
-                cmd.Parameters.Add("@roomAvailability", SqlDbType.VarChar).Value = rmUpdate.RoomAvailability;
+
+
+                adapt.UpdateCommand.Parameters.Add("@roomId", SqlDbType.Int).Value = id;
+                adapt.UpdateCommand.Parameters.Add("@roomSymbolCode", SqlDbType.VarChar).Value = rmUpdate.RoomSymbolCode;
+                adapt.UpdateCommand.Parameters.Add("@roomFloor", SqlDbType.VarChar).Value = rmUpdate.RoomFloor;
+                adapt.UpdateCommand.Parameters.Add("@roomType", SqlDbType.VarChar).Value = rmUpdate.RoomType;
+                adapt.UpdateCommand.Parameters.Add("@roomAvailability", SqlDbType.VarChar).Value = rmUpdate.RoomAvailability;
 
 
                 try
@@ -202,7 +242,7 @@ namespace Residence_Management_System.Repository
 		}
 		
 		
-		public void ReserveRoomForStudent(Models.ReservationModel rms){
+		public void ReserveRoomForStudent(ReservationModel rms){
             //aStudentNo,aRoomId,aBedAndChairUsage,aRecessStatus, aDateReserved
             string sqlInsertReservation = @"INSERT INTO [reservations](studentId,roomId,bedAndChairUsage,recessStatus,dateReserved)" +
             "VALUES(@StudentNo,@roomId,@aBedAndChairUsage,@recessStatus,@dateReserved)";
@@ -241,7 +281,7 @@ namespace Residence_Management_System.Repository
 		}
 		
 		public void UpdateReservationDetails(int rId){
-			Models.ReservationModel rmUpdateReservation = new Models.ReservationModel();
+			ReservationModel rmUpdateReservation = new ReservationModel();
 			string sqlUpdateReservation = @"UPDATE [reservation] SET recessStatus=@recessStatus WHERE reservationId=@reservationId";
 
             using (SqlConnection con = new SqlConnection(myRoomMethod.GetConnection()))
