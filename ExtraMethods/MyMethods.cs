@@ -42,11 +42,33 @@ namespace Residence_Management_System.ExtraMethods
             }
         }
 
-
-
-
-
-        /*
+        public bool CheckIdRecordExist(string selectedTable)
+        {
+            using (SqlConnection con = new SqlConnection(GetConnection()))
+            {
+                SqlDataAdapter adp = new SqlDataAdapter(selectedTable, con);
+                DataTable dt = new DataTable();
+                adp.Fill(dt);
+                try
+                {
+                    if (dt.Rows.Count > 0)
+                    {
+                        return true;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                finally
+                {
+                    dt.Dispose();
+                    adp.Dispose();
+                }
+            }
+            return false;
+        }
+        
         public int GetUserId(string lbl)
         {
             string sqlId = @"SELECT * FROM [users] WHERE username = @username"; // userName = lblWelcome.Text
@@ -65,12 +87,12 @@ namespace Residence_Management_System.ExtraMethods
                 }
             }
         }
-        */
 
         public int CountRecords(string sqlCount)
         {
             using (SqlConnection con = new SqlConnection(GetConnection()))
             {
+                if (con.State != ConnectionState.Open) { con.Open(); }
                 using (SqlCommand cmd = new SqlCommand(sqlCount, con))
                 {
                     if (con.State != ConnectionState.Open){con.Open();}
@@ -185,12 +207,11 @@ namespace Residence_Management_System.ExtraMethods
         }
 
         
-        public bool CheckIfIdExist(int id, string tableToCheck)
+        public bool CheckIfIdExist(string query)
         {
             using (SqlConnection con = new SqlConnection(GetConnection()))
             {
-                string query  = ""; 
-                //string query = @"SELECT * FROM {tableToCheck} WHERE userName LIKE '" + userNm.lblWelcomeUsername.Text + "'";
+                if (con.State != ConnectionState.Open) { con.Open(); }
                 SqlCommand cmd = new SqlCommand(query, con);
                 SqlDataReader myReader = cmd.ExecuteReader();
 
@@ -203,16 +224,12 @@ namespace Residence_Management_System.ExtraMethods
                     }
                     else
                     {
-                        myReader.Close();
-                        MessageBox.Show("Id:"+id+" does not exist", "Information", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        
+                        MessageBox.Show("Id does not exist", "Information", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.Message + GetConnection().ToString());
-                    myReader.Close();
-                    
+                    MessageBox.Show(ex.Message + GetConnection().ToString());   
                 }
                 finally
                 {

@@ -14,6 +14,9 @@ namespace Residence_Management_System.ExtraMethods
         // Regular expression used to validate a phone number.
         const string motif = @"^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$";
 
+        // Regular expression used to validate a phone number.
+        const string reg = @"^[0-9]+$";
+
         // validate email
         const string emailReg = @"^[\w!#$%&'*+\-/=?\^_`{|}~]+(\.[\w!#$%&'*+\-/=?\^_`{|}~]+)*@((([\-\w]+\.)+[a-zA-Z]{2,4})|(([0-9]{1,3}\.){3}[0-9]{1,3}))\z";
 
@@ -56,7 +59,7 @@ namespace Residence_Management_System.ExtraMethods
 
         public bool IsValidStudentNumber(string sourceNum, Label labelSelected)
         {
-            bool isStuNoValid = Regex.IsMatch(sourceNum, motif);
+            bool isStuNoValid = Regex.IsMatch(sourceNum, reg);
             if (isStuNoValid == true && sourceNum.Length == studentNoLen)
             {
                 labelSelected.Visible = false;
@@ -65,7 +68,7 @@ namespace Residence_Management_System.ExtraMethods
             else
             {
                 labelSelected.Visible = true;
-                labelSelected.Text = "Invalid Phone number";
+                labelSelected.Text = "Invalid student number";
                 return false;
             }
         }

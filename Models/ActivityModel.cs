@@ -11,39 +11,36 @@ namespace Residence_Management_System.Models
 	public class ActivityModel{
 		
 		private int _activityId;
-		private string _activityName;
-		private string _activityDescription;
-		private string _particpatingSemester;
-		private DateTime _allocatedDate;
 		private int _studentId;
-		private int _userId;
+		private string _semesterParticipating;
 		private int _totalPoints;
-		
-		
+		private string _allocatedDate;
+		private int _userId;
+
+
 		public ActivityModel(){
 			
 			
 		}
 		
-		public ActivityModel(int anActivityId, string anActivityName, string aAnctivityDescription, string aParticipatingSemeter , DateTime anAllocatedDate,  int aStudentId, int aUserId){
+		public ActivityModel(int anActivityId, int aStudentId,string aSemesterParticipating, int aTotalPoint, string anAllocatedDate){
 			_activityId = anActivityId;
-			_activityName = anActivityName;
-			_activityDescription = aAnctivityDescription;
-			_particpatingSemester = aParticipatingSemeter;
-			_allocatedDate = anAllocatedDate;
 			StudentId = aStudentId;
-			UserId  = aUserId;
-			
-		}
-		
-		public ActivityModel(string anActivityName, string aAnctivityDescription, string aParticipatingSemeter, DateTime anAllocatedDate,  int aStudentId){
-			_activityName = anActivityName;
-			_activityDescription = aAnctivityDescription;
-			_particpatingSemester = aParticipatingSemeter;
+			SemesterParticipating = aSemesterParticipating;
+			_totalPoints = aTotalPoint;
 			_allocatedDate = anAllocatedDate;
-			StudentId = aStudentId;
 			//UserId  = aUserId;
 			
+		}
+
+		public ActivityModel(int aStudentId, string aSemesterParticipating, int aTotalPoint, string anAllocatedDate)
+		{
+			StudentId = aStudentId;
+			SemesterParticipating = aSemesterParticipating;
+			_totalPoints = aTotalPoint;
+			_allocatedDate = anAllocatedDate;
+			//UserId = aUserId;
+
 		}
 
 		public ActivityModel(int aStudentId, int aTotalPoints)
@@ -58,18 +55,7 @@ namespace Residence_Management_System.Models
 			set {_activityId = value;}
 		}
 		
-		
-		public string ActivityName{
-			get {return _activityName;}
-			set {_activityName = value;}
-		}
-		
-		public string ActivityDescription{
-			get {return _activityDescription;}
-			set {_activityDescription = value;}
-		}
-		
-		public DateTime AllocatedDate
+		public string AllocatedDate
 		{
 			get {return _allocatedDate;}
 			set {_allocatedDate = value;}
@@ -81,37 +67,35 @@ namespace Residence_Management_System.Models
 			set { _totalPoints = value; }
 		}
 
-		public string ParticipatingGender{
-			get {return _particpatingSemester;}
+		public string SemesterParticipating{
+			get {return _semesterParticipating;}
 			set {
 				if(value == "First-Semester" || value == "Second-Semester" || value == "Both-Semesters")
 				{
-					_particpatingSemester = value;
+					_semesterParticipating = value;
 				}
 				else{
-					_particpatingSemester = null;
+					_semesterParticipating = "";
 				}
 			}
 		}
 
 		// Foreign key 
-		[Display(Name = "StudentModel")] 
 		public int StudentId { 
 			get{ return _studentId; }
 			set{ _studentId = value; } 
 		} 
 	 
-		[ForeignKey("studentNumber")] 
-		public virtual StudentModel students { get; set; } 
+		[ForeignKey("StudentId")] 
+		public virtual StudentModel StudentModel { get; set; } 
 		
 		// Foreign key 
-		[Display(Name = "UserModel")] 
 		public int UserId { 
 			get{ return _userId; }
 			set{ _userId = value; }
 		} 
 		[ForeignKey("UserId")] 
-		public virtual UserModel users { get; set; } 
+		public virtual UserModel UserModel { get; set; } 
 		
 	}
 }

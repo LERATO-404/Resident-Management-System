@@ -19,7 +19,7 @@ namespace Residence_Management_System.Models
 		private string _dOB;
 		private string _nextOfKinFullName;
 		private string _nextOfKinPhone;
-		private int _studentNo;
+		private string _studentNo;
 		private string _studentType;
 		private string _courseName;
 		private string _registrationStatus;
@@ -30,7 +30,7 @@ namespace Residence_Management_System.Models
 		}
 		
 		public StudentModel(int aStudentId, string aFirstName, string aLstName,string aEmailAddress,string aPhoneNumber,string aGender,string 
-		aDOB, string aNextOfKinName, string aNextOfKinPhone, int aStudentNo, string aStudentType, string aCourseName, string aRegistrationStatus){
+		aDOB, string aNextOfKinName, string aNextOfKinPhone, string aStudentNo, string aStudentType, string aCourseName, string aRegistrationStatus){
 			_studentId = aStudentId;
 			_firstName = aFirstName;
 			_lastName = aLstName;
@@ -48,7 +48,7 @@ namespace Residence_Management_System.Models
 		}
 
 		public StudentModel(string aFirstName, string aLstName, string aEmailAddress, string aPhoneNumber, string aGender, string
-		aDOB, string aNextOfKinName, string aNextOfKinPhone, int aStudentNo, string aStudentType, string aCourseName, string aRegistrationStatus)
+		aDOB, string aNextOfKinName, string aNextOfKinPhone, string aStudentNo, string aStudentType, string aCourseName, string aRegistrationStatus)
 		{
 			
 			_firstName = aFirstName;
@@ -122,7 +122,7 @@ namespace Residence_Management_System.Models
 			set { _nextOfKinPhone = value; }
 		}
 
-		public int StudentNo
+		public string StudentNo
 		{
 			get { return _studentNo; }
 			set { _studentNo = value; }

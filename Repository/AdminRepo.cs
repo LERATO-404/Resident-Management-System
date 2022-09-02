@@ -17,7 +17,7 @@ namespace Residence_Management_System.Repository
 
         private readonly MyMethods myAdminMethod = new MyMethods();
 
-        public string SelectedEmployeeToDelete(int id)
+        public string SelectedEmployeeTable(int id)
         {
             return @"DELETE [workers] WHERE workerId = '" + id + "'";
         }
@@ -26,6 +26,8 @@ namespace Residence_Management_System.Repository
         {
             return @"DELETE [students] WHERE studentId = '" + id + "'";
         }
+
+        
 
         public WorkerModel ViewEmployeeDetails(int id, WorkerModel wkView)
         {
@@ -97,7 +99,7 @@ namespace Residence_Management_System.Repository
                         stView.DateOfBirth = srd["dOB"].ToString();
                         stView.NextOfKinFullName = srd["nextOfKinFullName"].ToString();
                         stView.NextOfKinPhone = srd["nextOfKinPhone"].ToString();
-                        stView.StudentNo = (int)srd["studentNo"];
+                        stView.StudentNo = srd["studentNo"].ToString();;
                         stView.StudentType = srd["studentType"].ToString();
                         stView.CourseName = srd["courseName"].ToString();
                         stView.RegistrationStatus = srd["registrationStatus"].ToString();

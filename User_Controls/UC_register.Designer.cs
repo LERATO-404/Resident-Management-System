@@ -65,18 +65,25 @@ namespace Residence_Management_System.User_Controls
             this.label20 = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
             this.Student = new System.Windows.Forms.TabPage();
+            this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.btnDeleteStudent = new Guna.UI2.WinForms.Guna2Button();
+            this.txtStudentIdentifier = new Guna.UI2.WinForms.Guna2TextBox();
+            this.btnDisplayStudent = new Guna.UI2.WinForms.Guna2Button();
+            this.label10 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnUpdateStudent = new Guna.UI2.WinForms.Guna2Button();
             this.btnCancelStudentInput = new Guna.UI2.WinForms.Guna2Button();
             this.btnAddStudent = new Guna.UI2.WinForms.Guna2Button();
-            this.gboxNextOfKin = new Guna.UI2.WinForms.Guna2GroupBox();
-            this.lblInvalidNOKPhone = new System.Windows.Forms.Label();
             this.gboxAcademicInfo = new Guna.UI2.WinForms.Guna2GroupBox();
+            this.cboxStudentType = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.txtStudentNo = new Guna.UI2.WinForms.Guna2TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label34 = new System.Windows.Forms.Label();
+            this.label32 = new System.Windows.Forms.Label();
+            this.cboxRegistrationStatus = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.txtCourseName = new Guna.UI2.WinForms.Guna2TextBox();
+            this.label36 = new System.Windows.Forms.Label();
             this.gboxStudentInfor = new Guna.UI2.WinForms.Guna2GroupBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.guna2VScrollBar1 = new Guna.UI2.WinForms.Guna2VScrollBar();
             this.lblStuInvalidPhone = new System.Windows.Forms.Label();
             this.lblStuInvalidEmail = new System.Windows.Forms.Label();
             this.label33 = new System.Windows.Forms.Label();
@@ -91,24 +98,18 @@ namespace Residence_Management_System.User_Controls
             this.txtStuLastName = new Guna.UI2.WinForms.Guna2TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.txtStuEmail = new Guna.UI2.WinForms.Guna2TextBox();
+            this.gboxNextOfKin = new Guna.UI2.WinForms.Guna2GroupBox();
             this.txtStuNextOfKinName = new Guna.UI2.WinForms.Guna2TextBox();
             this.label35 = new System.Windows.Forms.Label();
             this.label37 = new System.Windows.Forms.Label();
             this.txtStuNextOfKinPhone = new Guna.UI2.WinForms.Guna2TextBox();
-            this.cboxStudentType = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label32 = new System.Windows.Forms.Label();
-            this.txtCourseName = new Guna.UI2.WinForms.Guna2TextBox();
-            this.label36 = new System.Windows.Forms.Label();
-            this.txtStudentNo = new Guna.UI2.WinForms.Guna2TextBox();
-            this.cboxRegistrationStatus = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.label34 = new System.Windows.Forms.Label();
-            this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
-            this.btnDeleteStudent = new Guna.UI2.WinForms.Guna2Button();
-            this.txtStudentIdentifier = new Guna.UI2.WinForms.Guna2TextBox();
-            this.btnDisplayStudent = new Guna.UI2.WinForms.Guna2Button();
-            this.label10 = new System.Windows.Forms.Label();
-            this.btnUpdateStudent = new Guna.UI2.WinForms.Guna2Button();
+            this.lblInvalidNOKPhone = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.guna2VScrollBar1 = new Guna.UI2.WinForms.Guna2VScrollBar();
+            this.lblInvalidStudentNo = new System.Windows.Forms.Label();
             this.guna2TabControl1.SuspendLayout();
             this.Employee.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
@@ -116,11 +117,11 @@ namespace Residence_Management_System.User_Controls
             this.panel2.SuspendLayout();
             this.gboxEmployeeInfo.SuspendLayout();
             this.Student.SuspendLayout();
+            this.guna2Panel1.SuspendLayout();
             this.panel1.SuspendLayout();
-            this.gboxNextOfKin.SuspendLayout();
             this.gboxAcademicInfo.SuspendLayout();
             this.gboxStudentInfor.SuspendLayout();
-            this.guna2Panel1.SuspendLayout();
+            this.gboxNextOfKin.SuspendLayout();
             this.SuspendLayout();
             // 
             // guna2TabControl1
@@ -710,6 +711,87 @@ namespace Residence_Management_System.User_Controls
             this.Student.UseVisualStyleBackColor = true;
             this.Student.Click += new System.EventHandler(this.Student_Click);
             // 
+            // guna2Panel1
+            // 
+            this.guna2Panel1.Controls.Add(this.btnDeleteStudent);
+            this.guna2Panel1.Controls.Add(this.txtStudentIdentifier);
+            this.guna2Panel1.Controls.Add(this.btnDisplayStudent);
+            this.guna2Panel1.Controls.Add(this.label10);
+            this.guna2Panel1.Location = new System.Drawing.Point(11, 44);
+            this.guna2Panel1.Name = "guna2Panel1";
+            this.guna2Panel1.Size = new System.Drawing.Size(861, 81);
+            this.guna2Panel1.TabIndex = 180;
+            // 
+            // btnDeleteStudent
+            // 
+            this.btnDeleteStudent.Animated = true;
+            this.btnDeleteStudent.BorderRadius = 10;
+            this.btnDeleteStudent.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDeleteStudent.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnDeleteStudent.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnDeleteStudent.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnDeleteStudent.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnDeleteStudent.FillColor = System.Drawing.Color.Red;
+            this.btnDeleteStudent.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnDeleteStudent.ForeColor = System.Drawing.Color.White;
+            this.btnDeleteStudent.Location = new System.Drawing.Point(546, 31);
+            this.btnDeleteStudent.Name = "btnDeleteStudent";
+            this.btnDeleteStudent.Size = new System.Drawing.Size(110, 33);
+            this.btnDeleteStudent.TabIndex = 2;
+            this.btnDeleteStudent.Text = "Delete";
+            this.btnDeleteStudent.Click += new System.EventHandler(this.btnDeleteStudent_Click);
+            // 
+            // txtStudentIdentifier
+            // 
+            this.txtStudentIdentifier.BorderRadius = 5;
+            this.txtStudentIdentifier.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtStudentIdentifier.DefaultText = "";
+            this.txtStudentIdentifier.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtStudentIdentifier.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtStudentIdentifier.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtStudentIdentifier.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtStudentIdentifier.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtStudentIdentifier.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtStudentIdentifier.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtStudentIdentifier.Location = new System.Drawing.Point(208, 31);
+            this.txtStudentIdentifier.Name = "txtStudentIdentifier";
+            this.txtStudentIdentifier.PasswordChar = '\0';
+            this.txtStudentIdentifier.PlaceholderText = "";
+            this.txtStudentIdentifier.SelectedText = "";
+            this.txtStudentIdentifier.Size = new System.Drawing.Size(200, 36);
+            this.txtStudentIdentifier.TabIndex = 0;
+            // 
+            // btnDisplayStudent
+            // 
+            this.btnDisplayStudent.Animated = true;
+            this.btnDisplayStudent.BorderRadius = 10;
+            this.btnDisplayStudent.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDisplayStudent.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnDisplayStudent.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnDisplayStudent.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnDisplayStudent.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnDisplayStudent.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnDisplayStudent.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnDisplayStudent.ForeColor = System.Drawing.Color.White;
+            this.btnDisplayStudent.Location = new System.Drawing.Point(427, 31);
+            this.btnDisplayStudent.Name = "btnDisplayStudent";
+            this.btnDisplayStudent.Size = new System.Drawing.Size(110, 33);
+            this.btnDisplayStudent.TabIndex = 1;
+            this.btnDisplayStudent.Text = "Display";
+            this.btnDisplayStudent.Click += new System.EventHandler(this.btnDisplayStudent_Click);
+            // 
+            // label10
+            // 
+            this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.label10.Location = new System.Drawing.Point(205, 13);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(61, 13);
+            this.label10.TabIndex = 195;
+            this.label10.Text = "Student Id";
+            // 
             // panel1
             // 
             this.panel1.Controls.Add(this.btnUpdateStudent);
@@ -719,6 +801,26 @@ namespace Residence_Management_System.User_Controls
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(870, 41);
             this.panel1.TabIndex = 135;
+            // 
+            // btnUpdateStudent
+            // 
+            this.btnUpdateStudent.Animated = true;
+            this.btnUpdateStudent.AnimatedGIF = true;
+            this.btnUpdateStudent.BorderRadius = 10;
+            this.btnUpdateStudent.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnUpdateStudent.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnUpdateStudent.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnUpdateStudent.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnUpdateStudent.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnUpdateStudent.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnUpdateStudent.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnUpdateStudent.ForeColor = System.Drawing.Color.White;
+            this.btnUpdateStudent.Location = new System.Drawing.Point(640, 5);
+            this.btnUpdateStudent.Name = "btnUpdateStudent";
+            this.btnUpdateStudent.Size = new System.Drawing.Size(110, 33);
+            this.btnUpdateStudent.TabIndex = 2;
+            this.btnUpdateStudent.Text = "Update";
+            this.btnUpdateStudent.Click += new System.EventHandler(this.btnUpdateStudent_Click);
             // 
             // btnCancelStudentInput
             // 
@@ -759,36 +861,10 @@ namespace Residence_Management_System.User_Controls
             this.btnAddStudent.Text = "Add";
             this.btnAddStudent.Click += new System.EventHandler(this.btnAddStudent_Click);
             // 
-            // gboxNextOfKin
-            // 
-            this.gboxNextOfKin.AutoScroll = true;
-            this.gboxNextOfKin.Controls.Add(this.txtStuNextOfKinName);
-            this.gboxNextOfKin.Controls.Add(this.label35);
-            this.gboxNextOfKin.Controls.Add(this.label37);
-            this.gboxNextOfKin.Controls.Add(this.txtStuNextOfKinPhone);
-            this.gboxNextOfKin.Controls.Add(this.lblInvalidNOKPhone);
-            this.gboxNextOfKin.CustomBorderColor = System.Drawing.Color.White;
-            this.gboxNextOfKin.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.gboxNextOfKin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.gboxNextOfKin.Location = new System.Drawing.Point(1, 238);
-            this.gboxNextOfKin.Name = "gboxNextOfKin";
-            this.gboxNextOfKin.Size = new System.Drawing.Size(503, 112);
-            this.gboxNextOfKin.TabIndex = 133;
-            this.gboxNextOfKin.Text = "Next Of Kin Details";
-            // 
-            // lblInvalidNOKPhone
-            // 
-            this.lblInvalidNOKPhone.AutoSize = true;
-            this.lblInvalidNOKPhone.ForeColor = System.Drawing.Color.Red;
-            this.lblInvalidNOKPhone.Location = new System.Drawing.Point(348, 42);
-            this.lblInvalidNOKPhone.Name = "lblInvalidNOKPhone";
-            this.lblInvalidNOKPhone.Size = new System.Drawing.Size(76, 15);
-            this.lblInvalidNOKPhone.TabIndex = 170;
-            this.lblInvalidNOKPhone.Text = "InvalidPhone";
-            // 
             // gboxAcademicInfo
             // 
             this.gboxAcademicInfo.AutoScroll = true;
+            this.gboxAcademicInfo.Controls.Add(this.lblInvalidStudentNo);
             this.gboxAcademicInfo.Controls.Add(this.cboxStudentType);
             this.gboxAcademicInfo.Controls.Add(this.txtStudentNo);
             this.gboxAcademicInfo.Controls.Add(this.label12);
@@ -805,6 +881,135 @@ namespace Residence_Management_System.User_Controls
             this.gboxAcademicInfo.Size = new System.Drawing.Size(359, 350);
             this.gboxAcademicInfo.TabIndex = 2;
             this.gboxAcademicInfo.Text = "Academic Information";
+            // 
+            // cboxStudentType
+            // 
+            this.cboxStudentType.BackColor = System.Drawing.Color.Transparent;
+            this.cboxStudentType.BorderRadius = 5;
+            this.cboxStudentType.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cboxStudentType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboxStudentType.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cboxStudentType.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cboxStudentType.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cboxStudentType.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cboxStudentType.ItemHeight = 30;
+            this.cboxStudentType.Items.AddRange(new object[] {
+            "Freshmen",
+            "Sophomore",
+            "Junior",
+            "Senior"});
+            this.cboxStudentType.Location = new System.Drawing.Point(58, 125);
+            this.cboxStudentType.Name = "cboxStudentType";
+            this.cboxStudentType.Size = new System.Drawing.Size(200, 36);
+            this.cboxStudentType.TabIndex = 1;
+            // 
+            // txtStudentNo
+            // 
+            this.txtStudentNo.BorderRadius = 5;
+            this.txtStudentNo.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtStudentNo.DefaultText = "";
+            this.txtStudentNo.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtStudentNo.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtStudentNo.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtStudentNo.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtStudentNo.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtStudentNo.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtStudentNo.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtStudentNo.Location = new System.Drawing.Point(58, 59);
+            this.txtStudentNo.MaxLength = 8;
+            this.txtStudentNo.Name = "txtStudentNo";
+            this.txtStudentNo.PasswordChar = '\0';
+            this.txtStudentNo.PlaceholderText = "e.g 12345678";
+            this.txtStudentNo.SelectedText = "";
+            this.txtStudentNo.Size = new System.Drawing.Size(200, 36);
+            this.txtStudentNo.TabIndex = 0;
+            // 
+            // label12
+            // 
+            this.label12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.label12.Location = new System.Drawing.Point(56, 43);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(94, 13);
+            this.label12.TabIndex = 150;
+            this.label12.Text = "Student Number";
+            // 
+            // label34
+            // 
+            this.label34.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.label34.AutoSize = true;
+            this.label34.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label34.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.label34.Location = new System.Drawing.Point(56, 262);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(105, 13);
+            this.label34.TabIndex = 151;
+            this.label34.Text = "Registration Status";
+            // 
+            // label32
+            // 
+            this.label32.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.label32.AutoSize = true;
+            this.label32.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label32.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.label32.Location = new System.Drawing.Point(55, 112);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(76, 13);
+            this.label32.TabIndex = 153;
+            this.label32.Text = "Student Type";
+            // 
+            // cboxRegistrationStatus
+            // 
+            this.cboxRegistrationStatus.BackColor = System.Drawing.Color.Transparent;
+            this.cboxRegistrationStatus.BorderRadius = 5;
+            this.cboxRegistrationStatus.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cboxRegistrationStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboxRegistrationStatus.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cboxRegistrationStatus.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cboxRegistrationStatus.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cboxRegistrationStatus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cboxRegistrationStatus.ItemHeight = 30;
+            this.cboxRegistrationStatus.Items.AddRange(new object[] {
+            "Active",
+            "Not-Active"});
+            this.cboxRegistrationStatus.Location = new System.Drawing.Point(59, 280);
+            this.cboxRegistrationStatus.Name = "cboxRegistrationStatus";
+            this.cboxRegistrationStatus.Size = new System.Drawing.Size(200, 36);
+            this.cboxRegistrationStatus.TabIndex = 3;
+            // 
+            // txtCourseName
+            // 
+            this.txtCourseName.BorderRadius = 5;
+            this.txtCourseName.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtCourseName.DefaultText = "";
+            this.txtCourseName.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtCourseName.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtCourseName.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtCourseName.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtCourseName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtCourseName.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtCourseName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtCourseName.Location = new System.Drawing.Point(58, 196);
+            this.txtCourseName.Name = "txtCourseName";
+            this.txtCourseName.PasswordChar = '\0';
+            this.txtCourseName.PlaceholderText = "e.g Bsc In information Technology";
+            this.txtCourseName.SelectedText = "";
+            this.txtCourseName.Size = new System.Drawing.Size(200, 36);
+            this.txtCourseName.TabIndex = 2;
+            // 
+            // label36
+            // 
+            this.label36.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.label36.AutoSize = true;
+            this.label36.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label36.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.label36.Location = new System.Drawing.Point(54, 180);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(93, 13);
+            this.label36.TabIndex = 152;
+            this.label36.Text = "Certificate Name";
             // 
             // gboxStudentInfor
             // 
@@ -834,62 +1039,6 @@ namespace Residence_Management_System.User_Controls
             this.gboxStudentInfor.Size = new System.Drawing.Size(504, 350);
             this.gboxStudentInfor.TabIndex = 0;
             this.gboxStudentInfor.Text = "Student Personal Information";
-            // 
-            // label8
-            // 
-            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.label8.Location = new System.Drawing.Point(7, -123);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(63, 13);
-            this.label8.TabIndex = 114;
-            this.label8.Text = "First Name";
-            // 
-            // label5
-            // 
-            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.label5.Location = new System.Drawing.Point(252, -123);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(62, 13);
-            this.label5.TabIndex = 116;
-            this.label5.Text = "Last Name";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(8, 28);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(179, 13);
-            this.label4.TabIndex = 45;
-            this.label4.Text = "Fill the form to add a new student";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(6, 3);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(118, 25);
-            this.label3.TabIndex = 26;
-            this.label3.Text = "Add Student";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
-            // 
-            // guna2VScrollBar1
-            // 
-            this.guna2VScrollBar1.InUpdate = false;
-            this.guna2VScrollBar1.LargeChange = 10;
-            this.guna2VScrollBar1.Location = new System.Drawing.Point(0, 0);
-            this.guna2VScrollBar1.Name = "guna2VScrollBar1";
-            this.guna2VScrollBar1.ScrollbarSize = 18;
-            this.guna2VScrollBar1.Size = new System.Drawing.Size(18, 300);
-            this.guna2VScrollBar1.TabIndex = 0;
             // 
             // lblStuInvalidPhone
             // 
@@ -1101,6 +1250,23 @@ namespace Residence_Management_System.User_Controls
             this.txtStuEmail.Size = new System.Drawing.Size(200, 36);
             this.txtStuEmail.TabIndex = 2;
             // 
+            // gboxNextOfKin
+            // 
+            this.gboxNextOfKin.AutoScroll = true;
+            this.gboxNextOfKin.Controls.Add(this.txtStuNextOfKinName);
+            this.gboxNextOfKin.Controls.Add(this.label35);
+            this.gboxNextOfKin.Controls.Add(this.label37);
+            this.gboxNextOfKin.Controls.Add(this.txtStuNextOfKinPhone);
+            this.gboxNextOfKin.Controls.Add(this.lblInvalidNOKPhone);
+            this.gboxNextOfKin.CustomBorderColor = System.Drawing.Color.White;
+            this.gboxNextOfKin.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.gboxNextOfKin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.gboxNextOfKin.Location = new System.Drawing.Point(1, 238);
+            this.gboxNextOfKin.Name = "gboxNextOfKin";
+            this.gboxNextOfKin.Size = new System.Drawing.Size(503, 112);
+            this.gboxNextOfKin.TabIndex = 133;
+            this.gboxNextOfKin.Text = "Next Of Kin Details";
+            // 
             // txtStuNextOfKinName
             // 
             this.txtStuNextOfKinName.BorderRadius = 5;
@@ -1166,235 +1332,81 @@ namespace Residence_Management_System.User_Controls
             this.txtStuNextOfKinPhone.Size = new System.Drawing.Size(200, 36);
             this.txtStuNextOfKinPhone.TabIndex = 1;
             // 
-            // cboxStudentType
+            // lblInvalidNOKPhone
             // 
-            this.cboxStudentType.BackColor = System.Drawing.Color.Transparent;
-            this.cboxStudentType.BorderRadius = 5;
-            this.cboxStudentType.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cboxStudentType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboxStudentType.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cboxStudentType.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cboxStudentType.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.cboxStudentType.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.cboxStudentType.ItemHeight = 30;
-            this.cboxStudentType.Items.AddRange(new object[] {
-            "Freshmen",
-            "Sophomore",
-            "Junior",
-            "Senior"});
-            this.cboxStudentType.Location = new System.Drawing.Point(58, 125);
-            this.cboxStudentType.Name = "cboxStudentType";
-            this.cboxStudentType.Size = new System.Drawing.Size(200, 36);
-            this.cboxStudentType.TabIndex = 1;
+            this.lblInvalidNOKPhone.AutoSize = true;
+            this.lblInvalidNOKPhone.ForeColor = System.Drawing.Color.Red;
+            this.lblInvalidNOKPhone.Location = new System.Drawing.Point(348, 42);
+            this.lblInvalidNOKPhone.Name = "lblInvalidNOKPhone";
+            this.lblInvalidNOKPhone.Size = new System.Drawing.Size(76, 15);
+            this.lblInvalidNOKPhone.TabIndex = 170;
+            this.lblInvalidNOKPhone.Text = "InvalidPhone";
             // 
-            // label12
+            // label8
             // 
-            this.label12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.label12.Location = new System.Drawing.Point(56, 43);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(94, 13);
-            this.label12.TabIndex = 150;
-            this.label12.Text = "Student Number";
+            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.label8.Location = new System.Drawing.Point(7, -123);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(63, 13);
+            this.label8.TabIndex = 114;
+            this.label8.Text = "First Name";
             // 
-            // label32
+            // label5
             // 
-            this.label32.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.label32.AutoSize = true;
-            this.label32.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label32.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.label32.Location = new System.Drawing.Point(55, 112);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(76, 13);
-            this.label32.TabIndex = 153;
-            this.label32.Text = "Student Type";
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.label5.Location = new System.Drawing.Point(252, -123);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(62, 13);
+            this.label5.TabIndex = 116;
+            this.label5.Text = "Last Name";
             // 
-            // txtCourseName
+            // label4
             // 
-            this.txtCourseName.BorderRadius = 5;
-            this.txtCourseName.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtCourseName.DefaultText = "";
-            this.txtCourseName.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtCourseName.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtCourseName.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtCourseName.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtCourseName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtCourseName.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtCourseName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtCourseName.Location = new System.Drawing.Point(58, 196);
-            this.txtCourseName.Name = "txtCourseName";
-            this.txtCourseName.PasswordChar = '\0';
-            this.txtCourseName.PlaceholderText = "e.g Bsc In information Technology";
-            this.txtCourseName.SelectedText = "";
-            this.txtCourseName.Size = new System.Drawing.Size(200, 36);
-            this.txtCourseName.TabIndex = 2;
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(8, 28);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(179, 13);
+            this.label4.TabIndex = 45;
+            this.label4.Text = "Fill the form to add a new student";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
-            // label36
+            // label3
             // 
-            this.label36.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.label36.AutoSize = true;
-            this.label36.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label36.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.label36.Location = new System.Drawing.Point(54, 180);
-            this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(93, 13);
-            this.label36.TabIndex = 152;
-            this.label36.Text = "Certificate Name";
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(6, 3);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(118, 25);
+            this.label3.TabIndex = 26;
+            this.label3.Text = "Add Student";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
-            // txtStudentNo
+            // guna2VScrollBar1
             // 
-            this.txtStudentNo.BorderRadius = 5;
-            this.txtStudentNo.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtStudentNo.DefaultText = "";
-            this.txtStudentNo.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtStudentNo.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtStudentNo.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtStudentNo.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtStudentNo.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtStudentNo.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtStudentNo.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtStudentNo.Location = new System.Drawing.Point(58, 59);
-            this.txtStudentNo.MaxLength = 8;
-            this.txtStudentNo.Name = "txtStudentNo";
-            this.txtStudentNo.PasswordChar = '\0';
-            this.txtStudentNo.PlaceholderText = "e.g 12345678";
-            this.txtStudentNo.SelectedText = "";
-            this.txtStudentNo.Size = new System.Drawing.Size(200, 36);
-            this.txtStudentNo.TabIndex = 0;
+            this.guna2VScrollBar1.InUpdate = false;
+            this.guna2VScrollBar1.LargeChange = 10;
+            this.guna2VScrollBar1.Location = new System.Drawing.Point(0, 0);
+            this.guna2VScrollBar1.Name = "guna2VScrollBar1";
+            this.guna2VScrollBar1.ScrollbarSize = 18;
+            this.guna2VScrollBar1.Size = new System.Drawing.Size(18, 300);
+            this.guna2VScrollBar1.TabIndex = 0;
             // 
-            // cboxRegistrationStatus
+            // lblInvalidStudentNo
             // 
-            this.cboxRegistrationStatus.BackColor = System.Drawing.Color.Transparent;
-            this.cboxRegistrationStatus.BorderRadius = 5;
-            this.cboxRegistrationStatus.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cboxRegistrationStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboxRegistrationStatus.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cboxRegistrationStatus.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cboxRegistrationStatus.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.cboxRegistrationStatus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.cboxRegistrationStatus.ItemHeight = 30;
-            this.cboxRegistrationStatus.Items.AddRange(new object[] {
-            "Active",
-            "Not-Active"});
-            this.cboxRegistrationStatus.Location = new System.Drawing.Point(59, 280);
-            this.cboxRegistrationStatus.Name = "cboxRegistrationStatus";
-            this.cboxRegistrationStatus.Size = new System.Drawing.Size(200, 36);
-            this.cboxRegistrationStatus.TabIndex = 3;
-            // 
-            // label34
-            // 
-            this.label34.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.label34.AutoSize = true;
-            this.label34.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label34.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.label34.Location = new System.Drawing.Point(56, 262);
-            this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(105, 13);
-            this.label34.TabIndex = 151;
-            this.label34.Text = "Registration Status";
-            // 
-            // guna2Panel1
-            // 
-            this.guna2Panel1.Controls.Add(this.btnDeleteStudent);
-            this.guna2Panel1.Controls.Add(this.txtStudentIdentifier);
-            this.guna2Panel1.Controls.Add(this.btnDisplayStudent);
-            this.guna2Panel1.Controls.Add(this.label10);
-            this.guna2Panel1.Location = new System.Drawing.Point(11, 44);
-            this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(861, 81);
-            this.guna2Panel1.TabIndex = 180;
-            // 
-            // btnDeleteStudent
-            // 
-            this.btnDeleteStudent.Animated = true;
-            this.btnDeleteStudent.BorderRadius = 10;
-            this.btnDeleteStudent.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnDeleteStudent.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnDeleteStudent.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnDeleteStudent.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnDeleteStudent.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnDeleteStudent.FillColor = System.Drawing.Color.Red;
-            this.btnDeleteStudent.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnDeleteStudent.ForeColor = System.Drawing.Color.White;
-            this.btnDeleteStudent.Location = new System.Drawing.Point(546, 31);
-            this.btnDeleteStudent.Name = "btnDeleteStudent";
-            this.btnDeleteStudent.Size = new System.Drawing.Size(110, 33);
-            this.btnDeleteStudent.TabIndex = 2;
-            this.btnDeleteStudent.Text = "Delete";
-            this.btnDeleteStudent.Click += new System.EventHandler(this.btnDeleteStudent_Click);
-            // 
-            // txtStudentIdentifier
-            // 
-            this.txtStudentIdentifier.BorderRadius = 5;
-            this.txtStudentIdentifier.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtStudentIdentifier.DefaultText = "";
-            this.txtStudentIdentifier.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtStudentIdentifier.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtStudentIdentifier.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtStudentIdentifier.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtStudentIdentifier.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtStudentIdentifier.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtStudentIdentifier.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtStudentIdentifier.Location = new System.Drawing.Point(208, 31);
-            this.txtStudentIdentifier.Name = "txtStudentIdentifier";
-            this.txtStudentIdentifier.PasswordChar = '\0';
-            this.txtStudentIdentifier.PlaceholderText = "";
-            this.txtStudentIdentifier.SelectedText = "";
-            this.txtStudentIdentifier.Size = new System.Drawing.Size(200, 36);
-            this.txtStudentIdentifier.TabIndex = 0;
-            // 
-            // btnDisplayStudent
-            // 
-            this.btnDisplayStudent.Animated = true;
-            this.btnDisplayStudent.BorderRadius = 10;
-            this.btnDisplayStudent.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnDisplayStudent.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnDisplayStudent.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnDisplayStudent.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnDisplayStudent.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnDisplayStudent.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnDisplayStudent.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnDisplayStudent.ForeColor = System.Drawing.Color.White;
-            this.btnDisplayStudent.Location = new System.Drawing.Point(427, 31);
-            this.btnDisplayStudent.Name = "btnDisplayStudent";
-            this.btnDisplayStudent.Size = new System.Drawing.Size(110, 33);
-            this.btnDisplayStudent.TabIndex = 1;
-            this.btnDisplayStudent.Text = "Display";
-            this.btnDisplayStudent.Click += new System.EventHandler(this.btnDisplayStudent_Click);
-            // 
-            // label10
-            // 
-            this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.label10.Location = new System.Drawing.Point(205, 13);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(61, 13);
-            this.label10.TabIndex = 195;
-            this.label10.Text = "Student Id";
-            // 
-            // btnUpdateStudent
-            // 
-            this.btnUpdateStudent.Animated = true;
-            this.btnUpdateStudent.AnimatedGIF = true;
-            this.btnUpdateStudent.BorderRadius = 10;
-            this.btnUpdateStudent.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnUpdateStudent.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnUpdateStudent.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnUpdateStudent.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnUpdateStudent.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnUpdateStudent.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnUpdateStudent.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnUpdateStudent.ForeColor = System.Drawing.Color.White;
-            this.btnUpdateStudent.Location = new System.Drawing.Point(640, 5);
-            this.btnUpdateStudent.Name = "btnUpdateStudent";
-            this.btnUpdateStudent.Size = new System.Drawing.Size(110, 33);
-            this.btnUpdateStudent.TabIndex = 2;
-            this.btnUpdateStudent.Text = "Update";
-            this.btnUpdateStudent.Click += new System.EventHandler(this.btnUpdateStudent_Click);
+            this.lblInvalidStudentNo.AutoSize = true;
+            this.lblInvalidStudentNo.ForeColor = System.Drawing.Color.Red;
+            this.lblInvalidStudentNo.Location = new System.Drawing.Point(156, 41);
+            this.lblInvalidStudentNo.Name = "lblInvalidStudentNo";
+            this.lblInvalidStudentNo.Size = new System.Drawing.Size(99, 15);
+            this.lblInvalidStudentNo.TabIndex = 198;
+            this.lblInvalidStudentNo.Text = "InvalidStudentNo";
             // 
             // UC_register
             // 
@@ -1415,15 +1427,15 @@ namespace Residence_Management_System.User_Controls
             this.gboxEmployeeInfo.PerformLayout();
             this.Student.ResumeLayout(false);
             this.Student.PerformLayout();
+            this.guna2Panel1.ResumeLayout(false);
+            this.guna2Panel1.PerformLayout();
             this.panel1.ResumeLayout(false);
-            this.gboxNextOfKin.ResumeLayout(false);
-            this.gboxNextOfKin.PerformLayout();
             this.gboxAcademicInfo.ResumeLayout(false);
             this.gboxAcademicInfo.PerformLayout();
             this.gboxStudentInfor.ResumeLayout(false);
             this.gboxStudentInfor.PerformLayout();
-            this.guna2Panel1.ResumeLayout(false);
-            this.guna2Panel1.PerformLayout();
+            this.gboxNextOfKin.ResumeLayout(false);
+            this.gboxNextOfKin.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1510,5 +1522,6 @@ namespace Residence_Management_System.User_Controls
         private System.Windows.Forms.Label label37;
         private Guna.UI2.WinForms.Guna2TextBox txtStuNextOfKinPhone;
         private Guna.UI2.WinForms.Guna2Button btnUpdateStudent;
+        public System.Windows.Forms.Label lblInvalidStudentNo;
     }
 }

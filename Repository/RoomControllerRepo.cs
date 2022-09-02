@@ -87,6 +87,50 @@ namespace Residence_Management_System.Repository
             }
             return tname;
         }
+        
+
+        public ReservationModel ViewReservationDetails(int id, ReservationModel reservationView)
+        {
+            string sqlReservation = @"SELECT * FROM [reservations] WHERE reservationId = '" + id + "'";
+            using (SqlConnection con = new SqlConnection(myRoomMethod.GetConnection()))
+            {
+                if (con.State != ConnectionState.Open) { con.Open(); }
+
+                SqlCommand cmd = new SqlCommand(sqlReservation, con)
+                {
+                    CommandType = CommandType.Text
+                };
+                SqlDataReader srd = cmd.ExecuteReader();
+                try
+                {
+                    if (srd.Read())
+                    {
+                        reservationView.StudentId = (int)srd["studentId"];
+                        reservationView.RoomId = (int)srd["roomId"];
+                        reservationView.BedAndChairUsage = srd["bedAndChairUsage"].ToString();
+                        reservationView.RecessStatus = srd["recessStatus"].ToString();
+                        reservationView.DateReserved = srd["dateReserved"].ToString();
+;                        
+                    }
+                    else
+                    {
+                        MessageBox.Show("No data found reservation Id " + id.ToString(), "Error", (MessageBoxButtons)MessageBoxButton.OK, MessageBoxIcon.Error);
+                    }
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Failed to view reservation. No reservation in the system to view \n" + ex.Message, "Error", (MessageBoxButtons)MessageBoxButton.OK, MessageBoxIcon.Error);
+                }
+                finally
+                {
+                    srd.Close();
+                    cmd.Dispose();
+                }
+                return reservationView;
+            }
+
+        }
 
         public RoomModel ViewRoomDetails(int id, RoomModel roomView)
         {
@@ -245,7 +289,7 @@ namespace Residence_Management_System.Repository
 		public void ReserveRoomForStudent(ReservationModel rms){
             //aStudentNo,aRoomId,aBedAndChairUsage,aRecessStatus, aDateReserved
             string sqlInsertReservation = @"INSERT INTO [reservations](studentId,roomId,bedAndChairUsage,recessStatus,dateReserved)" +
-            "VALUES(@StudentNo,@roomId,@aBedAndChairUsage,@recessStatus,@dateReserved)";
+            "VALUES(@StudentId,@roomId,@BedAndChairUsage,@recessStatus,@dateReserved)";
 
             using (SqlConnection con = new SqlConnection(myRoomMethod.GetConnection()))
             {
@@ -256,9 +300,9 @@ namespace Residence_Management_System.Repository
                     CommandType = CommandType.Text
                 };
 
-                cmd.Parameters.Add("@StudentNo", SqlDbType.Int).Value = rms.StudentId;
+                cmd.Parameters.Add("@StudentId", SqlDbType.Int).Value = rms.StudentId;
                 cmd.Parameters.Add("@roomId", SqlDbType.Int).Value = rms.RoomId;
-                cmd.Parameters.Add("@aBedAndChairUsage", SqlDbType.VarChar).Value = rms.BedAndChairUsage;
+                cmd.Parameters.Add("@BedAndChairUsage", SqlDbType.VarChar).Value = rms.BedAndChairUsage;
                 cmd.Parameters.Add("@recessStatus", SqlDbType.VarChar).Value = rms.RecessStatus;
                 cmd.Parameters.Add("@dateReserved", SqlDbType.DateTime).Value = rms.DateReserved;
 
@@ -266,7 +310,7 @@ namespace Residence_Management_System.Repository
                 try
                 {
                     cmd.ExecuteNonQuery();
-                    MessageBox.Show("Reservation added successfully for student no:" + rms.ToString() + "", "Information", (MessageBoxButtons)MessageBoxButton.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Reservation added successfully for student Id:" + rms.StudentId.ToString() + "", "Information", (MessageBoxButtons)MessageBoxButton.OK, MessageBoxIcon.Information);
                 }
                 catch (Exception ex)
                 {

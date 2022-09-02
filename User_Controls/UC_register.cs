@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using Residence_Management_System.ExtraMethods;
 using Residence_Management_System.Repository;
 
+
 using Residence_Management_System.Models;
 
 namespace Residence_Management_System.User_Controls
@@ -18,7 +19,7 @@ namespace Residence_Management_System.User_Controls
     {
         private readonly AdminRepo rpA = new AdminRepo();
         private readonly MyMethods myMethod = new MyMethods();
-        private readonly IsValid extraMethodIsValid = new IsValid();
+        private readonly IsValid IsValidInput = new IsValid();
 
 
         public UC_register()
@@ -29,11 +30,9 @@ namespace Residence_Management_System.User_Controls
             lblInvalidNOKPhone.Visible = false;
             lblStuInvalidEmail.Visible = false;
             lblStuInvalidPhone.Visible = false;
+            lblInvalidStudentNo.Visible = false;
 
         }
-
-
-
 
         //==========methods============================
         public Boolean isEmpEmptyInput()
@@ -94,26 +93,20 @@ namespace Residence_Management_System.User_Controls
 
         }
 
-        private void label17_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void guna2DateTimePicker3_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
+       
+        
 
         private void btnAddStudent_Click(object sender, EventArgs e)
         {
-            string stuPhone = txtStuPhoneNo.Text.Trim();
-            string nxtOfKinPhone = txtStuNextOfKinPhone.Text.Trim();
-            string stuEmail = txtStuEmail.Text.Trim();
+            bool studentPhone = IsValidInput.IsValidPhoneNumber(txtStuPhoneNo.Text.Trim(), lblStuInvalidPhone);
+            bool nOkPhone = IsValidInput.IsValidPhoneNumber(txtStuNextOfKinPhone.Text.Trim(), lblInvalidNOKPhone);
+            bool studentEmail = IsValidInput.IsValidEmailAddress(txtStuEmail.Text.Trim(), lblStuInvalidEmail);
+            bool studentNo = IsValidInput.IsValidStudentNumber(txtStudentNo.Text.Trim(), lblInvalidStudentNo);
 
-            if(isStuEmptyInput() == false && extraMethodIsValid.IsValidEmailAddress(stuEmail, lblStuInvalidEmail) == true && extraMethodIsValid.IsValidPhoneNumber(stuPhone, lblStuInvalidPhone) == true && extraMethodIsValid.IsValidPhoneNumber(nxtOfKinPhone, lblInvalidNOKPhone))
+            if (isStuEmptyInput() == false && studentEmail == true && studentPhone == true && nOkPhone == true && studentNo == true)
             {
-                Models.StudentModel createdStudent = new Models.StudentModel(txtStuFirstName.Text.Trim(), txtStuLastName.Text.Trim(), txtStuEmail.Text.Trim(), txtStuPhoneNo.Text.Trim(), cBoxStuGender.Text.Trim(),
-                dtpStuDob.Text.Trim(), txtStuNextOfKinName.Text.Trim(), txtStuNextOfKinPhone.Text.Trim(), int.Parse(txtStudentNo.Text), cboxStudentType.Text.Trim(), txtCourseName.Text.Trim(), cboxRegistrationStatus.Text.Trim() );
+                StudentModel createdStudent = new StudentModel(txtStuFirstName.Text.Trim(), txtStuLastName.Text.Trim(), txtStuEmail.Text.Trim(), txtStuPhoneNo.Text.Trim(), cBoxStuGender.Text.Trim(),
+                dtpStuDob.Text.Trim(), txtStuNextOfKinName.Text.Trim(), txtStuNextOfKinPhone.Text.Trim(), txtStudentNo.Text.Trim(), cboxStudentType.Text.Trim(), txtCourseName.Text.Trim(), cboxRegistrationStatus.Text.Trim() );
                 rpA.AddStudent(createdStudent);
             }
             else
@@ -129,10 +122,10 @@ namespace Residence_Management_System.User_Controls
             string empEmail = txtEmpEmail.Text.Trim();
             string empPhone = txtEmpPhoneNo.Text.Trim();
 
-            if (isEmpEmptyInput() == false && extraMethodIsValid.IsValidEmailAddress(empEmail, lblInvalidEmpEmail) == true && extraMethodIsValid.IsValidPhoneNumber(empPhone, lblInvalidEmpPhone) == true)
+            if (isEmpEmptyInput() == false && IsValidInput.IsValidEmailAddress(empEmail, lblInvalidEmpEmail) == true && IsValidInput.IsValidPhoneNumber(empPhone, lblInvalidEmpPhone) == true)
             {
                 
-                Models.WorkerModel createdWorker = new Models.WorkerModel(txtEmpFirstName.Text.Trim(), txtEmpLastName.Text.Trim(), empEmail, empPhone,dtpEmpDob.Text, cBoxGender.Text.Trim(),cBoxEmpJobTitle.Text.Trim(), cBoxEmpJobType.Text.Trim(), dtpStartDate.Text);
+                WorkerModel createdWorker = new WorkerModel(txtEmpFirstName.Text.Trim(), txtEmpLastName.Text.Trim(), empEmail, empPhone,dtpEmpDob.Text, cBoxGender.Text.Trim(),cBoxEmpJobTitle.Text.Trim(), cBoxEmpJobType.Text.Trim(), dtpStartDate.Text);
                 rpA.AddWorker(createdWorker);
             }
             else
@@ -149,7 +142,7 @@ namespace Residence_Management_System.User_Controls
                 
                 if (txtEmployeeIdentifier.Text != "")
                 {
-                    string employeeToToDelete = rpA.SelectedEmployeeToDelete(int.Parse(txtEmployeeIdentifier.Text));
+                    string employeeToToDelete = rpA.SelectedEmployeeTable(int.Parse(txtEmployeeIdentifier.Text));
                     myMethod.RemoveById(int.Parse(txtEmployeeIdentifier.Text), employeeToToDelete);
                 }
                 else
@@ -200,7 +193,7 @@ namespace Residence_Management_System.User_Controls
             string x = ((String.IsNullOrEmpty(txtEmployeeIdentifier.Text) == true) && (isEmpEmptyInput() == true)) ? "Please enter the employee Id of the worker you want to update!.. " : "Please fill all the boxes with *";
             if (String.IsNullOrEmpty(txtEmployeeIdentifier.Text) == false && (isEmpEmptyInput() == false))
             {
-                Models.WorkerModel viewWorkerDetails = new Models.WorkerModel(txtEmpFirstName.Text, txtEmpLastName.Text, txtEmpEmail.Text, txtEmpPhoneNo.Text, dtpEmpDob.Text, cBoxGender.Text, cBoxEmpJobTitle.Text, cBoxEmpJobType.Text, dtpStartDate.Text);
+                WorkerModel viewWorkerDetails = new WorkerModel(txtEmpFirstName.Text, txtEmpLastName.Text, txtEmpEmail.Text, txtEmpPhoneNo.Text, dtpEmpDob.Text, cBoxGender.Text, cBoxEmpJobTitle.Text, cBoxEmpJobType.Text, dtpStartDate.Text);
                 bool isInputValid = Int32.TryParse(txtEmployeeIdentifier.Text, out int id);
                 if (isInputValid == true)
                 {
@@ -259,7 +252,7 @@ namespace Residence_Management_System.User_Controls
                     dtpEmpDob.Text = viewStudentDetails.DateOfBirth;
                     txtStuNextOfKinName.Text = viewStudentDetails.NextOfKinFullName;
                     txtStuNextOfKinPhone.Text = viewStudentDetails.NextOfKinPhone;
-                    txtStudentNo.Text = viewStudentDetails.StudentNo.ToString();
+                    txtStudentNo.Text = viewStudentDetails.StudentNo;
                     cboxStudentType.Text = viewStudentDetails.StudentType;
                     txtCourseName.Text = viewStudentDetails.CourseName;
                     cboxRegistrationStatus.Text = viewStudentDetails.RegistrationStatus;
@@ -283,7 +276,7 @@ namespace Residence_Management_System.User_Controls
             {
                 StudentModel updateStudentDetails = new StudentModel(txtStuFirstName.Text, txtStuLastName.Text,
                     txtStuEmail.Text, txtStuPhoneNo.Text, cBoxStuGender.Text, dtpEmpDob.Text, txtStuNextOfKinName.Text,
-                    txtStuNextOfKinPhone.Text, int.Parse(txtStudentNo.Text), cboxStudentType.Text, txtCourseName.Text, cboxRegistrationStatus.Text);
+                    txtStuNextOfKinPhone.Text, txtStudentNo.Text, cboxStudentType.Text, txtCourseName.Text, cboxRegistrationStatus.Text);
                 bool isInputValid = Int32.TryParse(txtStudentIdentifier.Text, out int id);
                 if (isInputValid == true)
                 {

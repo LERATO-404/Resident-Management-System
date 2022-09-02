@@ -40,6 +40,9 @@ namespace Residence_Management_System.User_Controls
             this.guna2GroupBox1 = new Guna.UI2.WinForms.Guna2GroupBox();
             this.dgvRooms = new Guna.UI2.WinForms.Guna2DataGridView();
             this.panelDisplayRooms = new Guna.UI2.WinForms.Guna2Panel();
+            this.btnSearch = new Guna.UI2.WinForms.Guna2Button();
+            this.cboxShowRooms = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.label31 = new System.Windows.Forms.Label();
             this.btnDeleteRoom = new Guna.UI2.WinForms.Guna2Button();
             this.btnDisplayRooms = new Guna.UI2.WinForms.Guna2Button();
             this.txtRoomIdentifier = new Guna.UI2.WinForms.Guna2TextBox();
@@ -86,9 +89,7 @@ namespace Residence_Management_System.User_Controls
             this.label20 = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.cboxShowRooms = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.label31 = new System.Windows.Forms.Label();
-            this.btnSearch = new Guna.UI2.WinForms.Guna2Button();
+            this.btnSearchReservation = new Guna.UI2.WinForms.Guna2Button();
             this.Rooms.SuspendLayout();
             this.guna2GroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRooms)).BeginInit();
@@ -200,6 +201,59 @@ namespace Residence_Management_System.User_Controls
             this.panelDisplayRooms.Size = new System.Drawing.Size(597, 148);
             this.panelDisplayRooms.TabIndex = 178;
             this.panelDisplayRooms.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2Panel1_Paint);
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.Animated = true;
+            this.btnSearch.BorderRadius = 10;
+            this.btnSearch.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSearch.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnSearch.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnSearch.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnSearch.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnSearch.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnSearch.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnSearch.ForeColor = System.Drawing.Color.White;
+            this.btnSearch.Location = new System.Drawing.Point(316, 85);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(110, 33);
+            this.btnSearch.TabIndex = 191;
+            this.btnSearch.Text = "Search";
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
+            // cboxShowRooms
+            // 
+            this.cboxShowRooms.BackColor = System.Drawing.Color.Transparent;
+            this.cboxShowRooms.BorderRadius = 5;
+            this.cboxShowRooms.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cboxShowRooms.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboxShowRooms.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cboxShowRooms.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cboxShowRooms.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cboxShowRooms.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cboxShowRooms.ItemHeight = 30;
+            this.cboxShowRooms.Items.AddRange(new object[] {
+            "All Rooms",
+            "Single",
+            "Shared",
+            "Available",
+            "Not-Available"});
+            this.cboxShowRooms.Location = new System.Drawing.Point(110, 30);
+            this.cboxShowRooms.Name = "cboxShowRooms";
+            this.cboxShowRooms.Size = new System.Drawing.Size(200, 36);
+            this.cboxShowRooms.TabIndex = 189;
+            // 
+            // label31
+            // 
+            this.label31.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.label31.AutoSize = true;
+            this.label31.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label31.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.label31.Location = new System.Drawing.Point(107, 14);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(67, 13);
+            this.label31.TabIndex = 190;
+            this.label31.Text = "Select Table";
             // 
             // btnDeleteRoom
             // 
@@ -626,6 +680,7 @@ namespace Residence_Management_System.User_Controls
             // 
             // guna2Panel2
             // 
+            this.guna2Panel2.Controls.Add(this.btnSearchReservation);
             this.guna2Panel2.Controls.Add(this.btnDeleteReservation);
             this.guna2Panel2.Controls.Add(this.btnDisplayReservations);
             this.guna2Panel2.Controls.Add(this.txtReservationIdentifier);
@@ -649,7 +704,7 @@ namespace Residence_Management_System.User_Controls
             this.btnDeleteReservation.FillColor = System.Drawing.Color.Red;
             this.btnDeleteReservation.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnDeleteReservation.ForeColor = System.Drawing.Color.White;
-            this.btnDeleteReservation.Location = new System.Drawing.Point(308, 87);
+            this.btnDeleteReservation.Location = new System.Drawing.Point(433, 86);
             this.btnDeleteReservation.Name = "btnDeleteReservation";
             this.btnDeleteReservation.Size = new System.Drawing.Size(110, 33);
             this.btnDeleteReservation.TabIndex = 188;
@@ -806,9 +861,9 @@ namespace Residence_Management_System.User_Controls
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             this.label6.Location = new System.Drawing.Point(34, 109);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(110, 13);
+            this.label6.Size = new System.Drawing.Size(51, 13);
             this.label6.TabIndex = 169;
-            this.label6.Text = "Room Symbol Code";
+            this.label6.Text = "Room Id";
             // 
             // txtReserveRoomCode
             // 
@@ -866,6 +921,7 @@ namespace Residence_Management_System.User_Controls
             this.btnUpdate.Size = new System.Drawing.Size(110, 33);
             this.btnUpdate.TabIndex = 167;
             this.btnUpdate.Text = "Update ";
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // label24
             // 
@@ -930,9 +986,9 @@ namespace Residence_Management_System.User_Controls
             this.label27.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             this.label27.Location = new System.Drawing.Point(33, 52);
             this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(94, 13);
+            this.label27.Size = new System.Drawing.Size(61, 13);
             this.label27.TabIndex = 82;
-            this.label27.Text = "Student Number";
+            this.label27.Text = "Student Id";
             this.label27.Click += new System.EventHandler(this.label27_Click);
             // 
             // label26
@@ -1009,58 +1065,24 @@ namespace Residence_Management_System.User_Controls
             this.label28.Text = "Reservations";
             this.label28.Click += new System.EventHandler(this.label28_Click);
             // 
-            // cboxShowRooms
+            // btnSearchReservation
             // 
-            this.cboxShowRooms.BackColor = System.Drawing.Color.Transparent;
-            this.cboxShowRooms.BorderRadius = 5;
-            this.cboxShowRooms.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cboxShowRooms.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboxShowRooms.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cboxShowRooms.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cboxShowRooms.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.cboxShowRooms.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.cboxShowRooms.ItemHeight = 30;
-            this.cboxShowRooms.Items.AddRange(new object[] {
-            "All Rooms",
-            "Single",
-            "Shared",
-            "Available",
-            "Not-Available"});
-            this.cboxShowRooms.Location = new System.Drawing.Point(110, 30);
-            this.cboxShowRooms.Name = "cboxShowRooms";
-            this.cboxShowRooms.Size = new System.Drawing.Size(200, 36);
-            this.cboxShowRooms.TabIndex = 189;
-            // 
-            // label31
-            // 
-            this.label31.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.label31.AutoSize = true;
-            this.label31.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label31.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.label31.Location = new System.Drawing.Point(107, 14);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(67, 13);
-            this.label31.TabIndex = 190;
-            this.label31.Text = "Select Table";
-            // 
-            // btnSearch
-            // 
-            this.btnSearch.Animated = true;
-            this.btnSearch.BorderRadius = 10;
-            this.btnSearch.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSearch.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnSearch.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnSearch.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnSearch.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnSearch.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnSearch.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnSearch.ForeColor = System.Drawing.Color.White;
-            this.btnSearch.Location = new System.Drawing.Point(316, 85);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(110, 33);
-            this.btnSearch.TabIndex = 191;
-            this.btnSearch.Text = "Search";
-            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            this.btnSearchReservation.Animated = true;
+            this.btnSearchReservation.BorderRadius = 10;
+            this.btnSearchReservation.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSearchReservation.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnSearchReservation.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnSearchReservation.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnSearchReservation.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnSearchReservation.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnSearchReservation.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnSearchReservation.ForeColor = System.Drawing.Color.White;
+            this.btnSearchReservation.Location = new System.Drawing.Point(308, 86);
+            this.btnSearchReservation.Name = "btnSearchReservation";
+            this.btnSearchReservation.Size = new System.Drawing.Size(110, 33);
+            this.btnSearchReservation.TabIndex = 189;
+            this.btnSearchReservation.Text = "Search";
+            this.btnSearchReservation.Click += new System.EventHandler(this.btnSearchReservation_Click);
             // 
             // UC_room
             // 
@@ -1145,5 +1167,6 @@ namespace Residence_Management_System.User_Controls
         private Guna.UI2.WinForms.Guna2ComboBox cboxShowRooms;
         private System.Windows.Forms.Label label31;
         private Guna.UI2.WinForms.Guna2Button btnSearch;
+        private Guna.UI2.WinForms.Guna2Button btnSearchReservation;
     }
 }

@@ -9,19 +9,21 @@ using System.Windows;
 using System.Windows.Forms;
 using MessageBox = System.Windows.Forms.MessageBox;
 using Residence_Management_System.ExtraMethods;
+using Residence_Management_System.Models;
 
 namespace Residence_Management_System.Repository
 {
     public class ActivityControllerRepo{
 
         private readonly MyMethods myActMethod = new MyMethods();
-        
 
-        public void AllocateStudentToActivity(Models.ActivityModel stdAct){
-			string sqlInsertActivity = @"INSERT INTO [activityParticipation](activityName,activityDescription,semesterParticipating,allocatedDate, studentParticipant)"+
-            "VALUES(@activityName,@activityDescription,@semesterParticipating,@allocatedDate,@studentParticipant)";
-
-           
+        public string SelecteTable(int id)
+        {
+            return "SELECT * FROM [students] WHERE studentId = '" + id + "'";
+        }
+        public void AllocateStudentToActivity(ActivityModel stdAct){
+			string sqlInsertActivity = @"INSERT INTO [activityParticipation](studentParticipating,semesterParticipating,totalPoints,allocatedDate, addedBy)"+
+            "VALUES(@studentParticipating,@semesterParticipating,@totalPoints,@allocatedDate, @addedBy)";
 
             using (SqlConnection con = new SqlConnection(myActMethod.GetConnection()))
             {
@@ -32,12 +34,12 @@ namespace Residence_Management_System.Repository
                     CommandType = CommandType.Text
                 };
                 
-                cmd.Parameters.Add("@activityName", SqlDbType.VarChar).Value = stdAct.ActivityName;
-                cmd.Parameters.Add("@activityDescription", SqlDbType.VarChar).Value = stdAct.ActivityDescription;
-                cmd.Parameters.Add("@semesterParticipating", SqlDbType.VarChar).Value = stdAct.ParticipatingGender;
+                cmd.Parameters.Add("@studentParticipating", SqlDbType.Int).Value = stdAct.StudentId;
+                cmd.Parameters.Add("@semesterParticipating", SqlDbType.VarChar).Value = stdAct.SemesterParticipating;
+                cmd.Parameters.Add("@totalPoints", SqlDbType.Int).Value = stdAct.TotalPoints;
                 cmd.Parameters.Add("@allocatedDate", SqlDbType.VarChar).Value = stdAct.AllocatedDate;
-                cmd.Parameters.Add("@studentParticipant", SqlDbType.Int).Value = stdAct.StudentId;
-                //cmd.Parameters.Add("@addedBy", SqlDbType.Int).Value = stdAct.UserId;
+                cmd.Parameters.Add("@addedBy", SqlDbType.Int).Value = myActMethod.GetUserId("sa");
+                
 
                
                 try
@@ -58,7 +60,7 @@ namespace Residence_Management_System.Repository
 		}
 
 
-        public void AddTotalPoints(Models.ActivityModel stdAct)
+        public void AddTotalPoints(ActivityModel stdAct)
         {
            
             string sqlInsertPoints = @"INSERT INTO [points](studentId, totalPoint)" +

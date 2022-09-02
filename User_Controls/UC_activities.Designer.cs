@@ -95,7 +95,6 @@ namespace Residence_Management_System.User_Controls
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.btnCancelActivityInput = new Guna.UI2.WinForms.Guna2Button();
-            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
             this.guna2TabControl1.SuspendLayout();
             this.addParticipant.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -231,7 +230,6 @@ namespace Residence_Management_System.User_Controls
             // guna2GroupBox2
             // 
             this.guna2GroupBox2.AutoScroll = true;
-            this.guna2GroupBox2.Controls.Add(this.checkedListBox1);
             this.guna2GroupBox2.Controls.Add(this.gboxW);
             this.guna2GroupBox2.Controls.Add(this.gboxC);
             this.guna2GroupBox2.Controls.Add(this.gboxHP);
@@ -817,6 +815,7 @@ namespace Residence_Management_System.User_Controls
             this.txtActStudentNo.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtActStudentNo.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtActStudentNo.Location = new System.Drawing.Point(162, 32);
+            this.txtActStudentNo.MaxLength = 8;
             this.txtActStudentNo.Name = "txtActStudentNo";
             this.txtActStudentNo.PasswordChar = '\0';
             this.txtActStudentNo.PlaceholderText = "";
@@ -1146,14 +1145,6 @@ namespace Residence_Management_System.User_Controls
             this.btnCancelActivityInput.TabIndex = 180;
             this.btnCancelActivityInput.Text = "Cancel";
             // 
-            // checkedListBox1
-            // 
-            this.checkedListBox1.FormattingEnabled = true;
-            this.checkedListBox1.Location = new System.Drawing.Point(369, 3);
-            this.checkedListBox1.Name = "checkedListBox1";
-            this.checkedListBox1.Size = new System.Drawing.Size(120, 22);
-            this.checkedListBox1.TabIndex = 179;
-            // 
             // UC_activities
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1256,6 +1247,5 @@ namespace Residence_Management_System.User_Controls
         private Guna.UI2.WinForms.Guna2Button btnCancelActivityInput;
         private Guna.UI2.WinForms.Guna2ComboBox cboxFilterBy;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.CheckedListBox checkedListBox1;
     }
 }

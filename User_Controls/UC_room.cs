@@ -303,18 +303,19 @@ namespace Residence_Management_System.User_Controls
                 {
                     try
                     {
+                        
 
-
-                        Models.ReservationModel rS = new Models.ReservationModel(Int32.Parse(txtReserveStudentNo.Text), Int32.Parse(txtRoomSymbolCode.Text), cboxBedandChairUsage.Text, cboxRecessStatus.Text, dtpDateAllocated.Text);
-
+                        ReservationModel rS = new ReservationModel(Int32.Parse(txtReserveStudentNo.Text), Int32.Parse(txtReserveRoomCode.Text), cboxBedandChairUsage.Text, cboxRecessStatus.Text, dtpDateAllocated.Text);
+                        rRCR.ReserveRoomForStudent(rS);
+                        /*
                         if (rS != null)
                         {
-                            rRCR.ReserveRoomForStudent(rS);
+                            
                         }
                         else
                         {
                             MessageBox.Show("Failed to add a reservation", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        }
+                        }*/
                     }
                     catch (Exception)
                     {
@@ -358,6 +359,39 @@ namespace Residence_Management_System.User_Controls
             else
             {
                 MessageBox.Show("Please enter the room Id of the room you want to view!..", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnSearchReservation_Click(object sender, EventArgs e)
+        {
+            if (String.IsNullOrEmpty(txtReservationIdentifier.Text) == false)
+            {
+                ReservationModel rs = new ReservationModel();
+                bool isInputValid = Int32.TryParse(txtReservationIdentifier.Text, out int id);
+                if (isInputValid == true)
+                {
+                    
+                    rRCR.ViewReservationDetails(id, rs);
+                    txtReserveStudentNo.Text = rs.StudentId.ToString();
+                    txtReserveRoomCode.Text = rs.RoomId.ToString();
+                    cboxBedandChairUsage.Text = rs.BedAndChairUsage;
+                    cboxRecessStatus.Text = rs.RecessStatus;
+                    dtpDateAllocated.Text = rs.DateReserved;
+                }
+                else
+                {
+                    MessageBox.Show("Invalid reservation Id entered!!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+            }
+            else
+            {
+                MessageBox.Show("Please enter the reservation Id of the reservation you want to view!..", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

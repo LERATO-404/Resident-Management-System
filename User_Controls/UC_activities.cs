@@ -7,12 +7,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Residence_Management_System.Models;
+using Residence_Management_System.ExtraMethods;
+using Residence_Management_System.Repository;
 
 namespace Residence_Management_System.User_Controls
 {
     public partial class UC_activities : UserControl
     {
-        private readonly Repository.ActivityControllerRepo actREpo = new Repository.ActivityControllerRepo();
+        private readonly MyMethods myActMethod = new MyMethods();
+        private readonly ActivityControllerRepo actREpo = new ActivityControllerRepo();
+
         public UC_activities()
         {
             InitializeComponent();
@@ -23,15 +28,12 @@ namespace Residence_Management_System.User_Controls
 
         }
 
-        public string sportsActivitySelected()
+        public int SortsActivityAccumulatedPoints()
         {
-            return "";
+            return 10;
         }
 
-        public string sportTypeDescription()
-        {
-            return "";
-        }
+       
 
         public string semesterParticipating(ComboBox cBox)
         {
@@ -54,29 +56,44 @@ namespace Residence_Management_System.User_Controls
             return textSelected;
         }
 
-        public void IsChecked()
+        public bool IsActivityInputEmpty()
         {
-            var sportChecked = sportsActivitySelected().Split(',');
-            checkedListBox1.Items.Clear();
-            checkedListBox1.Items.AddRange(sportChecked);
-            
+            string x = ((String.IsNullOrEmpty(txtActStudentNo.Text) == true || String.IsNullOrEmpty(cboxSemesterParticipating.Text) == true)) ? "Enter student Id of the student you want to allocate to activies " : "Please select the semester the student will be participating in the activitie(s)";
+
+            if (String.IsNullOrEmpty(txtActStudentNo.Text) == true || String.IsNullOrEmpty(cboxSemesterParticipating.Text) == true)
+            {
+                if(int.TryParse(txtActStudentNo.Text, out int id) == false){
+                    if(myActMethod.CheckIfIdExist(actREpo.SelecteTable(id)) == false)
+                    {
+                        //MessageBox.Show("Student Id"+id.ToString()+" was not found", "Id Not Found", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    return true;
+                }
+            }
+            else
+            {
+                MessageBox.Show(x, "Input not entered", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            return false;
         }
 
+        
         private void btnAddActivity_Click(object sender, EventArgs e)
         {
-            Models.ActivityModel actModParticipation = new Models.ActivityModel(sportsActivitySelected(),sportTypeDescription(),
-                semesterParticipating(cboxSemesterParticipating),DateTime.Now,int.Parse(txtActStudentNo.Text));
-            IsChecked();
-            for (int i  = 0; i < checkedListBox1.Items.Count-1; i++)
+            
+            if (IsActivityInputEmpty() == false)
             {
-                //Models.ActivityModel actModParticipation = new Models.ActivityModel(checkedListBox1.GetItemCheckState(i).ToString(), sportTypeDescription(),
-                //semesterParticipating(cboxSemesterParticipating), DateTime.Now, int.Parse(txtActStudentNo.Text));
-                //actREpo.AllocateStudentToActivity(actModParticipation);
+                try
+                {
+                    ActivityModel createAct = new ActivityModel(int.Parse(txtActStudentNo.Text),cboxSemesterParticipating.Text, SortsActivityAccumulatedPoints(), DateTime.Today.ToString());
+                    actREpo.AllocateStudentToActivity(createAct);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Failed to add a student participation points "+ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                } 
             }
             
-
-            Models.ActivityModel actModPoints = new Models.ActivityModel(int.Parse(txtActStudentNo.Text), int.Parse(lblTotalPoints.Text));
-            actREpo.AddTotalPoints(actModPoints);
         }
     }
 }
