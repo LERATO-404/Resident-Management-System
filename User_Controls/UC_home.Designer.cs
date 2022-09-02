@@ -457,11 +457,11 @@ namespace Residence_Management_System.User_Controls
         private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
         private Guna.UI2.WinForms.Guna2Button btnDisplay;
         private Guna.UI2.WinForms.Guna2ComboBox cboxViewTable;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
         private Guna.UI2.WinForms.Guna2GroupBox guna2GroupBox5;
         private Guna.UI2.WinForms.Guna2Button btnCancel;
         private Guna.UI2.WinForms.Guna2Button btnDelete;
         private Guna.UI2.WinForms.Guna2TextBox txtIdentifier;
+        public System.Windows.Forms.Label label5;
+        public System.Windows.Forms.Label label6;
     }
 }

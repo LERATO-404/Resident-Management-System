@@ -20,6 +20,7 @@ namespace Residence_Management_System.User_Controls
         public UC_home()
         {
             InitializeComponent();
+            //userId.Text = 
         }
 
         private void btnDisplay_Click(object sender, EventArgs e)

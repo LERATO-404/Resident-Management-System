@@ -191,7 +191,7 @@ namespace Residence_Management_System.User_Controls
         {
             if(IsRoomInputEmpty() == false)
             {
-                Models.RoomModel rm = new Models.RoomModel(txtRoomSymbolCode.Text.Trim(), cboxFloor.Text.Trim(), cboxRoomType.Text.Trim(), cboxRoomAvailability.Text.Trim());
+                RoomModel rm = new RoomModel(txtRoomSymbolCode.Text.Trim(), cboxFloor.Text.Trim(), cboxRoomType.Text.Trim(), cboxRoomAvailability.Text.Trim());
                 rRCR.AddRoom(rm); 
             }
             else
@@ -305,7 +305,7 @@ namespace Residence_Management_System.User_Controls
                     {
                         
 
-                        ReservationModel rS = new ReservationModel(Int32.Parse(txtReserveStudentNo.Text), Int32.Parse(txtReserveRoomCode.Text), cboxBedandChairUsage.Text, cboxRecessStatus.Text, dtpDateAllocated.Text);
+                        ReservationModel rS = new ReservationModel(Int32.Parse(txtReserveStudentNo.Text), Int32.Parse(txtReserveRoomCode.Text), cboxBedandChairUsage.Text, cboxRecessStatus.Text, DateTime.Today.ToShortDateString());
                         rRCR.ReserveRoomForStudent(rS);
                         /*
                         if (rS != null)
@@ -364,7 +364,25 @@ namespace Residence_Management_System.User_Controls
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
+            string x = ((String.IsNullOrEmpty(txtReservationIdentifier.Text) == true) && (IsReservationInputEmpty() == true)) ? "Please enter the reservation Id of the reservation you want to update!.. " : "Please fill all the boxes with *";
+            if (String.IsNullOrEmpty(txtReservationIdentifier.Text) == false && (IsReservationInputEmpty() == false))
+            {
+                ReservationModel updateReservationDetails = new ReservationModel(int.Parse(txtReserveStudentNo.Text),int.Parse(txtReserveRoomCode.Text),cboxBedandChairUsage.Text,cboxRecessStatus.Text,DateTime.Today.ToShortDateString());
+                bool isInputValid = Int32.TryParse(txtReservationIdentifier.Text, out int id);
+                if (isInputValid == true)
+                {
+                    rRCR.UpdateReservationDetails(id, updateReservationDetails);
+                }
+                else
+                {
+                    MessageBox.Show("Invalid reservation Id entered!!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
 
+            }
+            else
+            {
+                MessageBox.Show(x, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btnSearchReservation_Click(object sender, EventArgs e)

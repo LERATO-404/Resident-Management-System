@@ -174,8 +174,8 @@ namespace Residence_Management_System.Repository
         }
 
         public void AddRoom(RoomModel rm){
-			string sqlInsertRoom = @"INSERT INTO [rooms](roomSymbolCode,roomFloor,roomType,roomAvailability)" +
-            "VALUES(@roomSymbolCode,@roomFloor,@roomType,@roomAvailability)";
+			string sqlInsertRoom = @"INSERT INTO [rooms](roomSymbolCode,roomFloor,roomType,roomAvailability,addedBy)" +
+            "VALUES(@roomSymbolCode,@roomFloor,@roomType,@roomAvailability,@addedBy)";
             using (SqlConnection con = new SqlConnection(myRoomMethod.GetConnection()))
             {
                 if (con.State != ConnectionState.Open) { con.Open(); }
@@ -189,7 +189,7 @@ namespace Residence_Management_System.Repository
                 cmd.Parameters.Add("@roomFloor", SqlDbType.VarChar).Value = rm.RoomFloor;
                 cmd.Parameters.Add("@roomType", SqlDbType.VarChar).Value = rm.RoomType;
                 cmd.Parameters.Add("@roomAvailability", SqlDbType.VarChar).Value = rm.RoomAvailability;
-                //cmd.Parameters.Add("@userId", SqlDbType.Int).Value = rm.UserId;
+                cmd.Parameters.Add("@addedBy", SqlDbType.Int).Value = UserId.GetUserId();
 
                 try
                 {
@@ -288,8 +288,8 @@ namespace Residence_Management_System.Repository
 		
 		public void ReserveRoomForStudent(ReservationModel rms){
             //aStudentNo,aRoomId,aBedAndChairUsage,aRecessStatus, aDateReserved
-            string sqlInsertReservation = @"INSERT INTO [reservations](studentId,roomId,bedAndChairUsage,recessStatus,dateReserved)" +
-            "VALUES(@StudentId,@roomId,@BedAndChairUsage,@recessStatus,@dateReserved)";
+            string sqlInsertReservation = @"INSERT INTO [reservations](studentId,roomId,reservedBy,bedAndChairUsage,recessStatus,dateReserved)" +
+            "VALUES(@StudentId,@roomId,@reservedBy,@BedAndChairUsage,@recessStatus,@dateReserved)";
 
             using (SqlConnection con = new SqlConnection(myRoomMethod.GetConnection()))
             {
@@ -302,11 +302,12 @@ namespace Residence_Management_System.Repository
 
                 cmd.Parameters.Add("@StudentId", SqlDbType.Int).Value = rms.StudentId;
                 cmd.Parameters.Add("@roomId", SqlDbType.Int).Value = rms.RoomId;
+                cmd.Parameters.Add("@reservedBy", SqlDbType.Int).Value = UserId.GetUserId();
                 cmd.Parameters.Add("@BedAndChairUsage", SqlDbType.VarChar).Value = rms.BedAndChairUsage;
                 cmd.Parameters.Add("@recessStatus", SqlDbType.VarChar).Value = rms.RecessStatus;
                 cmd.Parameters.Add("@dateReserved", SqlDbType.DateTime).Value = rms.DateReserved;
 
-
+                
                 try
                 {
                     cmd.ExecuteNonQuery();
@@ -324,9 +325,10 @@ namespace Residence_Management_System.Repository
             
 		}
 		
-		public void UpdateReservationDetails(int rId){
-			ReservationModel rmUpdateReservation = new ReservationModel();
-			string sqlUpdateReservation = @"UPDATE [reservation] SET recessStatus=@recessStatus WHERE reservationId=@reservationId";
+		public void UpdateReservationDetails(int rId, ReservationModel rmUpdateReservation)
+        {
+			 
+			string sqlUpdateReservation = @"UPDATE [reservations] SET studentId=@studentId,roomId=@roomId,bedAndChairUsage=@bedAndChairUsage,recessStatus=@recessStatus WHERE reservationId=@reservationId";
 
             using (SqlConnection con = new SqlConnection(myRoomMethod.GetConnection()))
             {
@@ -340,9 +342,12 @@ namespace Residence_Management_System.Repository
                 SqlDataAdapter adapt = new SqlDataAdapter() {
                     UpdateCommand = new SqlCommand(sqlUpdateReservation, con)
                 };
-                
-                cmd.Parameters.Add("@reservationId", SqlDbType.Int).Value = rId;
-                cmd.Parameters.Add("@recessStatus", SqlDbType.VarChar).Value = rmUpdateReservation.RecessStatus;
+
+                adapt.UpdateCommand.Parameters.Add("@reservationId", SqlDbType.Int).Value = rId;
+                adapt.UpdateCommand.Parameters.Add("@studentId", SqlDbType.Int).Value = rmUpdateReservation.StudentId;
+                adapt.UpdateCommand.Parameters.Add("@roomId", SqlDbType.Int).Value = rmUpdateReservation.RoomId;
+                adapt.UpdateCommand.Parameters.Add("@bedAndChairUsage", SqlDbType.VarChar).Value = rmUpdateReservation.BedAndChairUsage;
+                adapt.UpdateCommand.Parameters.Add("@recessStatus", SqlDbType.VarChar).Value = rmUpdateReservation.RecessStatus;
 
                 try
                 {

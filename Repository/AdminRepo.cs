@@ -125,8 +125,8 @@ namespace Residence_Management_System.Repository
         }
 
         public void AddWorker(WorkerModel wk){
-			string sqlInsertWorker = @"INSERT INTO [workers](firstName,lastName,emailAddress,phoneNumber,dOB,gender,jobTitle,jobType,startDate)" +
-            "VALUES(@firstName,@lastName,@emailAddress,@phoneNumber,@dOB,@gender,@jobTitle,@jobType,@startDate)";
+			string sqlInsertWorker = @"INSERT INTO [workers](firstName,lastName,emailAddress,phoneNumber,dOB,gender,jobTitle,jobType,startDate,addedBy)" +
+            "VALUES(@firstName,@lastName,@emailAddress,@phoneNumber,@dOB,@gender,@jobTitle,@jobType,@startDate,@addedBy)";
 
             using (SqlConnection con = new SqlConnection(myAdminMethod.GetConnection()))
             {
@@ -146,7 +146,7 @@ namespace Residence_Management_System.Repository
                 cmd.Parameters.Add("@jobTitle", SqlDbType.VarChar).Value = wk.JobTitle;
                 cmd.Parameters.Add("@jobType", SqlDbType.VarChar).Value = wk.JobType;
                 cmd.Parameters.Add("@startDate", SqlDbType.Date).Value = wk.StartDate;
-                //cmd.Parameters.Add("@addedBy", SqlDbType.Int).Value = wk.UserId;
+                cmd.Parameters.Add("@addedBy", SqlDbType.Int).Value = UserId.GetUserId();
 
 
                 try
@@ -255,8 +255,8 @@ namespace Residence_Management_System.Repository
 		
 		
 		public void AddStudent(StudentModel std){
-			string sqlInsertStudent = @"INSERT INTO [students](firstName,lastName,emailAddress,phoneNumber,gender,dOB,nextOfKinFullName,nextOfKinPhone,studentNo,studentType,courseName,registrationStatus)" +
-            "VALUES(@firstName,@lastName,@emailAddress,@phoneNumber,@gender,@dOB,@nextOfKinFullName,@nextOfKinPhone,@studentNo,@studentType,@courseName,@registrationStatus)";
+			string sqlInsertStudent = @"INSERT INTO [students](firstName,lastName,emailAddress,phoneNumber,gender,dOB,nextOfKinFullName,nextOfKinPhone,studentNo,studentType,courseName,registrationStatus,addedBy)" +
+            "VALUES(@firstName,@lastName,@emailAddress,@phoneNumber,@gender,@dOB,@nextOfKinFullName,@nextOfKinPhone,@studentNo,@studentType,@courseName,@registrationStatus,@addedBy)";
 
             using (SqlConnection con = new SqlConnection(myAdminMethod.GetConnection()))
             {
@@ -278,7 +278,7 @@ namespace Residence_Management_System.Repository
                 cmd.Parameters.Add("@studentType", SqlDbType.VarChar).Value = std.StudentType;
                 cmd.Parameters.Add("@courseName", SqlDbType.VarChar).Value = std.CourseName;
                 cmd.Parameters.Add("@registrationStatus", SqlDbType.VarChar).Value = std.RegistrationStatus;
-                //cmd.Parameters.Add("@userId", SqlDbType.Int).Value = std.UserId;
+                cmd.Parameters.Add("@addedBy", SqlDbType.Int).Value = UserId.GetUserId();
 
 
                 try

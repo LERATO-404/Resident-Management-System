@@ -15,7 +15,8 @@ namespace Residence_Management_System.Repository
 	public class UserRepo{
 		
 		public static readonly ProtectPassword userPasswordProtect = new ProtectPassword();
-        private readonly MyMethods myUserMethod = new MyMethods();
+        private static readonly MyMethods myUserMethod = new MyMethods();
+        public static string userLoggedIn;
         
         public void AddUser(Models.UserModel usM){
 			
@@ -55,8 +56,7 @@ namespace Residence_Management_System.Repository
             }	
 		}
 
-       
-
+        
         public void LoginUser(string username, string password)
 		{
 
@@ -76,16 +76,21 @@ namespace Residence_Management_System.Repository
                         //cmd.ExecuteNonQuery();
                         if (myReader.HasRows)
                         {
+                            //store the username in a global variable
+                            userLoggedIn = username;
+                            
                             LandingPage landingP = new LandingPage();
                             landingP.Show(); //show landing page
                             landingP.lblWelcomeUsername.Text = username;
                             myReader.Close();
+                            
                         }
                         else
                         {
                             myReader.Close();
                             MessageBox.Show("Sorry, Username and password you entered doesn't belong to an account. Please double-check.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
+                        
                     }
                     catch (Exception ex)
                     {
@@ -94,6 +99,7 @@ namespace Residence_Management_System.Repository
                     }
                     finally
                     {
+                        
                         myReader.Close();
                         cmd.Dispose();
                     }

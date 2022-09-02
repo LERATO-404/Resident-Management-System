@@ -30,12 +30,12 @@ namespace Residence_Management_System.User_Controls
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.Rooms = new System.Windows.Forms.TabPage();
             this.guna2GroupBox1 = new Guna.UI2.WinForms.Guna2GroupBox();
             this.dgvRooms = new Guna.UI2.WinForms.Guna2DataGridView();
@@ -66,6 +66,7 @@ namespace Residence_Management_System.User_Controls
             this.gboxReservation = new Guna.UI2.WinForms.Guna2GroupBox();
             this.dgvReservations = new Guna.UI2.WinForms.Guna2DataGridView();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
+            this.btnSearchReservation = new Guna.UI2.WinForms.Guna2Button();
             this.btnDeleteReservation = new Guna.UI2.WinForms.Guna2Button();
             this.btnDisplayReservations = new Guna.UI2.WinForms.Guna2Button();
             this.txtReservationIdentifier = new Guna.UI2.WinForms.Guna2TextBox();
@@ -89,7 +90,6 @@ namespace Residence_Management_System.User_Controls
             this.label20 = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.btnSearchReservation = new Guna.UI2.WinForms.Guna2Button();
             this.Rooms.SuspendLayout();
             this.guna2GroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRooms)).BeginInit();
@@ -137,27 +137,27 @@ namespace Residence_Management_System.User_Controls
             // 
             // dgvRooms
             // 
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
-            this.dgvRooms.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.dgvRooms.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvRooms.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 9F);
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvRooms.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvRooms.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvRooms.ColumnHeadersHeight = 30;
             this.dgvRooms.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI", 9F);
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvRooms.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvRooms.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvRooms.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvRooms.Location = new System.Drawing.Point(3, 191);
             this.dgvRooms.Name = "dgvRooms";
@@ -629,27 +629,27 @@ namespace Residence_Management_System.User_Controls
             // 
             // dgvReservations
             // 
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.White;
-            this.dgvReservations.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            this.dgvReservations.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvReservations.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Segoe UI", 9F);
-            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvReservations.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 9F);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvReservations.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvReservations.ColumnHeadersHeight = 30;
             this.dgvReservations.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Segoe UI", 9F);
-            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvReservations.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 9F);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvReservations.DefaultCellStyle = dataGridViewCellStyle6;
             this.dgvReservations.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvReservations.Location = new System.Drawing.Point(3, 191);
             this.dgvReservations.Name = "dgvReservations";
@@ -691,6 +691,25 @@ namespace Residence_Management_System.User_Controls
             this.guna2Panel2.Name = "guna2Panel2";
             this.guna2Panel2.Size = new System.Drawing.Size(597, 148);
             this.guna2Panel2.TabIndex = 178;
+            // 
+            // btnSearchReservation
+            // 
+            this.btnSearchReservation.Animated = true;
+            this.btnSearchReservation.BorderRadius = 10;
+            this.btnSearchReservation.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSearchReservation.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnSearchReservation.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnSearchReservation.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnSearchReservation.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnSearchReservation.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnSearchReservation.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnSearchReservation.ForeColor = System.Drawing.Color.White;
+            this.btnSearchReservation.Location = new System.Drawing.Point(308, 86);
+            this.btnSearchReservation.Name = "btnSearchReservation";
+            this.btnSearchReservation.Size = new System.Drawing.Size(110, 33);
+            this.btnSearchReservation.TabIndex = 189;
+            this.btnSearchReservation.Text = "Search";
+            this.btnSearchReservation.Click += new System.EventHandler(this.btnSearchReservation_Click);
             // 
             // btnDeleteReservation
             // 
@@ -880,7 +899,7 @@ namespace Residence_Management_System.User_Controls
             this.txtReserveRoomCode.Location = new System.Drawing.Point(37, 123);
             this.txtReserveRoomCode.Name = "txtReserveRoomCode";
             this.txtReserveRoomCode.PasswordChar = '\0';
-            this.txtReserveRoomCode.PlaceholderText = "G21";
+            this.txtReserveRoomCode.PlaceholderText = "1";
             this.txtReserveRoomCode.SelectedText = "";
             this.txtReserveRoomCode.Size = new System.Drawing.Size(200, 36);
             this.txtReserveRoomCode.TabIndex = 168;
@@ -901,7 +920,7 @@ namespace Residence_Management_System.User_Controls
             this.dtpDateAllocated.Name = "dtpDateAllocated";
             this.dtpDateAllocated.Size = new System.Drawing.Size(200, 36);
             this.dtpDateAllocated.TabIndex = 4;
-            this.dtpDateAllocated.Value = new System.DateTime(2022, 7, 8, 11, 10, 53, 331);
+            this.dtpDateAllocated.Value = new System.DateTime(2022, 9, 2, 0, 0, 0, 0);
             this.dtpDateAllocated.ValueChanged += new System.EventHandler(this.guna2DateTimePicker4_ValueChanged);
             // 
             // btnUpdate
@@ -1019,7 +1038,7 @@ namespace Residence_Management_System.User_Controls
             this.txtReserveStudentNo.Location = new System.Drawing.Point(36, 66);
             this.txtReserveStudentNo.Name = "txtReserveStudentNo";
             this.txtReserveStudentNo.PasswordChar = '\0';
-            this.txtReserveStudentNo.PlaceholderText = "12345678";
+            this.txtReserveStudentNo.PlaceholderText = "1";
             this.txtReserveStudentNo.SelectedText = "";
             this.txtReserveStudentNo.Size = new System.Drawing.Size(200, 36);
             this.txtReserveStudentNo.TabIndex = 3;
@@ -1064,25 +1083,6 @@ namespace Residence_Management_System.User_Controls
             this.label28.TabIndex = 63;
             this.label28.Text = "Reservations";
             this.label28.Click += new System.EventHandler(this.label28_Click);
-            // 
-            // btnSearchReservation
-            // 
-            this.btnSearchReservation.Animated = true;
-            this.btnSearchReservation.BorderRadius = 10;
-            this.btnSearchReservation.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSearchReservation.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnSearchReservation.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnSearchReservation.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnSearchReservation.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnSearchReservation.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnSearchReservation.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnSearchReservation.ForeColor = System.Drawing.Color.White;
-            this.btnSearchReservation.Location = new System.Drawing.Point(308, 86);
-            this.btnSearchReservation.Name = "btnSearchReservation";
-            this.btnSearchReservation.Size = new System.Drawing.Size(110, 33);
-            this.btnSearchReservation.TabIndex = 189;
-            this.btnSearchReservation.Text = "Search";
-            this.btnSearchReservation.Click += new System.EventHandler(this.btnSearchReservation_Click);
             // 
             // UC_room
             // 

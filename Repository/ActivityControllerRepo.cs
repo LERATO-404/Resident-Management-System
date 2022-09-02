@@ -16,14 +16,18 @@ namespace Residence_Management_System.Repository
     public class ActivityControllerRepo{
 
         private readonly MyMethods myActMethod = new MyMethods();
-
+        
+        
         public string SelecteTable(int id)
         {
             return "SELECT * FROM [students] WHERE studentId = '" + id + "'";
         }
+
+
+
         public void AllocateStudentToActivity(ActivityModel stdAct){
-			string sqlInsertActivity = @"INSERT INTO [activityParticipation](studentParticipating,semesterParticipating,totalPoints,allocatedDate, addedBy)"+
-            "VALUES(@studentParticipating,@semesterParticipating,@totalPoints,@allocatedDate, @addedBy)";
+			string sqlInsertActivity = @"INSERT INTO [activityParticipation](studentParticipant,semesterParticipating,totalPoints,allocatedDate, addedBy)" +
+            "VALUES(@studentParticipant,@semesterParticipating,@totalPoints,@allocatedDate, @addedBy)";
 
             using (SqlConnection con = new SqlConnection(myActMethod.GetConnection()))
             {
@@ -34,22 +38,23 @@ namespace Residence_Management_System.Repository
                     CommandType = CommandType.Text
                 };
                 
-                cmd.Parameters.Add("@studentParticipating", SqlDbType.Int).Value = stdAct.StudentId;
+                
+                cmd.Parameters.Add("@studentParticipant", SqlDbType.Int).Value = stdAct.StudentId;
                 cmd.Parameters.Add("@semesterParticipating", SqlDbType.VarChar).Value = stdAct.SemesterParticipating;
                 cmd.Parameters.Add("@totalPoints", SqlDbType.Int).Value = stdAct.TotalPoints;
                 cmd.Parameters.Add("@allocatedDate", SqlDbType.VarChar).Value = stdAct.AllocatedDate;
-                cmd.Parameters.Add("@addedBy", SqlDbType.Int).Value = myActMethod.GetUserId("sa");
-                
+                cmd.Parameters.Add("@addedBy", SqlDbType.Int).Value = UserId.GetUserId();
 
-               
+
+
                 try
                 {
                     cmd.ExecuteNonQuery();
                     MessageBox.Show("Activity participation added successfully", "Information", (MessageBoxButtons)MessageBoxButton.OK, MessageBoxIcon.Information);
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
-                    MessageBox.Show("Failed to add activity \n" + ex.Message, "Error", (MessageBoxButtons)MessageBoxButton.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Failed to add activity student Id:" +stdAct.StudentId+ " was not found", "Error", (MessageBoxButtons)MessageBoxButton.OK, MessageBoxIcon.Error);
                 }
                 finally
                 {

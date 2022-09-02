@@ -28,7 +28,7 @@ namespace Residence_Management_System.User_Controls
 
         }
 
-        public int SortsActivityAccumulatedPoints()
+        public int ActivityAccumulatedPoints()
         {
             return 10;
         }
@@ -41,14 +41,15 @@ namespace Residence_Management_System.User_Controls
             int selection = cBox.SelectedIndex;
             switch (selection)
             {
+               
                 case 0:
-                    textSelected = cBox.SelectedText;
+                    textSelected = "First-Semester";
                     break;
                 case 1:
-                    textSelected = cBox.SelectedText;
+                    textSelected = "Second-Semester";
                     break;
                 case 2:
-                    textSelected = cBox.SelectedText;
+                    textSelected = "Both-Semesters";
                     break;
                 default:
                     break;
@@ -58,23 +59,18 @@ namespace Residence_Management_System.User_Controls
 
         public bool IsActivityInputEmpty()
         {
-            string x = ((String.IsNullOrEmpty(txtActStudentNo.Text) == true || String.IsNullOrEmpty(cboxSemesterParticipating.Text) == true)) ? "Enter student Id of the student you want to allocate to activies " : "Please select the semester the student will be participating in the activitie(s)";
+            //string x = (String.IsNullOrEmpty(txtActStudentNo.Text) == true || String.IsNullOrEmpty(semesterParticipating(cboxSemesterParticipating)) == true) ? "Enter student Id of the student you want to allocate to activies " : "Please select the semester the student will be participating in the activitie(s)";
 
             if (String.IsNullOrEmpty(txtActStudentNo.Text) == true || String.IsNullOrEmpty(cboxSemesterParticipating.Text) == true)
             {
-                if(int.TryParse(txtActStudentNo.Text, out int id) == false){
-                    if(myActMethod.CheckIfIdExist(actREpo.SelecteTable(id)) == false)
-                    {
-                        //MessageBox.Show("Student Id"+id.ToString()+" was not found", "Id Not Found", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                    return true;
-                }
+                return true;
             }
             else
             {
-                MessageBox.Show(x, "Input not entered", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //MessageBox.Show(x, "Input not entered", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
             }
-            return false;
+            
         }
 
         
@@ -85,13 +81,17 @@ namespace Residence_Management_System.User_Controls
             {
                 try
                 {
-                    ActivityModel createAct = new ActivityModel(int.Parse(txtActStudentNo.Text),cboxSemesterParticipating.Text, SortsActivityAccumulatedPoints(), DateTime.Today.ToString());
+                    
+                    ActivityModel createAct = new ActivityModel(int.Parse(txtActStudentNo.Text), semesterParticipating(cboxSemesterParticipating), ActivityAccumulatedPoints(), DateTime.Today.ToString());
                     actREpo.AllocateStudentToActivity(createAct);
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Failed to add a student participation points "+ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                } 
+                    MessageBox.Show("Failed to add a student participation points  "+ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }else
+            {
+                MessageBox.Show("Please enter both the student Id semester participating " , "No input entered", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             
         }

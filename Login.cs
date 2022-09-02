@@ -16,6 +16,7 @@ namespace Residence_Management_System
         public Login()
         {
             InitializeComponent();
+            
         }
 
 
@@ -49,7 +50,8 @@ namespace Residence_Management_System
             {
                 if (isEmptyInput() == false)
                 {
-                    uR.LoginUser(username, password);   
+                    uR.LoginUser(username, password);
+                    
                     //this.Hide();
                 }
                 else

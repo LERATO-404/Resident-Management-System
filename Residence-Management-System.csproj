@@ -113,6 +113,7 @@
     <Compile Include="Repository\HomeRepo.cs" />
     <Compile Include="Repository\RoomControllerRepo.cs" />
     <Compile Include="Repository\UserRepo.cs" />
+    <Compile Include="UserId.cs" />
     <Compile Include="User_Controls\UC_activities.cs">
       <SubType>UserControl</SubType>
     </Compile>

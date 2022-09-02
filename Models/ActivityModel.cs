@@ -75,7 +75,7 @@ namespace Residence_Management_System.Models
 					_semesterParticipating = value;
 				}
 				else{
-					_semesterParticipating = "";
+					_semesterParticipating = null;
 				}
 			}
 		}

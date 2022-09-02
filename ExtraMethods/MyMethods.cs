@@ -14,7 +14,9 @@ namespace Residence_Management_System.ExtraMethods
 {
     internal class MyMethods
     {
-        
+       
+
+       
         //gets connection string
         public string GetConnection()
         {
@@ -69,24 +71,7 @@ namespace Residence_Management_System.ExtraMethods
             return false;
         }
         
-        public int GetUserId(string lbl)
-        {
-            string sqlId = @"SELECT * FROM [users] WHERE username = @username"; // userName = lblWelcome.Text
-            using (SqlConnection con = new SqlConnection(GetConnection()))
-            {
-                if (con.State != ConnectionState.Open) { con.Open(); }
-                SqlCommand cmd = new SqlCommand(sqlId, con);
-                cmd.Parameters.AddWithValue("@username", lbl);
-                try
-                {
-                    return Convert.ToInt32(cmd.ExecuteScalar());
-                }
-                finally
-                {
-                    cmd.Dispose();
-                }
-            }
-        }
+        
 
         public int CountRecords(string sqlCount)
         {

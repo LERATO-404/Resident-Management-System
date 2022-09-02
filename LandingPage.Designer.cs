@@ -310,8 +310,8 @@ namespace Residence_Management_System
         private FontAwesome.Sharp.IconButton menuBtn;
         private System.Windows.Forms.Panel tabsContainer;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label7;
         public System.Windows.Forms.Label lblWelcomeUsername;
         private Guna.UI2.WinForms.Guna2PictureBox LogoLandingPage;
+        public System.Windows.Forms.Label label7;
     }
 }
