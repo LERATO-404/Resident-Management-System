@@ -16,7 +16,8 @@ namespace Residence_Management_System.Models
 		private int _reservedBy; //Fk -- addedby
 		private string _bedAndChairUsage;
 		private string _recessStatus;
-		private string _dateReserved;
+		private DateTime _dateReserved;
+		private DateTime _movedInDate;
 		
 		
 		public ReservationModel(){
@@ -24,24 +25,25 @@ namespace Residence_Management_System.Models
 			
 		}
 		
-		public ReservationModel(int aReservationId, int aStudentNo, int aRoomId, int aUser, string aBedAndChairUsage, string aRecessStatus, string aDateReserved){
+		public ReservationModel(int aReservationId, int aStudentNo, int aRoomId, string aBedAndChairUsage, string aRecessStatus, DateTime aDateReserved, DateTime aMovedInDate)
+		{
 			_reservationId  = aReservationId;
 			_studentId = aStudentNo;
 			_roomId  = aRoomId;
-			_reservedBy  = aUser;
 			BedAndChairUsage = aBedAndChairUsage;
 			RecessStatus = aRecessStatus;
 			_dateReserved = aDateReserved;
+			_movedInDate = aMovedInDate;
 		}
 
-		public ReservationModel(int aStudentNo, int aRoomId, string aBedAndChairUsage, string aRecessStatus, string aDateReserved)
+		public ReservationModel(int aStudentNo, int aRoomId, string aBedAndChairUsage, string aRecessStatus, DateTime aDateReserved, DateTime aMovedInDate)
 		{
 			StudentId = aStudentNo;
 			RoomId = aRoomId;
-			//_reservedBy = aUser;
 			BedAndChairUsage = aBedAndChairUsage;
 			RecessStatus = aRecessStatus;
 			_dateReserved = aDateReserved;
+			_movedInDate = aMovedInDate;
 		}
 
 
@@ -79,13 +81,20 @@ namespace Residence_Management_System.Models
 			}
 		}
 		
-		public string DateReserved{
+		public DateTime DateReserved
+		{
 			get {return _dateReserved;}
 			set {_dateReserved = value;}
 		}
 		
 
-		
+		public DateTime MovedInDate
+		{
+			get { return _movedInDate; }
+			set { _movedInDate = value; }
+		}
+
+
 		// Foreign key 
 		//[Display(Name = "StudentModel")] 
 		public int StudentId { 

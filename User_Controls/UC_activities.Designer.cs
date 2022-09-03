@@ -29,9 +29,9 @@ namespace Residence_Management_System.User_Controls
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.guna2TabControl1 = new Guna.UI2.WinForms.Guna2TabControl();
             this.addParticipant = new System.Windows.Forms.TabPage();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
@@ -666,9 +666,9 @@ namespace Residence_Management_System.User_Controls
             this.checkboxCharityWalks.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.checkboxCharityWalks.Location = new System.Drawing.Point(82, 137);
             this.checkboxCharityWalks.Name = "checkboxCharityWalks";
-            this.checkboxCharityWalks.Size = new System.Drawing.Size(93, 19);
+            this.checkboxCharityWalks.Size = new System.Drawing.Size(91, 19);
             this.checkboxCharityWalks.TabIndex = 130;
-            this.checkboxCharityWalks.Text = "Charity walls";
+            this.checkboxCharityWalks.Text = "Charity walk";
             this.checkboxCharityWalks.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             this.checkboxCharityWalks.UncheckedState.BorderRadius = 0;
             this.checkboxCharityWalks.UncheckedState.BorderThickness = 0;
@@ -928,6 +928,7 @@ namespace Residence_Management_System.User_Controls
             this.btnDeleteActivity.Size = new System.Drawing.Size(110, 33);
             this.btnDeleteActivity.TabIndex = 188;
             this.btnDeleteActivity.Text = "Delete";
+            this.btnDeleteActivity.Click += new System.EventHandler(this.btnDeleteActivity_Click);
             // 
             // label4
             // 
@@ -963,27 +964,27 @@ namespace Residence_Management_System.User_Controls
             // 
             // dgvActivities
             // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.dgvActivities.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            this.dgvActivities.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvActivities.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvActivities.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvActivities.ColumnHeadersHeight = 4;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 9F);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvActivities.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            this.dgvActivities.ColumnHeadersHeight = 30;
             this.dgvActivities.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvActivities.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 9F);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvActivities.DefaultCellStyle = dataGridViewCellStyle6;
             this.dgvActivities.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvActivities.Location = new System.Drawing.Point(3, 191);
             this.dgvActivities.Name = "dgvActivities";
@@ -1002,7 +1003,7 @@ namespace Residence_Management_System.User_Controls
             this.dgvActivities.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.dgvActivities.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
             this.dgvActivities.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            this.dgvActivities.ThemeStyle.HeaderStyle.Height = 4;
+            this.dgvActivities.ThemeStyle.HeaderStyle.Height = 30;
             this.dgvActivities.ThemeStyle.ReadOnly = false;
             this.dgvActivities.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
             this.dgvActivities.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
@@ -1074,6 +1075,7 @@ namespace Residence_Management_System.User_Controls
             this.btnDisplayActivities.Size = new System.Drawing.Size(110, 33);
             this.btnDisplayActivities.TabIndex = 183;
             this.btnDisplayActivities.Text = "Display";
+            this.btnDisplayActivities.Click += new System.EventHandler(this.btnDisplayActivities_Click);
             // 
             // cboxShowActivities
             // 

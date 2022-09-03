@@ -19,6 +19,7 @@ namespace Residence_Management_System.ExtraMethods
 
         // validate email
         const string emailReg = @"^[\w!#$%&'*+\-/=?\^_`{|}~]+(\.[\w!#$%&'*+\-/=?\^_`{|}~]+)*@((([\-\w]+\.)+[a-zA-Z]{2,4})|(([0-9]{1,3}\.){3}[0-9]{1,3}))\z";
+        const string gmail = "@gmail.com";
 
         const int phoneLen = 10;
         const int studentNoLen = 8;
@@ -27,7 +28,8 @@ namespace Residence_Management_System.ExtraMethods
         {
 
             bool isEmValid = Regex.IsMatch(email, emailReg);
-            if (isEmValid == true)
+            string modifiedEmail = email.ToLower();
+            if (isEmValid == true && modifiedEmail.Contains(gmail))
             {
                 labelSelected.Visible = false;
                 return true;

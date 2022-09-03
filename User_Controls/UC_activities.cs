@@ -28,9 +28,50 @@ namespace Residence_Management_System.User_Controls
 
         }
 
+        public int HighPerformance()
+        {
+            
+            if(checkboxSoccer.Checked == true|| checkboxRugby.Checked == true || checkboxCricket.Checked == true || checkboxNetball.Checked == true || checkboxHockey.Checked == true)
+            {
+                return 10;
+            }
+            return 0;
+        }
+
+        public int Competitive()
+        {
+
+            if (checkboxSwimming.Checked == true || checkboxKarate.Checked == true || checkboxCycling.Checked == true || checkboxGolf.Checked == true || checkboxSquash.Checked == true)
+            {
+                return 10;
+            }
+            return 0;
+        }
+
+        public int Recreational()
+        {
+
+            if (checkboxEsport.Checked == true || checkboxDance.Checked == true || checkboxDIYCraft.Checked == true || checkboxEasterdayhunt.Checked == true || checkboxCharityWalks.Checked == true)
+            {
+                return 5;
+            }
+            return 0;
+        }
+
+        public int Wellbeing()
+        {
+
+            if (checkboxYoga.Checked == true || checkboxGym.Checked == true || checkboxOther.Checked == true)
+            {
+                return 5;
+            }
+            return 0;
+        }
+
         public int ActivityAccumulatedPoints()
         {
-            return 10;
+            int totalPoint = HighPerformance() + Competitive() + Recreational() + Wellbeing();
+            return totalPoint;
         }
 
        
@@ -94,6 +135,34 @@ namespace Residence_Management_System.User_Controls
                 MessageBox.Show("Please enter both the student Id semester participating " , "No input entered", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             
+        }
+
+        
+
+        private void btnDisplayActivities_Click(object sender, EventArgs e)
+        {
+            string selecteT = actREpo.SelectedTable(cboxShowActivities);
+            myActMethod.ViewTable(dgvActivities, selecteT);
+        }
+
+        private void btnDeleteActivity_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (txtActivityIdentifier.Text != "")
+                {
+                    string resourceToDelete = actREpo.SelectedTableToDeleteResource(int.Parse(txtActivityIdentifier.Text));
+                    myActMethod.RemoveById(int.Parse(txtActivityIdentifier.Text), resourceToDelete);
+                }
+                else
+                {
+                    MessageBox.Show("Please enter the Id of the resource you want to delete!..", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Invalid Id, Please enter Id number (firstcolumn) of the resource you want to delete!..", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

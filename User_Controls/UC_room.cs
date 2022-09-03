@@ -40,7 +40,7 @@ namespace Residence_Management_System.User_Controls
         {
             
             if (String.IsNullOrEmpty(txtReserveStudentNo.Text) == true || String.IsNullOrEmpty(txtReserveRoomCode.Text) == true ||
-            String.IsNullOrEmpty(cboxBedandChairUsage.Text) == true || String.IsNullOrEmpty(cboxRecessStatus.Text) == true || String.IsNullOrEmpty(dtpDateAllocated.Text) == true)
+            String.IsNullOrEmpty(cboxBedandChairUsage.Text) == true || String.IsNullOrEmpty(cboxRecessStatus.Text) == true || String.IsNullOrEmpty(dtpDateMovingIn.Text) == true)
             {
                 return true;
             }
@@ -305,7 +305,7 @@ namespace Residence_Management_System.User_Controls
                     {
                         
 
-                        ReservationModel rS = new ReservationModel(Int32.Parse(txtReserveStudentNo.Text), Int32.Parse(txtReserveRoomCode.Text), cboxBedandChairUsage.Text, cboxRecessStatus.Text, DateTime.Today.ToShortDateString());
+                        ReservationModel rS = new ReservationModel(Int32.Parse(txtReserveStudentNo.Text), Int32.Parse(txtReserveRoomCode.Text), cboxBedandChairUsage.Text, cboxRecessStatus.Text, DateTime.Today,dtpDateMovingIn.Value);
                         rRCR.ReserveRoomForStudent(rS);
                         /*
                         if (rS != null)
@@ -367,7 +367,7 @@ namespace Residence_Management_System.User_Controls
             string x = ((String.IsNullOrEmpty(txtReservationIdentifier.Text) == true) && (IsReservationInputEmpty() == true)) ? "Please enter the reservation Id of the reservation you want to update!.. " : "Please fill all the boxes with *";
             if (String.IsNullOrEmpty(txtReservationIdentifier.Text) == false && (IsReservationInputEmpty() == false))
             {
-                ReservationModel updateReservationDetails = new ReservationModel(int.Parse(txtReserveStudentNo.Text),int.Parse(txtReserveRoomCode.Text),cboxBedandChairUsage.Text,cboxRecessStatus.Text,DateTime.Today.ToShortDateString());
+                ReservationModel updateReservationDetails = new ReservationModel(int.Parse(txtReserveStudentNo.Text),int.Parse(txtReserveRoomCode.Text),cboxBedandChairUsage.Text,cboxRecessStatus.Text,DateTime.Today,dtpDateMovingIn.Value);
                 bool isInputValid = Int32.TryParse(txtReservationIdentifier.Text, out int id);
                 if (isInputValid == true)
                 {
@@ -399,7 +399,7 @@ namespace Residence_Management_System.User_Controls
                     txtReserveRoomCode.Text = rs.RoomId.ToString();
                     cboxBedandChairUsage.Text = rs.BedAndChairUsage;
                     cboxRecessStatus.Text = rs.RecessStatus;
-                    dtpDateAllocated.Text = rs.DateReserved;
+                    //dtpDateMovingIn.Value = rs.MovedInDate.Date;
                 }
                 else
                 {

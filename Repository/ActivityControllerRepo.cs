@@ -16,12 +16,34 @@ namespace Residence_Management_System.Repository
     public class ActivityControllerRepo{
 
         private readonly MyMethods myActMethod = new MyMethods();
-        
-        
-        public string SelecteTable(int id)
+
+
+        public string SelectedTable(ComboBox cs)
         {
-            return "SELECT * FROM [students] WHERE studentId = '" + id + "'";
+
+            int tableSelected = cs.SelectedIndex;
+
+            string tname;
+            switch (tableSelected)
+            {
+                case 0:
+                    tname = @"SELECT * FROM [activityParticipation]";
+                    break;
+                case 1:
+                    tname = "";
+                    break;
+                default:
+                    tname = "";
+                    break;
+            }
+            return tname;
         }
+
+        public string SelectedTableToDeleteResource(int id)
+        {
+            return @"DELETE  [activityParticipation] WHERE activityId = '" + id + "'"; ;
+        }
+
 
 
 

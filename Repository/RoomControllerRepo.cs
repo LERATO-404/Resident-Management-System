@@ -109,7 +109,8 @@ namespace Residence_Management_System.Repository
                         reservationView.RoomId = (int)srd["roomId"];
                         reservationView.BedAndChairUsage = srd["bedAndChairUsage"].ToString();
                         reservationView.RecessStatus = srd["recessStatus"].ToString();
-                        reservationView.DateReserved = srd["dateReserved"].ToString();
+                        reservationView.DateReserved = (DateTime)srd["dateReserved"];
+                        reservationView.MovedInDate = (DateTime)srd["MovedInDate"];
 ;                        
                     }
                     else
@@ -288,8 +289,8 @@ namespace Residence_Management_System.Repository
 		
 		public void ReserveRoomForStudent(ReservationModel rms){
             //aStudentNo,aRoomId,aBedAndChairUsage,aRecessStatus, aDateReserved
-            string sqlInsertReservation = @"INSERT INTO [reservations](studentId,roomId,reservedBy,bedAndChairUsage,recessStatus,dateReserved)" +
-            "VALUES(@StudentId,@roomId,@reservedBy,@BedAndChairUsage,@recessStatus,@dateReserved)";
+            string sqlInsertReservation = @"INSERT INTO [reservations](studentId,roomId,reservedBy,bedAndChairUsage,recessStatus,dateReserved,MovedInDate)" +
+            "VALUES(@StudentId,@roomId,@reservedBy,@BedAndChairUsage,@recessStatus,@dateReserved,@MovedInDate)";
 
             using (SqlConnection con = new SqlConnection(myRoomMethod.GetConnection()))
             {
@@ -306,6 +307,7 @@ namespace Residence_Management_System.Repository
                 cmd.Parameters.Add("@BedAndChairUsage", SqlDbType.VarChar).Value = rms.BedAndChairUsage;
                 cmd.Parameters.Add("@recessStatus", SqlDbType.VarChar).Value = rms.RecessStatus;
                 cmd.Parameters.Add("@dateReserved", SqlDbType.DateTime).Value = rms.DateReserved;
+                cmd.Parameters.Add("@movedInDate", SqlDbType.DateTime).Value = rms.MovedInDate;
 
                 
                 try
@@ -328,7 +330,7 @@ namespace Residence_Management_System.Repository
 		public void UpdateReservationDetails(int rId, ReservationModel rmUpdateReservation)
         {
 			 
-			string sqlUpdateReservation = @"UPDATE [reservations] SET studentId=@studentId,roomId=@roomId,bedAndChairUsage=@bedAndChairUsage,recessStatus=@recessStatus WHERE reservationId=@reservationId";
+			string sqlUpdateReservation = @"UPDATE [reservations] SET studentId=@studentId,roomId=@roomId,bedAndChairUsage=@bedAndChairUsage,recessStatus=@recessStatus,dateReserved=@dateReserved,MovedInDate=@MovedInDate WHERE reservationId=@reservationId";
 
             using (SqlConnection con = new SqlConnection(myRoomMethod.GetConnection()))
             {
@@ -348,6 +350,8 @@ namespace Residence_Management_System.Repository
                 adapt.UpdateCommand.Parameters.Add("@roomId", SqlDbType.Int).Value = rmUpdateReservation.RoomId;
                 adapt.UpdateCommand.Parameters.Add("@bedAndChairUsage", SqlDbType.VarChar).Value = rmUpdateReservation.BedAndChairUsage;
                 adapt.UpdateCommand.Parameters.Add("@recessStatus", SqlDbType.VarChar).Value = rmUpdateReservation.RecessStatus;
+                adapt.UpdateCommand.Parameters.Add("@dateReserved", SqlDbType.DateTime).Value = rmUpdateReservation.DateReserved;
+                adapt.UpdateCommand.Parameters.Add("@MovedInDate", SqlDbType.DateTime).Value = rmUpdateReservation.MovedInDate;
 
                 try
                 {

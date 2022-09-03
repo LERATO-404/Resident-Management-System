@@ -78,7 +78,7 @@ namespace Residence_Management_System.User_Controls
             this.label9 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.txtReserveRoomCode = new Guna.UI2.WinForms.Guna2TextBox();
-            this.dtpDateAllocated = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            this.dtpDateMovingIn = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.btnUpdate = new Guna.UI2.WinForms.Guna2Button();
             this.label24 = new System.Windows.Forms.Label();
             this.btnReserve = new Guna.UI2.WinForms.Guna2Button();
@@ -823,7 +823,7 @@ namespace Residence_Management_System.User_Controls
             this.ReservationInfo.Controls.Add(this.label9);
             this.ReservationInfo.Controls.Add(this.label6);
             this.ReservationInfo.Controls.Add(this.txtReserveRoomCode);
-            this.ReservationInfo.Controls.Add(this.dtpDateAllocated);
+            this.ReservationInfo.Controls.Add(this.dtpDateMovingIn);
             this.ReservationInfo.Controls.Add(this.btnUpdate);
             this.ReservationInfo.Controls.Add(this.label24);
             this.ReservationInfo.Controls.Add(this.btnReserve);
@@ -904,24 +904,24 @@ namespace Residence_Management_System.User_Controls
             this.txtReserveRoomCode.Size = new System.Drawing.Size(200, 36);
             this.txtReserveRoomCode.TabIndex = 168;
             // 
-            // dtpDateAllocated
+            // dtpDateMovingIn
             // 
-            this.dtpDateAllocated.Animated = true;
-            this.dtpDateAllocated.BorderRadius = 5;
-            this.dtpDateAllocated.Checked = true;
-            this.dtpDateAllocated.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.dtpDateAllocated.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.dtpDateAllocated.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.dtpDateAllocated.ForeColor = System.Drawing.Color.White;
-            this.dtpDateAllocated.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.dtpDateAllocated.Location = new System.Drawing.Point(36, 291);
-            this.dtpDateAllocated.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.dtpDateAllocated.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            this.dtpDateAllocated.Name = "dtpDateAllocated";
-            this.dtpDateAllocated.Size = new System.Drawing.Size(200, 36);
-            this.dtpDateAllocated.TabIndex = 4;
-            this.dtpDateAllocated.Value = new System.DateTime(2022, 9, 2, 0, 0, 0, 0);
-            this.dtpDateAllocated.ValueChanged += new System.EventHandler(this.guna2DateTimePicker4_ValueChanged);
+            this.dtpDateMovingIn.Animated = true;
+            this.dtpDateMovingIn.BorderRadius = 5;
+            this.dtpDateMovingIn.Checked = true;
+            this.dtpDateMovingIn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.dtpDateMovingIn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.dtpDateMovingIn.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.dtpDateMovingIn.ForeColor = System.Drawing.Color.White;
+            this.dtpDateMovingIn.Format = System.Windows.Forms.DateTimePickerFormat.Long;
+            this.dtpDateMovingIn.Location = new System.Drawing.Point(36, 291);
+            this.dtpDateMovingIn.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.dtpDateMovingIn.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.dtpDateMovingIn.Name = "dtpDateMovingIn";
+            this.dtpDateMovingIn.Size = new System.Drawing.Size(200, 36);
+            this.dtpDateMovingIn.TabIndex = 4;
+            this.dtpDateMovingIn.Value = new System.DateTime(2022, 9, 2, 0, 0, 0, 0);
+            this.dtpDateMovingIn.ValueChanged += new System.EventHandler(this.guna2DateTimePicker4_ValueChanged);
             // 
             // btnUpdate
             // 
@@ -950,9 +950,9 @@ namespace Residence_Management_System.User_Controls
             this.label24.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             this.label24.Location = new System.Drawing.Point(33, 277);
             this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(81, 13);
+            this.label24.Size = new System.Drawing.Size(87, 13);
             this.label24.TabIndex = 85;
-            this.label24.Text = "Date allocated";
+            this.label24.Text = "Date moving In";
             this.label24.Click += new System.EventHandler(this.label24_Click);
             // 
             // btnReserve
@@ -1136,7 +1136,7 @@ namespace Residence_Management_System.User_Controls
         private System.Windows.Forms.Label label3;
         private Guna.UI2.WinForms.Guna2TabControl guna2TabControl1;
         private System.Windows.Forms.TabPage Reservation;
-        private Guna.UI2.WinForms.Guna2DateTimePicker dtpDateAllocated;
+        private Guna.UI2.WinForms.Guna2DateTimePicker dtpDateMovingIn;
         private System.Windows.Forms.Label label24;
         private Guna.UI2.WinForms.Guna2ComboBox cboxBedandChairUsage;
         private System.Windows.Forms.Label label26;
