@@ -30,174 +30,198 @@ namespace Residence_Management_System.User_Controls
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_report));
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.label5 = new System.Windows.Forms.Label();
-            this.AcademicYearGB = new Guna.UI2.WinForms.Guna2GroupBox();
-            this.guna2GroupBox2 = new Guna.UI2.WinForms.Guna2GroupBox();
-            this.guna2GroupBox3 = new Guna.UI2.WinForms.Guna2GroupBox();
-            this.guna2GroupBox4 = new Guna.UI2.WinForms.Guna2GroupBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.iconPictureBox2 = new FontAwesome.Sharp.IconPictureBox();
-            this.guna2GroupBox5 = new Guna.UI2.WinForms.Guna2GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.btnReserve = new Guna.UI2.WinForms.Guna2Button();
+            this.label13 = new System.Windows.Forms.Label();
+            this.cboxRoomAvailability = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.label24 = new System.Windows.Forms.Label();
+            this.dtpDateMovingIn = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            this.label4 = new System.Windows.Forms.Label();
+            this.guna2DateTimePicker1 = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            this.label6 = new System.Windows.Forms.Label();
+            this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2HScrollBar1 = new Guna.UI2.WinForms.Guna2HScrollBar();
-            this.label3 = new System.Windows.Forms.Label();
-            this.guna2GroupBox4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox2)).BeginInit();
-            this.guna2GroupBox5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
+            this.BarJobType = new Guna.UI2.WinForms.Guna2GroupBox();
+            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.guna2Panel2.SuspendLayout();
             this.guna2Panel1.SuspendLayout();
+            this.BarJobType.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.SuspendLayout();
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(558, 32);
+            this.label5.Location = new System.Drawing.Point(516, 14);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(308, 65);
             this.label5.TabIndex = 6;
             this.label5.Text = resources.GetString("label5.Text");
             // 
-            // AcademicYearGB
+            // label3
             // 
-            this.AcademicYearGB.AutoScroll = true;
-            this.AcademicYearGB.BackColor = System.Drawing.Color.Transparent;
-            this.AcademicYearGB.BorderRadius = 10;
-            this.AcademicYearGB.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.AcademicYearGB.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.AcademicYearGB.Location = new System.Drawing.Point(3, 16);
-            this.AcademicYearGB.Name = "AcademicYearGB";
-            this.AcademicYearGB.ShadowDecoration.BorderRadius = 10;
-            this.AcademicYearGB.ShadowDecoration.Enabled = true;
-            this.AcademicYearGB.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(0, 0, 10, 10);
-            this.AcademicYearGB.Size = new System.Drawing.Size(300, 200);
-            this.AcademicYearGB.TabIndex = 7;
-            this.AcademicYearGB.Text = "Total Student By Academic Year";
-            this.AcademicYearGB.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(65, 14);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(345, 39);
+            this.label3.TabIndex = 13;
+            this.label3.Text = "Participation marks contributes 30% to a student senior placement mark.\r\nA studen" +
+    "t index mark (academics) is calculated by the university, \r\nmakes out the remain" +
+    "ing 70%";
             // 
-            // guna2GroupBox2
+            // btnReserve
             // 
-            this.guna2GroupBox2.BorderRadius = 10;
-            this.guna2GroupBox2.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2GroupBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.guna2GroupBox2.Location = new System.Drawing.Point(309, 16);
-            this.guna2GroupBox2.Name = "guna2GroupBox2";
-            this.guna2GroupBox2.Size = new System.Drawing.Size(300, 200);
-            this.guna2GroupBox2.TabIndex = 8;
-            this.guna2GroupBox2.Text = "Total Students By Course Name";
-            this.guna2GroupBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnReserve.Animated = true;
+            this.btnReserve.BorderRadius = 10;
+            this.btnReserve.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnReserve.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnReserve.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnReserve.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnReserve.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnReserve.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnReserve.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnReserve.ForeColor = System.Drawing.Color.White;
+            this.btnReserve.Location = new System.Drawing.Point(77, 263);
+            this.btnReserve.Name = "btnReserve";
+            this.btnReserve.Size = new System.Drawing.Size(110, 33);
+            this.btnReserve.TabIndex = 191;
+            this.btnReserve.Text = "Generate";
+            this.btnReserve.Click += new System.EventHandler(this.btnReserve_Click);
             // 
-            // guna2GroupBox3
+            // label13
             // 
-            this.guna2GroupBox3.BorderRadius = 10;
-            this.guna2GroupBox3.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2GroupBox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.guna2GroupBox3.Location = new System.Drawing.Point(615, 16);
-            this.guna2GroupBox3.Name = "guna2GroupBox3";
-            this.guna2GroupBox3.Size = new System.Drawing.Size(300, 200);
-            this.guna2GroupBox3.TabIndex = 9;
-            this.guna2GroupBox3.Text = "Total Students By Participating in Activity";
-            this.guna2GroupBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.label13.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.label13.Location = new System.Drawing.Point(36, 187);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(99, 13);
+            this.label13.TabIndex = 193;
+            this.label13.Text = "Room Availability";
             // 
-            // guna2GroupBox4
+            // cboxRoomAvailability
             // 
-            this.guna2GroupBox4.BackColor = System.Drawing.Color.Transparent;
-            this.guna2GroupBox4.BorderRadius = 10;
-            this.guna2GroupBox4.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
-            this.guna2GroupBox4.Controls.Add(this.label2);
-            this.guna2GroupBox4.Controls.Add(this.iconPictureBox2);
-            this.guna2GroupBox4.FillColor = System.Drawing.Color.Gainsboro;
-            this.guna2GroupBox4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.guna2GroupBox4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.guna2GroupBox4.Location = new System.Drawing.Point(6, 3);
-            this.guna2GroupBox4.Name = "guna2GroupBox4";
-            this.guna2GroupBox4.ShadowDecoration.BorderRadius = 10;
-            this.guna2GroupBox4.ShadowDecoration.Enabled = true;
-            this.guna2GroupBox4.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(0, 0, 10, 10);
-            this.guna2GroupBox4.Size = new System.Drawing.Size(173, 94);
-            this.guna2GroupBox4.TabIndex = 10;
-            this.guna2GroupBox4.Text = "Male Students";
-            this.guna2GroupBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.cboxRoomAvailability.BackColor = System.Drawing.Color.Transparent;
+            this.cboxRoomAvailability.BorderRadius = 5;
+            this.cboxRoomAvailability.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cboxRoomAvailability.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboxRoomAvailability.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cboxRoomAvailability.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cboxRoomAvailability.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cboxRoomAvailability.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cboxRoomAvailability.ItemHeight = 30;
+            this.cboxRoomAvailability.Items.AddRange(new object[] {
+            "Available",
+            "Not-Available",
+            "Both"});
+            this.cboxRoomAvailability.Location = new System.Drawing.Point(39, 203);
+            this.cboxRoomAvailability.Name = "cboxRoomAvailability";
+            this.cboxRoomAvailability.Size = new System.Drawing.Size(200, 36);
+            this.cboxRoomAvailability.TabIndex = 194;
             // 
-            // label2
+            // label24
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(76, 61);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(40, 15);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "label2";
+            this.label24.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.label24.AutoSize = true;
+            this.label24.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label24.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.label24.Location = new System.Drawing.Point(38, 122);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(48, 13);
+            this.label24.TabIndex = 196;
+            this.label24.Text = "Date to:";
             // 
-            // iconPictureBox2
+            // dtpDateMovingIn
             // 
-            this.iconPictureBox2.BackColor = System.Drawing.Color.Transparent;
-            this.iconPictureBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.iconPictureBox2.IconChar = FontAwesome.Sharp.IconChar.Users;
-            this.iconPictureBox2.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.iconPictureBox2.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconPictureBox2.IconSize = 46;
-            this.iconPictureBox2.Location = new System.Drawing.Point(21, 45);
-            this.iconPictureBox2.Name = "iconPictureBox2";
-            this.iconPictureBox2.Size = new System.Drawing.Size(49, 46);
-            this.iconPictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.iconPictureBox2.TabIndex = 2;
-            this.iconPictureBox2.TabStop = false;
+            this.dtpDateMovingIn.Animated = true;
+            this.dtpDateMovingIn.BorderRadius = 5;
+            this.dtpDateMovingIn.Checked = true;
+            this.dtpDateMovingIn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.dtpDateMovingIn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.dtpDateMovingIn.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.dtpDateMovingIn.ForeColor = System.Drawing.Color.White;
+            this.dtpDateMovingIn.Format = System.Windows.Forms.DateTimePickerFormat.Long;
+            this.dtpDateMovingIn.Location = new System.Drawing.Point(41, 136);
+            this.dtpDateMovingIn.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.dtpDateMovingIn.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.dtpDateMovingIn.Name = "dtpDateMovingIn";
+            this.dtpDateMovingIn.Size = new System.Drawing.Size(200, 36);
+            this.dtpDateMovingIn.TabIndex = 195;
+            this.dtpDateMovingIn.Value = new System.DateTime(2022, 9, 2, 0, 0, 0, 0);
             // 
-            // guna2GroupBox5
+            // label4
             // 
-            this.guna2GroupBox5.BackColor = System.Drawing.Color.Transparent;
-            this.guna2GroupBox5.BorderRadius = 10;
-            this.guna2GroupBox5.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
-            this.guna2GroupBox5.Controls.Add(this.label1);
-            this.guna2GroupBox5.Controls.Add(this.iconPictureBox1);
-            this.guna2GroupBox5.FillColor = System.Drawing.Color.Gainsboro;
-            this.guna2GroupBox5.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.guna2GroupBox5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.guna2GroupBox5.Location = new System.Drawing.Point(215, 3);
-            this.guna2GroupBox5.Name = "guna2GroupBox5";
-            this.guna2GroupBox5.ShadowDecoration.BorderRadius = 10;
-            this.guna2GroupBox5.ShadowDecoration.Enabled = true;
-            this.guna2GroupBox5.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(0, 0, 10, 10);
-            this.guna2GroupBox5.Size = new System.Drawing.Size(173, 94);
-            this.guna2GroupBox5.TabIndex = 11;
-            this.guna2GroupBox5.Text = "Female Students";
-            this.guna2GroupBox5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.label4.Location = new System.Drawing.Point(36, 60);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(64, 13);
+            this.label4.TabIndex = 198;
+            this.label4.Text = "Date From:";
             // 
-            // label1
+            // guna2DateTimePicker1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(76, 61);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(40, 15);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "label1";
+            this.guna2DateTimePicker1.Animated = true;
+            this.guna2DateTimePicker1.BorderRadius = 5;
+            this.guna2DateTimePicker1.Checked = true;
+            this.guna2DateTimePicker1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.guna2DateTimePicker1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.guna2DateTimePicker1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2DateTimePicker1.ForeColor = System.Drawing.Color.White;
+            this.guna2DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Long;
+            this.guna2DateTimePicker1.Location = new System.Drawing.Point(39, 74);
+            this.guna2DateTimePicker1.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.guna2DateTimePicker1.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.guna2DateTimePicker1.Name = "guna2DateTimePicker1";
+            this.guna2DateTimePicker1.Size = new System.Drawing.Size(200, 36);
+            this.guna2DateTimePicker1.TabIndex = 197;
+            this.guna2DateTimePicker1.Value = new System.DateTime(2022, 9, 2, 0, 0, 0, 0);
             // 
-            // iconPictureBox1
+            // label6
             // 
-            this.iconPictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.iconPictureBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.Users;
-            this.iconPictureBox1.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconPictureBox1.IconSize = 46;
-            this.iconPictureBox1.Location = new System.Drawing.Point(21, 45);
-            this.iconPictureBox1.Name = "iconPictureBox1";
-            this.iconPictureBox1.Size = new System.Drawing.Size(49, 46);
-            this.iconPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.iconPictureBox1.TabIndex = 2;
-            this.iconPictureBox1.TabStop = false;
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(22, 5);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(226, 25);
+            this.label6.TabIndex = 192;
+            this.label6.Text = "Room Availability Report";
+            // 
+            // guna2Panel2
+            // 
+            this.guna2Panel2.Controls.Add(this.label6);
+            this.guna2Panel2.Controls.Add(this.guna2DateTimePicker1);
+            this.guna2Panel2.Controls.Add(this.label4);
+            this.guna2Panel2.Controls.Add(this.dtpDateMovingIn);
+            this.guna2Panel2.Controls.Add(this.label24);
+            this.guna2Panel2.Controls.Add(this.cboxRoomAvailability);
+            this.guna2Panel2.Controls.Add(this.label13);
+            this.guna2Panel2.Controls.Add(this.btnReserve);
+            this.guna2Panel2.Location = new System.Drawing.Point(3, 71);
+            this.guna2Panel2.Name = "guna2Panel2";
+            this.guna2Panel2.Size = new System.Drawing.Size(271, 300);
+            this.guna2Panel2.TabIndex = 14;
             // 
             // guna2Panel1
             // 
             this.guna2Panel1.Controls.Add(this.guna2HScrollBar1);
-            this.guna2Panel1.Controls.Add(this.AcademicYearGB);
-            this.guna2Panel1.Controls.Add(this.guna2GroupBox3);
-            this.guna2Panel1.Controls.Add(this.guna2GroupBox2);
-            this.guna2Panel1.Location = new System.Drawing.Point(3, 150);
+            this.guna2Panel1.Controls.Add(this.BarJobType);
+            this.guna2Panel1.Location = new System.Drawing.Point(302, 104);
             this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(863, 250);
-            this.guna2Panel1.TabIndex = 12;
+            this.guna2Panel1.Size = new System.Drawing.Size(556, 384);
+            this.guna2Panel1.TabIndex = 15;
             // 
             // guna2HScrollBar1
             // 
@@ -211,36 +235,71 @@ namespace Residence_Management_System.User_Controls
             this.guna2HScrollBar1.SmallChange = 5;
             this.guna2HScrollBar1.TabIndex = 10;
             // 
-            // label3
+            // BarJobType
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(130, 433);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(345, 39);
-            this.label3.TabIndex = 13;
-            this.label3.Text = "Participation marks contributes 30% to a student senior placement mark.\r\nA studen" +
-    "t index mark (academics) is calculated by the university, \r\nmakes out the remain" +
-    "ing 70%";
+            this.BarJobType.AutoScroll = true;
+            this.BarJobType.BackColor = System.Drawing.Color.Transparent;
+            this.BarJobType.BorderRadius = 10;
+            this.BarJobType.Controls.Add(this.chart1);
+            this.BarJobType.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.BarJobType.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.BarJobType.Location = new System.Drawing.Point(45, 47);
+            this.BarJobType.Name = "BarJobType";
+            this.BarJobType.ShadowDecoration.BorderRadius = 10;
+            this.BarJobType.ShadowDecoration.Enabled = true;
+            this.BarJobType.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(0, 0, 10, 10);
+            this.BarJobType.Size = new System.Drawing.Size(488, 305);
+            this.BarJobType.TabIndex = 7;
+            this.BarJobType.Text = "Employee Job Type";
+            this.BarJobType.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // chart1
+            // 
+            chartArea1.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chart1.Legends.Add(legend1);
+            this.chart1.Location = new System.Drawing.Point(20, 53);
+            this.chart1.Name = "chart1";
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Full-Time";
+            series2.ChartArea = "ChartArea1";
+            series2.Legend = "Legend1";
+            series2.Name = "Part-Time";
+            series3.ChartArea = "ChartArea1";
+            series3.Legend = "Legend1";
+            series3.Name = "Temporary";
+            series4.ChartArea = "ChartArea1";
+            series4.Legend = "Legend1";
+            series4.Name = "Volunteer";
+            this.chart1.Series.Add(series1);
+            this.chart1.Series.Add(series2);
+            this.chart1.Series.Add(series3);
+            this.chart1.Series.Add(series4);
+            this.chart1.Size = new System.Drawing.Size(451, 224);
+            this.chart1.TabIndex = 0;
+            this.chart1.Text = "chart1";
+            title1.Name = "Employee Job Type";
+            this.chart1.Titles.Add(title1);
             // 
             // UC_report
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.label3);
+            this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.guna2Panel1);
-            this.Controls.Add(this.guna2GroupBox5);
-            this.Controls.Add(this.guna2GroupBox4);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.guna2Panel2);
             this.Controls.Add(this.label5);
             this.Name = "UC_report";
             this.Size = new System.Drawing.Size(890, 569);
             this.Load += new System.EventHandler(this.UC_report_Load);
-            this.guna2GroupBox4.ResumeLayout(false);
-            this.guna2GroupBox4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox2)).EndInit();
-            this.guna2GroupBox5.ResumeLayout(false);
-            this.guna2GroupBox5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).EndInit();
+            this.guna2Panel2.ResumeLayout(false);
+            this.guna2Panel2.PerformLayout();
             this.guna2Panel1.ResumeLayout(false);
+            this.BarJobType.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -249,17 +308,19 @@ namespace Residence_Management_System.User_Controls
         #endregion
 
         private System.Windows.Forms.Label label5;
-        private Guna.UI2.WinForms.Guna2GroupBox AcademicYearGB;
-        private Guna.UI2.WinForms.Guna2GroupBox guna2GroupBox2;
-        private Guna.UI2.WinForms.Guna2GroupBox guna2GroupBox3;
-        private Guna.UI2.WinForms.Guna2GroupBox guna2GroupBox4;
-        private System.Windows.Forms.Label label2;
-        private FontAwesome.Sharp.IconPictureBox iconPictureBox2;
-        private Guna.UI2.WinForms.Guna2GroupBox guna2GroupBox5;
-        private System.Windows.Forms.Label label1;
-        private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
+        private System.Windows.Forms.Label label3;
+        private Guna.UI2.WinForms.Guna2Button btnReserve;
+        private System.Windows.Forms.Label label13;
+        private Guna.UI2.WinForms.Guna2ComboBox cboxRoomAvailability;
+        private System.Windows.Forms.Label label24;
+        private Guna.UI2.WinForms.Guna2DateTimePicker dtpDateMovingIn;
+        private System.Windows.Forms.Label label4;
+        private Guna.UI2.WinForms.Guna2DateTimePicker guna2DateTimePicker1;
+        private System.Windows.Forms.Label label6;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
         private Guna.UI2.WinForms.Guna2HScrollBar guna2HScrollBar1;
-        private System.Windows.Forms.Label label3;
+        private Guna.UI2.WinForms.Guna2GroupBox BarJobType;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
     }
 }

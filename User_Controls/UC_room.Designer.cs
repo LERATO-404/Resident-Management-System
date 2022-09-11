@@ -786,7 +786,8 @@ namespace Residence_Management_System.User_Controls
             "Shared",
             "staying",
             "leaving",
-            "not-sure"});
+            "not-sure",
+            "Occupants"});
             this.cboxShowReservations.Location = new System.Drawing.Point(91, 33);
             this.cboxShowReservations.Name = "cboxShowReservations";
             this.cboxShowReservations.Size = new System.Drawing.Size(200, 36);

@@ -35,6 +35,26 @@ namespace Residence_Management_System
                 }
             }
         }
+
+        public static String GetUserJobType()
+        {
+            string sqlId = @"SELECT jobType  FROM [users] WHERE username = @username"; // userName = lblWelcome.Text
+            using (SqlConnection con = new SqlConnection(myUserMethod.GetConnection()))
+            {
+                if (con.State != ConnectionState.Open) { con.Open(); }
+                SqlCommand cmd = new SqlCommand(sqlId, con);
+                cmd.Parameters.AddWithValue("@username", Repository.UserRepo.userLoggedIn);
+                try
+                {
+                    return cmd.ExecuteScalar().ToString();
+                }
+                finally
+                {
+                    cmd.Dispose();
+
+                }
+            }
+        }
     }
     
 }

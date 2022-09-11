@@ -17,7 +17,7 @@ namespace Residence_Management_System.ExtraMethods
         // Regular expression used to validate a phone number.
         const string reg = @"^[0-9]+$";
 
-        // validate email
+        // validate email 
         const string emailReg = @"^[\w!#$%&'*+\-/=?\^_`{|}~]+(\.[\w!#$%&'*+\-/=?\^_`{|}~]+)*@((([\-\w]+\.)+[a-zA-Z]{2,4})|(([0-9]{1,3}\.){3}[0-9]{1,3}))\z";
         const string gmail = "@gmail.com";
 

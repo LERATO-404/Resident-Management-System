@@ -36,6 +36,7 @@ namespace Residence_Management_System.User_Controls
             lblTotalRooms.Text = rph.CountRoom().ToString();
             lblTotalStudent.Text = rph.CountStudents().ToString();
             lblTotalEmployees.Text = rph.CountWorkers().ToString();
+            //label5.Text = UserId.GetUserJobType();
             
         }
 
@@ -45,6 +46,7 @@ namespace Residence_Management_System.User_Controls
             { 
                 if (txtIdentifier.Text != "")
                 {
+
                     string resourceToDelete = rph.SelectedTableToDeleteResource(cboxViewTable, int.Parse(txtIdentifier.Text));
                     myM.RemoveById(int.Parse(txtIdentifier.Text), resourceToDelete);
                 }

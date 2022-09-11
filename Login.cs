@@ -51,7 +51,6 @@ namespace Residence_Management_System
                 if (isEmptyInput() == false)
                 {
                     uR.LoginUser(username, password);
-                    
                     //this.Hide();
                 }
                 else
@@ -70,6 +69,11 @@ namespace Residence_Management_System
         {
             Register registerForm = new Register();
             registerForm.Show();
+        }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -168,8 +168,8 @@ namespace Residence_Management_System.User_Controls
             {
                 if (txtRoomIdentifier.Text != "")
                 {
-                    string resourceToDelete = rRCR.SelectedRoomToDelete(int.Parse(txtRoomIdentifier.Text));
-                    myM.RemoveById(int.Parse(txtRoomIdentifier.Text), resourceToDelete);
+                    //string resourceToDelete = rRCR.SelectedRoomToDelete(int.Parse(txtRoomIdentifier.Text));
+                    rRCR.RemoveRoomById(int.Parse(txtRoomIdentifier.Text));
                 }
                 else
                 {
@@ -280,8 +280,9 @@ namespace Residence_Management_System.User_Controls
             {
                 if (txtReservationIdentifier.Text != "")
                 {
-                    string reservationToDelete = rRCR.SelectedReservationToDelete(int.Parse(txtReservationIdentifier.Text));
-                    myM.RemoveById(int.Parse(txtReservationIdentifier.Text), reservationToDelete);
+                    //string reservationToDelete = rRCR.SelectedReservationToDelete(int.Parse(txtReservationIdentifier.Text));
+                    //myM.RemoveById(int.Parse(txtReservationIdentifier.Text), reservationToDelete);
+                    rRCR.RemoveReservationbyId(int.Parse(txtReservationIdentifier.Text));
                 }
                 else
                 {
@@ -303,8 +304,6 @@ namespace Residence_Management_System.User_Controls
                 {
                     try
                     {
-                        
-
                         ReservationModel rS = new ReservationModel(Int32.Parse(txtReserveStudentNo.Text), Int32.Parse(txtReserveRoomCode.Text), cboxBedandChairUsage.Text, cboxRecessStatus.Text, DateTime.Today,dtpDateMovingIn.Value);
                         rRCR.ReserveRoomForStudent(rS);
                         /*

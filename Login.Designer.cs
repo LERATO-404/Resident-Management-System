@@ -216,9 +216,9 @@ namespace Residence_Management_System
             this.lblSignUp.Controls.Add(this.label5);
             this.lblSignUp.Controls.Add(this.label1);
             this.lblSignUp.Dock = System.Windows.Forms.DockStyle.Right;
-            this.lblSignUp.Location = new System.Drawing.Point(376, 16);
+            this.lblSignUp.Location = new System.Drawing.Point(381, 16);
             this.lblSignUp.Name = "lblSignUp";
-            this.lblSignUp.Size = new System.Drawing.Size(555, 608);
+            this.lblSignUp.Size = new System.Drawing.Size(550, 608);
             this.lblSignUp.TabIndex = 7;
             // 
             // guna2PictureBox1
@@ -280,6 +280,7 @@ namespace Residence_Management_System
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
+            this.Load += new System.EventHandler(this.Login_Load);
             this.groupBox1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();

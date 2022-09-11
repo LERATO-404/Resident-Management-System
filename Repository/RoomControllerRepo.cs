@@ -16,7 +16,7 @@ namespace Residence_Management_System.Repository
     public class RoomControllerRepo{
 
         private readonly MyMethods myRoomMethod = new MyMethods();
-
+        private readonly string userRole = UserId.GetUserJobType();
 
         public string SelectedRoomToDelete(int id)
         {
@@ -79,6 +79,15 @@ namespace Residence_Management_System.Repository
                     break;
                 case 5:
                     tname = @"SELECT * FROM [reservations] WHERE recessStatus LIKE '" + tb + "'";
+                    break;
+                case 6:
+                    tname = @"SELECT r.roomId, r.roomSymbolCode, r.roomType, rs.studentId AS OccupantId, s.firstName, s.lastName
+                                   FROM Rooms r
+                                        INNER JOIN Reservations rs
+                                           ON r.roomId = rs.roomId
+                                        INNER JOIN Students s
+                                           ON  rs.studentId = s.studentId
+                                       ORDER BY r.roomId";
                     break;
 
                 default:
@@ -175,233 +184,271 @@ namespace Residence_Management_System.Repository
         }
 
         public void AddRoom(RoomModel rm){
-			string sqlInsertRoom = @"INSERT INTO [rooms](roomSymbolCode,roomFloor,roomType,roomAvailability,addedBy)" +
-            "VALUES(@roomSymbolCode,@roomFloor,@roomType,@roomAvailability,@addedBy)";
-            using (SqlConnection con = new SqlConnection(myRoomMethod.GetConnection()))
+
+            if (userRole == "Room-Controller")
             {
-                if (con.State != ConnectionState.Open) { con.Open(); }
-                
-                SqlCommand cmd = new SqlCommand(sqlInsertRoom, con)
+                string sqlInsertRoom = @"INSERT INTO [rooms](roomSymbolCode,roomFloor,roomType,roomAvailability,addedBy)" +
+            "VALUES(@roomSymbolCode,@roomFloor,@roomType,@roomAvailability,@addedBy)";
+                using (SqlConnection con = new SqlConnection(myRoomMethod.GetConnection()))
                 {
-                    CommandType = CommandType.Text
-                };
+                    if (con.State != ConnectionState.Open) { con.Open(); }
 
-                cmd.Parameters.Add("@roomSymbolCode", SqlDbType.VarChar).Value = rm.RoomSymbolCode;
-                cmd.Parameters.Add("@roomFloor", SqlDbType.VarChar).Value = rm.RoomFloor;
-                cmd.Parameters.Add("@roomType", SqlDbType.VarChar).Value = rm.RoomType;
-                cmd.Parameters.Add("@roomAvailability", SqlDbType.VarChar).Value = rm.RoomAvailability;
-                cmd.Parameters.Add("@addedBy", SqlDbType.Int).Value = UserId.GetUserId();
+                    SqlCommand cmd = new SqlCommand(sqlInsertRoom, con)
+                    {
+                        CommandType = CommandType.Text
+                    };
 
-                try
-                {
-                    cmd.ExecuteNonQuery();
-                    MessageBox.Show("Room added successfully", "Information", (MessageBoxButtons)MessageBoxButton.OK, MessageBoxIcon.Information);
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Failed to add room \n" + ex.Message, "Error", (MessageBoxButtons)MessageBoxButton.OK, MessageBoxIcon.Error);
-                }
-                finally
-                {
-                    cmd.Dispose();
-                    //if (con.State == ConnectionState.Open) { con.Close(); }
+                    cmd.Parameters.Add("@roomSymbolCode", SqlDbType.VarChar).Value = rm.RoomSymbolCode;
+                    cmd.Parameters.Add("@roomFloor", SqlDbType.VarChar).Value = rm.RoomFloor;
+                    cmd.Parameters.Add("@roomType", SqlDbType.VarChar).Value = rm.RoomType;
+                    cmd.Parameters.Add("@roomAvailability", SqlDbType.VarChar).Value = rm.RoomAvailability;
+                    cmd.Parameters.Add("@addedBy", SqlDbType.Int).Value = UserId.GetUserId();
+
+                    try
+                    {
+                        cmd.ExecuteNonQuery();
+                        MessageBox.Show("Room added successfully", "Information", (MessageBoxButtons)MessageBoxButton.OK, MessageBoxIcon.Information);
+                    }
+                    catch (Exception)
+                    {
+                        MessageBox.Show("Failed to add room \nThe Room Symbol Code entered already exist", "Error", (MessageBoxButtons)MessageBoxButton.OK, MessageBoxIcon.Error);
+                    }
+                    finally
+                    {
+                        cmd.Dispose();
+                        //if (con.State == ConnectionState.Open) { con.Close(); }
+                    }
                 }
             }
-		}
+            else
+            {
+                MessageBox.Show("You don't have the privilages to add a room.\nOnly the room-controller can perform this task", "Not allowed", (MessageBoxButtons)MessageBoxButton.OK, MessageBoxIcon.Error);
+            }
+
+        }
 		
 		public void UpdateRoomById(int id, RoomModel rmUpdate)
         {
-			 
-			string sqlUpdate = @"UPDATE [rooms] SET roomSymbolCode=@roomSymbolCode,roomFloor=@roomFloor,roomType=@roomType,roomAvailability=@roomAvailability WHERE roomId=@roomId";
-
-            using (SqlConnection con = new SqlConnection(myRoomMethod.GetConnection()))
+            if (userRole == "Room-Controller")
             {
-                if (con.State != ConnectionState.Open) { con.Open(); }
-
-                SqlCommand cmd = new SqlCommand(sqlUpdate, con)
+                string sqlUpdate = @"UPDATE [rooms] SET roomSymbolCode=@roomSymbolCode,roomFloor=@roomFloor,roomType=@roomType,roomAvailability=@roomAvailability WHERE roomId=@roomId";
+                using (SqlConnection con = new SqlConnection(myRoomMethod.GetConnection()))
                 {
-                    CommandType = CommandType.Text
-                };
+                    if (con.State != ConnectionState.Open) { con.Open(); }
 
-                SqlDataAdapter adapt = new SqlDataAdapter()
-                {
-                    UpdateCommand = new SqlCommand(sqlUpdate, con)
-                };
+                    SqlCommand cmd = new SqlCommand(sqlUpdate, con)
+                    {
+                        CommandType = CommandType.Text
+                    };
 
-
-                adapt.UpdateCommand.Parameters.Add("@roomId", SqlDbType.Int).Value = id;
-                adapt.UpdateCommand.Parameters.Add("@roomSymbolCode", SqlDbType.VarChar).Value = rmUpdate.RoomSymbolCode;
-                adapt.UpdateCommand.Parameters.Add("@roomFloor", SqlDbType.VarChar).Value = rmUpdate.RoomFloor;
-                adapt.UpdateCommand.Parameters.Add("@roomType", SqlDbType.VarChar).Value = rmUpdate.RoomType;
-                adapt.UpdateCommand.Parameters.Add("@roomAvailability", SqlDbType.VarChar).Value = rmUpdate.RoomAvailability;
+                    SqlDataAdapter adapt = new SqlDataAdapter()
+                    {
+                        UpdateCommand = new SqlCommand(sqlUpdate, con)
+                    };
 
 
-                try
-                {
+                    adapt.UpdateCommand.Parameters.Add("@roomId", SqlDbType.Int).Value = id;
+                    adapt.UpdateCommand.Parameters.Add("@roomSymbolCode", SqlDbType.VarChar).Value = rmUpdate.RoomSymbolCode;
+                    adapt.UpdateCommand.Parameters.Add("@roomFloor", SqlDbType.VarChar).Value = rmUpdate.RoomFloor;
+                    adapt.UpdateCommand.Parameters.Add("@roomType", SqlDbType.VarChar).Value = rmUpdate.RoomType;
+                    adapt.UpdateCommand.Parameters.Add("@roomAvailability", SqlDbType.VarChar).Value = rmUpdate.RoomAvailability;
 
-                    adapt.UpdateCommand.ExecuteNonQuery();
-                    MessageBox.Show("Room details update successfully", "Update Room", (MessageBoxButtons)MessageBoxButton.OK, MessageBoxIcon.Information);
+
+                    try
+                    {
+
+                        adapt.UpdateCommand.ExecuteNonQuery();
+                        MessageBox.Show("Room details update successfully", "Update Room", (MessageBoxButtons)MessageBoxButton.OK, MessageBoxIcon.Information);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Failed to update room details \n" + ex.Message, "Error", (MessageBoxButtons)MessageBoxButton.OK, MessageBoxIcon.Error);
+                    }
+                    finally
+                    {
+                        cmd.Dispose();
+                    }
                 }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Failed to update room details \n" + ex.Message, "Error", (MessageBoxButtons)MessageBoxButton.OK, MessageBoxIcon.Error);
-                }
-                finally
-                {
-                    cmd.Dispose();
-                }
+
             }
-            
+            else
+            {
+                MessageBox.Show("You don't have the privilages to update a room.\nOnly the room-controller can perform this task", "Not allowed", (MessageBoxButtons)MessageBoxButton.OK, MessageBoxIcon.Error);
+            }
 		}
 		
-		public void RemoveRoomById(int rmId){
-			string sqlDeleteRoom = @"DELETE FROM [rooms] WHERE roomId = '"+rmId+"'";
-
-            using (SqlConnection con = new SqlConnection(myRoomMethod.GetConnection()))
+        public void RemoveRoomById(int rmId)
+        {
+            if (userRole == "Room-Controller")
             {
-                if (con.State != ConnectionState.Open) { con.Open(); }
-                
-                SqlCommand cmd = new SqlCommand(sqlDeleteRoom, con) { };
-                try
+                using (SqlConnection con = new SqlConnection(myRoomMethod.GetConnection()))
                 {
-                    if (MessageBox.Show("Are you sure you want to remove room number:" + rmId.ToString() + "", " Remove Room", (MessageBoxButtons)MessageBoxButton.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    if (con.State != ConnectionState.Open) { con.Open(); }
+
+                    SqlCommand cmd = new SqlCommand(SelectedRoomToDelete(rmId), con) { };
+                    try
+                    {
+                        if (MessageBox.Show("Are you sure you want to remove room number:" + rmId.ToString() + "", " Remove Room", (MessageBoxButtons)MessageBoxButton.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                        {
+                            cmd.ExecuteNonQuery();
+                            MessageBox.Show("Room number:" + rmId.ToString() + " removed", "Remove Room", (MessageBoxButtons)MessageBoxButton.OK, MessageBoxIcon.Information);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Room number:" + rmId.ToString() + " not removed", "Remove Room", (MessageBoxButtons)MessageBoxButton.OK, MessageBoxIcon.Information);
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Failed to remove room \n" + ex.Message, "Error", (MessageBoxButtons)MessageBoxButton.OK, MessageBoxIcon.Error);
+                    }
+                    finally
+                    {
+                        cmd.Dispose();
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("You don't have the privilages to delete a room.\nOnly the room-controller can perform this task", "Not allowed", (MessageBoxButtons)MessageBoxButton.OK, MessageBoxIcon.Error);
+            }
+        }
+
+		public void ReserveRoomForStudent(ReservationModel rms){
+
+
+            if (userRole == "Room-Controller")
+            {
+                string sqlInsertReservation = @"INSERT INTO [reservations](studentId,roomId,reservedBy,bedAndChairUsage,recessStatus,dateReserved,MovedInDate)" +
+                    "VALUES(@StudentId,@roomId,@reservedBy,@BedAndChairUsage,@recessStatus,@dateReserved,@MovedInDate)";
+                using (SqlConnection con = new SqlConnection(myRoomMethod.GetConnection()))
+                {
+                    if (con.State != ConnectionState.Open) { con.Open(); }
+
+                    SqlCommand cmd = new SqlCommand(sqlInsertReservation, con)
+                    {
+                        CommandType = CommandType.Text
+                    };
+
+                    cmd.Parameters.Add("@StudentId", SqlDbType.Int).Value = rms.StudentId;
+                    cmd.Parameters.Add("@roomId", SqlDbType.Int).Value = rms.RoomId;
+                    cmd.Parameters.Add("@reservedBy", SqlDbType.Int).Value = UserId.GetUserId();
+                    cmd.Parameters.Add("@BedAndChairUsage", SqlDbType.VarChar).Value = rms.BedAndChairUsage;
+                    cmd.Parameters.Add("@recessStatus", SqlDbType.VarChar).Value = rms.RecessStatus;
+                    cmd.Parameters.Add("@dateReserved", SqlDbType.DateTime).Value = rms.DateReserved;
+                    cmd.Parameters.Add("@movedInDate", SqlDbType.DateTime).Value = rms.MovedInDate;
+
+
+                    try
                     {
                         cmd.ExecuteNonQuery();
-                        MessageBox.Show("Room number:" + rmId.ToString() + " removed", "Remove Room", (MessageBoxButtons)MessageBoxButton.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Reservation added successfully for student Id:" + rms.StudentId.ToString() + "", "Information", (MessageBoxButtons)MessageBoxButton.OK, MessageBoxIcon.Information);
                     }
-                    else
+                    catch (Exception)
                     {
-                        MessageBox.Show("Room number:" + rmId.ToString() + " not removed", "Remove Room", (MessageBoxButtons)MessageBoxButton.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Failed to add reservation \nInvalid student/room Id", "Error", (MessageBoxButtons)MessageBoxButton.OK, MessageBoxIcon.Error);
+                    }
+                    finally
+                    {
+                        cmd.Dispose();
                     }
                 }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Failed to remove room \n" + ex.Message, "Error", (MessageBoxButtons)MessageBoxButton.OK, MessageBoxIcon.Error);
-                }
-                finally
-                {
-                    cmd.Dispose();
-                }
             }
-            
-		}
-		
-		
-		public void ReserveRoomForStudent(ReservationModel rms){
-            //aStudentNo,aRoomId,aBedAndChairUsage,aRecessStatus, aDateReserved
-            string sqlInsertReservation = @"INSERT INTO [reservations](studentId,roomId,reservedBy,bedAndChairUsage,recessStatus,dateReserved,MovedInDate)" +
-            "VALUES(@StudentId,@roomId,@reservedBy,@BedAndChairUsage,@recessStatus,@dateReserved,@MovedInDate)";
-
-            using (SqlConnection con = new SqlConnection(myRoomMethod.GetConnection()))
+            else
             {
-                if (con.State != ConnectionState.Open) { con.Open(); }
-                
-                SqlCommand cmd = new SqlCommand(sqlInsertReservation, con)
-                {
-                    CommandType = CommandType.Text
-                };
-
-                cmd.Parameters.Add("@StudentId", SqlDbType.Int).Value = rms.StudentId;
-                cmd.Parameters.Add("@roomId", SqlDbType.Int).Value = rms.RoomId;
-                cmd.Parameters.Add("@reservedBy", SqlDbType.Int).Value = UserId.GetUserId();
-                cmd.Parameters.Add("@BedAndChairUsage", SqlDbType.VarChar).Value = rms.BedAndChairUsage;
-                cmd.Parameters.Add("@recessStatus", SqlDbType.VarChar).Value = rms.RecessStatus;
-                cmd.Parameters.Add("@dateReserved", SqlDbType.DateTime).Value = rms.DateReserved;
-                cmd.Parameters.Add("@movedInDate", SqlDbType.DateTime).Value = rms.MovedInDate;
-
-                
-                try
-                {
-                    cmd.ExecuteNonQuery();
-                    MessageBox.Show("Reservation added successfully for student Id:" + rms.StudentId.ToString() + "", "Information", (MessageBoxButtons)MessageBoxButton.OK, MessageBoxIcon.Information);
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Failed to add reservation \n" + ex.Message, "Error", (MessageBoxButtons)MessageBoxButton.OK, MessageBoxIcon.Error);
-                }
-                finally
-                {
-                    cmd.Dispose();
-                }
+                MessageBox.Show("You don't have the privilages to reserve a room.\nOnly the room-controller can perform this task", "Not allowed", (MessageBoxButtons)MessageBoxButton.OK, MessageBoxIcon.Error);
             }
-            
 		}
 		
 		public void UpdateReservationDetails(int rId, ReservationModel rmUpdateReservation)
         {
-			 
-			string sqlUpdateReservation = @"UPDATE [reservations] SET studentId=@studentId,roomId=@roomId,bedAndChairUsage=@bedAndChairUsage,recessStatus=@recessStatus,dateReserved=@dateReserved,MovedInDate=@MovedInDate WHERE reservationId=@reservationId";
 
-            using (SqlConnection con = new SqlConnection(myRoomMethod.GetConnection()))
+            if (userRole == "Room-Controller")
             {
-                if (con.State != ConnectionState.Open) { con.Open(); }
-            
-                SqlCommand cmd = new SqlCommand(sqlUpdateReservation, con)
+                string sqlUpdateReservation = @"UPDATE [reservations] SET studentId=@studentId,roomId=@roomId,bedAndChairUsage=@bedAndChairUsage,recessStatus=@recessStatus,dateReserved=@dateReserved,MovedInDate=@MovedInDate WHERE reservationId=@reservationId";
+                using (SqlConnection con = new SqlConnection(myRoomMethod.GetConnection()))
                 {
-                    CommandType = CommandType.Text
-                }; 
+                    if (con.State != ConnectionState.Open) { con.Open(); }
 
-                SqlDataAdapter adapt = new SqlDataAdapter() {
-                    UpdateCommand = new SqlCommand(sqlUpdateReservation, con)
-                };
+                    SqlCommand cmd = new SqlCommand(sqlUpdateReservation, con)
+                    {
+                        CommandType = CommandType.Text
+                    };
 
-                adapt.UpdateCommand.Parameters.Add("@reservationId", SqlDbType.Int).Value = rId;
-                adapt.UpdateCommand.Parameters.Add("@studentId", SqlDbType.Int).Value = rmUpdateReservation.StudentId;
-                adapt.UpdateCommand.Parameters.Add("@roomId", SqlDbType.Int).Value = rmUpdateReservation.RoomId;
-                adapt.UpdateCommand.Parameters.Add("@bedAndChairUsage", SqlDbType.VarChar).Value = rmUpdateReservation.BedAndChairUsage;
-                adapt.UpdateCommand.Parameters.Add("@recessStatus", SqlDbType.VarChar).Value = rmUpdateReservation.RecessStatus;
-                adapt.UpdateCommand.Parameters.Add("@dateReserved", SqlDbType.DateTime).Value = rmUpdateReservation.DateReserved;
-                adapt.UpdateCommand.Parameters.Add("@MovedInDate", SqlDbType.DateTime).Value = rmUpdateReservation.MovedInDate;
+                    SqlDataAdapter adapt = new SqlDataAdapter()
+                    {
+                        UpdateCommand = new SqlCommand(sqlUpdateReservation, con)
+                    };
 
-                try
-                {
+                    adapt.UpdateCommand.Parameters.Add("@reservationId", SqlDbType.Int).Value = rId;
+                    adapt.UpdateCommand.Parameters.Add("@studentId", SqlDbType.Int).Value = rmUpdateReservation.StudentId;
+                    adapt.UpdateCommand.Parameters.Add("@roomId", SqlDbType.Int).Value = rmUpdateReservation.RoomId;
+                    adapt.UpdateCommand.Parameters.Add("@bedAndChairUsage", SqlDbType.VarChar).Value = rmUpdateReservation.BedAndChairUsage;
+                    adapt.UpdateCommand.Parameters.Add("@recessStatus", SqlDbType.VarChar).Value = rmUpdateReservation.RecessStatus;
+                    adapt.UpdateCommand.Parameters.Add("@dateReserved", SqlDbType.DateTime).Value = rmUpdateReservation.DateReserved;
+                    adapt.UpdateCommand.Parameters.Add("@MovedInDate", SqlDbType.DateTime).Value = rmUpdateReservation.MovedInDate;
 
-                    adapt.UpdateCommand.ExecuteNonQuery();
-                    MessageBox.Show("Reservation no:" + rId + " updated successfully", "Update Room", (MessageBoxButtons)MessageBoxButton.OK, MessageBoxIcon.Information);
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Failed to update reservation \n" + ex.Message, "Error", (MessageBoxButtons)MessageBoxButton.OK, MessageBoxIcon.Error);
-                }
-                finally
-                {
-                    cmd.Dispose();
+                    try
+                    {
+
+                        adapt.UpdateCommand.ExecuteNonQuery();
+                        MessageBox.Show("Reservation no:" + rId + " updated successfully", "Update Room", (MessageBoxButtons)MessageBoxButton.OK, MessageBoxIcon.Information);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Failed to update reservation \n" + ex.Message, "Error", (MessageBoxButtons)MessageBoxButton.OK, MessageBoxIcon.Error);
+                    }
+                    finally
+                    {
+                        cmd.Dispose();
+                    }
                 }
             }
-            
+            else
+            {
+                MessageBox.Show("You don't have the privilages to update a reservation details.\nOnly the room-controller can perform this task", "Not allowed", (MessageBoxButtons)MessageBoxButton.OK, MessageBoxIcon.Error);
+            }
 		}
 		
-		public void RemoveStudentFromReservation(int rSR){
-			string sqlDeleteReservation = @"DELETE FROM [reservation] WHERE reservationId = '"+rSR+"'";
+		public void RemoveReservationbyId(int rSR){
 
-            using (SqlConnection con = new SqlConnection(myRoomMethod.GetConnection()))
+            if (userRole == "Room-Controller")
             {
-                if (con.State != ConnectionState.Open) { con.Open(); }
-           
-                SqlCommand cmd = new SqlCommand(sqlDeleteReservation, con);
-                try
+                using (SqlConnection con = new SqlConnection(myRoomMethod.GetConnection()))
                 {
-                    if (MessageBox.Show("Are you sure you want to remove reservation number:" + rSR.ToString() + "", " Remove Reservation", (MessageBoxButtons)MessageBoxButton.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    if (con.State != ConnectionState.Open) { con.Open(); }
+
+                    SqlCommand cmd = new SqlCommand(SelectedReservationToDelete(rSR), con);
+                    try
                     {
-                        cmd.ExecuteNonQuery();
-                        MessageBox.Show("Reservation number:" + rSR.ToString() + " removed", "Remove Reservation", (MessageBoxButtons)MessageBoxButton.OK, MessageBoxIcon.Information);
+                        if (MessageBox.Show("Are you sure you want to remove reservation number:" + rSR.ToString() + "", " Remove Reservation", (MessageBoxButtons)MessageBoxButton.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                        {
+                            cmd.ExecuteNonQuery();
+                            MessageBox.Show("Reservation number:" + rSR.ToString() + " removed", "Remove Reservation", (MessageBoxButtons)MessageBoxButton.OK, MessageBoxIcon.Information);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Reservation number:" + rSR.ToString() + " not removed", "Remove Reservation", (MessageBoxButtons)MessageBoxButton.OK, MessageBoxIcon.Information);
+                        }
                     }
-                    else
+                    catch (Exception ex)
                     {
-                        MessageBox.Show("Reservation number:" + rSR.ToString() + " not removed", "Remove Reservation", (MessageBoxButtons)MessageBoxButton.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Failed to remove reservation \n" + ex.Message, "Error", (MessageBoxButtons)MessageBoxButton.OK, MessageBoxIcon.Error);
                     }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Failed to remove reservation \n" + ex.Message, "Error", (MessageBoxButtons)MessageBoxButton.OK, MessageBoxIcon.Error);
-                }
-                finally
-                {
-                    cmd.Dispose();
+                    finally
+                    {
+                        cmd.Dispose();
+                    }
                 }
             }
-            
-		}
+            else
+            {
+                MessageBox.Show("You don't have the privilages to delete a reservation.\nOnly the room-controller can perform this task", "Not allowed", (MessageBoxButtons)MessageBoxButton.OK, MessageBoxIcon.Error);
+            }
+
+
+
+        }
 	}
 }
 

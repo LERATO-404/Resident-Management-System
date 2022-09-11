@@ -26,5 +26,15 @@ namespace Residence_Management_System.User_Controls
         {
 
         }
+
+        private void chart1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnReserve_Click(object sender, EventArgs e)
+        { 
+           //string roomTypeReport = @"SELECT r.RoomdId, r.RoomAvailability, Count(rs.StudentId) FROM r.Rooms, rs.Reservations WHERE r.roomId = rs.RoomId";
+        }
     }
 }

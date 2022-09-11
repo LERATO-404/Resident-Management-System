@@ -126,9 +126,9 @@ namespace Residence_Management_System.User_Controls
                     ActivityModel createAct = new ActivityModel(int.Parse(txtActStudentNo.Text), semesterParticipating(cboxSemesterParticipating), ActivityAccumulatedPoints(), DateTime.Today.ToString());
                     actREpo.AllocateStudentToActivity(createAct);
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
-                    MessageBox.Show("Failed to add a student participation points  "+ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Failed to add a student participation points.\nThe Student Id entered does not exist", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }else
             {
@@ -138,7 +138,6 @@ namespace Residence_Management_System.User_Controls
         }
 
         
-
         private void btnDisplayActivities_Click(object sender, EventArgs e)
         {
             string selecteT = actREpo.SelectedTable(cboxShowActivities);
@@ -152,7 +151,8 @@ namespace Residence_Management_System.User_Controls
                 if (txtActivityIdentifier.Text != "")
                 {
                     string resourceToDelete = actREpo.SelectedTableToDeleteResource(int.Parse(txtActivityIdentifier.Text));
-                    myActMethod.RemoveById(int.Parse(txtActivityIdentifier.Text), resourceToDelete);
+                    actREpo.RemoveById(int.Parse(txtActivityIdentifier.Text));
+                    //myActMethod.RemoveById(int.Parse(txtActivityIdentifier.Text), resourceToDelete);
                 }
                 else
                 {
@@ -163,6 +163,11 @@ namespace Residence_Management_System.User_Controls
             {
                 MessageBox.Show("Invalid Id, Please enter Id number (firstcolumn) of the resource you want to delete!..", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void gboxHP_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

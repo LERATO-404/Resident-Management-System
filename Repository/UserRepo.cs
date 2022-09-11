@@ -59,11 +59,11 @@ namespace Residence_Management_System.Repository
         
         public void LoginUser(string username, string password)
 		{
-
-            using (SqlConnection con = new SqlConnection(myUserMethod.GetConnection()))
-            { 
-                if (String.IsNullOrEmpty(username) == false || String.IsNullOrEmpty(password) == false)
+            if (String.IsNullOrEmpty(username) == false || String.IsNullOrEmpty(password) == false)
+            {
+                using (SqlConnection con = new SqlConnection(myUserMethod.GetConnection()))
                 {
+
                     if (con.State != ConnectionState.Open) { con.Open(); }
                     //encrypt password entered when logging in
                     string encodedUserPasswordBeforLogin = userPasswordProtect.encryptPassword(password);
@@ -84,13 +84,16 @@ namespace Residence_Management_System.Repository
                             landingP.lblWelcomeUsername.Text = username;
                             myReader.Close();
                             
+
+                            
+
                         }
                         else
                         {
                             myReader.Close();
                             MessageBox.Show("Sorry, Username and password you entered doesn't belong to an account. Please double-check.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
-                        
+
                     }
                     catch (Exception ex)
                     {
@@ -99,17 +102,17 @@ namespace Residence_Management_System.Repository
                     }
                     finally
                     {
-                        
                         myReader.Close();
                         cmd.Dispose();
                     }
-                    
-                }
-                else
-                {
-                    MessageBox.Show("Username or Password is empty", "Information", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
                 }
             }
+            else
+            {
+                MessageBox.Show("Username or Password is empty", "Information", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            
 		}
 	}
 }

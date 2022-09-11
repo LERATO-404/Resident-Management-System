@@ -139,11 +139,9 @@ namespace Residence_Management_System.User_Controls
         {
             try
             {
-                
                 if (txtEmployeeIdentifier.Text != "")
                 {
-                    string employeeToToDelete = rpA.SelectedEmployeeTable(int.Parse(txtEmployeeIdentifier.Text));
-                    myMethod.RemoveById(int.Parse(txtEmployeeIdentifier.Text), employeeToToDelete);
+                    rpA.RemoveWorkerById(int.Parse(txtEmployeeIdentifier.Text));
                 }
                 else
                 {
@@ -221,8 +219,9 @@ namespace Residence_Management_System.User_Controls
 
                 if (txtStudentIdentifier.Text != "")
                 {
-                    string studentToToDelete = rpA.SelectedStudentToDelete(int.Parse(txtStudentIdentifier.Text));
-                    myMethod.RemoveById(int.Parse(txtStudentIdentifier.Text), studentToToDelete);
+                    //string studentToToDelete = rpA.SelectedStudentToDelete(int.Parse(txtStudentIdentifier.Text));
+                    //myMethod.RemoveById(int.Parse(txtStudentIdentifier.Text), studentToToDelete);
+                    rpA.RemoveStudentById(int.Parse(txtStudentIdentifier.Text));
                 }
                 else
                 {

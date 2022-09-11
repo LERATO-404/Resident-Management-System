@@ -29,14 +29,13 @@ namespace Residence_Management_System.User_Controls
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.guna2TabControl1 = new Guna.UI2.WinForms.Guna2TabControl();
             this.addParticipant = new System.Windows.Forms.TabPage();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.lblTotalPoints = new System.Windows.Forms.Label();
             this.btnCancelSelectedAct = new Guna.UI2.WinForms.Guna2Button();
             this.btnAddActivity = new Guna.UI2.WinForms.Guna2Button();
             this.guna2GroupBox2 = new Guna.UI2.WinForms.Guna2GroupBox();
@@ -87,8 +86,6 @@ namespace Residence_Management_System.User_Controls
             this.txtActivityIdentifier = new Guna.UI2.WinForms.Guna2TextBox();
             this.dgvActivities = new Guna.UI2.WinForms.Guna2DataGridView();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
-            this.label17 = new System.Windows.Forms.Label();
-            this.cboxFilterBy = new Guna.UI2.WinForms.Guna2ComboBox();
             this.btnDisplayActivities = new Guna.UI2.WinForms.Guna2Button();
             this.cboxShowActivities = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label14 = new System.Windows.Forms.Label();
@@ -168,25 +165,12 @@ namespace Residence_Management_System.User_Controls
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.lblTotalPoints);
             this.panel1.Controls.Add(this.btnCancelSelectedAct);
             this.panel1.Controls.Add(this.btnAddActivity);
             this.panel1.Location = new System.Drawing.Point(11, 477);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(859, 41);
             this.panel1.TabIndex = 177;
-            // 
-            // lblTotalPoints
-            // 
-            this.lblTotalPoints.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblTotalPoints.AutoSize = true;
-            this.lblTotalPoints.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalPoints.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.lblTotalPoints.Location = new System.Drawing.Point(392, 14);
-            this.lblTotalPoints.Name = "lblTotalPoints";
-            this.lblTotalPoints.Size = new System.Drawing.Size(110, 13);
-            this.lblTotalPoints.TabIndex = 187;
-            this.lblTotalPoints.Text = "Total Activity Points";
             // 
             // btnCancelSelectedAct
             // 
@@ -491,6 +475,7 @@ namespace Residence_Management_System.User_Controls
             this.gboxHP.TabIndex = 68;
             this.gboxHP.Text = "High Performance (10 points) ";
             this.gboxHP.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.gboxHP.Click += new System.EventHandler(this.gboxHP_Click);
             // 
             // checkboxRugby
             // 
@@ -964,27 +949,27 @@ namespace Residence_Management_System.User_Controls
             // 
             // dgvActivities
             // 
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            this.dgvActivities.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.dgvActivities.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvActivities.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 9F);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvActivities.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvActivities.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvActivities.ColumnHeadersHeight = 30;
             this.dgvActivities.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 9F);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvActivities.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvActivities.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvActivities.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvActivities.Location = new System.Drawing.Point(3, 191);
             this.dgvActivities.Name = "dgvActivities";
@@ -1015,8 +1000,6 @@ namespace Residence_Management_System.User_Controls
             // 
             // guna2Panel2
             // 
-            this.guna2Panel2.Controls.Add(this.label17);
-            this.guna2Panel2.Controls.Add(this.cboxFilterBy);
             this.guna2Panel2.Controls.Add(this.btnDisplayActivities);
             this.guna2Panel2.Controls.Add(this.cboxShowActivities);
             this.guna2Panel2.Controls.Add(this.label14);
@@ -1024,39 +1007,6 @@ namespace Residence_Management_System.User_Controls
             this.guna2Panel2.Name = "guna2Panel2";
             this.guna2Panel2.Size = new System.Drawing.Size(584, 148);
             this.guna2Panel2.TabIndex = 178;
-            // 
-            // label17
-            // 
-            this.label17.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.label17.Location = new System.Drawing.Point(82, 82);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(49, 13);
-            this.label17.TabIndex = 189;
-            this.label17.Text = "Filter by";
-            // 
-            // cboxFilterBy
-            // 
-            this.cboxFilterBy.BackColor = System.Drawing.Color.Transparent;
-            this.cboxFilterBy.BorderRadius = 5;
-            this.cboxFilterBy.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cboxFilterBy.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboxFilterBy.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cboxFilterBy.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cboxFilterBy.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.cboxFilterBy.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.cboxFilterBy.ItemHeight = 30;
-            this.cboxFilterBy.Items.AddRange(new object[] {
-            "High Performance",
-            "Competitive",
-            "Recreational",
-            "Well-being"});
-            this.cboxFilterBy.Location = new System.Drawing.Point(137, 73);
-            this.cboxFilterBy.Name = "cboxFilterBy";
-            this.cboxFilterBy.Size = new System.Drawing.Size(200, 36);
-            this.cboxFilterBy.TabIndex = 188;
             // 
             // btnDisplayActivities
             // 
@@ -1070,7 +1020,7 @@ namespace Residence_Management_System.User_Controls
             this.btnDisplayActivities.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.btnDisplayActivities.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnDisplayActivities.ForeColor = System.Drawing.Color.White;
-            this.btnDisplayActivities.Location = new System.Drawing.Point(352, 27);
+            this.btnDisplayActivities.Location = new System.Drawing.Point(360, 53);
             this.btnDisplayActivities.Name = "btnDisplayActivities";
             this.btnDisplayActivities.Size = new System.Drawing.Size(110, 33);
             this.btnDisplayActivities.TabIndex = 183;
@@ -1090,8 +1040,8 @@ namespace Residence_Management_System.User_Controls
             this.cboxShowActivities.ItemHeight = 30;
             this.cboxShowActivities.Items.AddRange(new object[] {
             "Activities",
-            "Total Points"});
-            this.cboxShowActivities.Location = new System.Drawing.Point(137, 27);
+            "Activities-with-FullNames"});
+            this.cboxShowActivities.Location = new System.Drawing.Point(145, 53);
             this.cboxShowActivities.Name = "cboxShowActivities";
             this.cboxShowActivities.Size = new System.Drawing.Size(200, 36);
             this.cboxShowActivities.TabIndex = 185;
@@ -1102,7 +1052,7 @@ namespace Residence_Management_System.User_Controls
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.label14.Location = new System.Drawing.Point(66, 36);
+            this.label14.Location = new System.Drawing.Point(74, 62);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(65, 13);
             this.label14.TabIndex = 187;
@@ -1160,7 +1110,6 @@ namespace Residence_Management_System.User_Controls
             this.addParticipant.ResumeLayout(false);
             this.addParticipant.PerformLayout();
             this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.guna2GroupBox2.ResumeLayout(false);
             this.gboxW.ResumeLayout(false);
             this.gboxW.PerformLayout();
@@ -1190,7 +1139,6 @@ namespace Residence_Management_System.User_Controls
         private System.Windows.Forms.TabPage addParticipant;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label lblTotalPoints;
         private Guna.UI2.WinForms.Guna2Button btnCancelSelectedAct;
         private Guna.UI2.WinForms.Guna2Button btnAddActivity;
         private Guna.UI2.WinForms.Guna2GroupBox guna2GroupBox2;
@@ -1246,8 +1194,6 @@ namespace Residence_Management_System.User_Controls
         private System.Windows.Forms.Label label16;
         private Guna.UI2.WinForms.Guna2GroupBox gboxDeleteAct;
         private Guna.UI2.WinForms.Guna2Button btnCancelActivityInput;
-        private Guna.UI2.WinForms.Guna2ComboBox cboxFilterBy;
-        private System.Windows.Forms.Label label17;
         public System.Windows.Forms.Label label1;
     }
 }

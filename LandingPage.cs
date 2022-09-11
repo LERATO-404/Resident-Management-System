@@ -21,6 +21,7 @@ namespace Residence_Management_System
             InitializeComponent();
             User_Controls.UC_home uch = new User_Controls.UC_home();
             addUserControl(uch);
+            
         }
 
         //*********************methods****************
@@ -101,6 +102,7 @@ namespace Residence_Management_System
         private void iconButton1_Click_1(object sender, EventArgs e)
         {
             sideBarTimer.Start();
+
             
         }
 
@@ -138,6 +140,13 @@ namespace Residence_Management_System
         {
             User_Controls.UC_report ucReport = new User_Controls.UC_report();
             addUserControl(ucReport);
+        }
+
+        private void Logout_Click(object sender, EventArgs e)
+        {
+            Login toLogOff = new Login();
+            toLogOff.Show();
+            this.Close();
         }
     }
 }

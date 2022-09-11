@@ -14,9 +14,7 @@ namespace Residence_Management_System.ExtraMethods
 {
     internal class MyMethods
     {
-       
 
-       
         //gets connection string
         public string GetConnection()
         {
@@ -146,7 +144,6 @@ namespace Residence_Management_System.ExtraMethods
                         else
                         {
                             MessageBox.Show("Id not found", "Id not found", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
                         }
                     }
                     else
@@ -163,10 +160,7 @@ namespace Residence_Management_System.ExtraMethods
                     adapt.Dispose();
                     //if (con.State == ConnectionState.Open) { con.Close(); }
                 }
-
             }
-
-
         }
 
         public string JobTitleSelected(ComboBox cs)
