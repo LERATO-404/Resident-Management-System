@@ -36,5 +36,10 @@ namespace Residence_Management_System.User_Controls
         { 
            //string roomTypeReport = @"SELECT r.RoomdId, r.RoomAvailability, Count(rs.StudentId) FROM r.Rooms, rs.Reservations WHERE r.roomId = rs.RoomId";
         }
+
+        private void BarJobType_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

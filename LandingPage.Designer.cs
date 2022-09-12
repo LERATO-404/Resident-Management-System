@@ -224,11 +224,11 @@ namespace Residence_Management_System
             // 
             this.Logout.AutoSize = true;
             this.Logout.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Logout.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Logout.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Logout.ForeColor = System.Drawing.Color.Black;
-            this.Logout.Location = new System.Drawing.Point(842, 27);
+            this.Logout.Location = new System.Drawing.Point(832, 23);
             this.Logout.Name = "Logout";
-            this.Logout.Size = new System.Drawing.Size(45, 13);
+            this.Logout.Size = new System.Drawing.Size(46, 15);
             this.Logout.TabIndex = 192;
             this.Logout.Text = "Logout";
             this.Logout.Click += new System.EventHandler(this.Logout_Click);
@@ -237,32 +237,32 @@ namespace Residence_Management_System
             // 
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.lblWelcomeUsername);
-            this.panel1.Location = new System.Drawing.Point(712, 3);
+            this.panel1.Location = new System.Drawing.Point(342, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(124, 52);
+            this.panel1.Size = new System.Drawing.Size(287, 52);
             this.panel1.TabIndex = 193;
             // 
             // label7
             // 
             this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.Black;
-            this.label7.Location = new System.Drawing.Point(3, 24);
+            this.label7.Location = new System.Drawing.Point(35, 16);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(58, 13);
+            this.label7.Size = new System.Drawing.Size(113, 20);
             this.label7.TabIndex = 191;
-            this.label7.Text = "Welcome,";
+            this.label7.Text = "Welcome back,";
             // 
             // lblWelcomeUsername
             // 
             this.lblWelcomeUsername.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.lblWelcomeUsername.AutoSize = true;
-            this.lblWelcomeUsername.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblWelcomeUsername.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblWelcomeUsername.ForeColor = System.Drawing.Color.Black;
-            this.lblWelcomeUsername.Location = new System.Drawing.Point(67, 24);
+            this.lblWelcomeUsername.Location = new System.Drawing.Point(154, 15);
             this.lblWelcomeUsername.Name = "lblWelcomeUsername";
-            this.lblWelcomeUsername.Size = new System.Drawing.Size(38, 13);
+            this.lblWelcomeUsername.Size = new System.Drawing.Size(50, 20);
             this.lblWelcomeUsername.TabIndex = 190;
             this.lblWelcomeUsername.Text = "Name";
             // 

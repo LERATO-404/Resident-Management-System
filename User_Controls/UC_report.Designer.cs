@@ -29,7 +29,6 @@ namespace Residence_Management_System.User_Controls
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_report));
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
@@ -37,8 +36,9 @@ namespace Residence_Management_System.User_Controls
             System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.btnReserve = new Guna.UI2.WinForms.Guna2Button();
             this.label13 = new System.Windows.Forms.Label();
             this.cboxRoomAvailability = new Guna.UI2.WinForms.Guna2ComboBox();
@@ -50,33 +50,15 @@ namespace Residence_Management_System.User_Controls
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2HScrollBar1 = new Guna.UI2.WinForms.Guna2HScrollBar();
-            this.BarJobType = new Guna.UI2.WinForms.Guna2GroupBox();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.BarJobType = new Guna.UI2.WinForms.Guna2GroupBox();
+            this.chart2 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.guna2Panel2.SuspendLayout();
             this.guna2Panel1.SuspendLayout();
-            this.BarJobType.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
+            this.BarJobType.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chart2)).BeginInit();
             this.SuspendLayout();
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(516, 14);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(308, 65);
-            this.label5.TabIndex = 6;
-            this.label5.Text = resources.GetString("label5.Text");
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(65, 14);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(345, 39);
-            this.label3.TabIndex = 13;
-            this.label3.Text = "Participation marks contributes 30% to a student senior placement mark.\r\nA studen" +
-    "t index mark (academics) is calculated by the university, \r\nmakes out the remain" +
-    "ing 70%";
             // 
             // btnReserve
             // 
@@ -90,7 +72,7 @@ namespace Residence_Management_System.User_Controls
             this.btnReserve.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.btnReserve.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnReserve.ForeColor = System.Drawing.Color.White;
-            this.btnReserve.Location = new System.Drawing.Point(77, 263);
+            this.btnReserve.Location = new System.Drawing.Point(734, 72);
             this.btnReserve.Name = "btnReserve";
             this.btnReserve.Size = new System.Drawing.Size(110, 33);
             this.btnReserve.TabIndex = 191;
@@ -103,7 +85,7 @@ namespace Residence_Management_System.User_Controls
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.label13.Location = new System.Drawing.Point(36, 187);
+            this.label13.Location = new System.Drawing.Point(472, 44);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(99, 13);
             this.label13.TabIndex = 193;
@@ -124,7 +106,7 @@ namespace Residence_Management_System.User_Controls
             "Available",
             "Not-Available",
             "Both"});
-            this.cboxRoomAvailability.Location = new System.Drawing.Point(39, 203);
+            this.cboxRoomAvailability.Location = new System.Drawing.Point(475, 60);
             this.cboxRoomAvailability.Name = "cboxRoomAvailability";
             this.cboxRoomAvailability.Size = new System.Drawing.Size(200, 36);
             this.cboxRoomAvailability.TabIndex = 194;
@@ -135,7 +117,7 @@ namespace Residence_Management_System.User_Controls
             this.label24.AutoSize = true;
             this.label24.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label24.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.label24.Location = new System.Drawing.Point(38, 122);
+            this.label24.Location = new System.Drawing.Point(241, 46);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(48, 13);
             this.label24.TabIndex = 196;
@@ -151,7 +133,7 @@ namespace Residence_Management_System.User_Controls
             this.dtpDateMovingIn.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.dtpDateMovingIn.ForeColor = System.Drawing.Color.White;
             this.dtpDateMovingIn.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.dtpDateMovingIn.Location = new System.Drawing.Point(41, 136);
+            this.dtpDateMovingIn.Location = new System.Drawing.Point(244, 60);
             this.dtpDateMovingIn.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.dtpDateMovingIn.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.dtpDateMovingIn.Name = "dtpDateMovingIn";
@@ -165,7 +147,7 @@ namespace Residence_Management_System.User_Controls
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.label4.Location = new System.Drawing.Point(36, 60);
+            this.label4.Location = new System.Drawing.Point(9, 46);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(64, 13);
             this.label4.TabIndex = 198;
@@ -181,7 +163,7 @@ namespace Residence_Management_System.User_Controls
             this.guna2DateTimePicker1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2DateTimePicker1.ForeColor = System.Drawing.Color.White;
             this.guna2DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.guna2DateTimePicker1.Location = new System.Drawing.Point(39, 74);
+            this.guna2DateTimePicker1.Location = new System.Drawing.Point(12, 60);
             this.guna2DateTimePicker1.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.guna2DateTimePicker1.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.guna2DateTimePicker1.Name = "guna2DateTimePicker1";
@@ -193,7 +175,7 @@ namespace Residence_Management_System.User_Controls
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(22, 5);
+            this.label6.Location = new System.Drawing.Point(286, 9);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(226, 25);
             this.label6.TabIndex = 192;
@@ -203,25 +185,25 @@ namespace Residence_Management_System.User_Controls
             // 
             this.guna2Panel2.Controls.Add(this.label6);
             this.guna2Panel2.Controls.Add(this.guna2DateTimePicker1);
-            this.guna2Panel2.Controls.Add(this.label4);
-            this.guna2Panel2.Controls.Add(this.dtpDateMovingIn);
-            this.guna2Panel2.Controls.Add(this.label24);
-            this.guna2Panel2.Controls.Add(this.cboxRoomAvailability);
-            this.guna2Panel2.Controls.Add(this.label13);
             this.guna2Panel2.Controls.Add(this.btnReserve);
-            this.guna2Panel2.Location = new System.Drawing.Point(3, 71);
+            this.guna2Panel2.Controls.Add(this.dtpDateMovingIn);
+            this.guna2Panel2.Controls.Add(this.label13);
+            this.guna2Panel2.Controls.Add(this.label4);
+            this.guna2Panel2.Controls.Add(this.cboxRoomAvailability);
+            this.guna2Panel2.Controls.Add(this.label24);
+            this.guna2Panel2.Location = new System.Drawing.Point(23, 112);
             this.guna2Panel2.Name = "guna2Panel2";
-            this.guna2Panel2.Size = new System.Drawing.Size(271, 300);
+            this.guna2Panel2.Size = new System.Drawing.Size(847, 108);
             this.guna2Panel2.TabIndex = 14;
             // 
             // guna2Panel1
             // 
             this.guna2Panel1.Controls.Add(this.guna2HScrollBar1);
             this.guna2Panel1.Controls.Add(this.BarJobType);
-            this.guna2Panel1.Location = new System.Drawing.Point(302, 104);
+            this.guna2Panel1.Location = new System.Drawing.Point(346, 236);
             this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(556, 384);
-            this.guna2Panel1.TabIndex = 15;
+            this.guna2Panel1.Size = new System.Drawing.Size(524, 317);
+            this.guna2Panel1.TabIndex = 16;
             // 
             // guna2HScrollBar1
             // 
@@ -234,24 +216,6 @@ namespace Residence_Management_System.User_Controls
             this.guna2HScrollBar1.Size = new System.Drawing.Size(863, 18);
             this.guna2HScrollBar1.SmallChange = 5;
             this.guna2HScrollBar1.TabIndex = 10;
-            // 
-            // BarJobType
-            // 
-            this.BarJobType.AutoScroll = true;
-            this.BarJobType.BackColor = System.Drawing.Color.Transparent;
-            this.BarJobType.BorderRadius = 10;
-            this.BarJobType.Controls.Add(this.chart1);
-            this.BarJobType.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.BarJobType.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.BarJobType.Location = new System.Drawing.Point(45, 47);
-            this.BarJobType.Name = "BarJobType";
-            this.BarJobType.ShadowDecoration.BorderRadius = 10;
-            this.BarJobType.ShadowDecoration.Enabled = true;
-            this.BarJobType.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(0, 0, 10, 10);
-            this.BarJobType.Size = new System.Drawing.Size(488, 305);
-            this.BarJobType.TabIndex = 7;
-            this.BarJobType.Text = "Employee Job Type";
-            this.BarJobType.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // chart1
             // 
@@ -283,32 +247,64 @@ namespace Residence_Management_System.User_Controls
             title1.Name = "Employee Job Type";
             this.chart1.Titles.Add(title1);
             // 
+            // BarJobType
+            // 
+            this.BarJobType.AutoScroll = true;
+            this.BarJobType.BackColor = System.Drawing.Color.Transparent;
+            this.BarJobType.BorderRadius = 10;
+            this.BarJobType.Controls.Add(this.chart1);
+            this.BarJobType.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.BarJobType.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.BarJobType.Location = new System.Drawing.Point(17, 3);
+            this.BarJobType.Name = "BarJobType";
+            this.BarJobType.ShadowDecoration.BorderRadius = 10;
+            this.BarJobType.ShadowDecoration.Enabled = true;
+            this.BarJobType.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(0, 0, 10, 10);
+            this.BarJobType.Size = new System.Drawing.Size(488, 305);
+            this.BarJobType.TabIndex = 7;
+            this.BarJobType.Text = "Employee Job Type";
+            this.BarJobType.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.BarJobType.Click += new System.EventHandler(this.BarJobType_Click);
+            // 
+            // chart2
+            // 
+            chartArea2.Name = "ChartArea1";
+            this.chart2.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.chart2.Legends.Add(legend2);
+            this.chart2.Location = new System.Drawing.Point(23, 239);
+            this.chart2.Name = "chart2";
+            series5.ChartArea = "ChartArea1";
+            series5.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series5.Legend = "Legend1";
+            series5.Name = "Series1";
+            this.chart2.Series.Add(series5);
+            this.chart2.Size = new System.Drawing.Size(300, 300);
+            this.chart2.TabIndex = 17;
+            this.chart2.Text = "chart2";
+            // 
             // UC_report
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.chart2);
             this.Controls.Add(this.guna2Panel1);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.guna2Panel2);
-            this.Controls.Add(this.label5);
             this.Name = "UC_report";
             this.Size = new System.Drawing.Size(890, 569);
             this.Load += new System.EventHandler(this.UC_report_Load);
             this.guna2Panel2.ResumeLayout(false);
             this.guna2Panel2.PerformLayout();
             this.guna2Panel1.ResumeLayout(false);
-            this.BarJobType.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
+            this.BarJobType.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.chart2)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label3;
         private Guna.UI2.WinForms.Guna2Button btnReserve;
         private System.Windows.Forms.Label label13;
         private Guna.UI2.WinForms.Guna2ComboBox cboxRoomAvailability;
@@ -322,5 +318,6 @@ namespace Residence_Management_System.User_Controls
         private Guna.UI2.WinForms.Guna2HScrollBar guna2HScrollBar1;
         private Guna.UI2.WinForms.Guna2GroupBox BarJobType;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart2;
     }
 }

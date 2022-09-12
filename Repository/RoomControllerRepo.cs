@@ -222,7 +222,7 @@ namespace Residence_Management_System.Repository
             }
             else
             {
-                MessageBox.Show("You don't have the privilages to add a room.\nOnly the room-controller can perform this task", "Not allowed", (MessageBoxButtons)MessageBoxButton.OK, MessageBoxIcon.Error);
+                MessageBox.Show("You don't have the privileges to add a room.\nOnly the room-controller can perform this task", "Not allowed", (MessageBoxButtons)MessageBoxButton.OK, MessageBoxIcon.Error);
             }
 
         }
@@ -273,7 +273,7 @@ namespace Residence_Management_System.Repository
             }
             else
             {
-                MessageBox.Show("You don't have the privilages to update a room.\nOnly the room-controller can perform this task", "Not allowed", (MessageBoxButtons)MessageBoxButton.OK, MessageBoxIcon.Error);
+                MessageBox.Show("You don't have the privileges to update a room.\nOnly the room-controller can perform this task", "Not allowed", (MessageBoxButtons)MessageBoxButton.OK, MessageBoxIcon.Error);
             }
 		}
 		
@@ -310,7 +310,7 @@ namespace Residence_Management_System.Repository
             }
             else
             {
-                MessageBox.Show("You don't have the privilages to delete a room.\nOnly the room-controller can perform this task", "Not allowed", (MessageBoxButtons)MessageBoxButton.OK, MessageBoxIcon.Error);
+                MessageBox.Show("You don't have the privileges to delete a room.\nOnly the room-controller can perform this task", "Not allowed", (MessageBoxButtons)MessageBoxButton.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -356,7 +356,7 @@ namespace Residence_Management_System.Repository
             }
             else
             {
-                MessageBox.Show("You don't have the privilages to reserve a room.\nOnly the room-controller can perform this task", "Not allowed", (MessageBoxButtons)MessageBoxButton.OK, MessageBoxIcon.Error);
+                MessageBox.Show("You don't have the privileges to reserve a room.\nOnly the room-controller can perform this task", "Not allowed", (MessageBoxButtons)MessageBoxButton.OK, MessageBoxIcon.Error);
             }
 		}
 		
@@ -406,7 +406,7 @@ namespace Residence_Management_System.Repository
             }
             else
             {
-                MessageBox.Show("You don't have the privilages to update a reservation details.\nOnly the room-controller can perform this task", "Not allowed", (MessageBoxButtons)MessageBoxButton.OK, MessageBoxIcon.Error);
+                MessageBox.Show("You don't have the privileges to update a reservation details.\nOnly the room-controller can perform this task", "Not allowed", (MessageBoxButtons)MessageBoxButton.OK, MessageBoxIcon.Error);
             }
 		}
 		
@@ -443,7 +443,7 @@ namespace Residence_Management_System.Repository
             }
             else
             {
-                MessageBox.Show("You don't have the privilages to delete a reservation.\nOnly the room-controller can perform this task", "Not allowed", (MessageBoxButtons)MessageBoxButton.OK, MessageBoxIcon.Error);
+                MessageBox.Show("You don't have the privileges to delete a reservation.\nOnly the room-controller can perform this task", "Not allowed", (MessageBoxButtons)MessageBoxButton.OK, MessageBoxIcon.Error);
             }
 
 

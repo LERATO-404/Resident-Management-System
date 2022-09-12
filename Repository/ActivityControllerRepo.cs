@@ -94,7 +94,7 @@ namespace Residence_Management_System.Repository
             }
             else
             {
-                MessageBox.Show("You don't have the privilages to allocate student to activities only the activity-controller can allocate", "Not allowed", (MessageBoxButtons)MessageBoxButton.OK, MessageBoxIcon.Error);
+                MessageBox.Show("You don't have the privileges to allocate student to activities.\nOnly the activity-controller can perform this task", "Not allowed", (MessageBoxButtons)MessageBoxButton.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -177,7 +177,7 @@ namespace Residence_Management_System.Repository
             }
             else
             {
-                MessageBox.Show("You don't have the privilages to delete student activity points activities.\nOnly the activity-controller can perform this task", "Not allowed", (MessageBoxButtons)MessageBoxButton.OK, MessageBoxIcon.Error);
+                MessageBox.Show("You don't have the privileges to delete student activity points.\nOnly the activity-controller can perform this task", "Not allowed", (MessageBoxButtons)MessageBoxButton.OK, MessageBoxIcon.Error);
             }
         }
     }
