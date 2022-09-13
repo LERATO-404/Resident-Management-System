@@ -14,14 +14,21 @@ namespace Residence_Management_System
 {
     public partial class LandingPage : Form
     {
-        //private readonly MyMethods myLandingMethod = new MyMethods();
+        private readonly string userRole = UserId.GetUserJobType();
         bool sideBarExpand;
         public LandingPage()
         {
             InitializeComponent();
             User_Controls.UC_home uch = new User_Controls.UC_home();
             addUserControl(uch);
-            
+            if (userRole == "Residence-Manager")
+            {
+                iconButton1.Visible = true;
+            }
+            else
+            {
+                iconButton1.Visible = false;
+            }
         }
 
         //*********************methods****************
@@ -120,8 +127,7 @@ namespace Residence_Management_System
         private void reporbtn_Click(object sender, EventArgs e)
         {
             User_Controls.UC_report ucReport = new User_Controls.UC_report();
-            Reports.UC_RoomReport ucRReport = new Reports.UC_RoomReport();
-            addUserControl(ucRReport);
+            addUserControl(ucReport);
         }
 
         private void Logout_Click(object sender, EventArgs e)
@@ -129,6 +135,12 @@ namespace Residence_Management_System
             Login toLogOff = new Login();
             toLogOff.Show();
             this.Close();
+        }
+
+        private void iconButton1_Click(object sender, EventArgs e)
+        {
+            Reports.UC_RoomReport ucRR = new Reports.UC_RoomReport();
+            addUserControl(ucRR);
         }
     }
 }

@@ -37,6 +37,7 @@ namespace Residence_Management_System
             this.roombtn = new FontAwesome.Sharp.IconButton();
             this.activitiesbtn = new FontAwesome.Sharp.IconButton();
             this.reporbtn = new FontAwesome.Sharp.IconButton();
+            this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.panelLogo = new System.Windows.Forms.Panel();
             this.Logout = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -60,6 +61,7 @@ namespace Residence_Management_System
             this.sideBarContainer.Controls.Add(this.roombtn);
             this.sideBarContainer.Controls.Add(this.activitiesbtn);
             this.sideBarContainer.Controls.Add(this.reporbtn);
+            this.sideBarContainer.Controls.Add(this.iconButton1);
             this.sideBarContainer.Dock = System.Windows.Forms.DockStyle.Left;
             this.sideBarContainer.Location = new System.Drawing.Point(0, 0);
             this.sideBarContainer.MaximumSize = new System.Drawing.Size(195, 800);
@@ -206,6 +208,29 @@ namespace Residence_Management_System
             this.reporbtn.UseVisualStyleBackColor = true;
             this.reporbtn.Click += new System.EventHandler(this.reporbtn_Click);
             // 
+            // iconButton1
+            // 
+            this.iconButton1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.iconButton1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.iconButton1.FlatAppearance.BorderSize = 0;
+            this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.iconButton1.ForeColor = System.Drawing.Color.White;
+            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.Print;
+            this.iconButton1.IconColor = System.Drawing.Color.White;
+            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton1.IconSize = 32;
+            this.iconButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButton1.Location = new System.Drawing.Point(3, 314);
+            this.iconButton1.Name = "iconButton1";
+            this.iconButton1.Size = new System.Drawing.Size(192, 44);
+            this.iconButton1.TabIndex = 13;
+            this.iconButton1.Text = " Report";
+            this.iconButton1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.iconButton1.UseVisualStyleBackColor = true;
+            this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);
+            // 
             // panelLogo
             // 
             this.panelLogo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
@@ -324,11 +349,12 @@ namespace Residence_Management_System
         private System.Windows.Forms.Timer sideBarTimer;
         public System.Windows.Forms.FlowLayoutPanel sideBarContainer;
         private FontAwesome.Sharp.IconButton menuBtn;
-        private System.Windows.Forms.Panel tabsContainer;
         private System.Windows.Forms.Panel panel1;
         public System.Windows.Forms.Label lblWelcomeUsername;
         private Guna.UI2.WinForms.Guna2PictureBox LogoLandingPage;
         public System.Windows.Forms.Label label7;
         public System.Windows.Forms.Label Logout;
+        public System.Windows.Forms.Panel tabsContainer;
+        private FontAwesome.Sharp.IconButton iconButton1;
     }
 }

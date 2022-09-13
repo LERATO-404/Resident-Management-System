@@ -15,6 +15,7 @@ namespace Residence_Management_System.User_Controls
     public partial class UC_report : UserControl
     {
         private readonly ManagerRepo manRepo = new ManagerRepo();
+        private readonly LandingPage lanForm = new LandingPage();
         private readonly MyMethods myMethod = new MyMethods();
         private readonly string userRole = UserId.GetUserJobType();
 
@@ -40,12 +41,10 @@ namespace Residence_Management_System.User_Controls
 
         }
 
-
         private void btnReserve_Click(object sender, EventArgs e)
         {
            
-            Reports.UC_RoomReport ucRR = new Reports.UC_RoomReport();
-            ucRR.Show();            
+
         }
 
         private void BarJobType_Click(object sender, EventArgs e)

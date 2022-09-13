@@ -290,7 +290,6 @@ namespace Residence_Management_System.User_Controls
         }
 
         #endregion
-        private Guna.UI2.WinForms.Guna2Button btnGenerateRoomReport;
         private System.Windows.Forms.Label label13;
         private Guna.UI2.WinForms.Guna2ComboBox cboxRoomAvailability;
         private System.Windows.Forms.Label label24;
@@ -304,5 +303,6 @@ namespace Residence_Management_System.User_Controls
         private Guna.UI2.WinForms.Guna2GroupBox BarJobType;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
         private System.Windows.Forms.DataVisualization.Charting.Chart recessStatusPieChart;
+        public Guna.UI2.WinForms.Guna2Button btnGenerateRoomReport;
     }
 }
