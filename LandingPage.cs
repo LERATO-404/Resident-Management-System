@@ -34,26 +34,7 @@ namespace Residence_Management_System
             userControl.BringToFront();
         }
 
-        //*********************methods****************
-        /*
-        public int GetUserId(string lbl)
-        {
-            string sqlId = @"SELECT userId, username FROM [users] WHERE username = '" + lbl + "'"; // userName = lblWelcome.Text
-            using (SqlConnection con = new SqlConnection(myLandingMethod.GetConnection()))
-            {
-                if (con.State != ConnectionState.Open) { con.Open(); }
-                SqlCommand cmd = new SqlCommand(sqlId, con);
-               
-                try
-                {
-                    return Convert.ToInt32(cmd.ExecuteScalar());
-                }
-                finally
-                {
-                    cmd.Dispose();
-                }
-            }
-        }*/
+       
 
         private void LandingPage_Load(object sender, EventArgs e)
         {
@@ -139,7 +120,8 @@ namespace Residence_Management_System
         private void reporbtn_Click(object sender, EventArgs e)
         {
             User_Controls.UC_report ucReport = new User_Controls.UC_report();
-            addUserControl(ucReport);
+            Reports.UC_RoomReport ucRReport = new Reports.UC_RoomReport();
+            addUserControl(ucRReport);
         }
 
         private void Logout_Click(object sender, EventArgs e)

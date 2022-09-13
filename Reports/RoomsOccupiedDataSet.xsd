@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="RoomsOccupiedDataSet" targetNamespace="http://tempuri.org/RoomsOccupiedDataSet.xsd" xmlns:mstns="http://tempuri.org/RoomsOccupiedDataSet.xsd" xmlns="http://tempuri.org/RoomsOccupiedDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="ResidenceManagementSystemDBConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="ResidenceManagementSystemDBConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.Residence_Management_System.Properties.Settings.GlobalReference.Default.ResidenceManagementSystemDBConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="RoomReservationsTableAdapter" GeneratorDataComponentClassName="RoomReservationsTableAdapter" Name="RoomReservations" UserDataComponentName="RoomReservationsTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="ResidenceManagementSystemDBConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>Select rs.ReservationId, s.studentNo, s.FirstName, s.LastName, r.RoomSymbolCode, r.roomFloor, r.roomType
+                                From Reservations rs
+                                Inner Join Students s
+                                On rs.StudentId = s.StudentId
+                                Inner Join Rooms r
+                                On rs.RoomId = r.RoomId
+                                Order by rs.ReservationId</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="ReservationId" DataSetColumn="ReservationId" />
+              <Mapping SourceColumn="studentNo" DataSetColumn="studentNo" />
+              <Mapping SourceColumn="FirstName" DataSetColumn="FirstName" />
+              <Mapping SourceColumn="LastName" DataSetColumn="LastName" />
+              <Mapping SourceColumn="RoomSymbolCode" DataSetColumn="RoomSymbolCode" />
+              <Mapping SourceColumn="roomFloor" DataSetColumn="roomFloor" />
+              <Mapping SourceColumn="roomType" DataSetColumn="roomType" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="RoomsOccupiedDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="RoomsOccupiedDataSet" msprop:Generator_UserDSName="RoomsOccupiedDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="RoomReservations" msprop:Generator_TableClassName="RoomReservationsDataTable" msprop:Generator_TableVarName="tableRoomReservations" msprop:Generator_TablePropName="RoomReservations" msprop:Generator_RowDeletingName="RoomReservationsRowDeleting" msprop:Generator_RowChangingName="RoomReservationsRowChanging" msprop:Generator_RowEvHandlerName="RoomReservationsRowChangeEventHandler" msprop:Generator_RowDeletedName="RoomReservationsRowDeleted" msprop:Generator_UserTableName="RoomReservations" msprop:Generator_RowChangedName="RoomReservationsRowChanged" msprop:Generator_RowEvArgName="RoomReservationsRowChangeEvent" msprop:Generator_RowClassName="RoomReservationsRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ReservationId" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnReservationId" msprop:Generator_ColumnPropNameInRow="ReservationId" msprop:Generator_ColumnPropNameInTable="ReservationIdColumn" msprop:Generator_UserColumnName="ReservationId" type="xs:int" />
+              <xs:element name="studentNo" msprop:Generator_ColumnVarNameInTable="columnstudentNo" msprop:Generator_ColumnPropNameInRow="studentNo" msprop:Generator_ColumnPropNameInTable="studentNoColumn" msprop:Generator_UserColumnName="studentNo">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="8" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="FirstName" msprop:Generator_ColumnVarNameInTable="columnFirstName" msprop:Generator_ColumnPropNameInRow="FirstName" msprop:Generator_ColumnPropNameInTable="FirstNameColumn" msprop:Generator_UserColumnName="FirstName">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="LastName" msprop:Generator_ColumnVarNameInTable="columnLastName" msprop:Generator_ColumnPropNameInRow="LastName" msprop:Generator_ColumnPropNameInTable="LastNameColumn" msprop:Generator_UserColumnName="LastName">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="RoomSymbolCode" msprop:Generator_ColumnVarNameInTable="columnRoomSymbolCode" msprop:Generator_ColumnPropNameInRow="RoomSymbolCode" msprop:Generator_ColumnPropNameInTable="RoomSymbolCodeColumn" msprop:Generator_UserColumnName="RoomSymbolCode">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="roomFloor" msprop:Generator_ColumnVarNameInTable="columnroomFloor" msprop:Generator_ColumnPropNameInRow="roomFloor" msprop:Generator_ColumnPropNameInTable="roomFloorColumn" msprop:Generator_UserColumnName="roomFloor">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="roomType" msprop:Generator_ColumnVarNameInTable="columnroomType" msprop:Generator_ColumnPropNameInRow="roomType" msprop:Generator_ColumnPropNameInTable="roomTypeColumn" msprop:Generator_UserColumnName="roomType">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:RoomReservations" />
+      <xs:field xpath="mstns:ReservationId" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

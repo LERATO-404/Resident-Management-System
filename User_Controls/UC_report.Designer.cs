@@ -32,14 +32,11 @@ namespace Residence_Management_System.User_Controls
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            this.btnReserve = new Guna.UI2.WinForms.Guna2Button();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            this.btnGenerateRoomReport = new Guna.UI2.WinForms.Guna2Button();
             this.label13 = new System.Windows.Forms.Label();
             this.cboxRoomAvailability = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label24 = new System.Windows.Forms.Label();
@@ -50,34 +47,34 @@ namespace Residence_Management_System.User_Controls
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2HScrollBar1 = new Guna.UI2.WinForms.Guna2HScrollBar();
-            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.BarJobType = new Guna.UI2.WinForms.Guna2GroupBox();
-            this.chart2 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.recessStatusPieChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.guna2Panel2.SuspendLayout();
             this.guna2Panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.BarJobType.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chart2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.recessStatusPieChart)).BeginInit();
             this.SuspendLayout();
             // 
-            // btnReserve
+            // btnGenerateRoomReport
             // 
-            this.btnReserve.Animated = true;
-            this.btnReserve.BorderRadius = 10;
-            this.btnReserve.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnReserve.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnReserve.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnReserve.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnReserve.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnReserve.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnReserve.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnReserve.ForeColor = System.Drawing.Color.White;
-            this.btnReserve.Location = new System.Drawing.Point(734, 72);
-            this.btnReserve.Name = "btnReserve";
-            this.btnReserve.Size = new System.Drawing.Size(110, 33);
-            this.btnReserve.TabIndex = 191;
-            this.btnReserve.Text = "Generate";
-            this.btnReserve.Click += new System.EventHandler(this.btnReserve_Click);
+            this.btnGenerateRoomReport.Animated = true;
+            this.btnGenerateRoomReport.BorderRadius = 10;
+            this.btnGenerateRoomReport.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnGenerateRoomReport.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnGenerateRoomReport.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnGenerateRoomReport.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnGenerateRoomReport.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnGenerateRoomReport.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnGenerateRoomReport.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnGenerateRoomReport.ForeColor = System.Drawing.Color.White;
+            this.btnGenerateRoomReport.Location = new System.Drawing.Point(734, 72);
+            this.btnGenerateRoomReport.Name = "btnGenerateRoomReport";
+            this.btnGenerateRoomReport.Size = new System.Drawing.Size(110, 33);
+            this.btnGenerateRoomReport.TabIndex = 191;
+            this.btnGenerateRoomReport.Text = "Load";
+            this.btnGenerateRoomReport.Click += new System.EventHandler(this.btnReserve_Click);
             // 
             // label13
             // 
@@ -185,7 +182,7 @@ namespace Residence_Management_System.User_Controls
             // 
             this.guna2Panel2.Controls.Add(this.label6);
             this.guna2Panel2.Controls.Add(this.guna2DateTimePicker1);
-            this.guna2Panel2.Controls.Add(this.btnReserve);
+            this.guna2Panel2.Controls.Add(this.btnGenerateRoomReport);
             this.guna2Panel2.Controls.Add(this.dtpDateMovingIn);
             this.guna2Panel2.Controls.Add(this.label13);
             this.guna2Panel2.Controls.Add(this.label4);
@@ -217,36 +214,6 @@ namespace Residence_Management_System.User_Controls
             this.guna2HScrollBar1.SmallChange = 5;
             this.guna2HScrollBar1.TabIndex = 10;
             // 
-            // chart1
-            // 
-            chartArea1.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chart1.Legends.Add(legend1);
-            this.chart1.Location = new System.Drawing.Point(20, 53);
-            this.chart1.Name = "chart1";
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Full-Time";
-            series2.ChartArea = "ChartArea1";
-            series2.Legend = "Legend1";
-            series2.Name = "Part-Time";
-            series3.ChartArea = "ChartArea1";
-            series3.Legend = "Legend1";
-            series3.Name = "Temporary";
-            series4.ChartArea = "ChartArea1";
-            series4.Legend = "Legend1";
-            series4.Name = "Volunteer";
-            this.chart1.Series.Add(series1);
-            this.chart1.Series.Add(series2);
-            this.chart1.Series.Add(series3);
-            this.chart1.Series.Add(series4);
-            this.chart1.Size = new System.Drawing.Size(451, 224);
-            this.chart1.TabIndex = 0;
-            this.chart1.Text = "chart1";
-            title1.Name = "Employee Job Type";
-            this.chart1.Titles.Add(title1);
-            // 
             // BarJobType
             // 
             this.BarJobType.AutoScroll = true;
@@ -266,29 +233,47 @@ namespace Residence_Management_System.User_Controls
             this.BarJobType.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.BarJobType.Click += new System.EventHandler(this.BarJobType_Click);
             // 
-            // chart2
+            // chart1
+            // 
+            chartArea1.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chart1.Legends.Add(legend1);
+            this.chart1.Location = new System.Drawing.Point(20, 53);
+            this.chart1.Name = "chart1";
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "JobTitles";
+            this.chart1.Series.Add(series1);
+            this.chart1.Size = new System.Drawing.Size(451, 224);
+            this.chart1.TabIndex = 0;
+            this.chart1.Text = "chart1";
+            title1.Name = "Employee Job Type";
+            this.chart1.Titles.Add(title1);
+            // 
+            // recessStatusPieChart
             // 
             chartArea2.Name = "ChartArea1";
-            this.chart2.ChartAreas.Add(chartArea2);
+            this.recessStatusPieChart.ChartAreas.Add(chartArea2);
             legend2.Name = "Legend1";
-            this.chart2.Legends.Add(legend2);
-            this.chart2.Location = new System.Drawing.Point(23, 239);
-            this.chart2.Name = "chart2";
-            series5.ChartArea = "ChartArea1";
-            series5.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series5.Legend = "Legend1";
-            series5.Name = "Series1";
-            this.chart2.Series.Add(series5);
-            this.chart2.Size = new System.Drawing.Size(300, 300);
-            this.chart2.TabIndex = 17;
-            this.chart2.Text = "chart2";
+            this.recessStatusPieChart.Legends.Add(legend2);
+            this.recessStatusPieChart.Location = new System.Drawing.Point(23, 239);
+            this.recessStatusPieChart.Name = "recessStatusPieChart";
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            this.recessStatusPieChart.Series.Add(series2);
+            this.recessStatusPieChart.Size = new System.Drawing.Size(300, 300);
+            this.recessStatusPieChart.TabIndex = 17;
+            this.recessStatusPieChart.Text = "chart2";
             // 
             // UC_report
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.Controls.Add(this.chart2);
+            this.Controls.Add(this.recessStatusPieChart);
             this.Controls.Add(this.guna2Panel1);
             this.Controls.Add(this.guna2Panel2);
             this.Name = "UC_report";
@@ -297,15 +282,15 @@ namespace Residence_Management_System.User_Controls
             this.guna2Panel2.ResumeLayout(false);
             this.guna2Panel2.PerformLayout();
             this.guna2Panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.BarJobType.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.chart2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.recessStatusPieChart)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private Guna.UI2.WinForms.Guna2Button btnReserve;
+        private Guna.UI2.WinForms.Guna2Button btnGenerateRoomReport;
         private System.Windows.Forms.Label label13;
         private Guna.UI2.WinForms.Guna2ComboBox cboxRoomAvailability;
         private System.Windows.Forms.Label label24;
@@ -318,6 +303,6 @@ namespace Residence_Management_System.User_Controls
         private Guna.UI2.WinForms.Guna2HScrollBar guna2HScrollBar1;
         private Guna.UI2.WinForms.Guna2GroupBox BarJobType;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chart2;
+        private System.Windows.Forms.DataVisualization.Charting.Chart recessStatusPieChart;
     }
 }
