@@ -109,9 +109,9 @@ namespace Residence_Management_System.ExtraMethods
                     dgv.DataSource = ds;
                     dgv.DataMember = "Info";
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
-                    MessageBox.Show("Please select the table you want to display"+ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Please select the table you want to display", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 finally
                 {

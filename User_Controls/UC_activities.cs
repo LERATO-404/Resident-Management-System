@@ -74,7 +74,15 @@ namespace Residence_Management_System.User_Controls
             return totalPoint;
         }
 
-       
+        private void ClearActivity()
+        {
+            txtActStudentNo.Clear();
+            cboxSemesterParticipating.SelectedIndex = -1;
+        }
+
+
+
+
 
         public string semesterParticipating(ComboBox cBox)
         {
@@ -168,6 +176,11 @@ namespace Residence_Management_System.User_Controls
         private void gboxHP_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnCancelSelectedAct_Click(object sender, EventArgs e)
+        {
+            ClearActivity();
         }
     }
 }

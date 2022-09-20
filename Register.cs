@@ -102,12 +102,18 @@ namespace Residence_Management_System
                 usPhone, dtpDob.Text, myMethod.JobTitleSelected(cBoxJobTitle).Trim(), JobTypeSelected().Trim(),
                 txtRegisterUsername.Text.Trim(), txtRegisterPassword.Text.Trim());
                 uR.AddUser(us);
+                ClearRegister();
             }
             else
             {
                 MessageBox.Show("Please fill all the boxes with * to register your account!..", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             
+        }
+
+        private void guna2Panel3_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

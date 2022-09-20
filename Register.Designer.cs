@@ -66,6 +66,10 @@ namespace Residence_Management_System
             this.label2 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
             this.guna2Panel2.SuspendLayout();
             this.guna2Panel7.SuspendLayout();
             this.panelLoginCreden.SuspendLayout();
@@ -548,6 +552,10 @@ namespace Residence_Management_System
             // guna2Panel3
             // 
             this.guna2Panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.guna2Panel3.Controls.Add(this.label20);
+            this.guna2Panel3.Controls.Add(this.label19);
+            this.guna2Panel3.Controls.Add(this.label18);
+            this.guna2Panel3.Controls.Add(this.label5);
             this.guna2Panel3.Controls.Add(this.label2);
             this.guna2Panel3.Controls.Add(this.label7);
             this.guna2Panel3.Controls.Add(this.guna2PictureBox1);
@@ -556,22 +564,25 @@ namespace Residence_Management_System
             this.guna2Panel3.Name = "guna2Panel3";
             this.guna2Panel3.Size = new System.Drawing.Size(295, 627);
             this.guna2Panel3.TabIndex = 0;
+            this.guna2Panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2Panel3_Paint);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(17, 236);
+            this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold);
+            this.label2.Location = new System.Drawing.Point(39, 109);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(150, 13);
+            this.label2.Size = new System.Drawing.Size(164, 13);
             this.label2.TabIndex = 28;
-            this.label2.Text = "Sign up to use the application ";
+            this.label2.Text = "Register Workers and Students";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(109, 176);
+            this.label7.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold);
+            this.label7.Location = new System.Drawing.Point(3, 80);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(150, 13);
+            this.label7.Size = new System.Drawing.Size(161, 13);
             this.label7.TabIndex = 27;
             this.label7.Text = "Sign up to use the application ";
             // 
@@ -579,12 +590,52 @@ namespace Residence_Management_System
             // 
             this.guna2PictureBox1.Image = global::Residence_Management_System.Properties.Resources.LogoRMS;
             this.guna2PictureBox1.ImageRotate = 0F;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(3, 59);
+            this.guna2PictureBox1.Location = new System.Drawing.Point(3, 3);
             this.guna2PictureBox1.Name = "guna2PictureBox1";
             this.guna2PictureBox1.Size = new System.Drawing.Size(164, 63);
             this.guna2PictureBox1.TabIndex = 0;
             this.guna2PictureBox1.TabStop = false;
             this.guna2PictureBox1.Click += new System.EventHandler(this.guna2PictureBox1_Click);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold);
+            this.label5.Location = new System.Drawing.Point(39, 136);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(64, 13);
+            this.label5.TabIndex = 29;
+            this.label5.Text = "Add rooms";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold);
+            this.label18.Location = new System.Drawing.Point(39, 162);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(131, 13);
+            this.label18.TabIndex = 30;
+            this.label18.Text = "Assign students to room";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold);
+            this.label19.Location = new System.Drawing.Point(39, 192);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(148, 13);
+            this.label19.TabIndex = 31;
+            this.label19.Text = "Assign students to activities";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold);
+            this.label20.Location = new System.Drawing.Point(39, 215);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(91, 13);
+            this.label20.TabIndex = 32;
+            this.label20.Text = "Generate Report";
             // 
             // Register
             // 
@@ -652,5 +703,9 @@ namespace Residence_Management_System
         private Guna.UI2.WinForms.Guna2Panel guna2Panel7;
         public System.Windows.Forms.Label lblInvalidEmail;
         public System.Windows.Forms.Label lblInvalidPhone;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label label18;
     }
 }

@@ -20,7 +20,13 @@ namespace Residence_Management_System.User_Controls
         public UC_home()
         {
             InitializeComponent();
-            //userId.Text = 
+            
+        }
+
+        public void ClearHome()
+        {
+            txtIdentifier.Clear();
+            cboxViewTable.SelectedIndex = -1;
         }
 
         private void btnDisplay_Click(object sender, EventArgs e)
@@ -31,13 +37,10 @@ namespace Residence_Management_System.User_Controls
 
         private void UC_home_Load(object sender, EventArgs e)
         {
-            //LandingPage lp = new LandingPage();
-            //lp.GetUserId()
+            
             lblTotalRooms.Text = rph.CountRoom().ToString();
             lblTotalStudent.Text = rph.CountStudents().ToString();
             lblTotalEmployees.Text = rph.CountWorkers().ToString();
-            //label5.Text = UserId.GetUserJobType();
-            
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -60,6 +63,11 @@ namespace Residence_Management_System.User_Controls
                 MessageBox.Show("Invalid Id, Please enter Id number (firstcolumn) of the resource you want to delete!..", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            ClearHome();
         }
     }
 }

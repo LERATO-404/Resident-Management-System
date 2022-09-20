@@ -41,9 +41,6 @@ namespace Residence_Management_System.Repository
 				case 5:
 					tname = @"SELECT * FROM [activityParticipation]";
 					break;
-				case 6:
-					tname = @"SELECT * FROM [points]";
-					break;
 				default:
 					tname = "";
 					break;
@@ -75,9 +72,6 @@ namespace Residence_Management_System.Repository
 				case 5:
 					tname = @"DELETE  [activityParticipation] WHERE activityId = '" + id + "'";
 					break;
-				case 6:
-					tname = @"DELETE  [points] WHERE pointsId = '" + id + "'";
-					break;
 				default:
 					tname = "";
 					break;
@@ -90,6 +84,14 @@ namespace Residence_Management_System.Repository
 			string sqlTotalRoom = @"SELECT COUNT(roomID) FROM [rooms]";
 			int numberOfRooms = myHomeMethod.CountRecords(sqlTotalRoom);
 			return numberOfRooms;
+		}
+
+		public int CountFreeRooms()
+        {
+			string sqlTotalFreeRooms = @"SELECT COUNT(reservationId) FROM [rooms]";
+			int freerooms = myHomeMethod.CountRecords(sqlTotalFreeRooms);
+			return CountRoom()- freerooms;
+
 		}
 
 		public int CountStudents()

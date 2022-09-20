@@ -30,12 +30,12 @@ namespace Residence_Management_System.User_Controls
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.Rooms = new System.Windows.Forms.TabPage();
             this.guna2GroupBox1 = new Guna.UI2.WinForms.Guna2GroupBox();
             this.dgvRooms = new Guna.UI2.WinForms.Guna2DataGridView();
@@ -137,27 +137,27 @@ namespace Residence_Management_System.User_Controls
             // 
             // dgvRooms
             // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.dgvRooms.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
+            this.dgvRooms.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
             this.dgvRooms.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvRooms.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 9F);
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvRooms.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.dgvRooms.ColumnHeadersHeight = 30;
             this.dgvRooms.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvRooms.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI", 9F);
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvRooms.DefaultCellStyle = dataGridViewCellStyle9;
             this.dgvRooms.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvRooms.Location = new System.Drawing.Point(3, 191);
             this.dgvRooms.Name = "dgvRooms";
@@ -217,7 +217,7 @@ namespace Residence_Management_System.User_Controls
             this.btnSearch.Location = new System.Drawing.Point(316, 85);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(110, 33);
-            this.btnSearch.TabIndex = 191;
+            this.btnSearch.TabIndex = 3;
             this.btnSearch.Text = "Search";
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
@@ -241,7 +241,7 @@ namespace Residence_Management_System.User_Controls
             this.cboxShowRooms.Location = new System.Drawing.Point(110, 30);
             this.cboxShowRooms.Name = "cboxShowRooms";
             this.cboxShowRooms.Size = new System.Drawing.Size(200, 36);
-            this.cboxShowRooms.TabIndex = 189;
+            this.cboxShowRooms.TabIndex = 0;
             // 
             // label31
             // 
@@ -270,7 +270,7 @@ namespace Residence_Management_System.User_Controls
             this.btnDeleteRoom.Location = new System.Drawing.Point(432, 85);
             this.btnDeleteRoom.Name = "btnDeleteRoom";
             this.btnDeleteRoom.Size = new System.Drawing.Size(110, 33);
-            this.btnDeleteRoom.TabIndex = 188;
+            this.btnDeleteRoom.TabIndex = 4;
             this.btnDeleteRoom.Text = "Delete";
             this.btnDeleteRoom.Click += new System.EventHandler(this.guna2Button4_Click);
             // 
@@ -289,7 +289,7 @@ namespace Residence_Management_System.User_Controls
             this.btnDisplayRooms.Location = new System.Drawing.Point(316, 33);
             this.btnDisplayRooms.Name = "btnDisplayRooms";
             this.btnDisplayRooms.Size = new System.Drawing.Size(110, 33);
-            this.btnDisplayRooms.TabIndex = 183;
+            this.btnDisplayRooms.TabIndex = 1;
             this.btnDisplayRooms.Text = "Display";
             this.btnDisplayRooms.Click += new System.EventHandler(this.guna2Button2_Click);
             // 
@@ -311,7 +311,7 @@ namespace Residence_Management_System.User_Controls
             this.txtRoomIdentifier.PlaceholderText = "";
             this.txtRoomIdentifier.SelectedText = "";
             this.txtRoomIdentifier.Size = new System.Drawing.Size(200, 36);
-            this.txtRoomIdentifier.TabIndex = 184;
+            this.txtRoomIdentifier.TabIndex = 2;
             this.txtRoomIdentifier.TextChanged += new System.EventHandler(this.guna2TextBox4_TextChanged);
             // 
             // label7
@@ -369,7 +369,7 @@ namespace Residence_Management_System.User_Controls
             this.txtRoomSymbolCode.PlaceholderText = "G21";
             this.txtRoomSymbolCode.SelectedText = "";
             this.txtRoomSymbolCode.Size = new System.Drawing.Size(200, 36);
-            this.txtRoomSymbolCode.TabIndex = 191;
+            this.txtRoomSymbolCode.TabIndex = 0;
             // 
             // label5
             // 
@@ -398,7 +398,7 @@ namespace Residence_Management_System.User_Controls
             this.btnUpdateRoom.Location = new System.Drawing.Point(79, 360);
             this.btnUpdateRoom.Name = "btnUpdateRoom";
             this.btnUpdateRoom.Size = new System.Drawing.Size(110, 33);
-            this.btnUpdateRoom.TabIndex = 167;
+            this.btnUpdateRoom.TabIndex = 5;
             this.btnUpdateRoom.Text = "Update Room";
             this.btnUpdateRoom.Click += new System.EventHandler(this.updateRoombtn_Click);
             // 
@@ -419,7 +419,7 @@ namespace Residence_Management_System.User_Controls
             this.cboxRoomAvailability.Location = new System.Drawing.Point(27, 270);
             this.cboxRoomAvailability.Name = "cboxRoomAvailability";
             this.cboxRoomAvailability.Size = new System.Drawing.Size(200, 36);
-            this.cboxRoomAvailability.TabIndex = 184;
+            this.cboxRoomAvailability.TabIndex = 3;
             this.toolTip1.SetToolTip(this.cboxRoomAvailability, "Whether a room is available for reservation or not");
             this.cboxRoomAvailability.SelectedIndexChanged += new System.EventHandler(this.guna2ComboBox11_SelectedIndexChanged);
             // 
@@ -451,7 +451,7 @@ namespace Residence_Management_System.User_Controls
             this.btnAddRoom.Location = new System.Drawing.Point(79, 321);
             this.btnAddRoom.Name = "btnAddRoom";
             this.btnAddRoom.Size = new System.Drawing.Size(110, 33);
-            this.btnAddRoom.TabIndex = 0;
+            this.btnAddRoom.TabIndex = 4;
             this.btnAddRoom.Text = "Add Room";
             this.btnAddRoom.Click += new System.EventHandler(this.addRoombtn_Click);
             // 
@@ -485,7 +485,7 @@ namespace Residence_Management_System.User_Controls
             this.cboxRoomType.Location = new System.Drawing.Point(27, 204);
             this.cboxRoomType.Name = "cboxRoomType";
             this.cboxRoomType.Size = new System.Drawing.Size(200, 36);
-            this.cboxRoomType.TabIndex = 182;
+            this.cboxRoomType.TabIndex = 2;
             this.cboxRoomType.SelectedIndexChanged += new System.EventHandler(this.guna2ComboBox10_SelectedIndexChanged);
             // 
             // label8
@@ -520,7 +520,7 @@ namespace Residence_Management_System.User_Controls
             this.cboxFloor.Location = new System.Drawing.Point(27, 138);
             this.cboxFloor.Name = "cboxFloor";
             this.cboxFloor.Size = new System.Drawing.Size(200, 36);
-            this.cboxFloor.TabIndex = 174;
+            this.cboxFloor.TabIndex = 1;
             this.cboxFloor.SelectedIndexChanged += new System.EventHandler(this.guna2ComboBox3_SelectedIndexChanged);
             // 
             // btnCancelRoomInput
@@ -538,7 +538,7 @@ namespace Residence_Management_System.User_Controls
             this.btnCancelRoomInput.Location = new System.Drawing.Point(763, 482);
             this.btnCancelRoomInput.Name = "btnCancelRoomInput";
             this.btnCancelRoomInput.Size = new System.Drawing.Size(110, 33);
-            this.btnCancelRoomInput.TabIndex = 1;
+            this.btnCancelRoomInput.TabIndex = 0;
             this.btnCancelRoomInput.Text = "Cancel";
             this.btnCancelRoomInput.Click += new System.EventHandler(this.cancelbtn_Click);
             // 
@@ -629,27 +629,27 @@ namespace Residence_Management_System.User_Controls
             // 
             // dgvReservations
             // 
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            this.dgvReservations.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.White;
+            this.dgvReservations.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle10;
             this.dgvReservations.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 9F);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvReservations.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Segoe UI", 9F);
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvReservations.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
             this.dgvReservations.ColumnHeadersHeight = 30;
             this.dgvReservations.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 9F);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvReservations.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Segoe UI", 9F);
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvReservations.DefaultCellStyle = dataGridViewCellStyle12;
             this.dgvReservations.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvReservations.Location = new System.Drawing.Point(3, 191);
             this.dgvReservations.Name = "dgvReservations";
@@ -707,7 +707,7 @@ namespace Residence_Management_System.User_Controls
             this.btnSearchReservation.Location = new System.Drawing.Point(308, 86);
             this.btnSearchReservation.Name = "btnSearchReservation";
             this.btnSearchReservation.Size = new System.Drawing.Size(110, 33);
-            this.btnSearchReservation.TabIndex = 189;
+            this.btnSearchReservation.TabIndex = 3;
             this.btnSearchReservation.Text = "Search";
             this.btnSearchReservation.Click += new System.EventHandler(this.btnSearchReservation_Click);
             // 
@@ -726,7 +726,7 @@ namespace Residence_Management_System.User_Controls
             this.btnDeleteReservation.Location = new System.Drawing.Point(433, 86);
             this.btnDeleteReservation.Name = "btnDeleteReservation";
             this.btnDeleteReservation.Size = new System.Drawing.Size(110, 33);
-            this.btnDeleteReservation.TabIndex = 188;
+            this.btnDeleteReservation.TabIndex = 4;
             this.btnDeleteReservation.Text = "Delete";
             this.btnDeleteReservation.Click += new System.EventHandler(this.btnDeleteReservation_Click);
             // 
@@ -745,7 +745,7 @@ namespace Residence_Management_System.User_Controls
             this.btnDisplayReservations.Location = new System.Drawing.Point(308, 33);
             this.btnDisplayReservations.Name = "btnDisplayReservations";
             this.btnDisplayReservations.Size = new System.Drawing.Size(110, 33);
-            this.btnDisplayReservations.TabIndex = 183;
+            this.btnDisplayReservations.TabIndex = 1;
             this.btnDisplayReservations.Text = "Display";
             this.btnDisplayReservations.Click += new System.EventHandler(this.btnDisplayReservations_Click);
             // 
@@ -767,7 +767,7 @@ namespace Residence_Management_System.User_Controls
             this.txtReservationIdentifier.PlaceholderText = "";
             this.txtReservationIdentifier.SelectedText = "";
             this.txtReservationIdentifier.Size = new System.Drawing.Size(200, 36);
-            this.txtReservationIdentifier.TabIndex = 184;
+            this.txtReservationIdentifier.TabIndex = 2;
             // 
             // cboxShowReservations
             // 
@@ -791,7 +791,7 @@ namespace Residence_Management_System.User_Controls
             this.cboxShowReservations.Location = new System.Drawing.Point(91, 33);
             this.cboxShowReservations.Name = "cboxShowReservations";
             this.cboxShowReservations.Size = new System.Drawing.Size(200, 36);
-            this.cboxShowReservations.TabIndex = 185;
+            this.cboxShowReservations.TabIndex = 0;
             // 
             // label1
             // 
@@ -859,7 +859,7 @@ namespace Residence_Management_System.User_Controls
             this.cboxRecessStatus.Location = new System.Drawing.Point(37, 234);
             this.cboxRecessStatus.Name = "cboxRecessStatus";
             this.cboxRecessStatus.Size = new System.Drawing.Size(200, 36);
-            this.cboxRecessStatus.TabIndex = 170;
+            this.cboxRecessStatus.TabIndex = 3;
             // 
             // label9
             // 
@@ -903,7 +903,7 @@ namespace Residence_Management_System.User_Controls
             this.txtReserveRoomCode.PlaceholderText = "1";
             this.txtReserveRoomCode.SelectedText = "";
             this.txtReserveRoomCode.Size = new System.Drawing.Size(200, 36);
-            this.txtReserveRoomCode.TabIndex = 168;
+            this.txtReserveRoomCode.TabIndex = 1;
             // 
             // dtpDateMovingIn
             // 
@@ -939,7 +939,7 @@ namespace Residence_Management_System.User_Controls
             this.btnUpdate.Location = new System.Drawing.Point(79, 384);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(110, 33);
-            this.btnUpdate.TabIndex = 167;
+            this.btnUpdate.TabIndex = 6;
             this.btnUpdate.Text = "Update ";
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
@@ -971,7 +971,7 @@ namespace Residence_Management_System.User_Controls
             this.btnReserve.Location = new System.Drawing.Point(79, 345);
             this.btnReserve.Name = "btnReserve";
             this.btnReserve.Size = new System.Drawing.Size(110, 33);
-            this.btnReserve.TabIndex = 0;
+            this.btnReserve.TabIndex = 5;
             this.btnReserve.Text = "Reserve";
             this.btnReserve.Click += new System.EventHandler(this.btnReserve_Click);
             // 
@@ -994,7 +994,7 @@ namespace Residence_Management_System.User_Controls
             this.cboxBedandChairUsage.Location = new System.Drawing.Point(37, 179);
             this.cboxBedandChairUsage.Name = "cboxBedandChairUsage";
             this.cboxBedandChairUsage.Size = new System.Drawing.Size(200, 36);
-            this.cboxBedandChairUsage.TabIndex = 5;
+            this.cboxBedandChairUsage.TabIndex = 2;
             this.toolTip1.SetToolTip(this.cboxBedandChairUsage, "R- indicate Residence\r\nS-indicate Student");
             this.cboxBedandChairUsage.SelectedIndexChanged += new System.EventHandler(this.guna2ComboBox6_SelectedIndexChanged);
             // 
@@ -1042,7 +1042,7 @@ namespace Residence_Management_System.User_Controls
             this.txtReserveStudentNo.PlaceholderText = "1";
             this.txtReserveStudentNo.SelectedText = "";
             this.txtReserveStudentNo.Size = new System.Drawing.Size(200, 36);
-            this.txtReserveStudentNo.TabIndex = 3;
+            this.txtReserveStudentNo.TabIndex = 0;
             this.txtReserveStudentNo.TextChanged += new System.EventHandler(this.guna2TextBox8_TextChanged);
             // 
             // btnCancelReservationInfo
@@ -1059,7 +1059,7 @@ namespace Residence_Management_System.User_Controls
             this.btnCancelReservationInfo.Location = new System.Drawing.Point(766, 482);
             this.btnCancelReservationInfo.Name = "btnCancelReservationInfo";
             this.btnCancelReservationInfo.Size = new System.Drawing.Size(110, 33);
-            this.btnCancelReservationInfo.TabIndex = 1;
+            this.btnCancelReservationInfo.TabIndex = 0;
             this.btnCancelReservationInfo.Text = "Cancel";
             this.btnCancelReservationInfo.Click += new System.EventHandler(this.guna2Button1_Click);
             // 

@@ -28,8 +28,6 @@ namespace Residence_Management_System.Repository
             return @"DELETE [students] WHERE studentId = '" + id + "'";
         }
 
-        
-
         public WorkerModel ViewEmployeeDetails(int id, WorkerModel wkView)
         {
             string sqlEmployee = @"SELECT * FROM [workers] WHERE workerId ='" + id + "'";
@@ -140,9 +138,9 @@ namespace Residence_Management_System.Repository
                     {
                         CommandType = CommandType.Text
                     };
-                    cmd.Parameters.Add("@firstName", SqlDbType.VarChar).Value = wk.FirstName;
-                    cmd.Parameters.Add("@lastName", SqlDbType.VarChar).Value = wk.LastName;
-                    cmd.Parameters.Add("@emailAddress", SqlDbType.VarChar).Value = wk.EmailAddress;
+                    cmd.Parameters.Add("@firstName", SqlDbType.VarChar).Value = wk.FirstName.ToLower();
+                    cmd.Parameters.Add("@lastName", SqlDbType.VarChar).Value = wk.LastName.ToLower();
+                    cmd.Parameters.Add("@emailAddress", SqlDbType.VarChar).Value = wk.EmailAddress.ToLower();
                     cmd.Parameters.Add("@phoneNumber", SqlDbType.VarChar).Value = wk.PhoneNumber;
                     cmd.Parameters.Add("@dOB", SqlDbType.Date).Value = wk.DateOfBirth;
                     cmd.Parameters.Add("@gender", SqlDbType.VarChar).Value = wk.Gender;
@@ -157,9 +155,9 @@ namespace Residence_Management_System.Repository
                         cmd.ExecuteNonQuery();
                         MessageBox.Show("Worker added successfully", "Information", (MessageBoxButtons)MessageBoxButton.OK, MessageBoxIcon.Information);
                     }
-                    catch (Exception ex)
+                    catch (Exception)
                     {
-                        MessageBox.Show("Failed to add worker \n" + ex.Message + wk.UserId.ToString(), "Error", (MessageBoxButtons)MessageBoxButton.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Failed to add worker email address or phone number already taken\n"+ wk.UserId.ToString(), "Error", (MessageBoxButtons)MessageBoxButton.OK, MessageBoxIcon.Error);
                     }
                     finally
                     {
@@ -198,9 +196,9 @@ namespace Residence_Management_System.Repository
 
 
                     adapt.UpdateCommand.Parameters.Add("@workerId", SqlDbType.Int).Value = wId;
-                    adapt.UpdateCommand.Parameters.Add("@firstName", SqlDbType.VarChar).Value = wkUpdate.FirstName;
-                    adapt.UpdateCommand.Parameters.Add("@lastName", SqlDbType.VarChar).Value = wkUpdate.LastName;
-                    adapt.UpdateCommand.Parameters.Add("@emailAddress", SqlDbType.VarChar).Value = wkUpdate.EmailAddress;
+                    adapt.UpdateCommand.Parameters.Add("@firstName", SqlDbType.VarChar).Value = wkUpdate.FirstName.ToLower();
+                    adapt.UpdateCommand.Parameters.Add("@lastName", SqlDbType.VarChar).Value = wkUpdate.LastName.ToLower();
+                    adapt.UpdateCommand.Parameters.Add("@emailAddress", SqlDbType.VarChar).Value = wkUpdate.EmailAddress.ToLower();
                     adapt.UpdateCommand.Parameters.Add("@phoneNumber", SqlDbType.VarChar).Value = wkUpdate.PhoneNumber;
                     adapt.UpdateCommand.Parameters.Add("@dOB", SqlDbType.VarChar).Value = wkUpdate.DateOfBirth;
                     adapt.UpdateCommand.Parameters.Add("@gender", SqlDbType.VarChar).Value = wkUpdate.Gender;
@@ -213,9 +211,9 @@ namespace Residence_Management_System.Repository
                         adapt.UpdateCommand.ExecuteNonQuery();
                         MessageBox.Show("Worker details updated successfully", "Update Worker Details", (MessageBoxButtons)MessageBoxButton.OK, MessageBoxIcon.Information);
                     }
-                    catch (Exception ex)
+                    catch (Exception)
                     {
-                        MessageBox.Show("Failed to update worker details \n" + ex.Message, "Error", (MessageBoxButtons)MessageBoxButton.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Failed to update worker details email address or phone number already taken \n", "Error", (MessageBoxButtons)MessageBoxButton.OK, MessageBoxIcon.Error);
                     }
                     finally
                     {
@@ -279,9 +277,6 @@ namespace Residence_Management_System.Repository
 
         }
 
-        
-
-
         public void AddStudent(StudentModel std){
 
             if (userRole == "Administrator")
@@ -296,13 +291,13 @@ namespace Residence_Management_System.Repository
                     {
                         CommandType = CommandType.Text
                     };
-                    cmd.Parameters.Add("@firstName", SqlDbType.VarChar).Value = std.FirstName;
-                    cmd.Parameters.Add("@lastName", SqlDbType.VarChar).Value = std.LastName;
-                    cmd.Parameters.Add("@EmailAddress", SqlDbType.VarChar).Value = std.EmailAddress;
+                    cmd.Parameters.Add("@firstName", SqlDbType.VarChar).Value = std.FirstName.ToLower();
+                    cmd.Parameters.Add("@lastName", SqlDbType.VarChar).Value = std.LastName.ToLower();
+                    cmd.Parameters.Add("@EmailAddress", SqlDbType.VarChar).Value = std.EmailAddress.ToLower();
                     cmd.Parameters.Add("@phoneNumber", SqlDbType.VarChar).Value = std.PhoneNumber;
                     cmd.Parameters.Add("@gender", SqlDbType.VarChar).Value = std.Gender;
                     cmd.Parameters.Add("@dob", SqlDbType.Date).Value = std.DateOfBirth;
-                    cmd.Parameters.Add("@nextOfKinFullName", SqlDbType.VarChar).Value = std.NextOfKinFullName;
+                    cmd.Parameters.Add("@nextOfKinFullName", SqlDbType.VarChar).Value = std.NextOfKinFullName.ToLower();
                     cmd.Parameters.Add("@nextOfKinPhone", SqlDbType.VarChar).Value = std.NextOfKinPhone;
                     cmd.Parameters.Add("@studentNo", SqlDbType.VarChar).Value = std.StudentNo;
                     cmd.Parameters.Add("@studentType", SqlDbType.VarChar).Value = std.StudentType;
@@ -316,9 +311,9 @@ namespace Residence_Management_System.Repository
                         cmd.ExecuteNonQuery();
                         MessageBox.Show("Student added successfully", "Information", (MessageBoxButtons)MessageBoxButton.OK, MessageBoxIcon.Information);
                     }
-                    catch (Exception ex)
+                    catch (Exception)
                     {
-                        MessageBox.Show("Failed to add student \n" + ex.Message, "Error", (MessageBoxButtons)MessageBoxButton.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Failed to add student email address or phone number or student number already taken\n", "Error", (MessageBoxButtons)MessageBoxButton.OK, MessageBoxIcon.Error);
                     }
                     finally
                     {
@@ -359,13 +354,13 @@ namespace Residence_Management_System.Repository
                     };
 
                     adapt.UpdateCommand.Parameters.Add("@studentId", SqlDbType.VarChar).Value = stUpId;
-                    adapt.UpdateCommand.Parameters.Add("@firstName", SqlDbType.VarChar).Value = stUpdate.FirstName;
-                    adapt.UpdateCommand.Parameters.Add("@lastName", SqlDbType.VarChar).Value = stUpdate.LastName;
-                    adapt.UpdateCommand.Parameters.Add("@EmailAddress", SqlDbType.VarChar).Value = stUpdate.EmailAddress;
+                    adapt.UpdateCommand.Parameters.Add("@firstName", SqlDbType.VarChar).Value = stUpdate.FirstName.ToLower();
+                    adapt.UpdateCommand.Parameters.Add("@lastName", SqlDbType.VarChar).Value = stUpdate.LastName.ToLower();
+                    adapt.UpdateCommand.Parameters.Add("@EmailAddress", SqlDbType.VarChar).Value = stUpdate.EmailAddress.ToLower();
                     adapt.UpdateCommand.Parameters.Add("@phoneNumber", SqlDbType.VarChar).Value = stUpdate.PhoneNumber;
                     adapt.UpdateCommand.Parameters.Add("@gender", SqlDbType.VarChar).Value = stUpdate.Gender;
                     adapt.UpdateCommand.Parameters.Add("@dob", SqlDbType.Date).Value = stUpdate.DateOfBirth;
-                    adapt.UpdateCommand.Parameters.Add("@nextOfKinFullName", SqlDbType.VarChar).Value = stUpdate.NextOfKinFullName;
+                    adapt.UpdateCommand.Parameters.Add("@nextOfKinFullName", SqlDbType.VarChar).Value = stUpdate.NextOfKinFullName.ToLower();
                     adapt.UpdateCommand.Parameters.Add("@nextOfKinPhone", SqlDbType.VarChar).Value = stUpdate.NextOfKinPhone;
                     adapt.UpdateCommand.Parameters.Add("@studentNo", SqlDbType.VarChar).Value = stUpdate.StudentNo;
                     adapt.UpdateCommand.Parameters.Add("@studentType", SqlDbType.VarChar).Value = stUpdate.StudentType;
@@ -378,9 +373,9 @@ namespace Residence_Management_System.Repository
                         adapt.UpdateCommand.ExecuteNonQuery();
                         MessageBox.Show("Student details updated successfully", "Update Student Details", (MessageBoxButtons)MessageBoxButton.OK, MessageBoxIcon.Information);
                     }
-                    catch (Exception ex)
+                    catch (Exception)
                     {
-                        MessageBox.Show("Failed to update student details \n" + ex.Message, "Error", (MessageBoxButtons)MessageBoxButton.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Failed to update student details email address or phone number or student number already taken\n", "Error", (MessageBoxButtons)MessageBoxButton.OK, MessageBoxIcon.Error);
                     }
                     finally
                     {

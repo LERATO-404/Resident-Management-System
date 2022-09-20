@@ -75,6 +75,7 @@ namespace Residence_Management_System.User_Controls
             this.btnCancelStudentInput = new Guna.UI2.WinForms.Guna2Button();
             this.btnAddStudent = new Guna.UI2.WinForms.Guna2Button();
             this.gboxAcademicInfo = new Guna.UI2.WinForms.Guna2GroupBox();
+            this.lblInvalidStudentNo = new System.Windows.Forms.Label();
             this.cboxStudentType = new Guna.UI2.WinForms.Guna2ComboBox();
             this.txtStudentNo = new Guna.UI2.WinForms.Guna2TextBox();
             this.label12 = new System.Windows.Forms.Label();
@@ -109,7 +110,6 @@ namespace Residence_Management_System.User_Controls
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.guna2VScrollBar1 = new Guna.UI2.WinForms.Guna2VScrollBar();
-            this.lblInvalidStudentNo = new System.Windows.Forms.Label();
             this.guna2TabControl1.SuspendLayout();
             this.Employee.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
@@ -417,6 +417,7 @@ namespace Residence_Management_System.User_Controls
             this.btnCancelEmpInput.Size = new System.Drawing.Size(110, 33);
             this.btnCancelEmpInput.TabIndex = 1;
             this.btnCancelEmpInput.Text = "Cancel";
+            this.btnCancelEmpInput.Click += new System.EventHandler(this.btnCancelEmpInput_Click);
             // 
             // btnAddEmpl
             // 
@@ -840,6 +841,7 @@ namespace Residence_Management_System.User_Controls
             this.btnCancelStudentInput.Size = new System.Drawing.Size(110, 33);
             this.btnCancelStudentInput.TabIndex = 1;
             this.btnCancelStudentInput.Text = "Cancel";
+            this.btnCancelStudentInput.Click += new System.EventHandler(this.btnCancelStudentInput_Click);
             // 
             // btnAddStudent
             // 
@@ -881,6 +883,16 @@ namespace Residence_Management_System.User_Controls
             this.gboxAcademicInfo.Size = new System.Drawing.Size(359, 350);
             this.gboxAcademicInfo.TabIndex = 2;
             this.gboxAcademicInfo.Text = "Academic Information";
+            // 
+            // lblInvalidStudentNo
+            // 
+            this.lblInvalidStudentNo.AutoSize = true;
+            this.lblInvalidStudentNo.ForeColor = System.Drawing.Color.Red;
+            this.lblInvalidStudentNo.Location = new System.Drawing.Point(156, 41);
+            this.lblInvalidStudentNo.Name = "lblInvalidStudentNo";
+            this.lblInvalidStudentNo.Size = new System.Drawing.Size(99, 15);
+            this.lblInvalidStudentNo.TabIndex = 198;
+            this.lblInvalidStudentNo.Text = "InvalidStudentNo";
             // 
             // cboxStudentType
             // 
@@ -1397,16 +1409,6 @@ namespace Residence_Management_System.User_Controls
             this.guna2VScrollBar1.ScrollbarSize = 18;
             this.guna2VScrollBar1.Size = new System.Drawing.Size(18, 300);
             this.guna2VScrollBar1.TabIndex = 0;
-            // 
-            // lblInvalidStudentNo
-            // 
-            this.lblInvalidStudentNo.AutoSize = true;
-            this.lblInvalidStudentNo.ForeColor = System.Drawing.Color.Red;
-            this.lblInvalidStudentNo.Location = new System.Drawing.Point(156, 41);
-            this.lblInvalidStudentNo.Name = "lblInvalidStudentNo";
-            this.lblInvalidStudentNo.Size = new System.Drawing.Size(99, 15);
-            this.lblInvalidStudentNo.TabIndex = 198;
-            this.lblInvalidStudentNo.Text = "InvalidStudentNo";
             // 
             // UC_register
             // 

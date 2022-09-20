@@ -17,10 +17,12 @@ namespace Residence_Management_System.User_Controls
     {
         private readonly MyMethods myM = new MyMethods();
         private readonly HomeRepo rH = new HomeRepo();
-        private readonly RoomControllerRepo rRCR = new RoomControllerRepo();
+        private readonly RoomControllerRepo rRCR = new RoomControllerRepo(); 
+        
         public UC_room()
         {
             InitializeComponent();
+            
         }
 
         public Boolean IsRoomInputEmpty()
@@ -48,6 +50,26 @@ namespace Residence_Management_System.User_Controls
             {
                 return false;
             }
+        }
+
+        public void ClearRoom()
+        {
+            cboxShowRooms.SelectedIndex = -1;
+            txtRoomIdentifier.Clear();
+            txtRoomSymbolCode.Clear();
+            cboxFloor.SelectedIndex = -1;
+            cboxRoomType.SelectedIndex = -1;
+            cboxRoomAvailability.SelectedIndex = -1;
+        }
+
+        public void ClearReservation()
+        {
+            cboxShowReservations.SelectedIndex = -1;
+            txtReservationIdentifier.Clear();
+            txtReserveStudentNo.Clear();
+            txtReserveRoomCode.Clear();
+            cboxBedandChairUsage.SelectedIndex = -1;
+            cboxRecessStatus.SelectedIndex = -1;
         }
 
         private void guna2Panel1_Paint(object sender, PaintEventArgs e)
@@ -97,7 +119,7 @@ namespace Residence_Management_System.User_Controls
 
         private void guna2Button1_Click(object sender, EventArgs e)
         {
-
+            ClearReservation();
         }
 
         private void label8_Click(object sender, EventArgs e)
@@ -137,7 +159,7 @@ namespace Residence_Management_System.User_Controls
 
         private void cancelbtn_Click(object sender, EventArgs e)
         {
-
+            ClearRoom();
         }
 
         private void guna2TextBox8_TextChanged(object sender, EventArgs e)
@@ -304,17 +326,18 @@ namespace Residence_Management_System.User_Controls
                 {
                     try
                     {
-                        ReservationModel rS = new ReservationModel(Int32.Parse(txtReserveStudentNo.Text), Int32.Parse(txtReserveRoomCode.Text), cboxBedandChairUsage.Text, cboxRecessStatus.Text, DateTime.Today,dtpDateMovingIn.Value);
-                        rRCR.ReserveRoomForStudent(rS);
-                        /*
-                        if (rS != null)
+                        string roomAvailability = UserId.GetRoomAvailability(Int32.Parse(txtReserveRoomCode.Text));
+                        if(roomAvailability == "available")
                         {
-                            
+                            ReservationModel rS = new ReservationModel(Int32.Parse(txtReserveStudentNo.Text), Int32.Parse(txtReserveRoomCode.Text), cboxBedandChairUsage.Text, cboxRecessStatus.Text, DateTime.Today, dtpDateMovingIn.Value);
+                            rRCR.ReserveRoomForStudent(rS);
                         }
                         else
                         {
-                            MessageBox.Show("Failed to add a reservation", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        }*/
+                            MessageBox.Show("Room is not available for reservation", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                       
+                       
                     }
                     catch (Exception)
                     {

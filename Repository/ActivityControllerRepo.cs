@@ -69,7 +69,7 @@ namespace Residence_Management_System.Repository
 
 
                     cmd.Parameters.Add("@studentParticipant", SqlDbType.Int).Value = stdAct.StudentId;
-                    cmd.Parameters.Add("@semesterParticipating", SqlDbType.VarChar).Value = stdAct.SemesterParticipating;
+                    cmd.Parameters.Add("@semesterParticipating", SqlDbType.VarChar).Value = stdAct.SemesterParticipating.ToLower();
                     cmd.Parameters.Add("@totalPoints", SqlDbType.Int).Value = stdAct.TotalPoints;
                     cmd.Parameters.Add("@allocatedDate", SqlDbType.VarChar).Value = stdAct.AllocatedDate;
                     cmd.Parameters.Add("@addedBy", SqlDbType.Int).Value = UserId.GetUserId();

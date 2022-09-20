@@ -30,14 +30,14 @@ namespace Residence_Management_System.Repository
                     CommandType = CommandType.Text
                 };
 
-                cmd.Parameters.Add("@firstName", SqlDbType.VarChar).Value = usM.FirstName;
-                cmd.Parameters.Add("@lastName", SqlDbType.VarChar).Value = usM.LastName;
-                cmd.Parameters.Add("@EmailAddress", SqlDbType.VarChar).Value = usM.EmailAddress;
+                cmd.Parameters.Add("@firstName", SqlDbType.VarChar).Value = usM.FirstName.ToLower();
+                cmd.Parameters.Add("@lastName", SqlDbType.VarChar).Value = usM.LastName.ToLower();
+                cmd.Parameters.Add("@EmailAddress", SqlDbType.VarChar).Value = usM.EmailAddress.ToLower();
                 cmd.Parameters.Add("@phoneNumber", SqlDbType.VarChar).Value = usM.PhoneNumber;
                 cmd.Parameters.Add("@dob", SqlDbType.Date).Value = usM.DateOfBirth;
-                cmd.Parameters.Add("@jobTitle", SqlDbType.VarChar).Value = usM.JobTitle;
+                cmd.Parameters.Add("@jobTitle", SqlDbType.VarChar).Value = usM.JobTitle.ToLower();
                 cmd.Parameters.Add("@jobType", SqlDbType.VarChar).Value = usM.JobType;
-                cmd.Parameters.Add("@username", SqlDbType.VarChar).Value = usM.UserName;
+                cmd.Parameters.Add("@username", SqlDbType.VarChar).Value = usM.UserName.ToLower();
                 cmd.Parameters.Add("@password", SqlDbType.VarChar).Value = userPasswordProtect.encryptPassword(usM.Password);
 
                 try
@@ -81,11 +81,13 @@ namespace Residence_Management_System.Repository
                             
                             LandingPage landingP = new LandingPage();
                             landingP.Show(); //show landing page
-                            landingP.lblWelcomeUsername.Text = username;
+                            landingP.lblWelcomeUsername.Text = "Welcome back, "+ username.ToLower();
                             myReader.Close();
-                            
+                            username = "";
+                            password = "";
 
-                            
+
+
 
                         }
                         else

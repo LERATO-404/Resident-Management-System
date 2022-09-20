@@ -188,8 +188,9 @@ namespace Residence_Management_System.User_Controls
             this.btnCancelSelectedAct.Location = new System.Drawing.Point(738, 3);
             this.btnCancelSelectedAct.Name = "btnCancelSelectedAct";
             this.btnCancelSelectedAct.Size = new System.Drawing.Size(110, 33);
-            this.btnCancelSelectedAct.TabIndex = 3;
+            this.btnCancelSelectedAct.TabIndex = 1;
             this.btnCancelSelectedAct.Text = "Cancel";
+            this.btnCancelSelectedAct.Click += new System.EventHandler(this.btnCancelSelectedAct_Click);
             // 
             // btnAddActivity
             // 
@@ -207,7 +208,7 @@ namespace Residence_Management_System.User_Controls
             this.btnAddActivity.Location = new System.Drawing.Point(622, 3);
             this.btnAddActivity.Name = "btnAddActivity";
             this.btnAddActivity.Size = new System.Drawing.Size(110, 33);
-            this.btnAddActivity.TabIndex = 2;
+            this.btnAddActivity.TabIndex = 0;
             this.btnAddActivity.Text = "Add";
             this.btnAddActivity.Click += new System.EventHandler(this.btnAddActivity_Click);
             // 
@@ -255,7 +256,7 @@ namespace Residence_Management_System.User_Controls
             this.checkboxGym.Location = new System.Drawing.Point(71, 62);
             this.checkboxGym.Name = "checkboxGym";
             this.checkboxGym.Size = new System.Drawing.Size(51, 19);
-            this.checkboxGym.TabIndex = 129;
+            this.checkboxGym.TabIndex = 1;
             this.checkboxGym.Text = "Gym";
             this.checkboxGym.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             this.checkboxGym.UncheckedState.BorderRadius = 0;
@@ -285,7 +286,7 @@ namespace Residence_Management_System.User_Controls
             this.checkboxYoga.Location = new System.Drawing.Point(71, 37);
             this.checkboxYoga.Name = "checkboxYoga";
             this.checkboxYoga.Size = new System.Drawing.Size(52, 19);
-            this.checkboxYoga.TabIndex = 127;
+            this.checkboxYoga.TabIndex = 0;
             this.checkboxYoga.Text = "Yoga";
             this.checkboxYoga.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             this.checkboxYoga.UncheckedState.BorderRadius = 0;
@@ -303,7 +304,7 @@ namespace Residence_Management_System.User_Controls
             this.checkboxOther.Location = new System.Drawing.Point(71, 87);
             this.checkboxOther.Name = "checkboxOther";
             this.checkboxOther.Size = new System.Drawing.Size(54, 19);
-            this.checkboxOther.TabIndex = 128;
+            this.checkboxOther.TabIndex = 2;
             this.checkboxOther.Text = "other";
             this.checkboxOther.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             this.checkboxOther.UncheckedState.BorderRadius = 0;
@@ -353,7 +354,7 @@ namespace Residence_Management_System.User_Controls
             this.checkboxCycling.Location = new System.Drawing.Point(71, 66);
             this.checkboxCycling.Name = "checkboxCycling";
             this.checkboxCycling.Size = new System.Drawing.Size(66, 19);
-            this.checkboxCycling.TabIndex = 126;
+            this.checkboxCycling.TabIndex = 1;
             this.checkboxCycling.Text = "Cycling";
             this.checkboxCycling.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             this.checkboxCycling.UncheckedState.BorderRadius = 0;
@@ -383,7 +384,7 @@ namespace Residence_Management_System.User_Controls
             this.checkboxSquash.Location = new System.Drawing.Point(71, 141);
             this.checkboxSquash.Name = "checkboxSquash";
             this.checkboxSquash.Size = new System.Drawing.Size(64, 19);
-            this.checkboxSquash.TabIndex = 125;
+            this.checkboxSquash.TabIndex = 4;
             this.checkboxSquash.Text = "Squash";
             this.checkboxSquash.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             this.checkboxSquash.UncheckedState.BorderRadius = 0;
@@ -413,7 +414,7 @@ namespace Residence_Management_System.User_Controls
             this.checkboxGolf.Location = new System.Drawing.Point(71, 116);
             this.checkboxGolf.Name = "checkboxGolf";
             this.checkboxGolf.Size = new System.Drawing.Size(48, 19);
-            this.checkboxGolf.TabIndex = 124;
+            this.checkboxGolf.TabIndex = 3;
             this.checkboxGolf.Text = "Golf";
             this.checkboxGolf.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             this.checkboxGolf.UncheckedState.BorderRadius = 0;
@@ -431,7 +432,7 @@ namespace Residence_Management_System.User_Controls
             this.checkboxSwimming.Location = new System.Drawing.Point(71, 41);
             this.checkboxSwimming.Name = "checkboxSwimming";
             this.checkboxSwimming.Size = new System.Drawing.Size(83, 19);
-            this.checkboxSwimming.TabIndex = 122;
+            this.checkboxSwimming.TabIndex = 0;
             this.checkboxSwimming.Text = "Swimming";
             this.checkboxSwimming.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             this.checkboxSwimming.UncheckedState.BorderRadius = 0;
@@ -449,7 +450,7 @@ namespace Residence_Management_System.User_Controls
             this.checkboxKarate.Location = new System.Drawing.Point(71, 91);
             this.checkboxKarate.Name = "checkboxKarate";
             this.checkboxKarate.Size = new System.Drawing.Size(59, 19);
-            this.checkboxKarate.TabIndex = 123;
+            this.checkboxKarate.TabIndex = 2;
             this.checkboxKarate.Text = "Karate";
             this.checkboxKarate.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             this.checkboxKarate.UncheckedState.BorderRadius = 0;
@@ -488,7 +489,7 @@ namespace Residence_Management_System.User_Controls
             this.checkboxRugby.Location = new System.Drawing.Point(80, 66);
             this.checkboxRugby.Name = "checkboxRugby";
             this.checkboxRugby.Size = new System.Drawing.Size(60, 19);
-            this.checkboxRugby.TabIndex = 121;
+            this.checkboxRugby.TabIndex = 1;
             this.checkboxRugby.Text = "Rugby";
             this.checkboxRugby.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             this.checkboxRugby.UncheckedState.BorderRadius = 0;
@@ -506,7 +507,7 @@ namespace Residence_Management_System.User_Controls
             this.checkboxHockey.Location = new System.Drawing.Point(80, 141);
             this.checkboxHockey.Name = "checkboxHockey";
             this.checkboxHockey.Size = new System.Drawing.Size(66, 19);
-            this.checkboxHockey.TabIndex = 120;
+            this.checkboxHockey.TabIndex = 4;
             this.checkboxHockey.Text = "Hockey";
             this.checkboxHockey.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             this.checkboxHockey.UncheckedState.BorderRadius = 0;
@@ -524,7 +525,7 @@ namespace Residence_Management_System.User_Controls
             this.checkboxNetball.Location = new System.Drawing.Point(80, 116);
             this.checkboxNetball.Name = "checkboxNetball";
             this.checkboxNetball.Size = new System.Drawing.Size(64, 19);
-            this.checkboxNetball.TabIndex = 119;
+            this.checkboxNetball.TabIndex = 3;
             this.checkboxNetball.Text = "Netball";
             this.checkboxNetball.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             this.checkboxNetball.UncheckedState.BorderRadius = 0;
@@ -542,7 +543,7 @@ namespace Residence_Management_System.User_Controls
             this.checkboxCricket.Location = new System.Drawing.Point(80, 91);
             this.checkboxCricket.Name = "checkboxCricket";
             this.checkboxCricket.Size = new System.Drawing.Size(63, 19);
-            this.checkboxCricket.TabIndex = 118;
+            this.checkboxCricket.TabIndex = 2;
             this.checkboxCricket.Text = "Cricket";
             this.checkboxCricket.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             this.checkboxCricket.UncheckedState.BorderRadius = 0;
@@ -560,7 +561,7 @@ namespace Residence_Management_System.User_Controls
             this.checkboxSoccer.Location = new System.Drawing.Point(80, 41);
             this.checkboxSoccer.Name = "checkboxSoccer";
             this.checkboxSoccer.Size = new System.Drawing.Size(61, 19);
-            this.checkboxSoccer.TabIndex = 117;
+            this.checkboxSoccer.TabIndex = 0;
             this.checkboxSoccer.Text = "Soccer";
             this.checkboxSoccer.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             this.checkboxSoccer.UncheckedState.BorderRadius = 0;
@@ -622,7 +623,7 @@ namespace Residence_Management_System.User_Controls
             this.checkboxDance.Location = new System.Drawing.Point(82, 62);
             this.checkboxDance.Name = "checkboxDance";
             this.checkboxDance.Size = new System.Drawing.Size(59, 19);
-            this.checkboxDance.TabIndex = 131;
+            this.checkboxDance.TabIndex = 1;
             this.checkboxDance.Text = "Dance";
             this.checkboxDance.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             this.checkboxDance.UncheckedState.BorderRadius = 0;
@@ -652,7 +653,7 @@ namespace Residence_Management_System.User_Controls
             this.checkboxCharityWalks.Location = new System.Drawing.Point(82, 137);
             this.checkboxCharityWalks.Name = "checkboxCharityWalks";
             this.checkboxCharityWalks.Size = new System.Drawing.Size(91, 19);
-            this.checkboxCharityWalks.TabIndex = 130;
+            this.checkboxCharityWalks.TabIndex = 4;
             this.checkboxCharityWalks.Text = "Charity walk";
             this.checkboxCharityWalks.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             this.checkboxCharityWalks.UncheckedState.BorderRadius = 0;
@@ -682,7 +683,7 @@ namespace Residence_Management_System.User_Controls
             this.checkboxEasterdayhunt.Location = new System.Drawing.Point(82, 112);
             this.checkboxEasterdayhunt.Name = "checkboxEasterdayhunt";
             this.checkboxEasterdayhunt.Size = new System.Drawing.Size(107, 19);
-            this.checkboxEasterdayhunt.TabIndex = 129;
+            this.checkboxEasterdayhunt.TabIndex = 3;
             this.checkboxEasterdayhunt.Text = "Easter day hunt";
             this.checkboxEasterdayhunt.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             this.checkboxEasterdayhunt.UncheckedState.BorderRadius = 0;
@@ -700,7 +701,7 @@ namespace Residence_Management_System.User_Controls
             this.checkboxEsport.Location = new System.Drawing.Point(82, 37);
             this.checkboxEsport.Name = "checkboxEsport";
             this.checkboxEsport.Size = new System.Drawing.Size(64, 19);
-            this.checkboxEsport.TabIndex = 127;
+            this.checkboxEsport.TabIndex = 0;
             this.checkboxEsport.Text = "E-sport";
             this.checkboxEsport.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             this.checkboxEsport.UncheckedState.BorderRadius = 0;
@@ -718,7 +719,7 @@ namespace Residence_Management_System.User_Controls
             this.checkboxDIYCraft.Location = new System.Drawing.Point(82, 87);
             this.checkboxDIYCraft.Name = "checkboxDIYCraft";
             this.checkboxDIYCraft.Size = new System.Drawing.Size(71, 19);
-            this.checkboxDIYCraft.TabIndex = 128;
+            this.checkboxDIYCraft.TabIndex = 2;
             this.checkboxDIYCraft.Text = "DIY craft";
             this.checkboxDIYCraft.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             this.checkboxDIYCraft.UncheckedState.BorderRadius = 0;
@@ -761,7 +762,7 @@ namespace Residence_Management_System.User_Controls
             this.cboxSemesterParticipating.Location = new System.Drawing.Point(512, 32);
             this.cboxSemesterParticipating.Name = "cboxSemesterParticipating";
             this.cboxSemesterParticipating.Size = new System.Drawing.Size(200, 36);
-            this.cboxSemesterParticipating.TabIndex = 195;
+            this.cboxSemesterParticipating.TabIndex = 1;
             // 
             // label1
             // 
@@ -806,7 +807,7 @@ namespace Residence_Management_System.User_Controls
             this.txtActStudentNo.PlaceholderText = "";
             this.txtActStudentNo.SelectedText = "";
             this.txtActStudentNo.Size = new System.Drawing.Size(200, 36);
-            this.txtActStudentNo.TabIndex = 192;
+            this.txtActStudentNo.TabIndex = 0;
             // 
             // label2
             // 

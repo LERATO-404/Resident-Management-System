@@ -225,8 +225,9 @@ namespace Residence_Management_System.User_Controls
             this.btnCancel.Location = new System.Drawing.Point(761, 380);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(110, 33);
-            this.btnCancel.TabIndex = 180;
+            this.btnCancel.TabIndex = 1;
             this.btnCancel.Text = "Cancel";
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // dgvShowTable
             // 
@@ -287,7 +288,7 @@ namespace Residence_Management_System.User_Controls
             this.guna2Panel2.Location = new System.Drawing.Point(5, 37);
             this.guna2Panel2.Name = "guna2Panel2";
             this.guna2Panel2.Size = new System.Drawing.Size(597, 114);
-            this.guna2Panel2.TabIndex = 178;
+            this.guna2Panel2.TabIndex = 0;
             // 
             // btnDisplay
             // 
@@ -304,7 +305,7 @@ namespace Residence_Management_System.User_Controls
             this.btnDisplay.Location = new System.Drawing.Point(346, 39);
             this.btnDisplay.Name = "btnDisplay";
             this.btnDisplay.Size = new System.Drawing.Size(110, 33);
-            this.btnDisplay.TabIndex = 188;
+            this.btnDisplay.TabIndex = 1;
             this.btnDisplay.Text = "Display";
             this.btnDisplay.Click += new System.EventHandler(this.btnDisplay_Click);
             // 
@@ -325,12 +326,11 @@ namespace Residence_Management_System.User_Controls
             "Employees/Staff",
             "Students",
             "Reservation",
-            "Partcipation/Activities",
-            "Participation Marks"});
+            "Partcipation/Activities"});
             this.cboxViewTable.Location = new System.Drawing.Point(129, 39);
             this.cboxViewTable.Name = "cboxViewTable";
             this.cboxViewTable.Size = new System.Drawing.Size(200, 36);
-            this.cboxViewTable.TabIndex = 189;
+            this.cboxViewTable.TabIndex = 0;
             // 
             // label6
             // 
@@ -386,7 +386,7 @@ namespace Residence_Management_System.User_Controls
             this.btnDelete.Location = new System.Drawing.Point(59, 106);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(110, 33);
-            this.btnDelete.TabIndex = 188;
+            this.btnDelete.TabIndex = 1;
             this.btnDelete.Text = "Delete";
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
@@ -408,7 +408,7 @@ namespace Residence_Management_System.User_Controls
             this.txtIdentifier.PlaceholderText = "";
             this.txtIdentifier.SelectedText = "";
             this.txtIdentifier.Size = new System.Drawing.Size(200, 36);
-            this.txtIdentifier.TabIndex = 184;
+            this.txtIdentifier.TabIndex = 0;
             // 
             // UC_home
             // 

@@ -15,6 +15,7 @@ namespace Residence_Management_System.User_Controls
     public partial class UC_report : UserControl
     {
         private readonly ManagerRepo manRepo = new ManagerRepo();
+        private readonly HomeRepo hmrepo = new HomeRepo();
         private readonly LandingPage lanForm = new LandingPage();
         private readonly MyMethods myMethod = new MyMethods();
         private readonly string userRole = UserId.GetUserJobType();
@@ -29,6 +30,8 @@ namespace Residence_Management_System.User_Controls
         {
             manRepo.GenerateBarChart(chart1);
             manRepo.GeneratePieChart(recessStatusPieChart);
+            occ.Text = hmrepo.CountRoom().ToString();
+            non_occ.Text = hmrepo.CountFreeRooms().ToString();
         }
 
         private void guna2HScrollBar1_Scroll(object sender, ScrollEventArgs e)

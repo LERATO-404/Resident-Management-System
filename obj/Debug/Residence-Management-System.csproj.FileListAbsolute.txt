@@ -77,8 +77,8 @@ C:\Users\LAVAS\Desktop\CMPG 223 - SYSTEMS DESIGN\Project\RMS\Residence-Managemen
 C:\Users\LAVAS\Desktop\CMPG 223 - SYSTEMS DESIGN\Project\RMS\Residence-Management-System\bin\Debug\ru\Microsoft.ReportViewer.WinForms.resources.dll
 C:\Users\LAVAS\Desktop\CMPG 223 - SYSTEMS DESIGN\Project\RMS\Residence-Management-System\bin\Debug\zh-CHS\Microsoft.ReportViewer.WinForms.resources.dll
 C:\Users\LAVAS\Desktop\CMPG 223 - SYSTEMS DESIGN\Project\RMS\Residence-Management-System\bin\Debug\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
-C:\Users\LAVAS\Desktop\CMPG 223 - SYSTEMS DESIGN\Project\RMS\Residence-Management-System\obj\Debug\Residence-Management-System.csproj.AssemblyReference.cache
 C:\Users\LAVAS\Desktop\CMPG 223 - SYSTEMS DESIGN\Project\RMS\Residence-Management-System\obj\Debug\Residence_Management_System.Reports.UC_RoomReport.resources
 C:\Users\LAVAS\Desktop\CMPG 223 - SYSTEMS DESIGN\Project\RMS\Residence-Management-System\obj\Debug\RdlCompile.cache
 C:\Users\LAVAS\Desktop\CMPG 223 - SYSTEMS DESIGN\Project\RMS\Residence-Management-System\obj\Debug\RdlCompile.compiled
 C:\Users\LAVAS\Desktop\CMPG 223 - SYSTEMS DESIGN\Project\RMS\Residence-Management-System\bin\Debug\Reports\RoomsOccupiedReport.rdlc
+C:\Users\LAVAS\Desktop\CMPG 223 - SYSTEMS DESIGN\Project\RMS\Residence-Management-System\obj\Debug\Residence-Management-System.csproj.AssemblyReference.cache

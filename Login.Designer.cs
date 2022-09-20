@@ -225,7 +225,7 @@ namespace Residence_Management_System
             // 
             this.guna2PictureBox1.Image = global::Residence_Management_System.Properties.Resources.LogoRMS;
             this.guna2PictureBox1.ImageRotate = 0F;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(126, 108);
+            this.guna2PictureBox1.Location = new System.Drawing.Point(56, 121);
             this.guna2PictureBox1.Name = "guna2PictureBox1";
             this.guna2PictureBox1.Size = new System.Drawing.Size(163, 63);
             this.guna2PictureBox1.TabIndex = 16;
@@ -249,7 +249,7 @@ namespace Residence_Management_System
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(56, 203);
+            this.label1.Location = new System.Drawing.Point(53, 204);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(123, 17);
             this.label1.TabIndex = 14;

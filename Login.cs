@@ -36,7 +36,7 @@ namespace Residence_Management_System
 
         private void clearLogin()
         {
-            txtUsername.Clear();
+            //txtUsername.Clear();
             txtPassword.Clear();
         }
         /*=============================method===================*/
@@ -51,7 +51,7 @@ namespace Residence_Management_System
                 if (isEmptyInput() == false)
                 {
                     uR.LoginUser(username, password);
-                    //this.Hide();
+                    //clearLogin();
                 }
                 else
                 {
@@ -69,6 +69,7 @@ namespace Residence_Management_System
         {
             Register registerForm = new Register();
             registerForm.Show();
+            //this.Hide();
         }
 
         private void Login_Load(object sender, EventArgs e)

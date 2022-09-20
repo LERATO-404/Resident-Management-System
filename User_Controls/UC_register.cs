@@ -65,6 +65,31 @@ namespace Residence_Management_System.User_Controls
                 return false;
             }
         }
+
+        public void ClearStudent()
+        {
+            txtStuFirstName.Clear();
+            txtStuLastName.Clear();
+            txtStuEmail.Clear();
+            txtStuPhoneNo.Clear();
+            cBoxStuGender.SelectedIndex = -1;
+            txtStuNextOfKinName.Clear();
+            txtStuNextOfKinPhone.Clear();
+            txtStudentNo.Clear();
+            cboxStudentType.SelectedIndex = -1;
+            cboxRegistrationStatus.SelectedIndex = -1;
+        }
+        
+        public void ClearWorker()
+        {
+            txtEmpFirstName.Clear();
+            txtEmpLastName.Clear();
+            txtEmpEmail.Clear();
+            txtEmpPhoneNo.Clear();
+            cBoxGender.SelectedIndex = -1;
+            cBoxEmpJobTitle.SelectedIndex = -1;
+            cBoxEmpJobType.SelectedIndex = -1;
+        }
         //===================methods===================
 
 
@@ -125,7 +150,7 @@ namespace Residence_Management_System.User_Controls
             if (isEmpEmptyInput() == false && IsValidInput.IsValidEmailAddress(empEmail, lblInvalidEmpEmail) == true && IsValidInput.IsValidPhoneNumber(empPhone, lblInvalidEmpPhone) == true)
             {
                 
-                WorkerModel createdWorker = new WorkerModel(txtEmpFirstName.Text.Trim(), txtEmpLastName.Text.Trim(), empEmail, empPhone,dtpEmpDob.Text, cBoxGender.Text.Trim(),cBoxEmpJobTitle.Text.Trim(), cBoxEmpJobType.Text.Trim(), dtpStartDate.Text);
+                WorkerModel createdWorker = new WorkerModel(txtEmpFirstName.Text.Trim(), txtEmpLastName.Text.Trim(), empEmail, empPhone,dtpEmpDob.Text, cBoxGender.Text.Trim(),cBoxEmpJobTitle.Text, cBoxEmpJobType.Text, dtpStartDate.Text);
                 rpA.AddWorker(createdWorker);
             }
             else
@@ -291,6 +316,16 @@ namespace Residence_Management_System.User_Controls
             {
                 MessageBox.Show(x, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void btnCancelEmpInput_Click(object sender, EventArgs e)
+        {
+            ClearWorker();
+        }
+
+        private void btnCancelStudentInput_Click(object sender, EventArgs e)
+        {
+            ClearStudent();
         }
     }
 }
