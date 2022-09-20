@@ -339,8 +339,6 @@ namespace Residence_Management_System.User_Controls
                         {
                             MessageBox.Show("Room is not available for reservation", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         }
-                       
-                       
                     }
                     catch (Exception)
                     {

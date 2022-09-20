@@ -81,14 +81,14 @@ namespace Residence_Management_System.Repository
 
 		public int CountRoom()
         {
-			string sqlTotalRoom = @"SELECT COUNT(roomID) FROM [rooms]";
+			string sqlTotalRoom = @"SELECT COUNT(roomId) FROM [rooms]";
 			int numberOfRooms = myHomeMethod.CountRecords(sqlTotalRoom);
 			return numberOfRooms;
 		}
 
 		public int CountFreeRooms()
         {
-			string sqlTotalFreeRooms = @"SELECT COUNT(reservationId) FROM [rooms]";
+			string sqlTotalFreeRooms = @"SELECT COUNT(reservationId) FROM [reservations]";
 			int freerooms = myHomeMethod.CountRecords(sqlTotalFreeRooms);
 			return CountRoom()- freerooms;
 

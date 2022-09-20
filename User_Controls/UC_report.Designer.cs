@@ -42,6 +42,8 @@ namespace Residence_Management_System.User_Controls
             this.BarJobType = new Guna.UI2.WinForms.Guna2GroupBox();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.guna2GroupBox2 = new Guna.UI2.WinForms.Guna2GroupBox();
+            this.occ = new System.Windows.Forms.Label();
+            this.non_occ = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.occupied = new System.Windows.Forms.Label();
             this.iconPictureBox3 = new FontAwesome.Sharp.IconPictureBox();
@@ -49,8 +51,6 @@ namespace Residence_Management_System.User_Controls
             this.guna2GroupBox1 = new Guna.UI2.WinForms.Guna2GroupBox();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2HScrollBar2 = new Guna.UI2.WinForms.Guna2HScrollBar();
-            this.occ = new System.Windows.Forms.Label();
-            this.non_occ = new System.Windows.Forms.Label();
             this.guna2Panel1.SuspendLayout();
             this.BarJobType.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
@@ -142,23 +142,41 @@ namespace Residence_Management_System.User_Controls
             this.guna2GroupBox2.Text = "Number of Room Status:";
             this.guna2GroupBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // occ
+            // 
+            this.occ.AutoSize = true;
+            this.occ.Location = new System.Drawing.Point(115, 72);
+            this.occ.Name = "occ";
+            this.occ.Size = new System.Drawing.Size(40, 15);
+            this.occ.TabIndex = 19;
+            this.occ.Text = "label2";
+            // 
+            // non_occ
+            // 
+            this.non_occ.AutoSize = true;
+            this.non_occ.Location = new System.Drawing.Point(115, 110);
+            this.non_occ.Name = "non_occ";
+            this.non_occ.Size = new System.Drawing.Size(40, 15);
+            this.non_occ.TabIndex = 20;
+            this.non_occ.Text = "label3";
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(36, 108);
+            this.label1.Location = new System.Drawing.Point(33, 110);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(87, 15);
+            this.label1.Size = new System.Drawing.Size(76, 15);
             this.label1.TabIndex = 4;
-            this.label1.Text = "Not-Occupied:";
+            this.label1.Text = "Free Rooms:";
             // 
             // occupied
             // 
             this.occupied.AutoSize = true;
             this.occupied.Location = new System.Drawing.Point(61, 72);
             this.occupied.Name = "occupied";
-            this.occupied.Size = new System.Drawing.Size(62, 15);
+            this.occupied.Size = new System.Drawing.Size(48, 15);
             this.occupied.TabIndex = 3;
-            this.occupied.Text = "Occupied:";
+            this.occupied.Text = "Rooms:";
             // 
             // iconPictureBox3
             // 
@@ -234,24 +252,6 @@ namespace Residence_Management_System.User_Controls
             this.guna2HScrollBar2.Size = new System.Drawing.Size(863, 18);
             this.guna2HScrollBar2.SmallChange = 5;
             this.guna2HScrollBar2.TabIndex = 10;
-            // 
-            // occ
-            // 
-            this.occ.AutoSize = true;
-            this.occ.Location = new System.Drawing.Point(129, 72);
-            this.occ.Name = "occ";
-            this.occ.Size = new System.Drawing.Size(40, 15);
-            this.occ.TabIndex = 19;
-            this.occ.Text = "label2";
-            // 
-            // non_occ
-            // 
-            this.non_occ.AutoSize = true;
-            this.non_occ.Location = new System.Drawing.Point(129, 110);
-            this.non_occ.Name = "non_occ";
-            this.non_occ.Size = new System.Drawing.Size(40, 15);
-            this.non_occ.TabIndex = 20;
-            this.non_occ.Text = "label3";
             // 
             // UC_report
             // 
