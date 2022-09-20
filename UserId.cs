@@ -56,25 +56,7 @@ namespace Residence_Management_System
             }
         }
 
-        public static String GetRoomAvailability(int room)
-        {
-            string sqlId = @"SELECT roomAvailability  FROM [rooms] WHERE roomId = @roomId"; 
-            using (SqlConnection con = new SqlConnection(myUserMethod.GetConnection()))
-            {
-                if (con.State != ConnectionState.Open) { con.Open(); }
-                SqlCommand cmd = new SqlCommand(sqlId, con);
-                cmd.Parameters.Add("@roomId", SqlDbType.Int).Value = room;
-                try
-                {
-                    return cmd.ExecuteScalar().ToString();
-                }
-                finally
-                {
-                    cmd.Dispose();
-
-                }
-            }
-        }
+        
     }
     
 }

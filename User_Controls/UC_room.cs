@@ -319,6 +319,7 @@ namespace Residence_Management_System.User_Controls
 
         private void btnReserve_Click(object sender, EventArgs e)
         {
+            
             if (IsReservationInputEmpty() == false)
             {
                 string x = ((rH.CountRoom() != 0) || (rH.CountStudents() != 0)) ? "You do not have rooms available for reservation " : "First register a student to reserve a room for";
@@ -326,15 +327,17 @@ namespace Residence_Management_System.User_Controls
                 {
                     try
                     {
-                        string roomAvailability = UserId.GetRoomAvailability(Int32.Parse(txtReserveRoomCode.Text));
-                        if(roomAvailability == "available")
+                        int roomId = Int32.Parse(txtReserveRoomCode.Text);
+                        string roomAvailability = rRCR.GetRoomAvailability(roomId);
+                        if (roomAvailability == "Available")
                         {
-                            ReservationModel rS = new ReservationModel(Int32.Parse(txtReserveStudentNo.Text), Int32.Parse(txtReserveRoomCode.Text), cboxBedandChairUsage.Text, cboxRecessStatus.Text, DateTime.Today, dtpDateMovingIn.Value);
+                            ReservationModel rS = new ReservationModel(Int32.Parse(txtReserveStudentNo.Text), roomId, cboxBedandChairUsage.Text, cboxRecessStatus.Text, DateTime.Today, dtpDateMovingIn.Value);
+                            
                             rRCR.ReserveRoomForStudent(rS);
                         }
                         else
                         {
-                            MessageBox.Show("Room is not available for reservation", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            MessageBox.Show("Room is not available for reservation", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         }
                        
                        

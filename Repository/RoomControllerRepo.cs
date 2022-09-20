@@ -17,6 +17,8 @@ namespace Residence_Management_System.Repository
 
         private readonly MyMethods myRoomMethod = new MyMethods();
         private readonly string userRole = UserId.GetUserJobType();
+        
+       
 
         public string SelectedRoomToDelete(int id)
         {
@@ -26,6 +28,26 @@ namespace Residence_Management_System.Repository
         public string SelectedReservationToDelete(int id)
         {
             return @"DELETE [reservations] WHERE reservationId = '" + id + "'";
+        }
+
+        public String GetRoomAvailability(int room)
+        {
+            string sqlId = @"SELECT roomAvailability FROM [rooms] WHERE roomId = @roomId";
+            using (SqlConnection con = new SqlConnection(myRoomMethod.GetConnection()))
+            {
+                if (con.State != ConnectionState.Open) { con.Open(); }
+                SqlCommand cmd = new SqlCommand(sqlId, con);
+                cmd.Parameters.Add("@roomId", SqlDbType.Int).Value = room;
+                try
+                {
+                    return cmd.ExecuteScalar().ToString();
+                }
+                finally
+                {
+                    cmd.Dispose();
+
+                }
+            }
         }
 
         public string SelectedRoomsTable(ComboBox cs, string tb)
