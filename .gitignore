@@ -9,10 +9,10 @@
 
 #Extra
 UpgradeLog.htm/
-App.config/
+App.config
 Properties/
 SqlServerTypes/
-
+.vs/
 
 
 
