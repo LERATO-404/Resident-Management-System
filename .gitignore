@@ -10,6 +10,7 @@
 #Extra
 UpgradeLog.htm/
 App.config
+packages.config
 Properties/
 SqlServerTypes/
 .vs/
