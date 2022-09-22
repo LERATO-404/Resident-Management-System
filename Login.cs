@@ -36,7 +36,7 @@ namespace Residence_Management_System
 
         private void clearLogin()
         {
-            //txtUsername.Clear();
+            txtUsername.Clear();
             txtPassword.Clear();
         }
         /*=============================method===================*/

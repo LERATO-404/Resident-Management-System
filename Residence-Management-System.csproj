@@ -119,7 +119,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="ProtectPassword.cs" />
+    <Compile Include="ExtraMethods\ProtectPassword.cs" />
     <Compile Include="Register.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -144,7 +144,7 @@
     <Compile Include="Repository\RoomControllerRepo.cs" />
     <Compile Include="Repository\UserRepo.cs" />
     <Compile Include="SqlServerTypes\Loader.cs" />
-    <Compile Include="UserId.cs" />
+    <Compile Include="ExtraMethods\UserId.cs" />
     <Compile Include="User_Controls\UC_activities.cs">
       <SubType>UserControl</SubType>
     </Compile>

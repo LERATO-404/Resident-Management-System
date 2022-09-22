@@ -13,7 +13,7 @@ using Residence_Management_System.ExtraMethods;
 
 namespace Residence_Management_System
 {
-    class UserId
+    public class UserId
     {
         private  static readonly MyMethods myUserMethod = new MyMethods();
         public static int GetUserId()
