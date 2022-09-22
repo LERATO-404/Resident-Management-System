@@ -7,12 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Residence_Management_System.Repository;
 
 namespace Residence_Management_System
 {
     public partial class Login : Form
     {
-        private Repository.UserRepo uR = new Repository.UserRepo();
+        private UserRepo uR = new UserRepo();
         public Login()
         {
             InitializeComponent();

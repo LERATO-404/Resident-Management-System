@@ -39,16 +39,16 @@ namespace Residence_Management_System
             this.reporbtn = new FontAwesome.Sharp.IconButton();
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.panelLogo = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.lblWelcomeUsername = new System.Windows.Forms.Label();
             this.Logout = new System.Windows.Forms.Label();
             this.LogoLandingPage = new Guna.UI2.WinForms.Guna2PictureBox();
             this.sideBarTimer = new System.Windows.Forms.Timer(this.components);
             this.tabsContainer = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.sideBarContainer.SuspendLayout();
             this.panelLogo.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.LogoLandingPage)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.LogoLandingPage)).BeginInit();
             this.SuspendLayout();
             // 
             // sideBarContainer
@@ -244,6 +244,14 @@ namespace Residence_Management_System
             this.panelLogo.TabIndex = 1;
             this.panelLogo.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.lblWelcomeUsername);
+            this.panel1.Location = new System.Drawing.Point(168, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(658, 58);
+            this.panel1.TabIndex = 193;
+            // 
             // lblWelcomeUsername
             // 
             this.lblWelcomeUsername.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -293,14 +301,6 @@ namespace Residence_Management_System
             this.tabsContainer.Size = new System.Drawing.Size(890, 569);
             this.tabsContainer.TabIndex = 6;
             // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.lblWelcomeUsername);
-            this.panel1.Location = new System.Drawing.Point(168, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(658, 58);
-            this.panel1.TabIndex = 193;
-            // 
             // LandingPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -317,8 +317,8 @@ namespace Residence_Management_System
             this.sideBarContainer.ResumeLayout(false);
             this.panelLogo.ResumeLayout(false);
             this.panelLogo.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.LogoLandingPage)).EndInit();
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.LogoLandingPage)).EndInit();
             this.ResumeLayout(false);
 
         }

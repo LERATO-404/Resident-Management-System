@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using Residence_Management_System.ExtraMethods;
 
+
 namespace Residence_Management_System
 {
     public partial class LandingPage : Form
