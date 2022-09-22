@@ -83,11 +83,6 @@ namespace Residence_Management_System.Repository
                             landingP.Show(); //show landing page
                             landingP.lblWelcomeUsername.Text = "Welcome back, "+ username.ToLower();
                             myReader.Close();
-                            username = "";
-                            password = "";
-
-
-
 
                         }
                         else
